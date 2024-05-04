@@ -13,6 +13,14 @@ namespace ProSkills.ViewModels
         [Compare("Password")]
         public string ConfirmPassword { get; set; }
 
-        public string Address { get; set; }
+        [DataType(DataType.PhoneNumber)]
+        public int Phone { get; set; }
+
+        [DataType(DataType.Text)]
+        public string country { get; set; }
+
+        [DataType(DataType.EmailAddress)]
+        public string Email{ get; set; }
+        
     }
 }
