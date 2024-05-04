@@ -11,6 +11,9 @@ namespace ProSkills
 
             var app = builder.Build();
 
+            //Register Syncfusion license
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Ngo9BigBOggjHTQxAR8/V1NBaF5cXmZCe0x3RHxbf1x0ZFdMYF5bR3dPMyBoS35RckVmWXtecnRXRWFbVkF/");
+
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
