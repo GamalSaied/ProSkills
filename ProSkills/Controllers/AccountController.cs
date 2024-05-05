@@ -32,16 +32,16 @@ namespace ProSkills.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(RegisterUserViewModel userfromrequest)
         {
-           if(ModelState.IsValid)
-            {
-                ApplicationUser user = new ApplicationUser();
-                user.UserName = userfromrequest.UserName;
-                user.Email = userfromrequest.Email;
-                user.PasswordHash = userfromrequest.Password;
-                user.Phone = userfromrequest.Phone;
-                user.ConfirmPassword = userfromrequest.ConfirmPassword;
-                user.country = userfromrequest.country;
-                 IdentityResult Result= await userManager.CreateAsync(user);
+           //if(ModelState.IsValid)
+           // {
+           //     ApplicationUser user = new ApplicationUser();
+           //     user.UserName = userfromrequest.UserName;
+           //     user.Email = userfromrequest.Email;
+           //     user.PasswordHash = userfromrequest.Password;
+           //     user.Phone = userfromrequest.Phone;
+           //     user.ConfirmPassword = userfromrequest.ConfirmPassword;
+           //     user.country = userfromrequest.country;
+           //      IdentityResult Result= await userManager.CreateAsync(user);
 
                 if (Result.Succeeded == true)
                 {
@@ -57,7 +57,7 @@ namespace ProSkills.Controllers
                     ModelState.AddModelError("", item.Description);
                 }
 
-            }
+           // }
            return View("Register", userfromrequest);   
         }
     }

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+using ProSkills.Models.ClientSide;
 
 namespace ProSkills.Models
 {
