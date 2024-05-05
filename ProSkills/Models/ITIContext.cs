@@ -4,7 +4,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ProSkills.Models
 {
-    public class ITIContext: IdentityDbContext<ApplicationUser>
+    //IdentityDbContext<ApplicationUser>
+    public class ITIContext:DbContext
     {
 
         //foreach model make a dbset because this will transform into tables

@@ -1,3 +1,5 @@
+using ProSkills.Models;
+
 namespace ProSkills
 {
     public class Program
@@ -6,8 +8,22 @@ namespace ProSkills
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            //to change the session time
+            builder.Services.AddSession(
+                Options =>
+                {
+                    Options.IdleTimeout = TimeSpan.FromMinutes(5);   //change session time out
+                }
+
+                ); //add settings  we should put it before builder
+
+            ////inject dbcontext options //nject iticontext
+            //builder.Services.AddDbContext<ITIContext>(
+            //    Options => Options.UseSqlServer(builder.Configuration.GetConnectionString("cs")));
+
+            // Add services to the container.
 
             var app = builder.Build();
 
@@ -20,7 +36,7 @@ namespace ProSkills
                 app.UseExceptionHandler("/Home/Error");
             }
             app.UseStaticFiles();
-
+            app.UseSession();
             app.UseRouting();
 
             app.UseAuthorization();

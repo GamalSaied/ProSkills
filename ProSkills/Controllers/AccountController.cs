@@ -10,11 +10,13 @@ namespace ProSkills.Controllers
     public class AccountController : Controller
     {
         private readonly UserManager<ApplicationUser> userManager;
+        private readonly SignInManager<ApplicationUser> signInManager;
 
-        public AccountController(UserManager<ApplicationUser> UserManager)
+        public AccountController(UserManager<ApplicationUser> UserManager,SignInManager<ApplicationUser> SignInManager)
         {
           
             userManager = UserManager;
+            signInManager = SignInManager;
         }
         public IActionResult Index()
         {
@@ -47,7 +49,7 @@ namespace ProSkills.Controllers
                     IdentityResult roleResut = await userManager.AddToRoleAsync(user, "Admin");
                     //create cookie //id,username,role
                     //await signInManager.SignInAsync(user, false);//session Cookie
-                    return RedirectToAction("Index", "Employee");
+                    return RedirectToAction("Index", "Account");
                 }
                 //fail to save db
                 foreach (var item in Result.Errors)
