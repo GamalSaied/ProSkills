@@ -3,76 +3,56 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - ProSkills</title>
+    <title>@ViewData["Title"] - Sadat Website </title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/ProSkills.styles.css" asp-append-version="true" />
-    <!-- Syncfusion ASP.NET Core controls styles -->
-    <link rel="stylesheet" href="https://cdn.syncfusion.com/ej2/25.1.35/fluent.css" />
-    <!-- Syncfusion ASP.NET Core controls scripts -->
-    <script src="https://cdn.syncfusion.com/ej2/25.1.35/dist/ej2.min.js"></script>
+    <link rel="stylesheet" href="~/M_AECI.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/Particles JS/css/style.css">
+    <style>
+        /* Ensure the particles cover the whole screen */
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Ensure it's behind other content */
+        }
+
+        .footer {
+            position: fixed; /* Fixed mean it will use the top and bottom and left and right */
+            bottom: 0;
+            width: 100%;
+            background-color: #f8f9fa; /* You can change the background color as needed */
+            padding: 10px; /* Add padding for better appearance */
+            text-align: center; /* Center-align text */
+        }
+    </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ProSkills</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-
-                        @if(User.Identity.IsAuthenticated==true){
-
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Signout">Signout</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Welcome">Welcome @User.Identity.Name</a>
-                        </li>
-                        
-                        } else{
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Login">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Register">Register</a>
-                        </li>
-                        }
-
-                   
-                     
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <partial name="_NavPartial"></partial>
     </header>
     <div class="container">
         <main role="main" class="pb-3">
+            <!-- Particles Java Script -->
+            <div id="particles-js"></div>
+            <script src="/Particles JS/js/particles.js"></script>
+            <script src="/Particles JS/js/app.js"></script>
+            <!-- End of Particles Java Script -->
             @RenderBody()
         </main>
     </div>
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2024 - ProSkills - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2024 - M_AECI - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
-    <!-- Syncfusion ASP.NET Core Script Manager --- Must be after Render Section  -->
-    <ejs-scripts></ejs-scripts>
-    
 </body>
 </html>
