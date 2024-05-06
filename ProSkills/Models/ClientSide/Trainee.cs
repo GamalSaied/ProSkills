@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ProSkills.Models.ClientSide
 {
@@ -19,9 +20,11 @@ namespace ProSkills.Models.ClientSide
         public string CreatedAt { get; set; }
         public bool IsDeleted { get; set; } = false;
 
-        // Forigen Key With
-        // Course
-
-
+        #region foreignkeys
+        [ForeignKey("Course")]                                        // Add Foreignkey --> ("Referance") [ 1 to Menu ]
+        public int CourseId { get; set; }
+        public Course Course { get; set; }
+        #endregion
     }
+
 }
