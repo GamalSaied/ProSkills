@@ -10,14 +10,10 @@ namespace ProSkills.Controllers
         {
             return View();
         }
+        public IActionResult login()
+        {
+            return View();
+        }
+    }
 
-    }
-    public class TreeDatas
-    {
-        public string nodeId { get; set; }
-        public string nodeText { get; set; }
-        public string iconCss { get; set; }
-        public bool hasChild { get; set; }
-        public string pid { get; set; }
-    }
 }
