@@ -231,7 +231,9 @@
                              with font-awesome or any other icon font library -->
                         <!-- change icon from https://fontawesome.com/icons  copy code from it -->
                         <!-- Must add fas before start the code  -->
+                        @* nav-icon fas + code from fantasticfonts*@
                         <!-- Must add nav-icon if this will be nav icon not child form it  -->
+                        @*if u need make the window defult open use menu-open or close use menu-close*@
                         <!--  if u need add Bages to the nave bar use like that -->
                         @*
                         <span class="badge badge-info right">3</span>
@@ -248,19 +250,30 @@
                                 </p>
                             </a>
                         </li>
+                        <!-- ------------ -->
+                        <!-- Item / Start  -->
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Activitylog
+                                    <span class="badge badge-info right">3</span>
+                                </p>
+                            </a>
+                        </li>
+                        <!-- Item / Close  -->
                         <!-- Dashboard / One nav item  -->
                         <!-- -------------------------------------------------------------- -->
                         @* Admin Panel *@
                         <!-- Menu / Open  -->
                         <!-- Header / Menu / Start-->
                         <li class="nav-header">Administration</li>
-                        <li class="nav-item menu-open"> 
+                        <li class="nav-item menu-close"> 
                             <a href="#" class="nav-link active">
                                 <i class="nav-icon fas fa-sharp fa-regular fa-users"></i>
                                 <p>
                                     Admins
                                     <i class="fas fa-angle-left right"></i>
-                                    <span class="badge badge-info right">3</span>
                                 </p>
                             </a>
                         <!-- Header / Menu / End-->
@@ -356,31 +369,20 @@
                             <!-- Child / Menu / End -->
                         </li>
                         <!-- Menu / Close -->
-                        <!-- ------------ -->
-                        <!-- Item / Start  -->
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
-                                <p>
-                                    Activitylog
-                                    <span class="right badge badge-danger">New</span>
-                                </p>
-                            </a>
-                        </li>
-                        <!-- Item / Close  -->
+
                         <!-- -------------------------------------------------------------- -->
                         <!-- -------------------------------------------------------------- -->
                         @*Users*@
                         <!-- Menu / Open  -->
                         <!-- Header / Menu / Start-->
                         <li class="nav-header">Client Services</li>
-                        <li class="nav-item menu-open">
+                        <li class="nav-item menu-close">
                             <a href="#" class="nav-link active">
                                 <i class="nav-icon fas fa-solid fa-users"></i>
                                 <p>
                                     User Management
                                     <i class="fas fa-angle-left right"></i>
-                                    <span class="badge badge-info right">3</span>
+                                   
                                 </p>
                             </a>
                             <!-- Header / Menu / End-->
@@ -417,14 +419,12 @@
                         @*Packages*@
                         <!-- Menu / Open  -->
                         <!-- Header / Menu / Start-->
-                        <li class="nav-header">Administration</li>
-                        <li class="nav-item menu-open">
+                        <li class="nav-item menu-close">
                             <a href="#" class="nav-link active">
-                                <i class="nav-icon fas fa-solid fa-users"></i>
+                                <i class="nav-icon fas fa-solid fa-graduation-cap"></i>
                                 <p>
-                                    User Management
+                                    Course Management
                                     <i class="fas fa-angle-left right"></i>
-                                    <span class="badge badge-info right">3</span>
                                 </p>
                             </a>
                             <!-- Header / Menu / End-->
@@ -432,16 +432,24 @@
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="../layout/top-nav.html" class="nav-link">
-                                        <i class="nav-icon fas fa-solid fa-user"></i>
-                                        <p>Instructor</p>
+                                        <i class="nav-icon fas fa-solid fa-cubes"></i>
+                                        <p>Package</p>
                                     </a>
                                 </li>
                             </ul>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="../layout/top-nav.html" class="nav-link">
-                                        <i class="nav-icon fas fa-solid fa-user"></i>
-                                        <p>Trainee</p>
+                                        <i class="nav-icon fas fa-solid fa-laptop-code"></i>
+                                        <p>Generate Codes</p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="../layout/top-nav.html" class="nav-link">
+                                        <i class="nav-icon fas fa-solid fa-book-open"></i>
+                                        <p>Catergory</p>
                                     </a>
                                 </li>
                             </ul>
@@ -449,6 +457,111 @@
                         </li>
                         <!-- Menu / Close -->
                         <!-- -------------------------------------------------------------- -->
+                        <!-- -------------------------------------------------------------- -->
+                        @*Requests*@
+                        <!-- Menu / Open  -->
+                        <!-- Header / Menu / Start-->
+                        <li class="nav-item menu-close">
+                            <a href="#" class="nav-link active">
+                                <i class="nav-icon fas fa-solid fa-bullhorn"></i>
+                                <p>
+                                    Requests Management
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <!-- Header / Menu / End-->
+                            <!-- Child / Menu / Start -->
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="../layout/top-nav.html" class="nav-link">
+                                        <i class="nav-icon fas fa-solid fa-paper-plane"></i>
+                                        <p>Course Requests</p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="../layout/top-nav.html" class="nav-link">
+                                        <i class="nav-icon fas fa-solid fa-laptop-code"></i>
+                                        <p>Trainee Requests</p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- Child / Menu / End -->
+                        </li>
+                        <!-- Menu / Close -->
+                        <!-- -------------------------------------------------------------- -->
+                        <!-- -------------------------------------------------------------- -->
+                        @*Exam Rules*@
+                        <!-- Menu / Open  -->
+                        <!-- Header / Menu / Start-->
+                        <li class="nav-item menu-close">
+                            <a href="#" class="nav-link active">
+                                <i class="nav-icon fas fa-solid fa-laptop-code"></i>
+                                <p>
+                                    Rules Management
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <!-- Header / Menu / End-->
+                            <!-- Child / Menu / Start -->
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="../layout/top-nav.html" class="nav-link">
+                                        <i class="nav-icon fas fa-solid fa-person-chalkboard"></i>
+                                        <p>Create Rules</p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- Child / Menu / End -->
+                        </li>
+                        <!-- Menu / Close -->
+                        <!-- -------------------------------------------------------------- -->
+                        <!-- -------------------------------------------------------------- -->
+                        @*Front Pages*@
+                        <!-- Menu / Open  -->
+                        <!-- Header / Menu / Start-->
+                        <li class="nav-header">Frontend Customization</li>
+                        <li class="nav-item menu-close">
+                            <a href="#" class="nav-link active">
+                                <i class="nav-icon fas fa-solid fa-users"></i>
+                                <p>
+                                    Main Pages
+                                    <i class="fas fa-angle-left right"></i>
+                                    
+                                </p>
+                            </a>
+                            <!-- Header / Menu / End-->
+                            <!-- Child / Menu / Start -->
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="../layout/top-nav.html" class="nav-link">
+                                        <i class="nav-icon fas fa-solid fa-file"></i>
+                                        <p>About Us</p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="../layout/top-nav.html" class="nav-link">
+                                        <i class="nav-icon fas fa-solid fa-file"></i>
+                                        <p>Contact Us</p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="../layout/top-nav.html" class="nav-link">
+                                        <i class="nav-icon fas fa-solid fa-file"></i>
+                                        <p>Terms and Condition</p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- Child / Menu / End -->
+                        </li>
+                        <!-- Menu / Close -->
+                        <!-- -------------------------------------------------------------- -->
+
                 <!-- /.sidebar-menu -->
             </div>
             <!-- /.sidebar -->
