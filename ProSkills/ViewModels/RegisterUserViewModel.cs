@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using ProSkills.Models.Enumerators;
+using System.ComponentModel.DataAnnotations;
 
 namespace ProSkills.ViewModels
 {
@@ -18,8 +20,12 @@ namespace ProSkills.ViewModels
         [DataType(DataType.PhoneNumber)]
         public int Phone { get; set; }
 
-        [DataType(DataType.Text)]
-        public string country { get; set; }
+  
+        [Required(ErrorMessage = "Please select a country")]
+        [Display(Name = "Country")]
+        public Country SelectedCountry { get; set; }
+
+        public List<SelectListItem> Countries { get; set; }
 
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }

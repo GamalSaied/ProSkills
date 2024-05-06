@@ -40,7 +40,7 @@ namespace ProSkills.Controllers
                 user.PasswordHash = userfromrequest.Password;
                 user.Phone = userfromrequest.Phone;
                 //user.ConfirmPassword = userfromrequest.ConfirmPassword;
-                user.country = userfromrequest.country;
+                user.country= userfromrequest.SelectedCountry;
 
                 IdentityResult Result = await userManager.CreateAsync(user,userfromrequest.Password);
 
