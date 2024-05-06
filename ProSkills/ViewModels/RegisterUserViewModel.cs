@@ -23,9 +23,10 @@ namespace ProSkills.ViewModels
   
         [Required(ErrorMessage = "Please select a country")]
         [Display(Name = "Country")]
-        public Country SelectedCountry { get; set; }
+        public string country { get; set; }
+        //public Country SelectedCountry { get; set; }
 
-        public List<SelectListItem> Countries { get; set; }
+        //public List<SelectListItem> Countries { get; set; }
 
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
