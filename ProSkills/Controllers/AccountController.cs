@@ -99,5 +99,19 @@ namespace ProSkills.Controllers
              await signInManager.SignOutAsync();
              return RedirectToAction("Login");
         }
+
+        public IActionResult login2()
+        {
+            return View();
+        }
+
+        public IActionResult login3 ()
+        {
+            return View();
+        }
+        public IActionResult register2()
+        {
+            return View();
+        }
     }
 }
