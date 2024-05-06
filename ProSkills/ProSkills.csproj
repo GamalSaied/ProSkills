@@ -1740,4 +1740,8 @@
     <PackageReference Include="Syncfusion.EJ2.AspNet.Core" Version="25.1.42" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Filters\" />
+  </ItemGroup>
+
 </Project>

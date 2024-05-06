@@ -27,7 +27,7 @@ namespace ProSkills.Controllers
                  IdentityResult result= await roleManager.CreateAsync(role);
                 if(result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Trainee");
+                    return RedirectToAction("Index", "Home");
                 }
                 foreach (var item in result.Errors)
                 {

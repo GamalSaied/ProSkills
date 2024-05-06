@@ -50,7 +50,7 @@ namespace ProSkills.Controllers
                     //IdentityResult roleResut = await userManager.AddToRoleAsync(user, "Admin");
                     //create cookie //id,username,role
                     await signInManager.SignInAsync(user, false);//session Cookie
-                    return RedirectToAction("Index", "Account");
+                    return RedirectToAction("Login", "Account");
                 }
                 //fail to save db
                 foreach (var item in Result.Errors)
@@ -82,7 +82,7 @@ namespace ProSkills.Controllers
                     {
                         //create cookie
                          await signInManager.SignInAsync(userfromdatabase, userfromReq.RememberMe);
-                        return RedirectToAction("Index", "Instructor");
+                        return RedirectToAction("Index", "Home");
                     }
 
                 }

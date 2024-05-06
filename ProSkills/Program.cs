@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using ProSkills.Interfaces;
 using ProSkills.Models;
+using ProSkills.Repository;
 
 namespace ProSkills
 {
@@ -34,6 +36,10 @@ namespace ProSkills
             builder.Services.AddDbContext<ITIContext>(
                 Options => Options.UseSqlServer(builder.Configuration.GetConnectionString("cs")));
 
+
+            //register 
+            builder.Services.AddScoped<ICourseRepository, CourseRepository>();
+            builder.Services.AddScoped<ITraineeRepository, TraineeRepository>();
             // Add services to the container.
 
             var app = builder.Build();
