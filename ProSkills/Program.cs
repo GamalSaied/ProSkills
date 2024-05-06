@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using ProSkills.Models;
 
 namespace ProSkills
@@ -10,6 +12,15 @@ namespace ProSkills
 
             builder.Services.AddControllersWithViews();
 
+            builder.Services.AddIdentity<ApplicationUser, IdentityRole>(
+       options =>
+       {
+           options.Password.RequiredLength = 4;
+           options.Password.RequireNonAlphanumeric = false;
+           options.Password.RequireDigit = false;
+           options.Password.RequireUppercase = false;
+
+       }).AddEntityFrameworkStores<ITIContext>();
             //to change the session time
             builder.Services.AddSession(
                 Options =>
@@ -19,9 +30,9 @@ namespace ProSkills
 
                 ); //add settings  we should put it before builder
 
-            ////inject dbcontext options //nject iticontext
-            //builder.Services.AddDbContext<ITIContext>(
-            //    Options => Options.UseSqlServer(builder.Configuration.GetConnectionString("cs")));
+            //inject dbcontext options //nject iticontext
+            builder.Services.AddDbContext<ITIContext>(
+                Options => Options.UseSqlServer(builder.Configuration.GetConnectionString("cs")));
 
             // Add services to the container.
 

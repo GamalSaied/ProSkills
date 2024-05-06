@@ -5,8 +5,8 @@ using ProSkills.Models.ClientSide;
 
 namespace ProSkills.Models
 {
-    //IdentityDbContext<ApplicationUser>
-    public class ITIContext:DbContext
+   
+    public class ITIContext : IdentityDbContext<ApplicationUser>
     {
 
         //foreach model make a dbset because this will transform into tables
@@ -37,9 +37,9 @@ namespace ProSkills.Models
 
 
             //seeding for department
-            modelBuilder.Entity<Trainee>().HasData(new Trainee { Id = 1, Name = "Ahmed"});
-            modelBuilder.Entity<Trainee>().HasData(new Trainee { Id = 2, Name = "Gamal" });
-            modelBuilder.Entity<Trainee>().HasData(new Trainee { Id = 3, Name = "Sadat"});
+            modelBuilder.Entity<Trainee>().HasData(new Trainee { TraineeId = 1, TraineeName = "Ahmed"});
+            modelBuilder.Entity<Trainee>().HasData(new Trainee { TraineeId = 2, TraineeName = "Gamal" });
+            modelBuilder.Entity<Trainee>().HasData(new Trainee { TraineeId = 3, TraineeName = "Sadat"});
 
 
             base.OnModelCreating(modelBuilder);

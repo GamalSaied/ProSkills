@@ -13,6 +13,8 @@ namespace ProSkills.ViewModels
         [Compare("Password")]
         public string ConfirmPassword { get; set; }
 
+        
+
         [DataType(DataType.PhoneNumber)]
         public int Phone { get; set; }
 
@@ -20,7 +22,7 @@ namespace ProSkills.ViewModels
         public string country { get; set; }
 
         [DataType(DataType.EmailAddress)]
-        public string Email{ get; set; }
-        
+        public string Email { get; set; }
+
     }
 }
