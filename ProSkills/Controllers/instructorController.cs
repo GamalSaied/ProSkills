@@ -2,7 +2,7 @@
 
 namespace ProSkills.Controllers
 {
-    public class instructorController : Controller
+    public class InstructorController : Controller
     {
         public IActionResult Index()
         {
