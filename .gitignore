@@ -361,5 +361,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
-/ProSkills/appsettings.json
+/ProSkills/Models/AdminPanel/CourseManger/CourseRequest.cs
 /ProSkills/appsettings.json
