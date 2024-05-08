@@ -1,80 +1,29 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProSkills.Interfaces;
+using ProSkills.Models.AdminPanel.InstructorManger;
 using ProSkills.Models.ClientSide;
+using ProSkills.Repository;
 
 namespace ProSkills.Controllers
 {
     public class CourseController : Controller
     {
-        ////Default for reference = null
+        private IRepository<Course> _courseRepository;
 
-        //ICourseRepository CourseRepository;
+        public CourseController(IRepository<Course> CourseRepository)
+        {
+            _courseRepository = CourseRepository;
+        }
 
-        //public CourseController(ICourseRepository _CourseRepository)
+        // Filter By Instractor id 
+        public IActionResult index(int id)
+        {
+            //List<InstructorCourse> Courses = _courseRepository.GetAll();
 
+            //return View("Showall", instractorList); //View Index ,Model List<Department>
+            //return View("index", instructors);
 
-        //{
-        //    CourseRepository = _CourseRepository;
-
-        //    //CourseRepository = new CourseRepository();
-        //}
-        //public IActionResult Index()
-        //{
-        //    var courselist = CourseRepository.Getall();
-        //    //var courselist =context.Course.ToList();    
-
-        //    return View("Index", courselist);//pagination
-
-        //}
-
-        ////action to return a sepecific COURSE with id
-        //public IActionResult Details(int id)
-        //{
-        //    //ITIContext context = new ITIContext();
-
-        //    Course CRSid = CourseRepository.GetById(id);
-
-    
-
-        //    return View("Details", CRSid);//view Details ,Model =instructorid
-        //}
-
-        ////press anchor tag
-
-        //[HttpGet]
-        //public IActionResult New()
-        //{
-
-        //    ViewData["courseList"] = CourseRepository.Getall();
-        //    //ViewData["courseList"]=context.Course.ToList();
-        //    return View("New"); //view with the same action name "New" ,Model = null
-        //}
-
-      
-
-        //[HttpPost]//action attribute
-        //public IActionResult SaveNew(Course CrsFromreq)
-        //{
-        //    if (ModelState.IsValid == true)
-        //    {
-        //        CourseRepository.Insert(CrsFromreq);
-        //        CourseRepository.Save();
-        //        //context.Course.Add(CrsFromreq);
-        //        //context.SaveChanges();
-        //        return RedirectToAction("Index", "Course");
-        //    }
-        //    ViewData["courseList"] = CourseRepository.Getall();
-        //    //ViewData["courseList"] = context.Course.ToList();
-        //    return View("New", CrsFromreq);
-        //}
-
-        //public IActionResult CheckName(string name)
-        //{
-        //    Course course = CourseRepository.checkName(name);
-        //    //Course course = context.Course.FirstOrDefault(e => e.Name.ToLower() == name.ToLower());
-        //    if (course == null) { return Json(true); }
-        //    { return Json(false); }
-        //}
+        }
 
     }
 }

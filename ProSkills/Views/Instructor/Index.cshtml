@@ -43,12 +43,12 @@
                         <tr>
                             <th scope="row">@counter</th>
                             <td>@item.Id</td>
-                            <td><a href="/instructor/GetByID?ID=@item.Id">@item.Name</a></td>
+                            <td>@item.Name</td>
                             <td>@item.Email</td>
                             <td>@item.Password</td>
                             <td>@item.CreatedAt</td>
-                            <td><a href="/instructor/GetByID?ID=@item.Id">Profile</a></td>
                             <td><a href="/instructor/GetByID?ID=@item.Id">Courses</a></td>
+                            <td><a href="/instructor/GetByID?ID=@item.Id">Profile</a></td>
                             <td><a style="padding-bottom:10px" href="/instructor/Edit?ID=@item.Id" class="btn btn-block bg-gradient-secondary btn-xs">Edit</a></td>
                             <td><a href="/instructor/SoftDelete?ID=@item.Id" class="btn btn-block bg-gradient-danger btn-xs" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
                         </tr>
@@ -64,20 +64,3 @@
 
 
 
-<script>
-    $(function () {
-        $("#example1").DataTable({
-            "responsive": true, "lengthChange": false, "autoWidth": false,
-            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-        $('#example2').DataTable({
-            "paging": true,
-            "lengthChange": false,
-            "searching": false,
-            "ordering": true,
-            "info": true,
-            "autoWidth": false,
-            "responsive": true,
-        });
-    });
-</script>
