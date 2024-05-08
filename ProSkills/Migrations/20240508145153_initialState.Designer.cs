@@ -12,8 +12,8 @@ using ProSkills.Models;
 namespace ProSkills.Migrations
 {
     [DbContext(typeof(ITIContext))]
-    [Migration("20240508122017_in")]
-    partial class @in
+    [Migration("20240508145153_initialState")]
+    partial class initialState
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -158,7 +158,7 @@ namespace ProSkills.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("ProSkills.Models.AdminPanel.Instractor.instructor", b =>
+            modelBuilder.Entity("ProSkills.Models.AdminPanel.InstructorManger.instructor", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -198,7 +198,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 1,
                             Bio = "Bio for Instructor 1",
-                            CreatedAt = "08/05/2024 15:20:16",
+                            CreatedAt = "08/05/2024 05:51:53 م",
                             Email = "instructor1@example.com",
                             IsDeleted = false,
                             Name = "Instructor 1",
@@ -208,7 +208,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 2,
                             Bio = "Bio for Instructor 2",
-                            CreatedAt = "08/05/2024 15:20:16",
+                            CreatedAt = "08/05/2024 05:51:53 م",
                             Email = "instructor2@example.com",
                             IsDeleted = false,
                             Name = "Instructor 2",
@@ -218,7 +218,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 3,
                             Bio = "Bio for Instructor 3",
-                            CreatedAt = "08/05/2024 15:20:16",
+                            CreatedAt = "08/05/2024 05:51:53 م",
                             Email = "instructor3@example.com",
                             IsDeleted = false,
                             Name = "Instructor 3",
@@ -228,7 +228,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 4,
                             Bio = "Bio for Instructor 4",
-                            CreatedAt = "08/05/2024 15:20:16",
+                            CreatedAt = "08/05/2024 05:51:53 م",
                             Email = "instructor4@example.com",
                             IsDeleted = false,
                             Name = "Instructor 4",
@@ -238,7 +238,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 5,
                             Bio = "Bio for Instructor 5",
-                            CreatedAt = "08/05/2024 15:20:16",
+                            CreatedAt = "08/05/2024 05:51:53 م",
                             Email = "instructor5@example.com",
                             IsDeleted = false,
                             Name = "Instructor 5",
@@ -248,7 +248,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 6,
                             Bio = "Bio for Instructor 6",
-                            CreatedAt = "08/05/2024 15:20:16",
+                            CreatedAt = "08/05/2024 05:51:53 م",
                             Email = "instructor6@example.com",
                             IsDeleted = false,
                             Name = "Instructor 6",
@@ -258,7 +258,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 7,
                             Bio = "Bio for Instructor 7",
-                            CreatedAt = "08/05/2024 15:20:16",
+                            CreatedAt = "08/05/2024 05:51:53 م",
                             Email = "instructor7@example.com",
                             IsDeleted = false,
                             Name = "Instructor 7",
@@ -268,7 +268,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 8,
                             Bio = "Bio for Instructor 8",
-                            CreatedAt = "08/05/2024 15:20:16",
+                            CreatedAt = "08/05/2024 05:51:53 م",
                             Email = "instructor8@example.com",
                             IsDeleted = false,
                             Name = "Instructor 8",
@@ -278,7 +278,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 9,
                             Bio = "Bio for Instructor 9",
-                            CreatedAt = "08/05/2024 15:20:16",
+                            CreatedAt = "08/05/2024 05:51:53 م",
                             Email = "instructor9@example.com",
                             IsDeleted = false,
                             Name = "Instructor 9",
@@ -288,7 +288,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 10,
                             Bio = "Bio for Instructor 10",
-                            CreatedAt = "08/05/2024 15:20:16",
+                            CreatedAt = "08/05/2024 05:51:53 م",
                             Email = "instructor10@example.com",
                             IsDeleted = false,
                             Name = "Instructor 10",
@@ -298,7 +298,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 11,
                             Bio = "Bio for Instructor 11",
-                            CreatedAt = "08/05/2024 15:20:16",
+                            CreatedAt = "08/05/2024 05:51:53 م",
                             Email = "instructor11@example.com",
                             IsDeleted = false,
                             Name = "Instructor 11",
@@ -308,7 +308,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 12,
                             Bio = "Bio for Instructor 12",
-                            CreatedAt = "08/05/2024 15:20:16",
+                            CreatedAt = "08/05/2024 05:51:53 م",
                             Email = "instructor12@example.com",
                             IsDeleted = false,
                             Name = "Instructor 12",
@@ -318,7 +318,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 13,
                             Bio = "Bio for Instructor 13",
-                            CreatedAt = "08/05/2024 15:20:16",
+                            CreatedAt = "08/05/2024 05:51:53 م",
                             Email = "instructor13@example.com",
                             IsDeleted = false,
                             Name = "Instructor 13",
@@ -328,7 +328,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 14,
                             Bio = "Bio for Instructor 14",
-                            CreatedAt = "08/05/2024 15:20:16",
+                            CreatedAt = "08/05/2024 05:51:53 م",
                             Email = "instructor14@example.com",
                             IsDeleted = false,
                             Name = "Instructor 14",
@@ -338,7 +338,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 15,
                             Bio = "Bio for Instructor 15",
-                            CreatedAt = "08/05/2024 15:20:16",
+                            CreatedAt = "08/05/2024 05:51:53 م",
                             Email = "instructor15@example.com",
                             IsDeleted = false,
                             Name = "Instructor 15",
@@ -348,7 +348,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 16,
                             Bio = "Bio for Instructor 16",
-                            CreatedAt = "08/05/2024 15:20:16",
+                            CreatedAt = "08/05/2024 05:51:53 م",
                             Email = "instructor16@example.com",
                             IsDeleted = false,
                             Name = "Instructor 16",
@@ -358,7 +358,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 17,
                             Bio = "Bio for Instructor 17",
-                            CreatedAt = "08/05/2024 15:20:16",
+                            CreatedAt = "08/05/2024 05:51:53 م",
                             Email = "instructor17@example.com",
                             IsDeleted = false,
                             Name = "Instructor 17",
@@ -368,7 +368,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 18,
                             Bio = "Bio for Instructor 18",
-                            CreatedAt = "08/05/2024 15:20:16",
+                            CreatedAt = "08/05/2024 05:51:53 م",
                             Email = "instructor18@example.com",
                             IsDeleted = false,
                             Name = "Instructor 18",
@@ -378,7 +378,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 19,
                             Bio = "Bio for Instructor 19",
-                            CreatedAt = "08/05/2024 15:20:16",
+                            CreatedAt = "08/05/2024 05:51:53 م",
                             Email = "instructor19@example.com",
                             IsDeleted = false,
                             Name = "Instructor 19",
@@ -388,7 +388,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 20,
                             Bio = "Bio for Instructor 20",
-                            CreatedAt = "08/05/2024 15:20:16",
+                            CreatedAt = "08/05/2024 05:51:53 م",
                             Email = "instructor20@example.com",
                             IsDeleted = false,
                             Name = "Instructor 20",
@@ -398,7 +398,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 21,
                             Bio = "Bio for Instructor 21",
-                            CreatedAt = "08/05/2024 15:20:16",
+                            CreatedAt = "08/05/2024 05:51:53 م",
                             Email = "instructor21@example.com",
                             IsDeleted = false,
                             Name = "Instructor 21",
@@ -408,7 +408,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 22,
                             Bio = "Bio for Instructor 22",
-                            CreatedAt = "08/05/2024 15:20:16",
+                            CreatedAt = "08/05/2024 05:51:53 م",
                             Email = "instructor22@example.com",
                             IsDeleted = false,
                             Name = "Instructor 22",
@@ -418,7 +418,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 23,
                             Bio = "Bio for Instructor 23",
-                            CreatedAt = "08/05/2024 15:20:16",
+                            CreatedAt = "08/05/2024 05:51:53 م",
                             Email = "instructor23@example.com",
                             IsDeleted = false,
                             Name = "Instructor 23",
@@ -428,7 +428,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 24,
                             Bio = "Bio for Instructor 24",
-                            CreatedAt = "08/05/2024 15:20:16",
+                            CreatedAt = "08/05/2024 05:51:53 م",
                             Email = "instructor24@example.com",
                             IsDeleted = false,
                             Name = "Instructor 24",
@@ -438,7 +438,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 25,
                             Bio = "Bio for Instructor 25",
-                            CreatedAt = "08/05/2024 15:20:16",
+                            CreatedAt = "08/05/2024 05:51:53 م",
                             Email = "instructor25@example.com",
                             IsDeleted = false,
                             Name = "Instructor 25",
@@ -448,7 +448,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 26,
                             Bio = "Bio for Instructor 26",
-                            CreatedAt = "08/05/2024 15:20:16",
+                            CreatedAt = "08/05/2024 05:51:53 م",
                             Email = "instructor26@example.com",
                             IsDeleted = false,
                             Name = "Instructor 26",
@@ -458,7 +458,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 27,
                             Bio = "Bio for Instructor 27",
-                            CreatedAt = "08/05/2024 15:20:16",
+                            CreatedAt = "08/05/2024 05:51:53 م",
                             Email = "instructor27@example.com",
                             IsDeleted = false,
                             Name = "Instructor 27",
@@ -468,7 +468,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 28,
                             Bio = "Bio for Instructor 28",
-                            CreatedAt = "08/05/2024 15:20:16",
+                            CreatedAt = "08/05/2024 05:51:53 م",
                             Email = "instructor28@example.com",
                             IsDeleted = false,
                             Name = "Instructor 28",
@@ -478,7 +478,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 29,
                             Bio = "Bio for Instructor 29",
-                            CreatedAt = "08/05/2024 15:20:16",
+                            CreatedAt = "08/05/2024 05:51:53 م",
                             Email = "instructor29@example.com",
                             IsDeleted = false,
                             Name = "Instructor 29",
@@ -488,7 +488,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 30,
                             Bio = "Bio for Instructor 30",
-                            CreatedAt = "08/05/2024 15:20:16",
+                            CreatedAt = "08/05/2024 05:51:53 م",
                             Email = "instructor30@example.com",
                             IsDeleted = false,
                             Name = "Instructor 30",
@@ -890,7 +890,7 @@ namespace ProSkills.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ProSkills.Models.AdminPanel.Instractor.instructor", "Instructor")
+                    b.HasOne("ProSkills.Models.AdminPanel.InstructorManger.instructor", "Instructor")
                         .WithMany("instructorCourses")
                         .HasForeignKey("instructorId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -909,7 +909,7 @@ namespace ProSkills.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ProSkills.Models.AdminPanel.Instractor.instructor", "instructorData")
+                    b.HasOne("ProSkills.Models.AdminPanel.InstructorManger.instructor", "instructorData")
                         .WithMany("modules")
                         .HasForeignKey("InstructorId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -939,7 +939,7 @@ namespace ProSkills.Migrations
                     b.Navigation("trainee");
                 });
 
-            modelBuilder.Entity("ProSkills.Models.AdminPanel.Instractor.instructor", b =>
+            modelBuilder.Entity("ProSkills.Models.AdminPanel.InstructorManger.instructor", b =>
                 {
                     b.Navigation("instructorCourses");
 

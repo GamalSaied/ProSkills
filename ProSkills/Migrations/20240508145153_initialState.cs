@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ProSkills.Migrations
 {
     /// <inheritdoc />
-    public partial class @in : Migration
+    public partial class initialState : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -360,36 +360,36 @@ namespace ProSkills.Migrations
                 columns: new[] { "Id", "Bio", "CreatedAt", "Email", "IsDeleted", "Name", "Password", "Speciallization" },
                 values: new object[,]
                 {
-                    { 1, "Bio for Instructor 1", "08/05/2024 15:20:16", "instructor1@example.com", false, "Instructor 1", "password1", null },
-                    { 2, "Bio for Instructor 2", "08/05/2024 15:20:16", "instructor2@example.com", false, "Instructor 2", "password2", null },
-                    { 3, "Bio for Instructor 3", "08/05/2024 15:20:16", "instructor3@example.com", false, "Instructor 3", "password3", null },
-                    { 4, "Bio for Instructor 4", "08/05/2024 15:20:16", "instructor4@example.com", false, "Instructor 4", "password4", null },
-                    { 5, "Bio for Instructor 5", "08/05/2024 15:20:16", "instructor5@example.com", false, "Instructor 5", "password5", null },
-                    { 6, "Bio for Instructor 6", "08/05/2024 15:20:16", "instructor6@example.com", false, "Instructor 6", "password6", null },
-                    { 7, "Bio for Instructor 7", "08/05/2024 15:20:16", "instructor7@example.com", false, "Instructor 7", "password7", null },
-                    { 8, "Bio for Instructor 8", "08/05/2024 15:20:16", "instructor8@example.com", false, "Instructor 8", "password8", null },
-                    { 9, "Bio for Instructor 9", "08/05/2024 15:20:16", "instructor9@example.com", false, "Instructor 9", "password9", null },
-                    { 10, "Bio for Instructor 10", "08/05/2024 15:20:16", "instructor10@example.com", false, "Instructor 10", "password10", null },
-                    { 11, "Bio for Instructor 11", "08/05/2024 15:20:16", "instructor11@example.com", false, "Instructor 11", "password11", null },
-                    { 12, "Bio for Instructor 12", "08/05/2024 15:20:16", "instructor12@example.com", false, "Instructor 12", "password12", null },
-                    { 13, "Bio for Instructor 13", "08/05/2024 15:20:16", "instructor13@example.com", false, "Instructor 13", "password13", null },
-                    { 14, "Bio for Instructor 14", "08/05/2024 15:20:16", "instructor14@example.com", false, "Instructor 14", "password14", null },
-                    { 15, "Bio for Instructor 15", "08/05/2024 15:20:16", "instructor15@example.com", false, "Instructor 15", "password15", null },
-                    { 16, "Bio for Instructor 16", "08/05/2024 15:20:16", "instructor16@example.com", false, "Instructor 16", "password16", null },
-                    { 17, "Bio for Instructor 17", "08/05/2024 15:20:16", "instructor17@example.com", false, "Instructor 17", "password17", null },
-                    { 18, "Bio for Instructor 18", "08/05/2024 15:20:16", "instructor18@example.com", false, "Instructor 18", "password18", null },
-                    { 19, "Bio for Instructor 19", "08/05/2024 15:20:16", "instructor19@example.com", false, "Instructor 19", "password19", null },
-                    { 20, "Bio for Instructor 20", "08/05/2024 15:20:16", "instructor20@example.com", false, "Instructor 20", "password20", null },
-                    { 21, "Bio for Instructor 21", "08/05/2024 15:20:16", "instructor21@example.com", false, "Instructor 21", "password21", null },
-                    { 22, "Bio for Instructor 22", "08/05/2024 15:20:16", "instructor22@example.com", false, "Instructor 22", "password22", null },
-                    { 23, "Bio for Instructor 23", "08/05/2024 15:20:16", "instructor23@example.com", false, "Instructor 23", "password23", null },
-                    { 24, "Bio for Instructor 24", "08/05/2024 15:20:16", "instructor24@example.com", false, "Instructor 24", "password24", null },
-                    { 25, "Bio for Instructor 25", "08/05/2024 15:20:16", "instructor25@example.com", false, "Instructor 25", "password25", null },
-                    { 26, "Bio for Instructor 26", "08/05/2024 15:20:16", "instructor26@example.com", false, "Instructor 26", "password26", null },
-                    { 27, "Bio for Instructor 27", "08/05/2024 15:20:16", "instructor27@example.com", false, "Instructor 27", "password27", null },
-                    { 28, "Bio for Instructor 28", "08/05/2024 15:20:16", "instructor28@example.com", false, "Instructor 28", "password28", null },
-                    { 29, "Bio for Instructor 29", "08/05/2024 15:20:16", "instructor29@example.com", false, "Instructor 29", "password29", null },
-                    { 30, "Bio for Instructor 30", "08/05/2024 15:20:16", "instructor30@example.com", false, "Instructor 30", "password30", null }
+                    { 1, "Bio for Instructor 1", "08/05/2024 05:51:53 م", "instructor1@example.com", false, "Instructor 1", "password1", null },
+                    { 2, "Bio for Instructor 2", "08/05/2024 05:51:53 م", "instructor2@example.com", false, "Instructor 2", "password2", null },
+                    { 3, "Bio for Instructor 3", "08/05/2024 05:51:53 م", "instructor3@example.com", false, "Instructor 3", "password3", null },
+                    { 4, "Bio for Instructor 4", "08/05/2024 05:51:53 م", "instructor4@example.com", false, "Instructor 4", "password4", null },
+                    { 5, "Bio for Instructor 5", "08/05/2024 05:51:53 م", "instructor5@example.com", false, "Instructor 5", "password5", null },
+                    { 6, "Bio for Instructor 6", "08/05/2024 05:51:53 م", "instructor6@example.com", false, "Instructor 6", "password6", null },
+                    { 7, "Bio for Instructor 7", "08/05/2024 05:51:53 م", "instructor7@example.com", false, "Instructor 7", "password7", null },
+                    { 8, "Bio for Instructor 8", "08/05/2024 05:51:53 م", "instructor8@example.com", false, "Instructor 8", "password8", null },
+                    { 9, "Bio for Instructor 9", "08/05/2024 05:51:53 م", "instructor9@example.com", false, "Instructor 9", "password9", null },
+                    { 10, "Bio for Instructor 10", "08/05/2024 05:51:53 م", "instructor10@example.com", false, "Instructor 10", "password10", null },
+                    { 11, "Bio for Instructor 11", "08/05/2024 05:51:53 م", "instructor11@example.com", false, "Instructor 11", "password11", null },
+                    { 12, "Bio for Instructor 12", "08/05/2024 05:51:53 م", "instructor12@example.com", false, "Instructor 12", "password12", null },
+                    { 13, "Bio for Instructor 13", "08/05/2024 05:51:53 م", "instructor13@example.com", false, "Instructor 13", "password13", null },
+                    { 14, "Bio for Instructor 14", "08/05/2024 05:51:53 م", "instructor14@example.com", false, "Instructor 14", "password14", null },
+                    { 15, "Bio for Instructor 15", "08/05/2024 05:51:53 م", "instructor15@example.com", false, "Instructor 15", "password15", null },
+                    { 16, "Bio for Instructor 16", "08/05/2024 05:51:53 م", "instructor16@example.com", false, "Instructor 16", "password16", null },
+                    { 17, "Bio for Instructor 17", "08/05/2024 05:51:53 م", "instructor17@example.com", false, "Instructor 17", "password17", null },
+                    { 18, "Bio for Instructor 18", "08/05/2024 05:51:53 م", "instructor18@example.com", false, "Instructor 18", "password18", null },
+                    { 19, "Bio for Instructor 19", "08/05/2024 05:51:53 م", "instructor19@example.com", false, "Instructor 19", "password19", null },
+                    { 20, "Bio for Instructor 20", "08/05/2024 05:51:53 م", "instructor20@example.com", false, "Instructor 20", "password20", null },
+                    { 21, "Bio for Instructor 21", "08/05/2024 05:51:53 م", "instructor21@example.com", false, "Instructor 21", "password21", null },
+                    { 22, "Bio for Instructor 22", "08/05/2024 05:51:53 م", "instructor22@example.com", false, "Instructor 22", "password22", null },
+                    { 23, "Bio for Instructor 23", "08/05/2024 05:51:53 م", "instructor23@example.com", false, "Instructor 23", "password23", null },
+                    { 24, "Bio for Instructor 24", "08/05/2024 05:51:53 م", "instructor24@example.com", false, "Instructor 24", "password24", null },
+                    { 25, "Bio for Instructor 25", "08/05/2024 05:51:53 م", "instructor25@example.com", false, "Instructor 25", "password25", null },
+                    { 26, "Bio for Instructor 26", "08/05/2024 05:51:53 م", "instructor26@example.com", false, "Instructor 26", "password26", null },
+                    { 27, "Bio for Instructor 27", "08/05/2024 05:51:53 م", "instructor27@example.com", false, "Instructor 27", "password27", null },
+                    { 28, "Bio for Instructor 28", "08/05/2024 05:51:53 م", "instructor28@example.com", false, "Instructor 28", "password28", null },
+                    { 29, "Bio for Instructor 29", "08/05/2024 05:51:53 م", "instructor29@example.com", false, "Instructor 29", "password29", null },
+                    { 30, "Bio for Instructor 30", "08/05/2024 05:51:53 م", "instructor30@example.com", false, "Instructor 30", "password30", null }
                 });
 
             migrationBuilder.CreateIndex(

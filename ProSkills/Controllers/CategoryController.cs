@@ -8,16 +8,12 @@ namespace ProSkills.Controllers
 {
     public class CategoryController : Controller
     {
-        ICourseRepository CourseRepository;
-        public DepartmentController(IRepository _InstructorRepository, IDepartmentRepository _DepartmentRepository, ICourseRepository _CourseRepository)
+        IRepository<Category> _CategoryRepository;
+      
+        public CategoryController(IRepository<Category> CategoryRepository)
         {
-            InstructorRepository = _InstructorRepository;
-            DepartmentRepository = _DepartmentRepository;
-            CourseRepository = _CourseRepository;
-        }
-        public CategoryController(IRepository<Category> )
-        {
-                
+            _CategoryRepository = CategoryRepository;
+
         }
         public IActionResult Index()
         {
