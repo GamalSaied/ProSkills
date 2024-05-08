@@ -4,6 +4,7 @@ using NuGet.Protocol.Core.Types;
 using ProSkills.Interfaces;
 using ProSkills.Models;
 using ProSkills.Models.AdminPanel.InstructorManger;
+using ProSkills.Models.ClientSide;
 using ProSkills.Repository;
 
 namespace ProSkills
@@ -41,6 +42,7 @@ namespace ProSkills
 
             //register 
             builder.Services.AddScoped<IRepository<instructor>, InstructorRepository>();
+            builder.Services.AddScoped<IRepository<Category>, CategoryRepository>();
             //builder.Services.AddScoped<IRepository, CourseRepository>();
             //builder.Services.AddScoped<ICourseRepository, CourseRepository>();
             //builder.Services.AddScoped<ITraineeRepository, TraineeRepository>();

@@ -64,7 +64,19 @@ namespace ProSkills.Models
                     new instructor { Id = 30, Name = "Instructor 30", Email = "instructor30@example.com", Password = "password30", Bio = "Bio for Instructor 30", CreatedAt = DateTime.Now.ToString(), IsDeleted = false }
                 );
 
-            base.OnModelCreating(modelBuilder);
+
+
+            modelBuilder.Entity<Category>().HasData(new Category { Id = 1, Name = "Revit", CreatedAt = DateTime.Now.ToString(),Image="", IsDeleted = false });
+            modelBuilder.Entity<Category>().HasData(new Category { Id = 2, Name = "Sap", CreatedAt = DateTime.Now.ToString(), Image = "", IsDeleted = false });
+            modelBuilder.Entity<Category>().HasData(new Category { Id = 3, Name = "Etabs", CreatedAt = DateTime.Now.ToString(), Image = "", IsDeleted = false });
+            modelBuilder.Entity<Category>().HasData(new Category { Id = 4, Name = "Forge", CreatedAt = DateTime.Now.ToString(), Image = "", IsDeleted = false });
+            modelBuilder.Entity<Category>().HasData(new Category { Id = 5, Name = "primavera", CreatedAt = DateTime.Now.ToString(), Image = "", IsDeleted = false });
+            modelBuilder.Entity<Category>().HasData(new Category { Id = 6, Name = "wpf", CreatedAt = DateTime.Now.ToString(), Image = "", IsDeleted = false });
+            modelBuilder.Entity<Category>().HasData(new Category { Id = 7, Name = "Windows Form", CreatedAt = DateTime.Now.ToString(), Image = "", IsDeleted = false });
+            modelBuilder.Entity<Category>().HasData(new Category { Id = 8, Name = "NavisWorks", CreatedAt = DateTime.Now.ToString(), Image = "", IsDeleted = false });
+            modelBuilder.Entity<Category>().HasData(new Category { Id = 9, Name = "Graphics", CreatedAt = DateTime.Now.ToString(), Image = "", IsDeleted = false });
+
+           base.OnModelCreating(modelBuilder);
         }
 
 
