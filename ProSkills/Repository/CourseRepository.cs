@@ -3,46 +3,33 @@ using ProSkills.Models.ClientSide;
 
 namespace ProSkills.Repository
 {
-    public class CourseRepository:ICourseRepository
+    public class CourseRepository: IRepository<Course>
     {
 
-
         ITIContext context;
+
+        // Constructor to initialize the context
         public CourseRepository(ITIContext _context)
         {
             context = _context;
-            //context = new ITIContext();
-        }
-        public List<Course> Getall() => context.Course.ToList();
-        public List<Course> Getall() => context.Course.ToList();
-        public List<Course> Getall() => context.Course.ToList();
-        public List<Course> Getall() => context.Course.ToList();
-        public List<Course> Getall() => context.Course.ToList();
-
-
-
-
-        public Course GetById(int id)
-        {
-            return context.Course.FirstOrDefault(d => d.Id == id);
-        }
-     
-        public Course checkName(string name)
-        {
-
-            return context.Course.FirstOrDefault(e => e.Name.ToLower() == name.ToLower());
-
         }
 
-        public void Insert(Course obj)
-        {
-            context.Add(obj);
-        }
-        public void Update(Course obj)
-        {
-            context.Update(obj);
-        }
+        // Retrieves all Data from the database
+        public List<Course> GetAll() => context.Course.ToList();
 
+        // Retrieves a Data by its ID
+        public Course GetById(int id) => context.Course.FirstOrDefault(d => d.Id == id);
+
+        // Checks if a Data with the given name exists
+        public Course CheckName(string name) => context.Course.FirstOrDefault(e => e.Name.ToLower() == name.ToLower());
+
+        // Inserts a new Data into the database
+        public void Insert(Course obj) => context.Add(obj);
+
+        // Updates Data in the database
+        public void Update(Course obj) => context.Update(obj);
+
+        // Delete Data from the database by its ID
         public void Delete(int id)
         {
             Course obj = GetById(id);
@@ -52,12 +39,8 @@ namespace ProSkills.Repository
             }
         }
 
-
-        public void Save()
-        {
-            context.SaveChanges();
-        }
-
+        // Saves changes made to the database
+        public void Save() => context.SaveChanges();
 
     }
 }
