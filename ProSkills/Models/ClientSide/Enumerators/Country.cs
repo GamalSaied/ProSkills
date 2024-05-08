@@ -2,7 +2,9 @@
 {
     public enum Country
     {
-        Egypt,
-        Other
+        USA,
+        UK,
+        Canada,
+        Egypt
     }
 }
