@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using NuGet.Protocol.Core.Types;
 using ProSkills.Interfaces;
 using ProSkills.Models;
-using ProSkills.Models.AdminPanel.Instractor;
+using ProSkills.Models.AdminPanel.InstructorManger;
 using ProSkills.Repository;
 
 namespace ProSkills

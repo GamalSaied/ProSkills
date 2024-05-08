@@ -1,4 +1,5 @@
-﻿
+﻿using ProSkills.Models.ClientSide.Enumerators;
+
 namespace ProSkills.Models.ClientSide
 {
     public class User

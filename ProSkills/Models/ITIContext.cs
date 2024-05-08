@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using ProSkills.Models.AdminPanel.Instractor;
+using ProSkills.Models.AdminPanel.InstructorManger;
 using ProSkills.Models.ClientSide;
 
 namespace ProSkills.Models
