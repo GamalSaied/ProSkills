@@ -13,10 +13,14 @@ namespace ProSkills.Repository
             context = _context;
             //context = new ITIContext();
         }
-        public List<Course> Getall()
-        {
-            return context.Course.ToList();
-        }
+        public List<Course> Getall() => context.Course.ToList();
+        public List<Course> Getall() => context.Course.ToList();
+        public List<Course> Getall() => context.Course.ToList();
+        public List<Course> Getall() => context.Course.ToList();
+        public List<Course> Getall() => context.Course.ToList();
+
+
+
 
         public Course GetById(int id)
         {
