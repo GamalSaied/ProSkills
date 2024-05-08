@@ -3,8 +3,8 @@
     public class Category
     {
         
-            public int CCategoryId { get; set; }
-            public string CCategoryName { get; set; }
+            public int Id { get; set; }
+            public string Name { get; set; }
             public string CreatedAt{ get; set;}
             public bool IsDeleted { get; set;}
     }
