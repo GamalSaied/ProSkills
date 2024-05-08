@@ -1,5 +1,4 @@
-﻿using ProSkills.Models.Enumerators;
-
+﻿
 namespace ProSkills.Models.ClientSide
 {
     public class User
@@ -17,10 +16,7 @@ namespace ProSkills.Models.ClientSide
         public DateTime CreatedAt { get; set; } = DateTime.Now;
 
         public DateTime? ModifiedAt { get; set; }
-        public string? Photo { get; set; }
-
       
-        //Navigation Property
        
     }
 }
