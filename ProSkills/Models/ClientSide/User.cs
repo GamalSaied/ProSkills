@@ -1,11 +1,11 @@
-﻿using Microsoft.AspNetCore.Identity;
-using ProSkills.Models.ClientSide.Enumerators;
-
-
+﻿
 namespace ProSkills.Models.ClientSide
 {
-    public class User : IdentityUser
+    public class User
     {
+        //public string FirstName { get; set; } = string.Empty;
+
+        //public string LastName { get; set; } = string.Empty;
 
         public UserType UserType { get; set; }
 
@@ -16,9 +16,7 @@ namespace ProSkills.Models.ClientSide
         public DateTime CreatedAt { get; set; } = DateTime.Now;
 
         public DateTime? ModifiedAt { get; set; }
-        public string? Image { get; set; }
-
-        public string? AddressLine { get; set; }
-
+      
+       
     }
 }

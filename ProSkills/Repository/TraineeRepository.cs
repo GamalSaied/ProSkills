@@ -3,47 +3,43 @@ using ProSkills.Models.ClientSide;
 
 namespace ProSkills.Repository
 {
-    public class TraineeRepository :ITraineeRepository
+    public class TraineeRepository 
     {
-        ITIContext context;
-        public TraineeRepository(ITIContext _context)
-        {
-            context = _context;
+        //ITIContext context;
 
-            //context = new ITIContext();
-        }
-        public List<Trainee> Getall()
-        {
-            return context.Trainee.ToList();
-        }
+        //// Constructor to initialize the context
+        //public TraineeRepository(ITIContext _context)
+        //{
+        //    context = _context;
+        //}
 
-        public Trainee GetbyId(int id)
-        {
-            return context.Trainee.FirstOrDefault(d => d.Id == id);
-        }
+        //// Retrieves all Data from the database
+        //public List<Trainee> GetAll() => context.Trainee.ToList();
 
-        public void Insert(Trainee obj)
-        {
-            context.Add(obj);
-        }
-        public void Update(Trainee obj)
-        {
-            context.Update(obj);
-        }
+        //// Retrieves a Data by its ID
+        //public Trainee GetById(int id) => context.Trainee.FirstOrDefault(d => d.Id == id);
 
-        public void Delete(int id)
-        {
-            Trainee obj = GetbyId(id);
-            if (obj != null)
-            {
-                context.Remove(obj);
-            }
-        }
+        //// Checks if a Data with the given name exists
+        //public Trainee CheckName(string name) => context.Trainee.FirstOrDefault(e => e.Name.ToLower() == name.ToLower());
 
+        //// Inserts a new Data into the database
+        //public void Insert(Trainee obj) => context.Add(obj);
 
-        public void Save()
-        {
-            context.SaveChanges();
-        }
+        //// Updates Data in the database
+        //public void Update(Trainee obj) => context.Update(obj);
+
+        //// Delete Data from the database by its ID
+        //public void Delete(int id)
+        //{
+        //    Trainee obj = GetById(id);
+        //    if (obj != null)
+        //    {
+        //        context.Remove(obj);
+        //    }
+        //}
+
+        //// Saves changes made to the database
+        //public void Save() => context.SaveChanges();
+
     }
 }

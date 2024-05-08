@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using NuGet.Protocol.Core.Types;
 using ProSkills.Interfaces;
 using ProSkills.Models;
+using ProSkills.Models.AdminPanel.Instractor;
 using ProSkills.Repository;
 
 namespace ProSkills
@@ -38,8 +40,10 @@ namespace ProSkills
 
 
             //register 
-            builder.Services.AddScoped<ICourseRepository, CourseRepository>();
-            builder.Services.AddScoped<ITraineeRepository, TraineeRepository>();
+            builder.Services.AddScoped<IRepository<instructor>, InstructorRepository>();
+            //builder.Services.AddScoped<IRepository, CourseRepository>();
+            //builder.Services.AddScoped<ICourseRepository, CourseRepository>();
+            //builder.Services.AddScoped<ITraineeRepository, TraineeRepository>();
             // Add services to the container.
 
             var app = builder.Build();
