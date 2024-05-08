@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using ProSkills.Interfaces;
 using ProSkills.Models.AdminPanel.InstructorManger;
-using ProSkills.Models.ClientSide;
+
 using ProSkills.Repository;
 
 namespace ProSkills.Controllers

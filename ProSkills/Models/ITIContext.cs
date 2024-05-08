@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using ProSkills.Models.AdminPanel.InstructorManger;
 using ProSkills.Models.ClientSide;
+using Category = ProSkills.Models.ClientSide.Category;
 
 namespace ProSkills.Models
 {
@@ -12,6 +13,7 @@ namespace ProSkills.Models
         // 1- Create Database Tables 
         // ====> DbSet<Class> TableName   
         public DbSet<instructor> instructor { get; set; }
+        public DbSet<Category> Category{ get; set; }
 
         // --------------------------------------------------------------------
         // 2- Restore Constructor from Parent DBContext

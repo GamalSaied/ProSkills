@@ -1,8 +1,9 @@
-﻿using ProSkills.Models.ClientSide;
+﻿using ProSkills.Interfaces;
+using ProSkills.Models.ClientSide;
 
 namespace ProSkills.Repository
 {
-    public class CategoryRepository
+    public class CategoryRepository : IRepository<Category>
     {
         ITIContext context;
 
@@ -11,16 +12,14 @@ namespace ProSkills.Repository
         {
             context = _context;
         }
-      
-
         // Retrieves all Data from the database
-        //public List<Category> GetAll() => context.Category.ToList();
+        public List<Category> GetAll() => context.Category.ToList();
 
-        //// Retrieves a Data by its ID
-        //public Category GetById(int id) => context.Category.FirstOrDefault(d => d.Id == id);
+        // Retrieves a Data by its ID
+        public Category GetById(int id) => context.Category.FirstOrDefault(d => d.Id == id);
 
-        //// Checks if a Data with the given name exists
-        //public Category CheckName(string name) => context.Category.FirstOrDefault(e => e.Name.ToLower() == name.ToLower());
+        // Checks if a Data with the given name exists
+        public Category CheckName(string name) => context.Category.FirstOrDefault(e => e.Name.ToLower() == name.ToLower());
 
         // Inserts a new Data into the database
         public void Insert(Category obj) => context.Add(obj);
@@ -29,16 +28,19 @@ namespace ProSkills.Repository
         public void Update(Category obj) => context.Update(obj);
 
         // Delete Data from the database by its ID
-        //public void Delete(int id)
-        //{
-        //    Category obj = GetbyId(id);
-        //    if (obj != null)
-        //    {
-        //        context.Remove(obj);
-        //    }
-        //}
+        public void Delete(int id)
+        {
+            Category obj = GetById(id);
+            if (obj != null)
+            {
+                context.Remove(obj);
+            }
+        }
 
         // Saves changes made to the database
         public void Save() => context.SaveChanges();
+
     }
+        
+   
 }

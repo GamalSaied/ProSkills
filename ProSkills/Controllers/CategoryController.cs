@@ -17,7 +17,11 @@ namespace ProSkills.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            List<Category> Categories = _CategoryRepository.GetAll();
+
+          
+            return View("Index", Categories);
+
         }
     }
 }
