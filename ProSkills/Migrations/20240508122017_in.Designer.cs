@@ -12,8 +12,8 @@ using ProSkills.Models;
 namespace ProSkills.Migrations
 {
     [DbContext(typeof(ITIContext))]
-    [Migration("20240508112618_init")]
-    partial class init
+    [Migration("20240508122017_in")]
+    partial class @in
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -167,7 +167,6 @@ namespace ProSkills.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Bio")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CreatedAt")
@@ -175,7 +174,6 @@ namespace ProSkills.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
@@ -186,7 +184,9 @@ namespace ProSkills.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")
-                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Speciallization")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -198,7 +198,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 1,
                             Bio = "Bio for Instructor 1",
-                            CreatedAt = "08/05/2024 14:26:18",
+                            CreatedAt = "08/05/2024 15:20:16",
                             Email = "instructor1@example.com",
                             IsDeleted = false,
                             Name = "Instructor 1",
@@ -208,7 +208,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 2,
                             Bio = "Bio for Instructor 2",
-                            CreatedAt = "08/05/2024 14:26:18",
+                            CreatedAt = "08/05/2024 15:20:16",
                             Email = "instructor2@example.com",
                             IsDeleted = false,
                             Name = "Instructor 2",
@@ -218,7 +218,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 3,
                             Bio = "Bio for Instructor 3",
-                            CreatedAt = "08/05/2024 14:26:18",
+                            CreatedAt = "08/05/2024 15:20:16",
                             Email = "instructor3@example.com",
                             IsDeleted = false,
                             Name = "Instructor 3",
@@ -228,7 +228,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 4,
                             Bio = "Bio for Instructor 4",
-                            CreatedAt = "08/05/2024 14:26:18",
+                            CreatedAt = "08/05/2024 15:20:16",
                             Email = "instructor4@example.com",
                             IsDeleted = false,
                             Name = "Instructor 4",
@@ -238,7 +238,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 5,
                             Bio = "Bio for Instructor 5",
-                            CreatedAt = "08/05/2024 14:26:18",
+                            CreatedAt = "08/05/2024 15:20:16",
                             Email = "instructor5@example.com",
                             IsDeleted = false,
                             Name = "Instructor 5",
@@ -248,7 +248,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 6,
                             Bio = "Bio for Instructor 6",
-                            CreatedAt = "08/05/2024 14:26:18",
+                            CreatedAt = "08/05/2024 15:20:16",
                             Email = "instructor6@example.com",
                             IsDeleted = false,
                             Name = "Instructor 6",
@@ -258,7 +258,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 7,
                             Bio = "Bio for Instructor 7",
-                            CreatedAt = "08/05/2024 14:26:18",
+                            CreatedAt = "08/05/2024 15:20:16",
                             Email = "instructor7@example.com",
                             IsDeleted = false,
                             Name = "Instructor 7",
@@ -268,7 +268,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 8,
                             Bio = "Bio for Instructor 8",
-                            CreatedAt = "08/05/2024 14:26:18",
+                            CreatedAt = "08/05/2024 15:20:16",
                             Email = "instructor8@example.com",
                             IsDeleted = false,
                             Name = "Instructor 8",
@@ -278,7 +278,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 9,
                             Bio = "Bio for Instructor 9",
-                            CreatedAt = "08/05/2024 14:26:18",
+                            CreatedAt = "08/05/2024 15:20:16",
                             Email = "instructor9@example.com",
                             IsDeleted = false,
                             Name = "Instructor 9",
@@ -288,7 +288,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 10,
                             Bio = "Bio for Instructor 10",
-                            CreatedAt = "08/05/2024 14:26:18",
+                            CreatedAt = "08/05/2024 15:20:16",
                             Email = "instructor10@example.com",
                             IsDeleted = false,
                             Name = "Instructor 10",
@@ -298,7 +298,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 11,
                             Bio = "Bio for Instructor 11",
-                            CreatedAt = "08/05/2024 14:26:18",
+                            CreatedAt = "08/05/2024 15:20:16",
                             Email = "instructor11@example.com",
                             IsDeleted = false,
                             Name = "Instructor 11",
@@ -308,7 +308,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 12,
                             Bio = "Bio for Instructor 12",
-                            CreatedAt = "08/05/2024 14:26:18",
+                            CreatedAt = "08/05/2024 15:20:16",
                             Email = "instructor12@example.com",
                             IsDeleted = false,
                             Name = "Instructor 12",
@@ -318,7 +318,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 13,
                             Bio = "Bio for Instructor 13",
-                            CreatedAt = "08/05/2024 14:26:18",
+                            CreatedAt = "08/05/2024 15:20:16",
                             Email = "instructor13@example.com",
                             IsDeleted = false,
                             Name = "Instructor 13",
@@ -328,7 +328,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 14,
                             Bio = "Bio for Instructor 14",
-                            CreatedAt = "08/05/2024 14:26:18",
+                            CreatedAt = "08/05/2024 15:20:16",
                             Email = "instructor14@example.com",
                             IsDeleted = false,
                             Name = "Instructor 14",
@@ -338,7 +338,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 15,
                             Bio = "Bio for Instructor 15",
-                            CreatedAt = "08/05/2024 14:26:18",
+                            CreatedAt = "08/05/2024 15:20:16",
                             Email = "instructor15@example.com",
                             IsDeleted = false,
                             Name = "Instructor 15",
@@ -348,7 +348,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 16,
                             Bio = "Bio for Instructor 16",
-                            CreatedAt = "08/05/2024 14:26:18",
+                            CreatedAt = "08/05/2024 15:20:16",
                             Email = "instructor16@example.com",
                             IsDeleted = false,
                             Name = "Instructor 16",
@@ -358,7 +358,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 17,
                             Bio = "Bio for Instructor 17",
-                            CreatedAt = "08/05/2024 14:26:18",
+                            CreatedAt = "08/05/2024 15:20:16",
                             Email = "instructor17@example.com",
                             IsDeleted = false,
                             Name = "Instructor 17",
@@ -368,7 +368,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 18,
                             Bio = "Bio for Instructor 18",
-                            CreatedAt = "08/05/2024 14:26:18",
+                            CreatedAt = "08/05/2024 15:20:16",
                             Email = "instructor18@example.com",
                             IsDeleted = false,
                             Name = "Instructor 18",
@@ -378,7 +378,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 19,
                             Bio = "Bio for Instructor 19",
-                            CreatedAt = "08/05/2024 14:26:18",
+                            CreatedAt = "08/05/2024 15:20:16",
                             Email = "instructor19@example.com",
                             IsDeleted = false,
                             Name = "Instructor 19",
@@ -388,7 +388,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 20,
                             Bio = "Bio for Instructor 20",
-                            CreatedAt = "08/05/2024 14:26:18",
+                            CreatedAt = "08/05/2024 15:20:16",
                             Email = "instructor20@example.com",
                             IsDeleted = false,
                             Name = "Instructor 20",
@@ -398,7 +398,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 21,
                             Bio = "Bio for Instructor 21",
-                            CreatedAt = "08/05/2024 14:26:18",
+                            CreatedAt = "08/05/2024 15:20:16",
                             Email = "instructor21@example.com",
                             IsDeleted = false,
                             Name = "Instructor 21",
@@ -408,7 +408,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 22,
                             Bio = "Bio for Instructor 22",
-                            CreatedAt = "08/05/2024 14:26:18",
+                            CreatedAt = "08/05/2024 15:20:16",
                             Email = "instructor22@example.com",
                             IsDeleted = false,
                             Name = "Instructor 22",
@@ -418,7 +418,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 23,
                             Bio = "Bio for Instructor 23",
-                            CreatedAt = "08/05/2024 14:26:18",
+                            CreatedAt = "08/05/2024 15:20:16",
                             Email = "instructor23@example.com",
                             IsDeleted = false,
                             Name = "Instructor 23",
@@ -428,7 +428,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 24,
                             Bio = "Bio for Instructor 24",
-                            CreatedAt = "08/05/2024 14:26:18",
+                            CreatedAt = "08/05/2024 15:20:16",
                             Email = "instructor24@example.com",
                             IsDeleted = false,
                             Name = "Instructor 24",
@@ -438,7 +438,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 25,
                             Bio = "Bio for Instructor 25",
-                            CreatedAt = "08/05/2024 14:26:18",
+                            CreatedAt = "08/05/2024 15:20:16",
                             Email = "instructor25@example.com",
                             IsDeleted = false,
                             Name = "Instructor 25",
@@ -448,7 +448,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 26,
                             Bio = "Bio for Instructor 26",
-                            CreatedAt = "08/05/2024 14:26:18",
+                            CreatedAt = "08/05/2024 15:20:16",
                             Email = "instructor26@example.com",
                             IsDeleted = false,
                             Name = "Instructor 26",
@@ -458,7 +458,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 27,
                             Bio = "Bio for Instructor 27",
-                            CreatedAt = "08/05/2024 14:26:18",
+                            CreatedAt = "08/05/2024 15:20:16",
                             Email = "instructor27@example.com",
                             IsDeleted = false,
                             Name = "Instructor 27",
@@ -468,7 +468,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 28,
                             Bio = "Bio for Instructor 28",
-                            CreatedAt = "08/05/2024 14:26:18",
+                            CreatedAt = "08/05/2024 15:20:16",
                             Email = "instructor28@example.com",
                             IsDeleted = false,
                             Name = "Instructor 28",
@@ -478,7 +478,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 29,
                             Bio = "Bio for Instructor 29",
-                            CreatedAt = "08/05/2024 14:26:18",
+                            CreatedAt = "08/05/2024 15:20:16",
                             Email = "instructor29@example.com",
                             IsDeleted = false,
                             Name = "Instructor 29",
@@ -488,7 +488,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 30,
                             Bio = "Bio for Instructor 30",
-                            CreatedAt = "08/05/2024 14:26:18",
+                            CreatedAt = "08/05/2024 15:20:16",
                             Email = "instructor30@example.com",
                             IsDeleted = false,
                             Name = "Instructor 30",
@@ -569,6 +569,238 @@ namespace ProSkills.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("ProSkills.Models.ClientSide.Assessment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("DueDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("MaxScore")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ModuleId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Weight")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("assessmentType")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ModuleId");
+
+                    b.ToTable("Assessment");
+                });
+
+            modelBuilder.Entity("ProSkills.Models.ClientSide.Course", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CourseCategory")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CreatedAt")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("EndAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Hours")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Location")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("NumberOfAssessment")
+                        .HasColumnType("int");
+
+                    b.Property<int>("NumberOfLessons")
+                        .HasColumnType("int");
+
+                    b.Property<int>("NumberOfStudents")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("StartAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<double>("TotalFilesSize")
+                        .HasColumnType("float");
+
+                    b.Property<string>("TraineeImagePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("maxDegree")
+                        .HasColumnType("int");
+
+                    b.Property<int>("minDegree")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Course");
+                });
+
+            modelBuilder.Entity("ProSkills.Models.ClientSide.Enrollment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CourseId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("EnrollDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("FinalGrade")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TraineeId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CourseId");
+
+                    b.HasIndex("TraineeId");
+
+                    b.ToTable("Enrollment");
+                });
+
+            modelBuilder.Entity("ProSkills.Models.ClientSide.InstructorCourse", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CourseId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("instructorId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CourseId");
+
+                    b.HasIndex("instructorId");
+
+                    b.ToTable("InstructorCourse");
+                });
+
+            modelBuilder.Entity("ProSkills.Models.ClientSide.Module", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CourseId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("InstructorId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CourseId");
+
+                    b.HasIndex("InstructorId");
+
+                    b.ToTable("Module");
+                });
+
+            modelBuilder.Entity("ProSkills.Models.ClientSide.Submission", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AssessmentId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Score")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("SubmittedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("TraineeId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AssessmentId");
+
+                    b.HasIndex("TraineeId");
+
+                    b.ToTable("Submission");
+                });
+
+            modelBuilder.Entity("ProSkills.Models.ClientSide.Trainee", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("EnrollmentDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Trainee");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -618,6 +850,121 @@ namespace ProSkills.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("ProSkills.Models.ClientSide.Assessment", b =>
+                {
+                    b.HasOne("ProSkills.Models.ClientSide.Module", "module")
+                        .WithMany()
+                        .HasForeignKey("ModuleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("module");
+                });
+
+            modelBuilder.Entity("ProSkills.Models.ClientSide.Enrollment", b =>
+                {
+                    b.HasOne("ProSkills.Models.ClientSide.Course", "Course")
+                        .WithMany("enrollments")
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ProSkills.Models.ClientSide.Trainee", "Trainee")
+                        .WithMany("enrollments")
+                        .HasForeignKey("TraineeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Course");
+
+                    b.Navigation("Trainee");
+                });
+
+            modelBuilder.Entity("ProSkills.Models.ClientSide.InstructorCourse", b =>
+                {
+                    b.HasOne("ProSkills.Models.ClientSide.Course", "Course")
+                        .WithMany("instructorCourse")
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ProSkills.Models.AdminPanel.Instractor.instructor", "Instructor")
+                        .WithMany("instructorCourses")
+                        .HasForeignKey("instructorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Course");
+
+                    b.Navigation("Instructor");
+                });
+
+            modelBuilder.Entity("ProSkills.Models.ClientSide.Module", b =>
+                {
+                    b.HasOne("ProSkills.Models.ClientSide.Course", "CourseData")
+                        .WithMany("modules")
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ProSkills.Models.AdminPanel.Instractor.instructor", "instructorData")
+                        .WithMany("modules")
+                        .HasForeignKey("InstructorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CourseData");
+
+                    b.Navigation("instructorData");
+                });
+
+            modelBuilder.Entity("ProSkills.Models.ClientSide.Submission", b =>
+                {
+                    b.HasOne("ProSkills.Models.ClientSide.Assessment", "assessment")
+                        .WithMany("submissions")
+                        .HasForeignKey("AssessmentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ProSkills.Models.ClientSide.Trainee", "trainee")
+                        .WithMany("submissions")
+                        .HasForeignKey("TraineeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("assessment");
+
+                    b.Navigation("trainee");
+                });
+
+            modelBuilder.Entity("ProSkills.Models.AdminPanel.Instractor.instructor", b =>
+                {
+                    b.Navigation("instructorCourses");
+
+                    b.Navigation("modules");
+                });
+
+            modelBuilder.Entity("ProSkills.Models.ClientSide.Assessment", b =>
+                {
+                    b.Navigation("submissions");
+                });
+
+            modelBuilder.Entity("ProSkills.Models.ClientSide.Course", b =>
+                {
+                    b.Navigation("enrollments");
+
+                    b.Navigation("instructorCourse");
+
+                    b.Navigation("modules");
+                });
+
+            modelBuilder.Entity("ProSkills.Models.ClientSide.Trainee", b =>
+                {
+                    b.Navigation("enrollments");
+
+                    b.Navigation("submissions");
                 });
 #pragma warning restore 612, 618
         }

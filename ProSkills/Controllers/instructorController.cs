@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ProSkills.Interfaces;
-using ProSkills.Models.AdminPanel.Instractor;
+using ProSkills.Models.AdminPanel.InstructorManger;
 using ProSkills.Models.ClientSide;
 using ProSkills.Repository;
 
@@ -17,12 +17,13 @@ namespace ProSkills.Controllers
             _instructorRepository = InstructorRepository;
         }
 
-        //public IActionResult index()
-        //{
-        //    List<Course> courses = /*_instructorRepository*/.GetAll();
+        public IActionResult index()
+        {
+            List<instructor> instructors = _instructorRepository.GetAll();
 
-        //    //return View("Showall", instractorList); //View Index ,Model List<Department>
-            
-        //}
+            //return View("Showall", instractorList); //View Index ,Model List<Department>
+            return View("index", instructors);
+
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using ProSkills.Models.AdminPanel.InstructorManger;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ProSkills.Models.ClientSide
 {
@@ -7,13 +8,13 @@ namespace ProSkills.Models.ClientSide
 
 
 
+        public int Id { get; set; }
 
+        [ForeignKey("instructor")]
+        public int instructorId { get; set; }          
+        public instructor? Instructor { get; set; }
 
-        [ForeignKey("InstructorId")]
-        public int InstractorId { get; set; }          
-         public Instructor? Instructor { get; set; }
-
-        [ForeignKey("CourseId")]
+        [ForeignKey("Course")]
         public int CourseId { get; set; }            
 
         public Course? Course { get; set; }
