@@ -1,0 +1,68 @@
+﻿@model List<ProSkills.Models.ClientSide.Category>
+
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@* lazm 3lshan el paging yesht3'l wel header en el data ely fel title column t7teha data 2dha fel row *@
+<!-- /.card-header --> <!-- Henaa Lazm a7ot kolo fe div wa7da awel ma tft7 el html 3lshan mat3mlsh gab w b3den 7ot feha kol haga b2a 3lshan el7gat ba5od melparent -->
+<div class="card-body">
+    <div>
+        <a href="/Category/New" class="btn btn-info btn-block btn-flat" style="margin-bottom:10px;">New</a>
+    </div>
+
+
+    <table id="example1" class="table table-bordered table-striped">
+        <!-- Columns Head -->
+        <thead>
+            <tr>
+             
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+             
+                <th scope="col">CreatedAt</th>
+                <th scope="col">Image</th>
+
+                <th scope ="col">Courses</th>
+                <th scope ="col" >Profile</th>
+
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+           
+            @foreach (var item in Model)
+            {
+                @if (item != null)
+                {
+                    @if (item.IsDeleted == false)
+                    {
+
+
+                        <tr>
+             
+                            <td>@item.Id</td>
+                            <td>@item.Name</td>
+                            <td>@item.CreatedAt</td>
+                            <td>@item.Image</td>
+                            <td><a href="/Category/GetByID?ID=@item.Id">Courses</a></td>
+                            <td><a href="/Category/GetByID?ID=@item.Id">Profile</a></td>
+                            <td><a style="padding-bottom:10px" href="/Category/Edit?id=@item.Id" class="btn btn-block bg-gradient-secondary btn-xs">Edit</a></td>
+                         @*    <td><a href="/Category/Delete?id=@item.Id" class="btn btn-block bg-gradient-danger btn-xs" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td> *@
+                            <td>
+
+                                <form method="post" action="/Category/Delete/@item.Id" onsubmit="return confirm('Are you sure you want to delete?');">
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                     
+
+                    }
+                }
+            }
+        </tbody>
+    </table>
+</div>
+

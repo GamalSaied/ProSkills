@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
-using ProSkills.Models.Enumerators;
+using ProSkills.Models.ClientSide.Enumerators;
 using System.ComponentModel.DataAnnotations;
 
 namespace ProSkills.ViewModels

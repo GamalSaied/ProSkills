@@ -362,3 +362,5 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /ProSkills/appsettings.json
+/ProSkills/Migrations/20240510125236_init.cs
+/ProSkills/Migrations/ITIContextModelSnapshot.cs

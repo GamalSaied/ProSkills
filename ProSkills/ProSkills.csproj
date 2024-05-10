@@ -1742,7 +1742,7 @@
 
   <ItemGroup>
     <Folder Include="Filters\" />
-    <Folder Include="Migrations\" />
+    <Folder Include="wwwroot\Images\" />
   </ItemGroup>
 
 </Project>

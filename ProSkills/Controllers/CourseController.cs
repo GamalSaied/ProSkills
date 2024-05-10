@@ -16,15 +16,14 @@ namespace ProSkills.Controllers
         }
 
         // Filter By Instractor id 
-        public IActionResult index(int id)
-        {
-            //List<InstructorCourse> Courses = _courseRepository.GetAll();
+        //public IActionResult index(int id)
+        //{
+        //    //List<InstructorCourse> Courses = _courseRepository.GetAll();
 
-            //return View("Showall", instractorList); //View Index ,Model List<Department>
-            //return View("index", instructors);
-            return View("");
+        //    //return View("Showall", instractorList); //View Index ,Model List<Department>
+        //    //return View("index", instructors);
 
-        }
+        //}
 
     }
 }
