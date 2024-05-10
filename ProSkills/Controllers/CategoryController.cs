@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using NuGet.Protocol.Core.Types;
 using ProSkills.Interfaces;
 using ProSkills.Models.AdminPanel.InstructorManger;
@@ -83,18 +84,20 @@ namespace ProSkills.Controllers
         //Saveedit for the instructor
         public IActionResult SaveEdit(Category categreq)
         {
-            if (categreq.Name != null)
+
+            if (ModelState.IsValid)
             {
-        
-                var CategfromDb = _CategoryRepository.GetById(categreq.Id);
-               
-                _CategoryRepository.Update(CategfromDb);
-                
-                _CategoryRepository.Save();
-                
-                return RedirectToAction("Index");
+                try
+                {
+                    _CategoryRepository.Save();
+                    return RedirectToAction("Index");
+                }
+                catch (Exception e)
+                {
+                    ModelState.AddModelError("", "Something Went wrong Please Make Sure you set Everything right");
+                }
             }
-            
+
             return View("Edit", categreq);
         }
 
