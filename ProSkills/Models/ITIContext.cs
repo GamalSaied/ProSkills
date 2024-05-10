@@ -82,9 +82,6 @@ namespace ProSkills.Models
 
     }
 
-
-
-
 }
 
 
