@@ -75,13 +75,13 @@ namespace ProSkills.Controllers
             
             var Category = _CategoryRepository.GetById(id);
 
-            return View("Edit", Category);//load old info
+            return View("Edit", Category);                  //Open Edit Page
 
 
         }
 
 
-        //Saveedit for the instructor
+      
         public IActionResult SaveEdit(Category categreq)
         {
             var categoryformdb = _CategoryRepository.GetById(categreq.Id);

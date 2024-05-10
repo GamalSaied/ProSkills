@@ -3,6 +3,7 @@ using ProSkills.Interfaces;
 using ProSkills.Models.AdminPanel.InstructorManger;
 using ProSkills.Models.ClientSide;
 using ProSkills.Repository;
+using System.Collections.Generic;
 
 namespace ProSkills.Controllers
 {
@@ -15,15 +16,15 @@ namespace ProSkills.Controllers
             _courseRepository = CourseRepository;
         }
 
-        // Filter By Instractor id 
-        //public IActionResult index(int id)
-        //{
-        //    //List<InstructorCourse> Courses = _courseRepository.GetAll();
+        //Filter By Instractor id
+        public IActionResult index(int id)
+        {
+            
+            List<Course> Courses = _courseRepository.GetAll();
+            //List<Course> instructorCourses 
+            return View("index", Courses);
 
-        //    //return View("Showall", instractorList); //View Index ,Model List<Department>
-        //    //return View("index", instructors);
-
-        //}
+        }
 
     }
 }
