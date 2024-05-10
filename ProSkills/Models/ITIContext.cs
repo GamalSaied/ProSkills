@@ -64,11 +64,8 @@ namespace ProSkills.Models
 
             base.OnModelCreating(modelBuilder);
         }
-
-
-
-
         
+
     }
 
 

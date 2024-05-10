@@ -22,6 +22,7 @@ namespace ProSkills.Controllers
 
             //return View("Showall", instractorList); //View Index ,Model List<Department>
             //return View("index", instructors);
+            return View("");
 
         }
 
