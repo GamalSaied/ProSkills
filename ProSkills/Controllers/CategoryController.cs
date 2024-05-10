@@ -84,11 +84,15 @@ namespace ProSkills.Controllers
         //Saveedit for the instructor
         public IActionResult SaveEdit(Category categreq)
         {
+            var categoryformdb = _CategoryRepository.GetById(categreq.Id);
+            categoryformdb.Name = categreq.Name;
+            categoryformdb.Image = categreq.Image;
 
             if (ModelState.IsValid)
             {
                 try
                 {
+                  
                     _CategoryRepository.Save();
                     return RedirectToAction("Index");
                 }
