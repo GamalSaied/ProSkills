@@ -19,65 +19,67 @@ namespace ProSkills.Controllers
         }
         public IActionResult Index()
         {
-            List<Category> Categories = _CategoryRepository.GetAll();
 
-          
+            List<Category> Categories = _CategoryRepository.GetAll();
             return View("Index", Categories);
 
         }
-        [HttpPost]//action attribute
-        public ActionResult Delete(int id)
-        {
+        //[HttpPost]//action attribute
+        //public ActionResult Delete(int id)
+        //{
          
-            var Category = _CategoryRepository.GetById(id);
-            if (Category == null)
-            {
-                return NotFound();
-            }
+        //    var Category = _CategoryRepository.GetById(id);
+        //    if (Category == null)
+        //    {
+        //        return NotFound();
+        //    }
 
 
-            _CategoryRepository.Delete(id);
-            _CategoryRepository.Save();
+        //    _CategoryRepository.Delete(id);
+        //    _CategoryRepository.Save();
           
-            return RedirectToAction("Index"); // Redirect to the list of Categories after deletion
-        }
+        //    return RedirectToAction("Index"); // Redirect to the list of Categories after deletion
+        //}
 
 
-        [HttpGet]
-        public IActionResult New()
-        {
+        //[HttpGet]
+        //public IActionResult New()
+        //{
             
-            return View("New");
-        }
+        //    return View("New");
+        //}
 
         //press submit button
         //Instructor/SaveNEw?Name=SD&ManagerName=Ahmed
         //action saveNew
 
-        [HttpPost]//action attribute
-        public IActionResult SaveNew(Category categreq)
+        public IActionResult New()
         {
-            if (categreq.Name != null)
+            return View("New");
+        }
+
+        [HttpPost]//action attribute
+        public IActionResult SaveNew(Category CategoryFromReq)
+        {
+            if (CategoryFromReq.Name != null)
             {
-                _CategoryRepository.Insert(categreq);
+                
+                CategoryFromReq.CreatedAt = "Created At "+ DateTime.Now;
+                _CategoryRepository.Insert(CategoryFromReq);
                 _CategoryRepository.Save();
                
                 return RedirectToAction("Index", "Category");
             }
 
-            return View("New", categreq);
+            return View("New", CategoryFromReq);
         }
 
 
         public IActionResult Edit(int id)
         {
-            //Get data
-            
+            //Get data           
             var Category = _CategoryRepository.GetById(id);
-
-            return View("Edit", Category);                  //Open Edit Page
-
-
+            return View("Edit", Category);                  
         }
 
 
