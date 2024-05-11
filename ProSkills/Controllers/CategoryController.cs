@@ -46,7 +46,7 @@ namespace ProSkills.Controllers
         [HttpGet]
         public IActionResult New()
         {
-        
+            
             return View("New");
         }
 

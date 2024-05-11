@@ -16,10 +16,10 @@ namespace ProSkills.Controllers
         }
         public IActionResult Index()
         {
-            List<Package> Categories = _PackageRepository.GetAll();
+            List<Package> Packages = _PackageRepository.GetAll();
 
 
-            return View("Index", Categories);
+            return View("Index", Packages);
 
         }
         [HttpPost]//action attribute
@@ -43,7 +43,7 @@ namespace ProSkills.Controllers
         [HttpGet]
         public IActionResult New()
         {
-
+           
             return View("New");
         }
 
