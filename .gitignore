@@ -365,3 +365,4 @@ FodyWeavers.xsd
 /ProSkills/Migrations/20240508145153_initialState.cs
 /ProSkills/Migrations/20240508193613_secondstate.cs
 /ProSkills/Migrations/ITIContextModelSnapshot.cs
+/ProSkills/Migrations/20240511080020_packagestate.cs
