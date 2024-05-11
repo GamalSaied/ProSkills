@@ -14,6 +14,7 @@ namespace ProSkills.Models
         // ====> DbSet<Class> TableName   
         public DbSet<instructor> instructor { get; set; }
         public DbSet<Category> Category{ get; set; }
+        public DbSet<Package> Package { get; set; }
 
         // --------------------------------------------------------------------
         // 2- Restore Constructor from Parent DBContext
@@ -64,7 +65,7 @@ namespace ProSkills.Models
                     new instructor { Id = 30, Name = "Instructor 30", Email = "instructor30@example.com", Password = "password30", Bio = "Bio for Instructor 30", CreatedAt = DateTime.Now.ToString(), IsDeleted = false }
                 );
 
-
+            /////////////////seeding category
 
             modelBuilder.Entity<Category>().HasData(new Category { Id = 1, Name = "Revit", CreatedAt = DateTime.Now.ToString(),Image="", IsDeleted = false });
             modelBuilder.Entity<Category>().HasData(new Category { Id = 2, Name = "Sap", CreatedAt = DateTime.Now.ToString(), Image = "", IsDeleted = false });
@@ -76,7 +77,13 @@ namespace ProSkills.Models
             modelBuilder.Entity<Category>().HasData(new Category { Id = 8, Name = "NavisWorks", CreatedAt = DateTime.Now.ToString(), Image = "", IsDeleted = false });
             modelBuilder.Entity<Category>().HasData(new Category { Id = 9, Name = "Graphics", CreatedAt = DateTime.Now.ToString(), Image = "", IsDeleted = false });
 
-           base.OnModelCreating(modelBuilder);
+            //////////////////////////////////////////////seeding Packages
+            modelBuilder.Entity<Package>().HasData(new Package { Id = 1, Name = "package Free", CreatedAt = DateTime.Now.ToString(), Image = "", IsDeleted = false,Hours=30,TotlaFileSize=20,NumberOfAssesments=100,NumberOfLessons=100,NumberOfTrainees=100 });
+            modelBuilder.Entity<Package>().HasData(new Package { Id = 2, Name = "package Premium", CreatedAt = DateTime.Now.ToString(), Image = "", IsDeleted = false, Hours = 60, TotlaFileSize = 40, NumberOfAssesments = 200, NumberOfLessons = 200, NumberOfTrainees = 200 });
+            modelBuilder.Entity<Package>().HasData(new Package { Id = 3, Name = "package Premium Advanced", CreatedAt = DateTime.Now.ToString(), Image = "", IsDeleted = false, Hours = 100, TotlaFileSize = 100, NumberOfAssesments = 400, NumberOfLessons = 400, NumberOfTrainees =400 });
+
+
+            base.OnModelCreating(modelBuilder);
         }
         
 
