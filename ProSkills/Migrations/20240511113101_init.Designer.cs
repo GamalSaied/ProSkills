@@ -12,7 +12,7 @@ using ProSkills.Models;
 namespace ProSkills.Migrations
 {
     [DbContext(typeof(ITIContext))]
-    [Migration("20240511111630_init")]
+    [Migration("20240511113101_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -198,7 +198,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 1,
                             Bio = "Bio for Instructor 1",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Email = "instructor1@example.com",
                             IsDeleted = false,
                             Name = "Instructor 1",
@@ -208,7 +208,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 2,
                             Bio = "Bio for Instructor 2",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Email = "instructor2@example.com",
                             IsDeleted = false,
                             Name = "Instructor 2",
@@ -218,7 +218,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 3,
                             Bio = "Bio for Instructor 3",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Email = "instructor3@example.com",
                             IsDeleted = false,
                             Name = "Instructor 3",
@@ -228,7 +228,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 4,
                             Bio = "Bio for Instructor 4",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Email = "instructor4@example.com",
                             IsDeleted = false,
                             Name = "Instructor 4",
@@ -238,7 +238,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 5,
                             Bio = "Bio for Instructor 5",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Email = "instructor5@example.com",
                             IsDeleted = false,
                             Name = "Instructor 5",
@@ -248,7 +248,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 6,
                             Bio = "Bio for Instructor 6",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Email = "instructor6@example.com",
                             IsDeleted = false,
                             Name = "Instructor 6",
@@ -258,7 +258,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 7,
                             Bio = "Bio for Instructor 7",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Email = "instructor7@example.com",
                             IsDeleted = false,
                             Name = "Instructor 7",
@@ -268,7 +268,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 8,
                             Bio = "Bio for Instructor 8",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Email = "instructor8@example.com",
                             IsDeleted = false,
                             Name = "Instructor 8",
@@ -278,7 +278,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 9,
                             Bio = "Bio for Instructor 9",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Email = "instructor9@example.com",
                             IsDeleted = false,
                             Name = "Instructor 9",
@@ -288,7 +288,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 10,
                             Bio = "Bio for Instructor 10",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Email = "instructor10@example.com",
                             IsDeleted = false,
                             Name = "Instructor 10",
@@ -298,7 +298,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 11,
                             Bio = "Bio for Instructor 11",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Email = "instructor11@example.com",
                             IsDeleted = false,
                             Name = "Instructor 11",
@@ -308,7 +308,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 12,
                             Bio = "Bio for Instructor 12",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Email = "instructor12@example.com",
                             IsDeleted = false,
                             Name = "Instructor 12",
@@ -318,7 +318,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 13,
                             Bio = "Bio for Instructor 13",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Email = "instructor13@example.com",
                             IsDeleted = false,
                             Name = "Instructor 13",
@@ -328,7 +328,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 14,
                             Bio = "Bio for Instructor 14",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Email = "instructor14@example.com",
                             IsDeleted = false,
                             Name = "Instructor 14",
@@ -338,7 +338,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 15,
                             Bio = "Bio for Instructor 15",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Email = "instructor15@example.com",
                             IsDeleted = false,
                             Name = "Instructor 15",
@@ -348,7 +348,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 16,
                             Bio = "Bio for Instructor 16",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Email = "instructor16@example.com",
                             IsDeleted = false,
                             Name = "Instructor 16",
@@ -358,7 +358,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 17,
                             Bio = "Bio for Instructor 17",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Email = "instructor17@example.com",
                             IsDeleted = false,
                             Name = "Instructor 17",
@@ -368,7 +368,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 18,
                             Bio = "Bio for Instructor 18",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Email = "instructor18@example.com",
                             IsDeleted = false,
                             Name = "Instructor 18",
@@ -378,7 +378,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 19,
                             Bio = "Bio for Instructor 19",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Email = "instructor19@example.com",
                             IsDeleted = false,
                             Name = "Instructor 19",
@@ -388,7 +388,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 20,
                             Bio = "Bio for Instructor 20",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Email = "instructor20@example.com",
                             IsDeleted = false,
                             Name = "Instructor 20",
@@ -398,7 +398,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 21,
                             Bio = "Bio for Instructor 21",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Email = "instructor21@example.com",
                             IsDeleted = false,
                             Name = "Instructor 21",
@@ -408,7 +408,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 22,
                             Bio = "Bio for Instructor 22",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Email = "instructor22@example.com",
                             IsDeleted = false,
                             Name = "Instructor 22",
@@ -418,7 +418,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 23,
                             Bio = "Bio for Instructor 23",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Email = "instructor23@example.com",
                             IsDeleted = false,
                             Name = "Instructor 23",
@@ -428,7 +428,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 24,
                             Bio = "Bio for Instructor 24",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Email = "instructor24@example.com",
                             IsDeleted = false,
                             Name = "Instructor 24",
@@ -438,7 +438,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 25,
                             Bio = "Bio for Instructor 25",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Email = "instructor25@example.com",
                             IsDeleted = false,
                             Name = "Instructor 25",
@@ -448,7 +448,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 26,
                             Bio = "Bio for Instructor 26",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Email = "instructor26@example.com",
                             IsDeleted = false,
                             Name = "Instructor 26",
@@ -458,7 +458,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 27,
                             Bio = "Bio for Instructor 27",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Email = "instructor27@example.com",
                             IsDeleted = false,
                             Name = "Instructor 27",
@@ -468,7 +468,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 28,
                             Bio = "Bio for Instructor 28",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Email = "instructor28@example.com",
                             IsDeleted = false,
                             Name = "Instructor 28",
@@ -478,7 +478,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 29,
                             Bio = "Bio for Instructor 29",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Email = "instructor29@example.com",
                             IsDeleted = false,
                             Name = "Instructor 29",
@@ -488,7 +488,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 30,
                             Bio = "Bio for Instructor 30",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Email = "instructor30@example.com",
                             IsDeleted = false,
                             Name = "Instructor 30",
@@ -578,14 +578,13 @@ namespace ProSkills.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("CreatedAt")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Image")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("IsDeleted")
+                    b.Property<bool?>("IsDeleted")
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")
@@ -600,7 +599,7 @@ namespace ProSkills.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Image = "",
                             IsDeleted = false,
                             Name = "Revit"
@@ -608,7 +607,7 @@ namespace ProSkills.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Image = "",
                             IsDeleted = false,
                             Name = "Sap"
@@ -616,7 +615,7 @@ namespace ProSkills.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Image = "",
                             IsDeleted = false,
                             Name = "Etabs"
@@ -624,7 +623,7 @@ namespace ProSkills.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Image = "",
                             IsDeleted = false,
                             Name = "Forge"
@@ -632,7 +631,7 @@ namespace ProSkills.Migrations
                         new
                         {
                             Id = 5,
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Image = "",
                             IsDeleted = false,
                             Name = "primavera"
@@ -640,7 +639,7 @@ namespace ProSkills.Migrations
                         new
                         {
                             Id = 6,
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Image = "",
                             IsDeleted = false,
                             Name = "wpf"
@@ -648,7 +647,7 @@ namespace ProSkills.Migrations
                         new
                         {
                             Id = 7,
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Image = "",
                             IsDeleted = false,
                             Name = "Windows Form"
@@ -656,7 +655,7 @@ namespace ProSkills.Migrations
                         new
                         {
                             Id = 8,
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Image = "",
                             IsDeleted = false,
                             Name = "NavisWorks"
@@ -664,7 +663,7 @@ namespace ProSkills.Migrations
                         new
                         {
                             Id = 9,
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Image = "",
                             IsDeleted = false,
                             Name = "Graphics"
@@ -735,9 +734,9 @@ namespace ProSkills.Migrations
                         {
                             Id = 1,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Description = "This course provides an introduction to programming concepts and techniques.",
-                            EndAt = new DateTime(2024, 6, 10, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(7925),
+                            EndAt = new DateTime(2024, 6, 10, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6403),
                             Hours = 40,
                             IsDeleted = false,
                             Location = "Online",
@@ -745,17 +744,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 5,
                             NumberOfLessons = 20,
                             NumberOfStudents = 25,
-                            StartAt = new DateTime(2024, 5, 18, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(7915),
+                            StartAt = new DateTime(2024, 5, 18, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6395),
                             TotalFilesSize = 10.5,
-                            instructorId = 3
+                            instructorId = 11
                         },
                         new
                         {
                             Id = 2,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Description = "This course covers the basics of web development including HTML, CSS, and JavaScript.",
-                            EndAt = new DateTime(2024, 6, 25, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(7998),
+                            EndAt = new DateTime(2024, 6, 25, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6461),
                             Hours = 60,
                             IsDeleted = false,
                             Location = "Online",
@@ -763,17 +762,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 7,
                             NumberOfLessons = 25,
                             NumberOfStudents = 30,
-                            StartAt = new DateTime(2024, 5, 25, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(7994),
+                            StartAt = new DateTime(2024, 5, 25, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6459),
                             TotalFilesSize = 15.199999999999999,
-                            instructorId = 13
+                            instructorId = 1
                         },
                         new
                         {
                             Id = 3,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Description = "This course covers fundamental data structures and algorithms.",
-                            EndAt = new DateTime(2024, 6, 15, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8017),
+                            EndAt = new DateTime(2024, 6, 15, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6488),
                             Hours = 45,
                             IsDeleted = false,
                             Location = "Online",
@@ -781,17 +780,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 22,
                             NumberOfStudents = 20,
-                            StartAt = new DateTime(2024, 5, 16, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8014),
+                            StartAt = new DateTime(2024, 5, 16, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6486),
                             TotalFilesSize = 11.699999999999999,
-                            instructorId = 11
+                            instructorId = 7
                         },
                         new
                         {
                             Id = 4,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Description = "This course provides an introduction to machine learning concepts and techniques.",
-                            EndAt = new DateTime(2024, 7, 10, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8034),
+                            EndAt = new DateTime(2024, 7, 10, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6500),
                             Hours = 55,
                             IsDeleted = false,
                             Location = "Online",
@@ -799,17 +798,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 23,
                             NumberOfStudents = 25,
-                            StartAt = new DateTime(2024, 5, 21, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8031),
+                            StartAt = new DateTime(2024, 5, 21, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6498),
                             TotalFilesSize = 13.5,
-                            instructorId = 15
+                            instructorId = 9
                         },
                         new
                         {
                             Id = 5,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Description = "This course covers the design and management of relational databases.",
-                            EndAt = new DateTime(2024, 6, 20, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8065),
+                            EndAt = new DateTime(2024, 6, 20, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6512),
                             Hours = 50,
                             IsDeleted = false,
                             Location = "Online",
@@ -817,17 +816,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 7,
                             NumberOfLessons = 25,
                             NumberOfStudents = 30,
-                            StartAt = new DateTime(2024, 5, 18, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8062),
+                            StartAt = new DateTime(2024, 5, 18, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6510),
                             TotalFilesSize = 14.1,
-                            instructorId = 7
+                            instructorId = 11
                         },
                         new
                         {
                             Id = 6,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Description = "This course provides an overview of cybersecurity concepts and principles.",
-                            EndAt = new DateTime(2024, 6, 30, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8185),
+                            EndAt = new DateTime(2024, 6, 30, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6523),
                             Hours = 55,
                             IsDeleted = false,
                             Location = "Online",
@@ -835,17 +834,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 24,
                             NumberOfStudents = 25,
-                            StartAt = new DateTime(2024, 5, 23, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8181),
+                            StartAt = new DateTime(2024, 5, 23, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6521),
                             TotalFilesSize = 12.300000000000001,
-                            instructorId = 2
+                            instructorId = 10
                         },
                         new
                         {
                             Id = 7,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Description = "This course covers fundamental concepts and techniques in artificial intelligence.",
-                            EndAt = new DateTime(2024, 7, 5, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8207),
+                            EndAt = new DateTime(2024, 7, 5, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6539),
                             Hours = 50,
                             IsDeleted = false,
                             Location = "Online",
@@ -853,17 +852,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 23,
                             NumberOfStudents = 20,
-                            StartAt = new DateTime(2024, 5, 19, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8204),
+                            StartAt = new DateTime(2024, 5, 19, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6537),
                             TotalFilesSize = 12.800000000000001,
-                            instructorId = 4
+                            instructorId = 13
                         },
                         new
                         {
                             Id = 8,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Description = "This course covers software engineering principles and best practices.",
-                            EndAt = new DateTime(2024, 6, 15, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8223),
+                            EndAt = new DateTime(2024, 6, 15, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6551),
                             Hours = 45,
                             IsDeleted = false,
                             Location = "Online",
@@ -871,7 +870,7 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 22,
                             NumberOfStudents = 30,
-                            StartAt = new DateTime(2024, 5, 17, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8220),
+                            StartAt = new DateTime(2024, 5, 17, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6549),
                             TotalFilesSize = 13.199999999999999,
                             instructorId = 7
                         },
@@ -879,9 +878,9 @@ namespace ProSkills.Migrations
                         {
                             Id = 9,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Description = "This course covers the basics of Python programming language.",
-                            EndAt = new DateTime(2024, 6, 20, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8267),
+                            EndAt = new DateTime(2024, 6, 20, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6562),
                             Hours = 40,
                             IsDeleted = false,
                             Location = "Online",
@@ -889,17 +888,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 5,
                             NumberOfLessons = 20,
                             NumberOfStudents = 25,
-                            StartAt = new DateTime(2024, 5, 20, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8264),
+                            StartAt = new DateTime(2024, 5, 20, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6560),
                             TotalFilesSize = 10.800000000000001,
-                            instructorId = 12
+                            instructorId = 11
                         },
                         new
                         {
                             Id = 10,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Description = "This course covers data analysis techniques using Python programming language.",
-                            EndAt = new DateTime(2024, 6, 25, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8285),
+                            EndAt = new DateTime(2024, 6, 25, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6574),
                             Hours = 50,
                             IsDeleted = false,
                             Location = "Online",
@@ -907,7 +906,7 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 22,
                             NumberOfStudents = 20,
-                            StartAt = new DateTime(2024, 5, 22, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8282),
+                            StartAt = new DateTime(2024, 5, 22, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6572),
                             TotalFilesSize = 12.199999999999999,
                             instructorId = 10
                         },
@@ -915,9 +914,9 @@ namespace ProSkills.Migrations
                         {
                             Id = 11,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Description = "This course covers the fundamentals of Java programming language.",
-                            EndAt = new DateTime(2024, 6, 30, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8303),
+                            EndAt = new DateTime(2024, 6, 30, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6588),
                             Hours = 55,
                             IsDeleted = false,
                             Location = "Online",
@@ -925,17 +924,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 24,
                             NumberOfStudents = 25,
-                            StartAt = new DateTime(2024, 5, 24, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8300),
+                            StartAt = new DateTime(2024, 5, 24, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6586),
                             TotalFilesSize = 13.5,
-                            instructorId = 14
+                            instructorId = 13
                         },
                         new
                         {
                             Id = 12,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Description = "This course covers essential concepts in computer networks.",
-                            EndAt = new DateTime(2024, 6, 20, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8320),
+                            EndAt = new DateTime(2024, 6, 20, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6600),
                             Hours = 45,
                             IsDeleted = false,
                             Location = "Online",
@@ -943,17 +942,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 22,
                             NumberOfStudents = 30,
-                            StartAt = new DateTime(2024, 5, 21, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8318),
+                            StartAt = new DateTime(2024, 5, 21, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6598),
                             TotalFilesSize = 13.1,
-                            instructorId = 4
+                            instructorId = 12
                         },
                         new
                         {
                             Id = 13,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Description = "This course provides an introduction to the Linux operating system.",
-                            EndAt = new DateTime(2024, 6, 15, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8545),
+                            EndAt = new DateTime(2024, 6, 15, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6611),
                             Hours = 40,
                             IsDeleted = false,
                             Location = "Online",
@@ -961,17 +960,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 5,
                             NumberOfLessons = 20,
                             NumberOfStudents = 25,
-                            StartAt = new DateTime(2024, 5, 19, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8343),
+                            StartAt = new DateTime(2024, 5, 19, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6609),
                             TotalFilesSize = 10.6,
-                            instructorId = 10
+                            instructorId = 14
                         },
                         new
                         {
                             Id = 14,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Description = "This course covers the basics of mobile app development.",
-                            EndAt = new DateTime(2024, 6, 10, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8590),
+                            EndAt = new DateTime(2024, 6, 10, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6623),
                             Hours = 35,
                             IsDeleted = false,
                             Location = "Online",
@@ -979,17 +978,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 5,
                             NumberOfLessons = 18,
                             NumberOfStudents = 20,
-                            StartAt = new DateTime(2024, 5, 18, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8586),
+                            StartAt = new DateTime(2024, 5, 18, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6621),
                             TotalFilesSize = 11.199999999999999,
-                            instructorId = 12
+                            instructorId = 8
                         },
                         new
                         {
                             Id = 15,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Description = "This course covers frontend web development technologies and frameworks.",
-                            EndAt = new DateTime(2024, 6, 25, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8609),
+                            EndAt = new DateTime(2024, 6, 25, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6638),
                             Hours = 60,
                             IsDeleted = false,
                             Location = "Online",
@@ -997,17 +996,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 7,
                             NumberOfLessons = 25,
                             NumberOfStudents = 30,
-                            StartAt = new DateTime(2024, 5, 25, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8606),
+                            StartAt = new DateTime(2024, 5, 25, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6636),
                             TotalFilesSize = 15.800000000000001,
-                            instructorId = 13
+                            instructorId = 5
                         },
                         new
                         {
                             Id = 16,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Description = "This course provides an introduction to cloud computing concepts and services.",
-                            EndAt = new DateTime(2024, 6, 15, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8626),
+                            EndAt = new DateTime(2024, 6, 15, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6649),
                             Hours = 45,
                             IsDeleted = false,
                             Location = "Online",
@@ -1015,17 +1014,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 22,
                             NumberOfStudents = 25,
-                            StartAt = new DateTime(2024, 5, 16, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8623),
+                            StartAt = new DateTime(2024, 5, 16, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6648),
                             TotalFilesSize = 12.5,
-                            instructorId = 4
+                            instructorId = 6
                         },
                         new
                         {
                             Id = 17,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Description = "This course covers the fundamentals of React.js library for building user interfaces.",
-                            EndAt = new DateTime(2024, 6, 30, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8650),
+                            EndAt = new DateTime(2024, 6, 30, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6661),
                             Hours = 55,
                             IsDeleted = false,
                             Location = "Online",
@@ -1033,17 +1032,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 24,
                             NumberOfStudents = 30,
-                            StartAt = new DateTime(2024, 5, 23, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8646),
+                            StartAt = new DateTime(2024, 5, 23, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6659),
                             TotalFilesSize = 13.800000000000001,
-                            instructorId = 13
+                            instructorId = 3
                         },
                         new
                         {
                             Id = 18,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Description = "This course covers server-side development with Node.js runtime environment.",
-                            EndAt = new DateTime(2024, 7, 5, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8669),
+                            EndAt = new DateTime(2024, 7, 5, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6673),
                             Hours = 50,
                             IsDeleted = false,
                             Location = "Online",
@@ -1051,17 +1050,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 23,
                             NumberOfStudents = 20,
-                            StartAt = new DateTime(2024, 5, 19, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8665),
+                            StartAt = new DateTime(2024, 5, 19, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6671),
                             TotalFilesSize = 12.300000000000001,
-                            instructorId = 10
+                            instructorId = 6
                         },
                         new
                         {
                             Id = 19,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Description = "This course covers database concepts and technologies for developers.",
-                            EndAt = new DateTime(2024, 6, 15, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8687),
+                            EndAt = new DateTime(2024, 6, 15, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6687),
                             Hours = 45,
                             IsDeleted = false,
                             Location = "Online",
@@ -1069,17 +1068,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 22,
                             NumberOfStudents = 25,
-                            StartAt = new DateTime(2024, 5, 17, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8684),
+                            StartAt = new DateTime(2024, 5, 17, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6685),
                             TotalFilesSize = 13.1,
-                            instructorId = 6
+                            instructorId = 2
                         },
                         new
                         {
                             Id = 20,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Description = "This course provides an introduction to deep learning concepts and techniques.",
-                            EndAt = new DateTime(2024, 6, 20, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8706),
+                            EndAt = new DateTime(2024, 6, 20, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6699),
                             Hours = 40,
                             IsDeleted = false,
                             Location = "Online",
@@ -1087,17 +1086,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 5,
                             NumberOfLessons = 20,
                             NumberOfStudents = 30,
-                            StartAt = new DateTime(2024, 5, 20, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8703),
+                            StartAt = new DateTime(2024, 5, 20, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6697),
                             TotalFilesSize = 11.800000000000001,
-                            instructorId = 6
+                            instructorId = 8
                         },
                         new
                         {
                             Id = 21,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Description = "This course covers essential cybersecurity concepts and practices.",
-                            EndAt = new DateTime(2024, 6, 25, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8728),
+                            EndAt = new DateTime(2024, 6, 25, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6710),
                             Hours = 50,
                             IsDeleted = false,
                             Location = "Online",
@@ -1105,17 +1104,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 22,
                             NumberOfStudents = 20,
-                            StartAt = new DateTime(2024, 5, 22, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8725),
+                            StartAt = new DateTime(2024, 5, 22, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6709),
                             TotalFilesSize = 12.5,
-                            instructorId = 5
+                            instructorId = 13
                         },
                         new
                         {
                             Id = 22,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Description = "This course covers the basics of Ruby programming language.",
-                            EndAt = new DateTime(2024, 6, 30, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8745),
+                            EndAt = new DateTime(2024, 6, 30, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6722),
                             Hours = 55,
                             IsDeleted = false,
                             Location = "Online",
@@ -1123,17 +1122,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 24,
                             NumberOfStudents = 25,
-                            StartAt = new DateTime(2024, 5, 24, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8742),
+                            StartAt = new DateTime(2024, 5, 24, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6720),
                             TotalFilesSize = 13.199999999999999,
-                            instructorId = 8
+                            instructorId = 11
                         },
                         new
                         {
                             Id = 23,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Description = "This course covers fundamental concepts in computer architecture.",
-                            EndAt = new DateTime(2024, 6, 20, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8763),
+                            EndAt = new DateTime(2024, 6, 20, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6740),
                             Hours = 45,
                             IsDeleted = false,
                             Location = "Online",
@@ -1141,17 +1140,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 22,
                             NumberOfStudents = 30,
-                            StartAt = new DateTime(2024, 5, 21, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8760),
+                            StartAt = new DateTime(2024, 5, 21, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6738),
                             TotalFilesSize = 13.6,
-                            instructorId = 10
+                            instructorId = 11
                         },
                         new
                         {
                             Id = 24,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Description = "This course covers the basics of JavaScript programming language.",
-                            EndAt = new DateTime(2024, 6, 15, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8780),
+                            EndAt = new DateTime(2024, 6, 15, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6755),
                             Hours = 40,
                             IsDeleted = false,
                             Location = "Online",
@@ -1159,17 +1158,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 5,
                             NumberOfLessons = 20,
                             NumberOfStudents = 25,
-                            StartAt = new DateTime(2024, 5, 19, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8777),
+                            StartAt = new DateTime(2024, 5, 19, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6753),
                             TotalFilesSize = 10.9,
-                            instructorId = 11
+                            instructorId = 12
                         },
                         new
                         {
                             Id = 25,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Description = "This course covers fundamental concepts and techniques in software testing.",
-                            EndAt = new DateTime(2024, 6, 10, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8801),
+                            EndAt = new DateTime(2024, 6, 10, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6767),
                             Hours = 35,
                             IsDeleted = false,
                             Location = "Online",
@@ -1177,17 +1176,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 5,
                             NumberOfLessons = 18,
                             NumberOfStudents = 20,
-                            StartAt = new DateTime(2024, 5, 18, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8797),
+                            StartAt = new DateTime(2024, 5, 18, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6765),
                             TotalFilesSize = 11.4,
-                            instructorId = 10
+                            instructorId = 5
                         },
                         new
                         {
                             Id = 26,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Description = "This course covers the fundamentals of Angular framework for building web applications.",
-                            EndAt = new DateTime(2024, 6, 25, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8819),
+                            EndAt = new DateTime(2024, 6, 25, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6780),
                             Hours = 60,
                             IsDeleted = false,
                             Location = "Online",
@@ -1195,17 +1194,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 7,
                             NumberOfLessons = 25,
                             NumberOfStudents = 30,
-                            StartAt = new DateTime(2024, 5, 25, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8816),
+                            StartAt = new DateTime(2024, 5, 25, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6778),
                             TotalFilesSize = 15.199999999999999,
-                            instructorId = 1
+                            instructorId = 11
                         },
                         new
                         {
                             Id = 27,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Description = "This course covers the basics of iOS app development using Swift programming language.",
-                            EndAt = new DateTime(2024, 6, 15, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8836),
+                            EndAt = new DateTime(2024, 6, 15, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6794),
                             Hours = 45,
                             IsDeleted = false,
                             Location = "Online",
@@ -1213,17 +1212,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 22,
                             NumberOfStudents = 25,
-                            StartAt = new DateTime(2024, 5, 16, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8833),
+                            StartAt = new DateTime(2024, 5, 16, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6792),
                             TotalFilesSize = 13.699999999999999,
-                            instructorId = 10
+                            instructorId = 2
                         },
                         new
                         {
                             Id = 28,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Description = "This course covers server-side web development with ASP.NET Core framework.",
-                            EndAt = new DateTime(2024, 6, 30, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8854),
+                            EndAt = new DateTime(2024, 6, 30, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6807),
                             Hours = 55,
                             IsDeleted = false,
                             Location = "Online",
@@ -1231,17 +1230,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 24,
                             NumberOfStudents = 30,
-                            StartAt = new DateTime(2024, 5, 23, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8851),
+                            StartAt = new DateTime(2024, 5, 23, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6805),
                             TotalFilesSize = 14.300000000000001,
-                            instructorId = 14
+                            instructorId = 12
                         },
                         new
                         {
                             Id = 29,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Description = "This course covers the fundamentals of C# programming language.",
-                            EndAt = new DateTime(2024, 7, 5, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8874),
+                            EndAt = new DateTime(2024, 7, 5, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6819),
                             Hours = 50,
                             IsDeleted = false,
                             Location = "Online",
@@ -1249,17 +1248,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 23,
                             NumberOfStudents = 20,
-                            StartAt = new DateTime(2024, 5, 19, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8871),
+                            StartAt = new DateTime(2024, 5, 19, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6817),
                             TotalFilesSize = 12.6,
-                            instructorId = 6
+                            instructorId = 12
                         },
                         new
                         {
                             Id = 30,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "11/05/2024 14:16:29",
+                            CreatedAt = "11/05/2024 14:31:01",
                             Description = "This course covers the fundamentals of game development using Unity game engine.",
-                            EndAt = new DateTime(2024, 6, 15, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8892),
+                            EndAt = new DateTime(2024, 6, 15, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6831),
                             Hours = 45,
                             IsDeleted = false,
                             Location = "Online",
@@ -1267,10 +1266,52 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 22,
                             NumberOfStudents = 25,
-                            StartAt = new DateTime(2024, 5, 17, 14, 16, 29, 854, DateTimeKind.Local).AddTicks(8889),
+                            StartAt = new DateTime(2024, 5, 17, 14, 31, 1, 632, DateTimeKind.Local).AddTicks(6829),
                             TotalFilesSize = 13.9,
-                            instructorId = 2
+                            instructorId = 3
                         });
+                });
+
+            modelBuilder.Entity("ProSkills.Models.ClientSide.Package", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CreatedAt")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Hours")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("NumberOfAssesments")
+                        .HasColumnType("int");
+
+                    b.Property<int>("NumberOfLessons")
+                        .HasColumnType("int");
+
+                    b.Property<int>("NumberOfTrainees")
+                        .HasColumnType("int");
+
+                    b.Property<double>("TotlaFileSize")
+                        .HasColumnType("float");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Package");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

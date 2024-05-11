@@ -1,4 +1,5 @@
 ﻿using ProSkills.Interfaces;
+using ProSkills.Models.AdminPanel.InstructorManger;
 using ProSkills.Models.ClientSide;
 
 namespace ProSkills.Repository
@@ -39,6 +40,8 @@ namespace ProSkills.Repository
 
         // Saves changes made to the database
         public void Save() => context.SaveChanges();
+        public Package GetByName(string Name) => context.Package.FirstOrDefault(d => d.Name == Name);
+
 
     }
 }
