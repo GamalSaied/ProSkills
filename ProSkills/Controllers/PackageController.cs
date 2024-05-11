@@ -55,7 +55,7 @@ namespace ProSkills.Controllers
         public IActionResult SaveNew(Package Packagreq)
         {
            
-            if (Packagreq.Name!=null)
+            if (ModelState.IsValid)
             {
                 Packagreq.CreatedAt = "Created At " + DateTime.Now;
                 _PackageRepository.Insert(Packagreq);

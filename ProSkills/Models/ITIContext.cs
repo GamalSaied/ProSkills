@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿dausing Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using ProSkills.Models.AdminPanel.InstructorManger;
 using ProSkills.Models.ClientSide;
@@ -110,7 +110,15 @@ namespace ProSkills.Models
             modelBuilder.Entity<Category>().HasData(new Category { Id = 8, Name = "NavisWorks", CreatedAt = DateTime.Now.ToString(), Image = "", IsDeleted = false });
             modelBuilder.Entity<Category>().HasData(new Category { Id = 9, Name = "Graphics", CreatedAt = DateTime.Now.ToString(), Image = "", IsDeleted = false });
 
-           base.OnModelCreating(modelBuilder);
+
+
+            ////////////////////////seeding data for packages
+              modelBuilder.Entity<Package>().HasData(new Package { Id = 1, Name = "free", Image = "image1.jpg", Hours = 10, NumberOfTrainees = 20, NumberOfAssesments = 5, NumberOfLessons = 15, TotlaFileSize = 1024, CreatedAt = DateTime.Now.ToString(), IsDeleted = false });
+              modelBuilder.Entity<Package>().HasData(new Package { Id = 2, Name = "Premium", Image = "image2.jpg", Hours = 10, NumberOfTrainees = 40, NumberOfAssesments = 5, NumberOfLessons = 15, TotlaFileSize = 1024, CreatedAt = DateTime.Now.ToString(), IsDeleted = false });
+              modelBuilder.Entity<Package>().HasData(new Package { Id = 3, Name = "Advanced" ,Image = "image3.jpg", Hours = 10, NumberOfTrainees = 40, NumberOfAssesments = 5, NumberOfLessons = 15, TotlaFileSize = 1024, CreatedAt = DateTime.Now.ToString(), IsDeleted = false });
+              
+
+            base.OnModelCreating(modelBuilder);
         }
 
 

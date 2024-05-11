@@ -16,7 +16,7 @@ namespace ProSkills.Models.ClientSide
         public int NumberOfLessons { get; set; }
         public double TotlaFileSize { get; set; }
 
-
+        public string? CreatedAt { get; set; }
         public bool? IsDeleted { get; set; } = false;
     }
 }
