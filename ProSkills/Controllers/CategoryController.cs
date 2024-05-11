@@ -60,7 +60,6 @@ namespace ProSkills.Controllers
             return View("Edit", Category);                  
         }
 
-
       
         public IActionResult SaveEdit(Category categreq)
         {
@@ -84,7 +83,6 @@ namespace ProSkills.Controllers
 
             return View("Edit", categreq);
         }
-
 
     }
 }
