@@ -369,3 +369,5 @@ FodyWeavers.xsd
 /ProSkills/Migrations/20240511113101_init.cs
 /ProSkills/Migrations/20240511080020_packagestate.cs
 /ProSkills/Migrations/20240511125456_course.Designer.cs
+/ProSkills/Migrations/20240511131450_package.cs
+/ProSkills/Migrations/20240511131450_package.Designer.cs
