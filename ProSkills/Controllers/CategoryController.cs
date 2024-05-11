@@ -24,35 +24,13 @@ namespace ProSkills.Controllers
             return View("Index", Categories);
 
         }
-        //[HttpPost]//action attribute
-        //public ActionResult Delete(int id)
-        //{
-         
-        //    var Category = _CategoryRepository.GetById(id);
-        //    if (Category == null)
-        //    {
-        //        return NotFound();
-        //    }
 
-
-        //    _CategoryRepository.Delete(id);
-        //    _CategoryRepository.Save();
-          
-        //    return RedirectToAction("Index"); // Redirect to the list of Categories after deletion
-        //}
-
-
-        //[HttpGet]
-        //public IActionResult New()
-        //{
-            
-        //    return View("New");
-        //}
 
         //press submit button
         //Instructor/SaveNEw?Name=SD&ManagerName=Ahmed
         //action saveNew
-
+        [HttpGet]
+        
         public IActionResult New()
         {
             return View("New");

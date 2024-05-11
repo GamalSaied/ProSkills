@@ -12,7 +12,7 @@ namespace ProSkills.Models.ClientSide
             public string Image { get; set; }
 
             public string? CreatedAt { get; set; }
-            public bool? IsDeleted { get; set; } = false;
+            public bool ?IsDeleted { get; set; } = false;
     }
 }
 
