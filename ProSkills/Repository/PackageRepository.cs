@@ -1,4 +1,5 @@
-﻿using ProSkills.Interfaces;
+﻿using Microsoft.AspNetCore.Http.HttpResults;
+using ProSkills.Interfaces;
 using ProSkills.Models.AdminPanel.InstructorManger;
 using ProSkills.Models.ClientSide;
 
@@ -43,5 +44,9 @@ namespace ProSkills.Repository
         public Package GetByName(string Name) => context.Package.FirstOrDefault(d => d.Name == Name);
 
 
+        public Package GetByName(string id)
+        {
+            return NotFound;
+        }
     }
 }

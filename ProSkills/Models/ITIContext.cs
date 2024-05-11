@@ -12,6 +12,7 @@ namespace ProSkills.Models
         // 1- Create Database Tables 
         // ====> DbSet<Class> TableName   
         public DbSet<instructor> instructor { get; set; }
+        public DbSet<Course> Course { get; set; }
         public DbSet<Category> Category{ get; set; }
         public DbSet<Package> Package { get; set; }
         public DbSet<Course> Course { get; set; }

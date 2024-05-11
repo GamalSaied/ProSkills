@@ -365,7 +365,3 @@ FodyWeavers.xsd
 /ProSkills/Migrations/20240508145153_initialState.cs
 /ProSkills/Migrations/20240508193613_secondstate.cs
 /ProSkills/Migrations/ITIContextModelSnapshot.cs
-/ProSkills/Migrations/20240510141253_courses.cs
-/ProSkills/Migrations/20240511111630_init.cs
-/ProSkills/Migrations/ITIContextModelSnapshot.cs
-/ProSkills/Migrations/20240511113101_init.cs
