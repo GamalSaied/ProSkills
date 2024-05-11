@@ -32,7 +32,7 @@ namespace ProSkills.Controllers
         //Instructor/SaveNEw?Name=SD&ManagerName=Ahmed
         //action saveNew
         [HttpGet]
-        
+
         public IActionResult New()
         {
             return View("New");
@@ -43,7 +43,7 @@ namespace ProSkills.Controllers
         {
             if (CategoryFromReq.Name != null)
             {
-                
+
 
 
                 if (Image != null && Image.Length > 0)
@@ -57,30 +57,30 @@ namespace ProSkills.Controllers
                         await Image.CopyToAsync(fileStream);
                     }
 
-                    CategoryFromReq.Image= uniqueFileName; // save the filename to the model
+                    CategoryFromReq.Image = uniqueFileName; // save the filename to the model
                 }
 
                 CategoryFromReq.CreatedAt = "Created At " + DateTime.Now;
                 _CategoryRepository.Insert(CategoryFromReq);
                 _CategoryRepository.Save();
-               
+
                 return RedirectToAction("Index", "Category");
             }
 
             return View("New", CategoryFromReq);
         }
 
-
+        [HttpGet]//action attribute
         public IActionResult Edit(int id)
         {
             //Get data           
             var Category = _CategoryRepository.GetById(id);
-            return View("Edit", Category);                  
+            return View("Edit", Category);
         }
 
-  
-            public IActionResult SaveEdit(Category categreq)
-             {
+        [HttpPost]//action attribute
+        public IActionResult SaveEdit(Category categreq)
+        {
 
             var categoryformdb = _CategoryRepository.GetById(categreq.Id);
             categoryformdb.Name = categreq.Name;
@@ -90,7 +90,7 @@ namespace ProSkills.Controllers
             {
                 try
                 {
-                  
+
                     _CategoryRepository.Save();
                     return RedirectToAction("Index");
                 }

@@ -15,7 +15,8 @@ namespace ProSkills.Models
         public DbSet<Course> Course { get; set; }
         public DbSet<Category> Category{ get; set; }
         public DbSet<Package> Package { get; set; }
- 
+        public DbSet<RedeemCode> RedeemCode { get; set; }
+
 
         // --------------------------------------------------------------------
         // 2- Restore Constructor from Parent DBContext
@@ -116,7 +117,9 @@ namespace ProSkills.Models
               modelBuilder.Entity<Package>().HasData(new Package { Id = 1, Name = "free", Image = "image1.jpg", Hours = 10, NumberOfTrainees = 20, NumberOfAssesments = 5, NumberOfLessons = 15, TotlaFileSize = 1024, CreatedAt = DateTime.Now.ToString(), IsDeleted = false });
               modelBuilder.Entity<Package>().HasData(new Package { Id = 2, Name = "Premium", Image = "image2.jpg", Hours = 10, NumberOfTrainees = 40, NumberOfAssesments = 5, NumberOfLessons = 15, TotlaFileSize = 1024, CreatedAt = DateTime.Now.ToString(), IsDeleted = false });
               modelBuilder.Entity<Package>().HasData(new Package { Id = 3, Name = "Advanced" ,Image = "image3.jpg", Hours = 10, NumberOfTrainees = 40, NumberOfAssesments = 5, NumberOfLessons = 15, TotlaFileSize = 1024, CreatedAt = DateTime.Now.ToString(), IsDeleted = false });
-              
+
+            /////seeding data for redeemcode
+            modelBuilder.Entity<RedeemCode>().HasData(new RedeemCode { Id = 3, Code="gamal", packageid = 1,PackageName="premium", CreatedAt = DateTime.Now.ToString(), IsDeleted = false });
 
             base.OnModelCreating(modelBuilder);
         }
