@@ -4,7 +4,7 @@ namespace ProSkills.Models.ClientSide
 {
     public class Package
     {
-        [Key]
+        [Key]    
         public int Id { get; set; }
         public string Name { get; set; }
        
@@ -16,7 +16,7 @@ namespace ProSkills.Models.ClientSide
         public int NumberOfLessons { get; set; }
         public double TotlaFileSize { get; set; }
 
-        public string? CreatedAt { get; set; }
-        public bool? IsDeleted { get; set; }
+
+        public bool? IsDeleted { get; set; } = false;
     }
 }
