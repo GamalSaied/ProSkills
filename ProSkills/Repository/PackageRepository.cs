@@ -1,4 +1,5 @@
-﻿using ProSkills.Interfaces;
+﻿using Microsoft.AspNetCore.Http.HttpResults;
+using ProSkills.Interfaces;
 using ProSkills.Models.ClientSide;
 
 namespace ProSkills.Repository
@@ -40,5 +41,9 @@ namespace ProSkills.Repository
         // Saves changes made to the database
         public void Save() => context.SaveChanges();
 
+        public Package GetByName(string id)
+        {
+            return NotFound;
+        }
     }
 }
