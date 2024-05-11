@@ -39,7 +39,7 @@
                     @if (item.IsDeleted == false)
                     {
 
-
+                        
                         <tr>
                             <th scope="row">@counter</th>
                             <td>@item.Id</td>
@@ -47,7 +47,7 @@
                             <td>@item.Email</td>
                             <td>@item.Password</td>
                             <td>@item.CreatedAt</td>
-                            <td><a href="/instructor/GetByID?ID=@item.Id">Courses</a></td>
+                            <td><a href="/Course/index?ID=@item.Id">Courses</a></td>
                             <td><a href="/instructor/GetByID?ID=@item.Id">Profile</a></td>
                             <td><a style="padding-bottom:10px" href="/instructor/Edit?ID=@item.Id" class="btn btn-block bg-gradient-secondary btn-xs">Edit</a></td>
                             <td><a href="/instructor/SoftDelete?ID=@item.Id" class="btn btn-block bg-gradient-danger btn-xs" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>

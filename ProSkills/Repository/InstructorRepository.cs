@@ -44,6 +44,9 @@ namespace ProSkills.Repository
         // Saves changes made to the database
         public void Save() => context.SaveChanges();
 
-      
+        // Get By Name
+        public instructor GetByName(string Name) => context.instructor.FirstOrDefault(d => d.Name == Name);
+
+
     }
 }

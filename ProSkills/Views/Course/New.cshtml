@@ -1,0 +1,109 @@
+﻿@model ProSkills.Models.ClientSide.Course
+
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+
+}
+
+@ViewBag.instructorId
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="New" method="post">
+             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+            <div class="input-group mb-3">
+                @*Combo Style*@
+                <div class="input-group-prepend">
+                    <span class="input-group-text">" Course"</span>
+                </div>
+                @*Combo Box - Select Validation*@
+                <select asp-for="Name" asp-items="@ViewBag.CategoryNames" class="form-control">
+                    <option value="0">-- Select --</option>
+                </select>
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="input-group mb-3">
+                @*Text Style*@
+                <div class="input-group-prepend">
+                    <span class="input-group-text">"Start At"</span>
+                </div>
+                @*Date Input - Text Validation*@
+                <input asp-for="StartAt" type="date" class="form-control" placeholder="Choose Date">
+                <span asp-validation-for="StartAt" class="text-danger"></span>
+            </div>
+
+            <div class="input-group mb-3">
+                @*Text Style*@
+                <div class="input-group-prepend">
+                    <span class="input-group-text">"End At  "</</span>
+                </div>
+                @*Date Input - Date Validation*@
+                <input asp-for="EndAt" type="date" class="form-control" placeholder="Choose Date">
+                <span asp-validation-for="EndAt" class="text-danger"></span>
+            </div>
+
+            <div class="input-group mb-3">
+                @*Text Style*@
+                <div class="input-group-append">
+                    <span class="input-group-text"><i class="fas fa-check"></i></span>
+                </div>
+                @*Text Input - Text Validation*@
+                <input asp-for="Description" type="text" class="form-control" placeholder="Course Notes">
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <div class="input-group mb-3">
+                @*Text Style*@
+                <div class="input-group-append">
+                    <span class="input-group-text"><i class="fas fa-check"></i></span>
+                </div>
+                @*Text Input - Text Validation*@
+                <input asp-for="Location" type="text" class="form-control" placeholder="Course Location">
+                <span asp-validation-for="Location" class="text-danger"></span>
+            </div>
+
+
+
+
+
+
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div> 
+        </form>
+
+        @**@
+
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+            </div>
+            <input type="email" class="form-control" placeholder="Email">
+        </div>
+
+        <div class="input-group mb-3">
+            <input type="text" class="form-control">
+            <div class="input-group-append">
+                <span class="input-group-text"><i class="fas fa-check"></i></span>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                    <i class="fas fa-dollar-sign"></i>
+                </span>
+            </div>
+            <input type="text" class="form-control">
+            <div class="input-group-append">
+                <div class="input-group-text"><i class="fas fa-ambulance"></i></div>
+            </div>
+        </div>
+
+    </div>
+</div>

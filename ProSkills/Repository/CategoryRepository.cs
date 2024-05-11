@@ -40,6 +40,7 @@ namespace ProSkills.Repository
         // Saves changes made to the database
         public void Save() => context.SaveChanges();
 
+        public Category GetByName(string Name) => context.Category.FirstOrDefault(d => d.Name == Name);
     }
         
    

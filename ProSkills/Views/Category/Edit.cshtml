@@ -11,7 +11,7 @@
         <form action="/Category/SaveEdit/@Model.Id" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
            
-            <input type="hidden" asp-for="Id" class="form-control" value=@Model.Id />
+            <input type="hidden" asp-for="Id" class="form-control" value=@Model.Id /> @*BB3T EL ID Hidden *@
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
                 <input asp-for="Name" class="form-control" />
