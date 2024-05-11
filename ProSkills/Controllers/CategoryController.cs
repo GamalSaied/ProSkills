@@ -26,6 +26,12 @@ namespace ProSkills.Controllers
             return View("Index", Categories);
 
         }
+
+
+        //press submit button
+        //Instructor/SaveNEw?Name=SD&ManagerName=Ahmed
+        //action saveNew
+        [HttpGet]
         
         public IActionResult New()
         {

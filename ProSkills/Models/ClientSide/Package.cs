@@ -7,7 +7,7 @@ namespace ProSkills.Models.ClientSide
         [Key]    
         public int Id { get; set; }
         public string Name { get; set; }
-        public string? CreatedAt { get; set; }
+       
         public string Image { get; set; }
 
         public int Hours { get; set; }
