@@ -46,7 +46,7 @@ namespace ProSkills.Repository
 
         public Package GetByName(string id)
         {
-            return NotFound;
+            throw new NotImplementedException();
         }
     }
 }
