@@ -8,7 +8,7 @@
 
 <div class="row">
     <div class="col-md-4">
-        <form action="/Category/SaveEdit" method="post">
+        <form action="/Category/SaveEdit/@Model.Id" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
            
             <input type="hidden" asp-for="Id" class="form-control" value=@Model.Id /> @*BB3T EL ID Hidden *@

@@ -12,8 +12,8 @@ namespace ProSkills.Models
         // 1- Create Database Tables 
         // ====> DbSet<Class> TableName   
         public DbSet<instructor> instructor { get; set; }
-        public DbSet<Category> Category { get; set; }
-        public DbSet<Course> Course { get; set; }
+        public DbSet<Category> Category{ get; set; }
+        public DbSet<Package> Package { get; set; }
 
         // --------------------------------------------------------------------
         // 2- Restore Constructor from Parent DBContext
@@ -98,7 +98,7 @@ namespace ProSkills.Models
             );
 
 
-            modelBuilder.Entity<Category>().HasData(new Category { Id = 1, Name = "Revit", CreatedAt = DateTime.Now.ToString(), Image = "", IsDeleted = false });
+            modelBuilder.Entity<Category>().HasData(new Category { Id = 1, Name = "Revit", CreatedAt = DateTime.Now.ToString(),Image="", IsDeleted = false });
             modelBuilder.Entity<Category>().HasData(new Category { Id = 2, Name = "Sap", CreatedAt = DateTime.Now.ToString(), Image = "", IsDeleted = false });
             modelBuilder.Entity<Category>().HasData(new Category { Id = 3, Name = "Etabs", CreatedAt = DateTime.Now.ToString(), Image = "", IsDeleted = false });
             modelBuilder.Entity<Category>().HasData(new Category { Id = 4, Name = "Forge", CreatedAt = DateTime.Now.ToString(), Image = "", IsDeleted = false });
@@ -108,7 +108,7 @@ namespace ProSkills.Models
             modelBuilder.Entity<Category>().HasData(new Category { Id = 8, Name = "NavisWorks", CreatedAt = DateTime.Now.ToString(), Image = "", IsDeleted = false });
             modelBuilder.Entity<Category>().HasData(new Category { Id = 9, Name = "Graphics", CreatedAt = DateTime.Now.ToString(), Image = "", IsDeleted = false });
 
-            base.OnModelCreating(modelBuilder);
+           base.OnModelCreating(modelBuilder);
         }
 
 

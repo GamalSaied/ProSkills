@@ -1,44 +1,40 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using NuGet.Protocol.Core.Types;
 using ProSkills.Interfaces;
-using ProSkills.Models.AdminPanel.InstructorManger;
 using ProSkills.Models.ClientSide;
-using ProSkills.Repository;
 
 namespace ProSkills.Controllers
 {
-    public class CategoryController : Controller
+    public class PackageController : Controller
     {
-        IRepository<Category> _CategoryRepository;
-      
-        public CategoryController(IRepository<Category> CategoryRepository)
+        IRepository<Package> _PackageRepository;
+
+        public PackageController(IRepository<Package> PackageRepository)
         {
-            _CategoryRepository = CategoryRepository;
+            _PackageRepository = PackageRepository;
 
         }
         public IActionResult Index()
         {
-            List<Category> Categories = _CategoryRepository.GetAll();
+            List<Package> Categories = _PackageRepository.GetAll();
 
-          
+
             return View("Index", Categories);
 
         }
         [HttpPost]//action attribute
         public ActionResult Delete(int id)
         {
-         
-            var Category = _CategoryRepository.GetById(id);
-            if (Category == null)
+
+            var Package = _PackageRepository.GetById(id);
+            if (Package == null)
             {
                 return NotFound();
             }
 
 
-            _CategoryRepository.Delete(id);
-            _CategoryRepository.Save();
-          
+            _PackageRepository.Delete(id);
+            _PackageRepository.Save();
+
             return RedirectToAction("Index"); // Redirect to the list of Categories after deletion
         }
 
@@ -46,22 +42,22 @@ namespace ProSkills.Controllers
         [HttpGet]
         public IActionResult New()
         {
-        
+
             return View("New");
         }
 
         //press submit button
-        //Instructor/SaveNEw?Name=SD&ManagerName=Ahmed
+        
         //action saveNew
 
         [HttpPost]//action attribute
-        public IActionResult SaveNew(Category categreq)
+        public IActionResult SaveNew(Package categreq)
         {
             if (categreq.Name != null)
             {
-                _CategoryRepository.Insert(categreq);
-                _CategoryRepository.Save();
-               
+                _PackageRepository.Insert(categreq);
+                _PackageRepository.Save();
+
                 return RedirectToAction("Index", "Category");
             }
 
@@ -72,8 +68,8 @@ namespace ProSkills.Controllers
         public IActionResult Edit(int id)
         {
             //Get data
-            
-            var Category = _CategoryRepository.GetById(id);
+
+            var Category = _PackageRepository.GetById(id);
 
             return View("Edit", Category);                  //Open Edit Page
 
@@ -81,19 +77,20 @@ namespace ProSkills.Controllers
         }
 
 
-      
-        public IActionResult SaveEdit(Category categreq)
+
+        public IActionResult SaveEdit(Package Packagereq)
         {
-            var categoryformdb = _CategoryRepository.GetById(categreq.Id);
-            categoryformdb.Name = categreq.Name;
-            categoryformdb.Image = categreq.Image;
+            var Packageformdb = _PackageRepository.GetById(Packagereq.Id);
+            Packageformdb.Name = Packagereq.Name;
+            Packageformdb.Image = Packagereq.Image;
+            Packageformdb.CreatedAt="Edited" +DateTime.Now;
 
             if (ModelState.IsValid)
             {
                 try
                 {
-                  
-                    _CategoryRepository.Save();
+
+                    _PackageRepository.Save();
                     return RedirectToAction("Index");
                 }
                 catch (Exception e)
@@ -102,9 +99,7 @@ namespace ProSkills.Controllers
                 }
             }
 
-            return View("Edit", categreq);
+            return View("Edit", Packagereq);
         }
-
-
     }
 }
