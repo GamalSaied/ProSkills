@@ -1,0 +1,66 @@
+﻿@model ProSkills.Models.ClientSide.Package
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Package</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form action="/Package/SaveEdit/@Model.Id" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+           
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+           
+            <div class="form-group">
+                <label asp-for="Image" class="control-label"></label>
+                <input asp-for="Image" class="form-control" />
+                <span asp-validation-for="Image" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hours" class="control-label"></label>
+                <input asp-for="Hours" class="form-control" />
+                <span asp-validation-for="Hours" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumberOfTrainees" class="control-label"></label>
+                <input asp-for="NumberOfTrainees" class="form-control" />
+                <span asp-validation-for="NumberOfTrainees" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumberOfAssesments" class="control-label"></label>
+                <input asp-for="NumberOfAssesments" class="form-control" />
+                <span asp-validation-for="NumberOfAssesments" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumberOfLessons" class="control-label"></label>
+                <input asp-for="NumberOfLessons" class="form-control" />
+                <span asp-validation-for="NumberOfLessons" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotlaFileSize" class="control-label"></label>
+                <input asp-for="TotlaFileSize" class="form-control" />
+                <span asp-validation-for="TotlaFileSize" class="text-danger"></span>
+            </div>
+          
+            <div class="form-group">
+                <input type="submit" value="Update" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

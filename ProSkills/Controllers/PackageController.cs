@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProSkills.Interfaces;
 using ProSkills.Models.ClientSide;
+using ProSkills.Repository;
 
 namespace ProSkills.Controllers
 {
@@ -35,7 +36,7 @@ namespace ProSkills.Controllers
             _PackageRepository.Delete(id);
             _PackageRepository.Save();
 
-            return RedirectToAction("Index"); // Redirect to the list of Categories after deletion
+            return RedirectToAction("Index"); // Redirect to the list of Packages after deletion
         }
 
 
@@ -51,17 +52,17 @@ namespace ProSkills.Controllers
         //action saveNew
 
         [HttpPost]//action attribute
-        public IActionResult SaveNew(Package categreq)
+        public IActionResult SaveNew(Package Packagreq)
         {
-            if (categreq.Name != null)
+            if (ModelState.IsValid)
             {
-                _PackageRepository.Insert(categreq);
+                _PackageRepository.Insert(Packagreq);
                 _PackageRepository.Save();
 
-                return RedirectToAction("Index", "Category");
+                return RedirectToAction("Index", "Package");
             }
 
-            return View("New", categreq);
+            return View("New", Packagreq);
         }
 
 
@@ -69,9 +70,9 @@ namespace ProSkills.Controllers
         {
             //Get data
 
-            var Category = _PackageRepository.GetById(id);
+            var Package = _PackageRepository.GetById(id);
 
-            return View("Edit", Category);                  //Open Edit Page
+            return View("Edit", Package);                  //Open Edit Page
 
 
         }
