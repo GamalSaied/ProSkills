@@ -56,11 +56,13 @@ namespace ProSkills.Controllers
         {
             if (ModelState.IsValid)
             {
+                Packagreq.CreatedAt = "Created At " + DateTime.Now;
                 _PackageRepository.Insert(Packagreq);
                 _PackageRepository.Save();
 
                 return RedirectToAction("Index", "Package");
             }
+
 
             return View("New", Packagreq);
         }
