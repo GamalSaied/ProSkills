@@ -8,6 +8,9 @@
             // Retrieves an item of type T by its unique identifier.
             T GetById(int id);
 
+            // Retrieves an item of type T by its unique identifier.
+            T GetByName(string id);
+
             // Checks if an item with the specified name exists in the repository and returns it.
             T CheckName(string name);
 
