@@ -24,35 +24,7 @@ namespace ProSkills.Controllers
             return View("Index", Categories);
 
         }
-        //[HttpPost]//action attribute
-        //public ActionResult Delete(int id)
-        //{
-         
-        //    var Category = _CategoryRepository.GetById(id);
-        //    if (Category == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-
-        //    _CategoryRepository.Delete(id);
-        //    _CategoryRepository.Save();
-          
-        //    return RedirectToAction("Index"); // Redirect to the list of Categories after deletion
-        //}
-
-
-        //[HttpGet]
-        //public IActionResult New()
-        //{
-            
-        //    return View("New");
-        //}
-
-        //press submit button
-        //Instructor/SaveNEw?Name=SD&ManagerName=Ahmed
-        //action saveNew
-
+        
         public IActionResult New()
         {
             return View("New");
@@ -82,7 +54,6 @@ namespace ProSkills.Controllers
             return View("Edit", Category);                  
         }
 
-
       
         public IActionResult SaveEdit(Category categreq)
         {
@@ -106,7 +77,6 @@ namespace ProSkills.Controllers
 
             return View("Edit", categreq);
         }
-
 
     }
 }
