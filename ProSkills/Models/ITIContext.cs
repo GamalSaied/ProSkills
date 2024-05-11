@@ -15,7 +15,7 @@ namespace ProSkills.Models
         public DbSet<Course> Course { get; set; }
         public DbSet<Category> Category{ get; set; }
         public DbSet<Package> Package { get; set; }
-        public DbSet<Course> Course { get; set; }
+ 
 
         // --------------------------------------------------------------------
         // 2- Restore Constructor from Parent DBContext

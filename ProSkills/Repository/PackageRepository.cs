@@ -41,12 +41,7 @@ namespace ProSkills.Repository
 
         // Saves changes made to the database
         public void Save() => context.SaveChanges();
+
         public Package GetByName(string Name) => context.Package.FirstOrDefault(d => d.Name == Name);
-
-
-        public Package GetByName(string id)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
