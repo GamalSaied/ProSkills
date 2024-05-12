@@ -47,9 +47,7 @@ namespace ProSkills.Controllers
             return View("New");
         }
 
-        //press submit button
-        
-        //action saveNew
+
 
         [HttpPost]//action attribute
         public IActionResult SaveNew(Package Packagreq)

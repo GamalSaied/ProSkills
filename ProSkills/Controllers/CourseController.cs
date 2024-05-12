@@ -15,12 +15,15 @@ namespace ProSkills.Controllers
         private IRepository<Course> _courseRepository;
         private IRepository<instructor> _instructorRepository;
         private IRepository<Category> _categoryRepository;
-
-        public CourseController(IRepository<Course> CourseRepository, IRepository<instructor> InstructorRepository, IRepository<Category> CategoryRepository)
+        private IRepository<RedeemCode> _redeemCodeRepository;
+        private IRepository<Package> _packageRepository;
+        public CourseController(IRepository<Course> CourseRepository, IRepository<instructor> InstructorRepository, IRepository<Category> CategoryRepository, IRepository<RedeemCode> RedeemCodeRepository, IRepository<Package> PackageRepository)
         {
             _courseRepository = CourseRepository;
             _instructorRepository = InstructorRepository;
             _categoryRepository = CategoryRepository;
+            _redeemCodeRepository = RedeemCodeRepository;
+            _packageRepository = PackageRepository;
         }
         #endregion
         
@@ -39,13 +42,55 @@ namespace ProSkills.Controllers
             // Send Combobox Data to View
             List<Category> categoryData = _categoryRepository.GetAll().ToList();
             List<SelectListItem> categoryNames = categoryData
-                .Select(c => new SelectListItem { Text = c.Name, Value = c.Id.ToString() })
+                .Select(c => new SelectListItem { Text = c.Name, Value = c.Name })
                 .ToList();
 
             // Send Data To View
             ViewBag.CategoryNames = categoryNames;
             ViewBag.InstructorID = instructorId;                             // Send_Instructor ID
             return View("New");
+
+        }
+
+
+        public IActionResult SaveNew(Course CourseFromReq,int instructorId)  // Get_InstructorID from Hidden
+        {
+
+
+                
+
+            string redeemCodeFromReq = CourseFromReq.RedeemCode;
+            var RedeemCode = _redeemCodeRepository.GetByName(redeemCodeFromReq);
+            if (RedeemCode == null) 
+            {
+                //out message the code is expird 
+                // return view
+                return View("New");
+            }
+            else if (RedeemCode.isAvalible ==false)
+            {
+                // Ur Code is Expired
+                // return view
+                return View("New");
+            }
+
+            var Package = _packageRepository.GetByName(RedeemCode.PackageName);
+            var Category = _categoryRepository.GetByName(CourseFromReq.Name);
+
+            CourseFromReq.NumberOfAssessment = Package.NumberOfAssesments;
+            CourseFromReq.NumberOfLessons = Package.NumberOfLessons;
+            CourseFromReq.NumberOfStudents = Package.NumberOfTrainees;
+            CourseFromReq.Hours = Package.Hours;
+            CourseFromReq.TotalFilesSize = Package.TotlaFileSize;
+            CourseFromReq.CourseImagePath = Category.Image;
+            CourseFromReq.CreatedAt = "Created At" + DateTime.Now;
+            CourseFromReq.instructorId = 1;
+            RedeemCode.isAvalible = false;
+            _courseRepository.Insert(CourseFromReq);
+            _courseRepository.Save();
+
+            return RedirectToAction("Index", "Package");
+      
 
         }
     }
