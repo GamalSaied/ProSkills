@@ -1,6 +1,8 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using NuGet.Protocol.Core.Types;
+using ProSkills.Controllers;
 using ProSkills.Interfaces;
 using ProSkills.Models;
 using ProSkills.Models.AdminPanel.InstructorManger;
@@ -17,6 +19,8 @@ namespace ProSkills
 
             builder.Services.AddControllersWithViews();
 
+
+
             builder.Services.AddIdentity<ApplicationUser, IdentityRole>(
        options =>
        {
@@ -25,7 +29,9 @@ namespace ProSkills
            options.Password.RequireDigit = false;
            options.Password.RequireUppercase = false;
 
-       }).AddEntityFrameworkStores<ITIContext>();
+       }).AddEntityFrameworkStores<ITIContext>().AddDefaultTokenProviders();
+
+
             //to change the session time
             builder.Services.AddSession(
                 Options =>
@@ -35,11 +41,25 @@ namespace ProSkills
 
                 ); //add settings  we should put it before builder
 
-            //inject dbcontext options //nject iticontext
+         
+
+
             builder.Services.AddDbContext<ITIContext>(
                 Options => Options.UseSqlServer(builder.Configuration.GetConnectionString("cs")));
 
 
+            //where users are redirected when they are not authenticated. In this case, if an unauthenticated user tries to
+            //access a protected resource, they will be redirected to the "Account/login" page.
+            //redirected when they do not have permission to access a resource (authorization failure) => "Home/Error".
+            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(Options =>
+            {
+                Options.LoginPath = "Account/login";
+                Options.AccessDeniedPath = "Home/Error";
+            });
+
+
+
+            //inject dbcontext options //nject iticontext
             //register 
             builder.Services.AddScoped<IRepository<instructor>, InstructorRepository>();
             builder.Services.AddScoped<IRepository<Category>, CategoryRepository>();
@@ -70,7 +90,7 @@ namespace ProSkills
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Home}/{action=Index}");
 
             app.Run();
         }

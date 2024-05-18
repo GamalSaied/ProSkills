@@ -28,6 +28,8 @@ namespace ProSkills.ViewModels
 
         //public List<SelectListItem> Countries { get; set; }
 
+        [Required(ErrorMessage = "Email is required")]
+        [EmailAddress(ErrorMessage = "Invalid Email ")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
