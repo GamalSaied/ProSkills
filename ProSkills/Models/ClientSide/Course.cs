@@ -28,6 +28,9 @@ namespace ProSkills.Models.ClientSide
         [ForeignKey("instructor")]
         public int instructorId { get; set; }
         public instructor? Instructor { get; set; }
+
+        public List<Steps> steps  { get; set; }
+        public List<CourseTrainee>? Trainees {  get; set; } 
         #endregion
 
     }

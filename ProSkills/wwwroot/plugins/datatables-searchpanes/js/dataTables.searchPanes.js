@@ -52,7 +52,7 @@
                 forceViewTotal: false,
                 index: idx,
                 indexes: [],
-                lastCascade: false,
+                lastNoAction: false,
                 lastSelect: false,
                 listSet: false,
                 name: undefined,
@@ -413,7 +413,7 @@
          *
          * @param val the boolean value that the cascadeRegen property is to be set to
          */
-        SearchPane.prototype.setCascadeRegen = function (val) {
+        SearchPane.prototype.setNoActionRegen = function (val) {
             this.s.cascadeRegen = val;
         };
         /**
@@ -1547,7 +1547,7 @@
                 this.s.dtPane !== undefined &&
                 (!this.s.filteringActive || this.c.cascadePanes || draw === true) &&
                 (this.c.cascadePanes !== true || this.s.selectPresent !== true) &&
-                (!this.s.lastSelect || !this.s.lastCascade)) {
+                (!this.s.lastSelect || !this.s.lastNoAction)) {
                 var colOpts = this.s.colOpts;
                 var selected = this.s.dtPane.rows({ selected: true }).data().toArray();
                 var rowData = this.s.rowData;
@@ -2268,7 +2268,7 @@
             // and clear all of the previous selections in the pane
             for (var _i = 0, _a = this.s.panes; _i < _a.length; _i++) {
                 var pane = _a[_i];
-                pane.setCascadeRegen(true);
+                pane.setNoActionRegen(true);
                 pane.setClear(true);
                 // If this is the same as the pane with the only selection then pass it as a parameter into clearPane
                 if (pane.s.dtPane !== undefined && pane.s.index === solePane || pane.s.dtPane !== undefined) {
@@ -2293,13 +2293,13 @@
                 pane.updatePane(true);
             }
             // Remake Selections
-            this._makeCascadeSelections(newSelectionList);
+            this._makeNoActionSelections(newSelectionList);
             // Set the selection list property to be the list without the selections from the deselect pane
             this.s.selectionList = newSelectionList;
             // The regeneration of selections is over so set it back to false
             for (var _f = 0, _g = this.s.panes; _f < _g.length; _f++) {
                 var pane = _g[_f];
-                pane.setCascadeRegen(false);
+                pane.setNoActionRegen(false);
             }
             this.regenerating = false;
             // ViewTotal has already been forced at this point so can cancel that for future
@@ -2383,7 +2383,7 @@
          *
          * @param newSelectionList the list of selections to be made, in the order they were originally selected
          */
-        SearchPanes.prototype._makeCascadeSelections = function (newSelectionList) {
+        SearchPanes.prototype._makeNoActionSelections = function (newSelectionList) {
             // make selections in the order they were made previously,
             // excluding those from the pane where a deselect was made
             for (var i = 0; i < newSelectionList.length; i++) {
@@ -2393,7 +2393,7 @@
                         // the panes are only ignored if it
                         // is the last selection and the pane for that selection
                         if (i === newSelectionList.length - 1) {
-                            pane.s.lastCascade = true;
+                            pane.s.lastNoAction = true;
                         }
                         // if there are any selections currently in the pane then
                         // deselect them as we are about to make our new selections
@@ -2425,7 +2425,7 @@
                         pane.s.scrollTop = $$1(pane.s.dtPane.table().node()).parent()[0].scrollTop;
                         pane.s.dtPane.draw();
                         pane.s.dtPane.table().node().parentNode.scrollTop = pane.s.scrollTop;
-                        pane.s.lastCascade = false;
+                        pane.s.lastNoAction = false;
                     }
                 };
                 // As the selections may have been made across the panes
