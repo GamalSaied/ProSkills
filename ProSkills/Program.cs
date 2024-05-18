@@ -29,7 +29,9 @@ namespace ProSkills
            options.Password.RequireDigit = false;
            options.Password.RequireUppercase = false;
 
-       }).AddEntityFrameworkStores<ITIContext>();
+       }).AddEntityFrameworkStores<ITIContext>().AddDefaultTokenProviders();
+
+
             //to change the session time
             builder.Services.AddSession(
                 Options =>
@@ -88,7 +90,7 @@ namespace ProSkills
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Home}/{action=Index}");
 
             app.Run();
         }
