@@ -18,10 +18,7 @@ namespace ProSkills.Controllers
             userManager = UserManager;
             signInManager = SignInManager;
         }
-        public IActionResult Index()
-        {
-            return View();
-        }
+
 
 
         [HttpGet]
@@ -29,10 +26,11 @@ namespace ProSkills.Controllers
         {
             return View("Register");
         }
+
         [HttpPost]
         public async Task<IActionResult> Register(RegisterUserViewModel userfromrequest)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid)   //server side validation
             {
                 ApplicationUser user = new ApplicationUser();
                 user.UserName = userfromrequest.UserName;
@@ -53,9 +51,9 @@ namespace ProSkills.Controllers
                     return RedirectToAction("Login", "Account");
                 }
                 //fail to save db
-                foreach (var item in Result.Errors)
+                foreach (var error in Result.Errors)
                 {
-                    ModelState.AddModelError("", item.Description);
+                    ModelState.AddModelError("", error.Description);
                 }
 
             }
