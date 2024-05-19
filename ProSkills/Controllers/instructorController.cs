@@ -2,28 +2,25 @@
 using Microsoft.EntityFrameworkCore;
 using ProSkills.Interfaces;
 using ProSkills.Models.AdminPanel.InstructorManger;
-
 using ProSkills.Repository;
+namespace ProSkills.Controllers;
 
-namespace ProSkills.Controllers
+public class InstructorController : Controller
 {
-    public class InstructorController : Controller
+
+    private IRepository<instructor> _instructorRepository;
+
+    public InstructorController(IRepository<instructor> InstructorRepository)
     {
+        _instructorRepository = InstructorRepository;
+    }
 
-        private IRepository<instructor> _instructorRepository;
+    public IActionResult index()
+    {
+        List<instructor> instructors = _instructorRepository.GetAll();
 
-        public InstructorController(IRepository<instructor> InstructorRepository)
-        {
-            _instructorRepository = InstructorRepository;
-        }
+        //return View("Showall", instractorList); //View Index ,Model List<Department>
+        return View("index", instructors);
 
-        public IActionResult index()
-        {
-            List<instructor> instructors = _instructorRepository.GetAll();
-
-            //return View("Showall", instractorList); //View Index ,Model List<Department>
-            return View("index", instructors);
-
-        }
     }
 }

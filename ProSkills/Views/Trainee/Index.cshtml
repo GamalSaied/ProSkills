@@ -1,44 +1,64 @@
-﻿@* @model ProSkills.Models.ClientSide.Trainee
+﻿@model List<ProSkills.Models.ClientSide.Trainee>
 
 @{
-    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h1>Index</h1>
-
-<h4>Trainee</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Index">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Id" class="control-label"></label>
-                <input asp-for="Id" class="form-control" />
-                <span asp-validation-for="Id" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CourseId" class="control-label"></label>
-                <input asp-for="CourseId" class="form-control" />
-                <span asp-validation-for="CourseId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+<div class="card-body">
+    <div>
+        <a href="/Trainee/AddNew" class="btn btn-info btn-block btn-flat" style="margin-bottom:10px;">New</a>
     </div>
+
+
+    <table id="example1" class="table table-bordered table-striped">
+        <!-- Columns Head -->
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Password</th>
+                <th scope="col">CreatedAt</th>
+                <th scope="col">Courses</th>
+                <th scope="col">Profile</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                var counter = 1;
+            }
+            @foreach (var item in Model)
+            {
+                @if (item != null)
+                {
+                    @if (item.IsDeleted == false)
+                    {
+
+
+                        <tr>
+                            <th scope="row">@counter</th>
+                            <td>@item.Id</td>
+                            <td>@item.Name</td>
+                            <td>@item.Email</td>
+                            <td>@item.Password</td>
+                            <td>@item.CreatedAt</td>
+                            <td><a href="/Course/index?ID=@item.Id">Courses</a></td>
+                            <td><a href="/Trainee/GetByID?ID=@item.Id">Profile</a></td>
+                            <td><a style="padding-bottom:10px" href="/Trainee/Edit?ID=@item.Id" class="btn btn-block bg-gradient-secondary btn-xs">Edit</a></td>
+                            <td><a href="/Trainee/SoftDelete?ID=@item.Id" class="btn btn-block bg-gradient-danger btn-xs" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
+                        </tr>
+                        counter++;
+
+                    }
+                }
+            }
+        </tbody>
+    </table>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
- *@
+
+

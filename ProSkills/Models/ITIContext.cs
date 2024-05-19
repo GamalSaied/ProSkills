@@ -12,6 +12,8 @@ namespace ProSkills.Models
         // 1- Create Database Tables 
         // ====> DbSet<Class> TableName   
         public DbSet<instructor> instructor { get; set; }
+        public DbSet<Trainee> Trainee { get; set; }
+
         public DbSet<Course> Course { get; set; }
         public DbSet<Category> Category{ get; set; }
         public DbSet<Package> Package { get; set; }
@@ -32,6 +34,42 @@ namespace ProSkills.Models
         // using onModelCreating like intalize DB
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
+
+            // Add Trainee
+            modelBuilder.Entity<Trainee>().HasData(
+                    new Trainee { Id = 1, Name = "Trainee 1", Email = "Trainee1@example.com", Password = "password1", Bio = "Bio for Trainee 1", CreatedAt = DateTime.Now.ToString(), IsDeleted = false },
+                    new Trainee { Id = 2, Name = "Trainee 2", Email = "Trainee2@example.com", Password = "password2", Bio = "Bio for Trainee 2", CreatedAt = DateTime.Now.ToString(), IsDeleted = false },
+                    new Trainee { Id = 3, Name = "Trainee 3", Email = "Trainee3@example.com", Password = "password3", Bio = "Bio for Trainee 3", CreatedAt = DateTime.Now.ToString(), IsDeleted = false },
+                    new Trainee { Id = 4, Name = "Trainee 4", Email = "Trainee4@example.com", Password = "password4", Bio = "Bio for Trainee 4", CreatedAt = DateTime.Now.ToString(), IsDeleted = false },
+                    new Trainee { Id = 5, Name = "Trainee 5", Email = "Trainee5@example.com", Password = "password5", Bio = "Bio for Trainee 5", CreatedAt = DateTime.Now.ToString(), IsDeleted = false },
+                    new Trainee { Id = 6, Name = "Trainee 6", Email = "Trainee6@example.com", Password = "password6", Bio = "Bio for Trainee 6", CreatedAt = DateTime.Now.ToString(), IsDeleted = false },
+                    new Trainee { Id = 7, Name = "Trainee 7", Email = "Trainee7@example.com", Password = "password7", Bio = "Bio for Trainee 7", CreatedAt = DateTime.Now.ToString(), IsDeleted = false },
+                    new Trainee { Id = 8, Name = "Trainee 8", Email = "Trainee8@example.com", Password = "password8", Bio = "Bio for Trainee 8", CreatedAt = DateTime.Now.ToString(), IsDeleted = false },
+                    new Trainee { Id = 9, Name = "Trainee 9", Email = "Trainee9@example.com", Password = "password9", Bio = "Bio for Trainee 9", CreatedAt = DateTime.Now.ToString(), IsDeleted = false },
+                    new Trainee { Id = 10, Name = "Trainee 10", Email = "Trainee10@example.com", Password = "password10", Bio = "Bio for Trainee 10", CreatedAt = DateTime.Now.ToString(), IsDeleted = false },
+                    new Trainee { Id = 11, Name = "Trainee 11", Email = "Trainee11@example.com", Password = "password11", Bio = "Bio for Trainee 11", CreatedAt = DateTime.Now.ToString(), IsDeleted = false },
+                    new Trainee { Id = 12, Name = "Trainee 12", Email = "Trainee12@example.com", Password = "password12", Bio = "Bio for Trainee 12", CreatedAt = DateTime.Now.ToString(), IsDeleted = false },
+                    new Trainee { Id = 13, Name = "Trainee 13", Email = "Trainee13@example.com", Password = "password13", Bio = "Bio for Trainee 13", CreatedAt = DateTime.Now.ToString(), IsDeleted = false },
+                    new Trainee { Id = 14, Name = "Trainee 14", Email = "Trainee14@example.com", Password = "password14", Bio = "Bio for Trainee 14", CreatedAt = DateTime.Now.ToString(), IsDeleted = false },
+                    new Trainee { Id = 15, Name = "Trainee 15", Email = "Trainee15@example.com", Password = "password15", Bio = "Bio for Trainee 15", CreatedAt = DateTime.Now.ToString(), IsDeleted = false },
+                    new Trainee { Id = 16, Name = "Trainee 16", Email = "Trainee16@example.com", Password = "password16", Bio = "Bio for Trainee 16", CreatedAt = DateTime.Now.ToString(), IsDeleted = false },
+                    new Trainee { Id = 17, Name = "Trainee 17", Email = "Trainee17@example.com", Password = "password17", Bio = "Bio for Trainee 17", CreatedAt = DateTime.Now.ToString(), IsDeleted = false },
+                    new Trainee { Id = 18, Name = "Trainee 18", Email = "Trainee18@example.com", Password = "password18", Bio = "Bio for Trainee 18", CreatedAt = DateTime.Now.ToString(), IsDeleted = false },
+                    new Trainee { Id = 19, Name = "Trainee 19", Email = "Trainee19@example.com", Password = "password19", Bio = "Bio for Trainee 19", CreatedAt = DateTime.Now.ToString(), IsDeleted = false },
+                    new Trainee { Id = 20, Name = "Trainee 20", Email = "Trainee20@example.com", Password = "password20", Bio = "Bio for Trainee 20", CreatedAt = DateTime.Now.ToString(), IsDeleted = false },
+                    new Trainee { Id = 21, Name = "Trainee 21", Email = "Trainee21@example.com", Password = "password21", Bio = "Bio for Trainee 21", CreatedAt = DateTime.Now.ToString(), IsDeleted = false },
+                    new Trainee { Id = 22, Name = "Trainee 22", Email = "Trainee22@example.com", Password = "password22", Bio = "Bio for Trainee 22", CreatedAt = DateTime.Now.ToString(), IsDeleted = false },
+                    new Trainee { Id = 23, Name = "Trainee 23", Email = "Trainee23@example.com", Password = "password23", Bio = "Bio for Trainee 23", CreatedAt = DateTime.Now.ToString(), IsDeleted = false },
+                    new Trainee { Id = 24, Name = "Trainee 24", Email = "Trainee24@example.com", Password = "password24", Bio = "Bio for Trainee 24", CreatedAt = DateTime.Now.ToString(), IsDeleted = false },
+                    new Trainee { Id = 25, Name = "Trainee 25", Email = "Trainee25@example.com", Password = "password25", Bio = "Bio for Trainee 25", CreatedAt = DateTime.Now.ToString(), IsDeleted = false },
+                    new Trainee { Id = 26, Name = "Trainee 26", Email = "Trainee26@example.com", Password = "password26", Bio = "Bio for Trainee 26", CreatedAt = DateTime.Now.ToString(), IsDeleted = false },
+                    new Trainee { Id = 27, Name = "Trainee 27", Email = "Trainee27@example.com", Password = "password27", Bio = "Bio for Trainee 27", CreatedAt = DateTime.Now.ToString(), IsDeleted = false },
+                    new Trainee { Id = 28, Name = "Trainee 28", Email = "Trainee28@example.com", Password = "password28", Bio = "Bio for Trainee 28", CreatedAt = DateTime.Now.ToString(), IsDeleted = false },
+                    new Trainee { Id = 29, Name = "Trainee 29", Email = "Trainee29@example.com", Password = "password29", Bio = "Bio for Trainee 29", CreatedAt = DateTime.Now.ToString(), IsDeleted = false },
+                    new Trainee { Id = 30, Name = "Trainee 30", Email = "Trainee30@example.com", Password = "password30", Bio = "Bio for Trainee 30", CreatedAt = DateTime.Now.ToString(), IsDeleted = false }
+                );
+
 
             // Add Instructor
             modelBuilder.Entity<instructor>().HasData(
