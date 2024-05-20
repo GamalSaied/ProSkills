@@ -53,8 +53,9 @@ namespace ProSkills
             //redirected when they do not have permission to access a resource (authorization failure) => "Home/Error".
             builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(Options =>
             {
-                Options.LoginPath = "Account/login";
-                Options.AccessDeniedPath = "Home/Error";
+                Options.LoginPath = "/Account/Login";
+                Options.LogoutPath = "/Account/logout";
+                Options.AccessDeniedPath = "/Home/Error";
             });
 
 
@@ -82,10 +83,16 @@ namespace ProSkills
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-            app.UseStaticFiles();
+            
             app.UseSession();
+           
+
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
+
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllerRoute(

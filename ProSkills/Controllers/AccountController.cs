@@ -1,4 +1,7 @@
 ﻿using System.Drawing;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using ProSkills.ViewModels;
@@ -75,6 +78,30 @@ namespace ProSkills.Controllers
 
             return View("Login");
         }
+        //[HttpPost]
+        //public async Task<IActionResult> Login(LoginUserViewModel userfromReq)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        ApplicationUser userfromdatabase = await userManager.FindByNameAsync(userfromReq.UsreName);
+        //        if (userfromdatabase != null)
+        //        {
+        //            bool found = await userManager.CheckPasswordAsync(userfromdatabase, userfromReq.Password);
+        //            if (found == true)
+        //            {
+        //                //create cookie
+        //                await signInManager.SignInAsync(userfromdatabase, userfromReq.RememberMe);
+        //                return RedirectToAction("Index", "Home");
+        //            }
+
+        //        }
+        //        ModelState.AddModelError("", "invalid User");
+        //    }
+        //    return View("Login");
+        //}
+
+
+
         [HttpPost]
         public async Task<IActionResult> Login(LoginUserViewModel userfromReq)
         {
@@ -86,17 +113,25 @@ namespace ProSkills.Controllers
                     bool found = await userManager.CheckPasswordAsync(userfromdatabase, userfromReq.Password);
                     if (found == true)
                     {
-                        //create cookie
-                        await signInManager.SignInAsync(userfromdatabase, userfromReq.RememberMe);
+                        // Add claims for user ID and username
+                        var claims = new List<Claim>
+                        {
+                            new Claim(ClaimTypes.NameIdentifier, userfromdatabase.Id),
+                            new Claim(ClaimTypes.Name, userfromdatabase.UserName)
+                        };
+
+                        var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+
+                        // Sign in with the claims
+                        await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity), new AuthenticationProperties { IsPersistent = userfromReq.RememberMe });
+
                         return RedirectToAction("Index", "Home");
                     }
-
                 }
-                ModelState.AddModelError("", "invalid User");
+                ModelState.AddModelError("", "Invalid User");
             }
             return View("Login");
         }
-
         #endregion
 
 
@@ -131,6 +166,7 @@ namespace ProSkills.Controllers
                 {
                     var token = userManager.GeneratePasswordResetTokenAsync(user); //token valid for this user only one time
                     var passwordresetLink = Url.Action("ResetPassword", "Account", new{Email=user.Email,token=token});
+
                     var email = new Email()
                     {
                         subject = "Reset password",
