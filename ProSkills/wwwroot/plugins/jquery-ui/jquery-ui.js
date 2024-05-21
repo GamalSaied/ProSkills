@@ -4506,7 +4506,7 @@ var widgetsAccordion = $.widget( "ui.accordion", {
 		this.element.attr( "aria-disabled", value );
 
 		// Support: IE8 Only
-		// #5332 / #6059 - opacity doesn't cascade to positioned elements in IE
+		// #5332 / #6059 - opacity doesn't NoAction to positioned elements in IE
 		// so we need to add the disabled class to the headers and panels
 		this._toggleClass( null, "ui-state-disabled", !!value );
 		this._toggleClass( this.headers.add( this.headers.next() ), null, "ui-state-disabled",
