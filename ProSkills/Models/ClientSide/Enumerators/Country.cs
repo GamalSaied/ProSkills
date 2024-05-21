@@ -47,7 +47,7 @@
         
         CostaRica,
         CôtedIvoire,
-Croatia,
+        Croatia,
         Cuba,
         Curaçao,
         Cyprus,
