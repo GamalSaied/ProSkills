@@ -83,13 +83,13 @@ namespace ProSkills.Controllers
             CourseFromReq.Hours = Package.Hours;
             CourseFromReq.TotalFilesSize = Package.TotlaFileSize;
             CourseFromReq.CourseImagePath = Category.Image;
-            CourseFromReq.CreatedAt = "Created At" + DateTime.Now;
-            CourseFromReq.instructorId = 1;
+            CourseFromReq.CreatedAt = "Created At " + DateTime.Now;
+            CourseFromReq.instructorId = (int)instructorId;
             RedeemCode.isAvalible = false;
             _courseRepository.Insert(CourseFromReq);
             _courseRepository.Save();
 
-            return RedirectToAction("Index", "Package");
+            return RedirectToAction("Index", "Course");
       
 
         }
