@@ -140,7 +140,7 @@ namespace ProSkills.Controllers
 
         //logout
         //destroy the cookie
-        [HttpPost]
+        //[HttpPost]
         //[ValidateAntiForgeryToken]
         public async Task<IActionResult> logout()
         {
