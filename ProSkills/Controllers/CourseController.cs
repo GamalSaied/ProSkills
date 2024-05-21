@@ -47,6 +47,11 @@ namespace ProSkills.Controllers
             return View(trainees);
         }
 
+        public IActionResult Index1()
+        {
+            var courses = _courseRepository.GetAll();
+            return View(courses);
+        }
 
         //Filter By Instractor id
         public IActionResult Index(int id)

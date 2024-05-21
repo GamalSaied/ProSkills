@@ -19,6 +19,7 @@ namespace ProSkills.Repository
         public List<Course> GetAll()
         {
             var courses = context.Course
+                                 .Include(c => c.Instructor)
                                  .Include(c => c.Trainees)
                                  .ThenInclude(ct => ct.Trainee)
                                  .ToList();
@@ -34,6 +35,7 @@ namespace ProSkills.Repository
         public Course GetById(int id)
         {
             var course = context.Course
+                                .Include(c => c.Instructor)
                                 .Include(c => c.Trainees)
                                 .ThenInclude(ct => ct.Trainee)
                                 .FirstOrDefault(d => d.Id == id);
@@ -48,7 +50,7 @@ namespace ProSkills.Repository
 
         public Course GetByName(string name)
         {
-            var course = context.Course
+            var course = context.Course.Include(c => c.Instructor)
                                 .Include(c => c.Trainees)
                                 .ThenInclude(ct => ct.Trainee)
                                 .FirstOrDefault(d => d.Name == name);
@@ -63,7 +65,7 @@ namespace ProSkills.Repository
         // Checks if a Data with the given name exists
         public Course CheckName(string name)
         {
-            var course = context.Course
+            var course = context.Course.Include(c => c.Instructor)
                                 .Include(c => c.Trainees)
                                 .ThenInclude(ct => ct.Trainee)
                                 .FirstOrDefault(e => e.Name.ToLower() == name.ToLower());
