@@ -19,7 +19,7 @@ namespace ProSkills.ViewModels
         
 
         [DataType(DataType.PhoneNumber)]
-        public int Phone { get; set; }
+        public string Phone { get; set; }
 
   
         [Required(ErrorMessage = "Please select a country")]
