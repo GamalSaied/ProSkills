@@ -141,7 +141,7 @@ namespace ProSkills.Controllers
         //logout
         //destroy the cookie
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public async Task<IActionResult> logout()
         {
             // Using SignInManager
