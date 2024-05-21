@@ -40,7 +40,7 @@
             }
             this.customPaneSettings = panes;
             this.s = {
-                cascadeRegen: false,
+                NoActionRegen: false,
                 clearing: false,
                 colOpts: [],
                 deselect: false,
@@ -408,16 +408,16 @@
             this.adjustTopRow();
         };
         /**
-         * Sets the cascadeRegen property of the pane. Accessible from above because as SearchPanes.ts
+         * Sets the NoActionRegen property of the pane. Accessible from above because as SearchPanes.ts
          * deals with the rebuilds.
          *
-         * @param val the boolean value that the cascadeRegen property is to be set to
+         * @param val the boolean value that the NoActionRegen property is to be set to
          */
         SearchPane.prototype.setNoActionRegen = function (val) {
-            this.s.cascadeRegen = val;
+            this.s.NoActionRegen = val;
         };
         /**
-         * This function allows the clearing property to be assigned. This is used when implementing cascadePane.
+         * This function allows the clearing property to be assigned. This is used when implementing NoActionPane.
          * In setting this to true for the clearing of the panes selection on the deselects it forces the pane to
          * repopulate from the entire dataset not just the displayed values.
          *
@@ -460,7 +460,7 @@
             this.selections = selectedRows;
             this._searchExtras();
             // If either of the options that effect how the panes are displayed are selected then update the Panes
-            if (this.c.cascadePanes || this.c.viewTotal) {
+            if (this.c.NoActionPanes || this.c.viewTotal) {
                 this.updatePane();
             }
         };
@@ -829,7 +829,7 @@
                                 sort: dataPoint.label,
                                 type: dataPoint.label
                             });
-                            this.s.rowData.bins[dataPoint.value] = this.c.viewTotal || this.c.cascadePanes ?
+                            this.s.rowData.bins[dataPoint.value] = this.c.viewTotal || this.c.NoActionPanes ?
                                 dataPoint.count :
                                 dataPoint.total;
                             this.s.rowData.binsTotal[dataPoint.value] = dataPoint.total;
@@ -1018,9 +1018,9 @@
                         }
                     }
                     if (this.s.dt.page.info().serverSide &&
-                        (!this.c.cascadePanes ||
-                            this.c.cascadePanes && rowData.bins[rowData.arrayFilter[i].filter] !== 0 ||
-                            this.c.cascadePanes && init !== null ||
+                        (!this.c.NoActionPanes ||
+                            this.c.NoActionPanes && rowData.bins[rowData.arrayFilter[i].filter] !== 0 ||
+                            this.c.NoActionPanes && init !== null ||
                             selected)) {
                         var row = this.addRow(rowData.arrayFilter[i].display, rowData.arrayFilter[i].filter, init ?
                             rowData.binsTotal[rowData.arrayFilter[i].filter] :
@@ -1038,7 +1038,7 @@
                     }
                     else if (!this.s.dt.page.info().serverSide &&
                         rowData.arrayFilter[i] &&
-                        (rowData.bins[rowData.arrayFilter[i].filter] !== undefined || !this.c.cascadePanes)) {
+                        (rowData.bins[rowData.arrayFilter[i].filter] !== undefined || !this.c.NoActionPanes)) {
                         this.addRow(rowData.arrayFilter[i].display, rowData.arrayFilter[i].filter, rowData.bins[rowData.arrayFilter[i].filter], rowData.binsTotal[rowData.arrayFilter[i].filter], rowData.arrayFilter[i].sort, rowData.arrayFilter[i].type);
                     }
                     else if (!this.s.dt.page.info().serverSide) {
@@ -1100,7 +1100,7 @@
                 loadedFilter.searchPanes.panes &&
                 (dataIn === null ||
                     dataIn.draw === 1)) {
-                if (!this.c.cascadePanes) {
+                if (!this.c.NoActionPanes) {
                     this._reloadSelect(loadedFilter);
                 }
                 for (var _j = 0, _k = loadedFilter.searchPanes.panes; _j < _k.length; _j++) {
@@ -1273,8 +1273,8 @@
                         comparisonObj.filter.push(comp.filter);
                     }
                 }
-                // If cascadePanes is not active or if it is and the comparisonObj should be shown then add it to the pane
-                if (!this.c.cascadePanes || this.c.cascadePanes && comparisonObj.shown !== 0) {
+                // If NoActionPanes is not active or if it is and the comparisonObj should be shown then add it to the pane
+                if (!this.c.NoActionPanes || this.c.NoActionPanes && comparisonObj.shown !== 0) {
                     rows.push(this.addRow(comparisonObj.display, comparisonObj.filter, comparisonObj.shown, comparisonObj.total, comparisonObj.sort, comparisonObj.type, comparisonObj.className));
                 }
             }
@@ -1328,11 +1328,11 @@
             this.s.rowData.arrayFilter = [];
             this.s.rowData.bins = {};
             var settings = this.s.dt.settings()[0];
-            // If cascadePanes or viewTotal are active it is necessary to get the data which is currently
+            // If NoActionPanes or viewTotal are active it is necessary to get the data which is currently
             // being displayed for their functionality.
             // Also make sure that this was not the last pane to have a selection made
             if (!this.s.dt.page.info().serverSide) {
-                var indexArray = (this.c.cascadePanes || this.c.viewTotal) && (!this.s.clearing && !last) ?
+                var indexArray = (this.c.NoActionPanes || this.c.viewTotal) && (!this.s.clearing && !last) ?
                     table.rows({ search: 'applied' }).indexes() :
                     table.rows().indexes();
                 for (var _i = 0, _a = indexArray.toArray(); _i < _a.length; _i++) {
@@ -1545,8 +1545,8 @@
             // update all of the panes except for the one causing the change
             if (!this.s.dt.page.info().serverSide &&
                 this.s.dtPane !== undefined &&
-                (!this.s.filteringActive || this.c.cascadePanes || draw === true) &&
-                (this.c.cascadePanes !== true || this.s.selectPresent !== true) &&
+                (!this.s.filteringActive || this.c.NoActionPanes || draw === true) &&
+                (this.c.NoActionPanes !== true || this.s.selectPresent !== true) &&
                 (!this.s.lastSelect || !this.s.lastNoAction)) {
                 var colOpts = this.s.colOpts;
                 var selected = this.s.dtPane.rows({ selected: true }).data().toArray();
@@ -1559,16 +1559,16 @@
                     if (rowData.arrayFilter.length === 0) {
                         this._populatePane(!this.s.filteringActive);
                     }
-                    // If cascadePanes is active and the table has returned to its default state then
+                    // If NoActionPanes is active and the table has returned to its default state then
                     // there is a need to update certain parts ofthe rowData.
-                    else if (this.c.cascadePanes &&
+                    else if (this.c.NoActionPanes &&
                         this.s.dt.rows().data().toArray().length ===
                             this.s.dt.rows({ search: 'applied' }).data().toArray().length) {
                         rowData.arrayFilter = rowData.arrayOriginal;
                         rowData.bins = rowData.binsOriginal;
                     }
-                    // Otherwise if viewTotal or cascadePanes is active then the data from the table must be read.
-                    else if (this.c.viewTotal || this.c.cascadePanes) {
+                    // Otherwise if viewTotal or NoActionPanes is active then the data from the table must be read.
+                    else if (this.c.viewTotal || this.c.NoActionPanes) {
                         this._populatePane(!this.s.filteringActive);
                     }
                     // If the viewTotal option is selected then find the totals for the table
@@ -1578,18 +1578,18 @@
                     else {
                         rowData.binsTotal = rowData.bins;
                     }
-                    if (this.c.viewTotal && !this.c.cascadePanes) {
+                    if (this.c.viewTotal && !this.c.NoActionPanes) {
                         rowData.arrayFilter = rowData.arrayTotals;
                     }
                     var _loop_1 = function (dataP) {
-                        // If both view Total and cascadePanes have been selected and the count of the row
+                        // If both view Total and NoActionPanes have been selected and the count of the row
                         // is not 0 then add it to pane
-                        // Do this also if the viewTotal option has been selected and cascadePanes has not
+                        // Do this also if the viewTotal option has been selected and NoActionPanes has not
                         if (dataP &&
                             (rowData.bins[dataP.filter] !== undefined &&
                                 rowData.bins[dataP.filter] !== 0 &&
-                                this_1.c.cascadePanes ||
-                                !this_1.c.cascadePanes ||
+                                this_1.c.NoActionPanes ||
+                                !this_1.c.NoActionPanes ||
                                 this_1.s.clearing)) {
                             var row = this_1.addRow(dataP.display, dataP.filter, !this_1.c.viewTotal ?
                                 rowData.bins[dataP.filter] :
@@ -1688,7 +1688,7 @@
         };
         // Define SearchPanes default options
         SearchPane.defaults = {
-            cascadePanes: false,
+            NoActionPanes: false,
             clear: true,
             collapse: true,
             combiner: 'or',
@@ -1847,7 +1847,7 @@
                 $$1(this).trigger('input');
             });
             var returnArray = [];
-            // Clear the selectionList to prevent cascadePanes from reselecting rows
+            // Clear the selectionList to prevent NoActionPanes from reselecting rows
             this.s.selectionList = [];
             // For every pane, clear the selections in the pane
             for (var _i = 0, _a = this.s.panes; _i < _a.length; _i++) {
@@ -1892,7 +1892,7 @@
                     undefined, null, maintainSelection));
                 this.dom.panes.append(pane.dom.container);
             }
-            if (this.c.cascadePanes || this.c.viewTotal) {
+            if (this.c.NoActionPanes || this.c.viewTotal) {
                 this.redrawPanes(true);
             }
             else {
@@ -1966,7 +1966,7 @@
                             }
                         }
                     }
-                    // If the searchbox is in place and filtering is applied then need to cascade down anyway
+                    // If the searchbox is in place and filtering is applied then need to NoAction down anyway
                     if (selectTotal === 0) {
                         filterPane = null;
                     }
@@ -2044,7 +2044,7 @@
                     // If the length of the selections are different then some of them have been
                     // removed and a deselect has occured
                     if (newSelectionList.length > 0 && (newSelectionList.length < this.s.selectionList.length || rebuild)) {
-                        this._cascadeRegen(newSelectionList, selectTotal);
+                        this._NoActionRegen(newSelectionList, selectTotal);
                         var last = newSelectionList[newSelectionList.length - 1].index;
                         for (var _m = 0, _o = this.s.panes; _m < _o.length; _m++) {
                             var pane = _o[_m];
@@ -2252,11 +2252,11 @@
             return this._attachMessage();
         };
         /**
-         * Prepares the panes for selections to be made when cascade is active and a deselect has occured
+         * Prepares the panes for selections to be made when NoAction is active and a deselect has occured
          *
          * @param newSelectionList the list of selections which are to be made
          */
-        SearchPanes.prototype._cascadeRegen = function (newSelectionList, selectTotal) {
+        SearchPanes.prototype._NoActionRegen = function (newSelectionList, selectTotal) {
             // Set this to true so that the actions taken do not cause this to run until it is finished
             this.regenerating = true;
             // If only one pane has been selected then take note of its index
@@ -2264,7 +2264,7 @@
             if (newSelectionList.length === 1 && selectTotal !== null && selectTotal !== 0) {
                 solePane = newSelectionList[0].index;
             }
-            // Let the pane know that a cascadeRegen is taking place to avoid unexpected behaviour
+            // Let the pane know that a NoActionRegen is taking place to avoid unexpected behaviour
             // and clear all of the previous selections in the pane
             for (var _i = 0, _a = this.s.panes; _i < _a.length; _i++) {
                 var pane = _a[_i];
@@ -2379,7 +2379,7 @@
             }
         };
         /**
-         * Makes all of the selections when cascade is active
+         * Makes all of the selections when NoAction is active
          *
          * @param newSelectionList the list of selections to be made, in the order they were originally selected
          */
@@ -2389,7 +2389,7 @@
             for (var i = 0; i < newSelectionList.length; i++) {
                 var _loop_1 = function (pane) {
                     if (pane.s.index === newSelectionList[i].index && pane.s.dtPane !== undefined) {
-                        // When regenerating the cascade selections we need this flag so that
+                        // When regenerating the NoAction selections we need this flag so that
                         // the panes are only ignored if it
                         // is the last selection and the pane for that selection
                         if (i === newSelectionList.length - 1) {
@@ -2663,7 +2663,7 @@
             this.dom.container.append(this.dom.panes);
             this.dom.panes.empty();
             var loadedFilter = this.s.dt.state.loaded();
-            if (this.c.viewTotal && !this.c.cascadePanes) {
+            if (this.c.viewTotal && !this.c.NoActionPanes) {
                 if (loadedFilter !== null &&
                     loadedFilter !== undefined &&
                     loadedFilter.searchPanes !== undefined &&
@@ -2699,7 +2699,7 @@
                 this.s.dt.draw('page');
             }
             this.s.stateRead = true;
-            if (this.c.viewTotal && !this.c.cascadePanes) {
+            if (this.c.viewTotal && !this.c.NoActionPanes) {
                 for (var _f = 0, _g = this.s.panes; _f < _g.length; _f++) {
                     var pane = _g[_f];
                     pane.updatePane();
@@ -2711,7 +2711,7 @@
                 // Check that the panes are not updating to avoid infinite loops
                 // Also check that this draw is not due to paging
                 if (!_this.s.updating && !_this.s.paging) {
-                    if ((_this.c.cascadePanes || _this.c.viewTotal) && !_this.s.dt.page.info().serverSide) {
+                    if ((_this.c.NoActionPanes || _this.c.viewTotal) && !_this.s.dt.page.info().serverSide) {
                         _this.redrawPanes(_this.c.viewTotal);
                     }
                     else {
@@ -2829,8 +2829,8 @@
                             _this.s.dt.draw();
                         }
                         _this.s.updating = false;
-                        if (_this.c.cascadePanes || _this.c.viewTotal) {
-                            _this.redrawPanes(_this.c.cascadePanes);
+                        if (_this.c.NoActionPanes || _this.c.viewTotal) {
+                            _this.redrawPanes(_this.c.NoActionPanes);
                         }
                         else {
                             _this._updateSelection();
@@ -2872,9 +2872,9 @@
                     pane.s.lastSelect = pane.s.index === last;
                 }
             }
-            // If cascadePanes is active then make the previous selections in the order they were previously
-            if (this.s.selectionList.length > 0 && this.c.cascadePanes) {
-                this._cascadeRegen(this.s.selectionList, this.s.selectionList.length);
+            // If NoActionPanes is active then make the previous selections in the order they were previously
+            if (this.s.selectionList.length > 0 && this.c.NoActionPanes) {
+                this._NoActionRegen(this.s.selectionList, this.s.selectionList.length);
             }
             // Update the title bar to show how many filters have been selected
             this._updateFilterCount();
@@ -2965,7 +2965,7 @@
             }
         };
         /**
-         * Updates the selectionList when cascade is not in place
+         * Updates the selectionList when NoAction is not in place
          */
         SearchPanes.prototype._updateSelection = function () {
             this.s.selectionList = [];
@@ -2997,7 +2997,7 @@
         };
         // Define SearchPanes default options
         SearchPanes.defaults = {
-            cascadePanes: false,
+            NoActionPanes: false,
             clear: true,
             collapse: true,
             columns: [],

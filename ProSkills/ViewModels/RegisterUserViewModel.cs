@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
 using ProSkills.Models.ClientSide.Enumerators;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.Metrics;
 
 namespace ProSkills.ViewModels
 {
@@ -23,7 +24,8 @@ namespace ProSkills.ViewModels
   
         [Required(ErrorMessage = "Please select a country")]
         [Display(Name = "Country")]
-        public string country { get; set; }
+     
+        public Country country { get; set; }
         //public Country SelectedCountry { get; set; }
 
         //public List<SelectListItem> Countries { get; set; }

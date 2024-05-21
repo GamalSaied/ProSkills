@@ -36,9 +36,6 @@ namespace ProSkills.Models
         {
 
 
-
-
-
             // Add Instructor
             modelBuilder.Entity<instructor>().HasData(
                     new instructor { Id = 1, Name = "Instructor 1", Email = "instructor1@example.com", Password = "password1", Bio = "Bio for Instructor 1", CreatedAt = DateTime.Now.ToString(), IsDeleted = false },
@@ -155,7 +152,6 @@ namespace ProSkills.Models
                 });
             }
             modelBuilder.Entity<CourseTrainee>().HasData(courseTraineeData);
-
 
             modelBuilder.Entity<Category>().HasData(new Category { Id = 1, Name = "Revit", CreatedAt = DateTime.Now.ToString(),Image="", IsDeleted = false });
             modelBuilder.Entity<Category>().HasData(new Category { Id = 2, Name = "Sap", CreatedAt = DateTime.Now.ToString(), Image = "", IsDeleted = false });
