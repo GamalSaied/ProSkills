@@ -1,71 +1,41 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using NuGet.Protocol.Core.Types;
 using ProSkills.Interfaces;
 using ProSkills.Models.ClientSide;
+using ProSkills.Repository;
+namespace ProSkills.Controllers;
 
-namespace ProSkills.Controllers
+public class TraineeController : Controller
 {
-    public class TraineeController : Controller
+
+    private readonly IRepository<Trainee> _traineeRepository;
+    private readonly IRepository<Course> _courseRepository;
+    private readonly IRepository<CourseTrainee> _courseTraineeRepository;
+
+    public TraineeController(IRepository<Trainee> traineeRepository, IRepository<Course> courseRepository, IRepository<CourseTrainee> courseTraineeRepository)
     {
-       
-        //ITraineeRepository TraineeRepository;
-        //ICourseRepository CourseRepository;
-        ////Initialization
-        ////inject -- ask
-        ////don't create ask or injection in constructor 
-        //public TraineeController
-        //    (ITraineeRepository _traineeRepository, ICourseRepository _CourseRepository)
-        //{
-        //    TraineeRepository = _traineeRepository;
-        //    CourseRepository = _CourseRepository;
-     
-        //}
-
-
-        ////Trainee/index
-        ////action to return all the trainees
-        //public IActionResult Index()
-        //{
-
-        //    List<Trainee> traineerList = TraineeRepository.Getall();
-        //    //List<Trainee> traineerList = context.Trainee.ToList();
-
-        //    return View("Index", traineerList);
-        //}
-
-     
-        ////action to return a sepecific instructor with id
-        //public IActionResult Details(int id)
-        //{
-        //    Trainee traineeid = TraineeRepository.GetbyId(id);
-        //    //Trainee traineeid = context.Trainee.FirstOrDefault(d => d.Id == id);
-
-        //    return View("Details", traineeid);//view Details ,Model =traineeid
-        //}
-
-        ////press anchor tag
-
-        //[HttpGet]
-        //public IActionResult New()
-        //{
-        //    return View("New");
-        //}
-
-        ////press submit button
-        ////Instructor/SaveNEw?Name=SD&ManagerName=Ahmed
-        ////action saveNew
-        //[HttpPost]//action attribute
-        //public IActionResult SaveNew(Trainee traineereq)
-        //{
-        //    if (traineereq.Name != null)
-        //    {
-        //        TraineeRepository.Insert(traineereq);
-        //        TraineeRepository.Save();
-        //        //context.Add(instructreq);
-        //        //context.SaveChanges();
-        //        return RedirectToAction("Index", "Trainee");
-        //    }
-
-        //    return View("New", traineereq);
-        //}
+        _traineeRepository = traineeRepository;
+        _courseRepository = courseRepository;
+        _courseTraineeRepository = courseTraineeRepository;
     }
+
+    public IActionResult index()
+    {
+        var trainees = _traineeRepository.GetAll();
+        return View("index", trainees);
+    }
+    public IActionResult CoursesForTrainee(int traineeId)
+    {
+        var trainee = _traineeRepository.GetById(traineeId);
+        if (trainee == null)
+        {
+            return NotFound();
+        }
+
+        var courses = trainee.Courses.Select(ct => ct.Course).ToList();
+        ViewBag.TraineeName = trainee.Name;
+        return View(courses);
+    }
+
 }
+

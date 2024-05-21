@@ -1,0 +1,52 @@
+﻿@model List<ProSkills.Models.ClientSide.Course>
+
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    var traineeName = ViewBag.TraineeName;
+}
+
+<div class="card-body">
+    <h2>@traineeName - Courses</h2>
+    <div>
+        <a href="/Course/AddNew" class="btn btn-info btn-block btn-flat" style="margin-bottom:10px;">New</a>
+    </div>
+
+    <table id="example1" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">StartAt</th>
+                <th scope="col">EndAt</th>
+                <th scope="col">Profile</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                var counter = 1;
+            }
+            @foreach (var item in Model)
+            {
+                if (item != null && !item.IsDeleted)
+                {
+                    <tr>
+                        <th scope="row">@counter</th>
+                        <td>@item.Id</td>
+                        <td>@item.Name</td>
+                        <td>@item.Description</td>
+                        <td>@item.StartAt.ToString("yyyy-MM-dd")</td>
+                        <td>@item.EndAt.ToString("yyyy-MM-dd")</td>
+                        <td><a href="/Course/GetByID?ID=@item.Id">Profile</a></td>
+                        <td><a href="/Course/Edit?ID=@item.Id" class="btn btn-block bg-gradient-secondary btn-xs">Edit</a></td>
+                        <td><a href="/Course/SoftDelete?ID=@item.Id" class="btn btn-block bg-gradient-danger btn-xs" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
+                    </tr>
+                    counter++;
+                }
+            }
+        </tbody>
+    </table>
+</div>

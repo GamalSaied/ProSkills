@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using System.Drawing;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using ProSkills.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using ProSkills.Models;
 using Microsoft.Extensions.Configuration.UserSecrets;
+using ProSkills.Models.AdminPanel.AccountManger;
 
 namespace ProSkills.Controllers
 {
@@ -12,27 +14,24 @@ namespace ProSkills.Controllers
         private readonly UserManager<ApplicationUser> userManager;
         private readonly SignInManager<ApplicationUser> signInManager;
 
-        public AccountController(UserManager<ApplicationUser> UserManager,SignInManager<ApplicationUser> SignInManager)
+        public AccountController(UserManager<ApplicationUser> UserManager, SignInManager<ApplicationUser> SignInManager)
         {
-          
+
             userManager = UserManager;
             signInManager = SignInManager;
         }
-        public IActionResult Index()
-        {
-            return View();
-        }
 
-
+        #region Register
         [HttpGet]
         public IActionResult Register()
         {
             return View("Register");
         }
+
         [HttpPost]
         public async Task<IActionResult> Register(RegisterUserViewModel userfromrequest)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid)   //server side validation
             {
                 ApplicationUser user = new ApplicationUser();
                 user.UserName = userfromrequest.UserName;
@@ -42,7 +41,7 @@ namespace ProSkills.Controllers
                 //user.ConfirmPassword = userfromrequest.ConfirmPassword;
                 user.country = userfromrequest.country;
 
-                IdentityResult Result = await userManager.CreateAsync(user,userfromrequest.Password);
+                IdentityResult Result = await userManager.CreateAsync(user, userfromrequest.Password);
 
                 if (Result.Succeeded == true)
                 {
@@ -53,14 +52,21 @@ namespace ProSkills.Controllers
                     return RedirectToAction("Login", "Account");
                 }
                 //fail to save db
-                foreach (var item in Result.Errors)
+                foreach (var error in Result.Errors)
                 {
-                    ModelState.AddModelError("", item.Description);
+                    ModelState.AddModelError("", error.Description);
                 }
 
             }
-            return View("Register", userfromrequest);   
+            return View("Register", userfromrequest);
         }
+        #endregion
+
+
+
+
+
+        #region Login
 
         //login
         [HttpGet]
@@ -81,7 +87,7 @@ namespace ProSkills.Controllers
                     if (found == true)
                     {
                         //create cookie
-                         await signInManager.SignInAsync(userfromdatabase, userfromReq.RememberMe);
+                        await signInManager.SignInAsync(userfromdatabase, userfromReq.RememberMe);
                         return RedirectToAction("Index", "Home");
                     }
 
@@ -91,27 +97,66 @@ namespace ProSkills.Controllers
             return View("Login");
         }
 
+        #endregion
+
+
+
+        #region logout
 
         //logout
         //destroy the cookie
         public async Task<IActionResult> logout()
         {
-             await signInManager.SignOutAsync();
-             return RedirectToAction("Login");
+            await signInManager.SignOutAsync();
+            return RedirectToAction(nameof(Login));
         }
 
-        public IActionResult login2()
+
+        #endregion
+
+        #region Forget Password
+        [HttpGet]
+        public IActionResult ForgetPassword()
         {
             return View();
         }
 
-        public IActionResult login3 ()
+        [HttpPost]
+        public async Task<IActionResult> SendEmail(ForgetPasswordViewmodel modelformreq)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = await userManager.FindByEmailAsync(modelformreq.Email);
+                if (user is not null)
+                {
+                    var token = userManager.GeneratePasswordResetTokenAsync(user); //token valid for this user only one time
+                    var passwordresetLink = Url.Action("ResetPassword", "Account", new{Email=user.Email,token=token});
+                    var email = new Email()
+                    {
+                        subject = "Reset password",
+                        body = passwordresetLink,
+                        To = user.Email
+
+
+                    };
+                    EmailSettings.Sendemail(email);
+                    RedirectToAction("CheckyourInbox");
+                }
+
+                ModelState.AddModelError("", "Email is not found");
+
+            }
+
+            return View();
+
+          
+        }
+
+        public IActionResult CheckyourInbox()
         {
             return View();
         }
-        public IActionResult register2()
-        {
-            return View();
-        }
+        #endregion
+
     }
 }
