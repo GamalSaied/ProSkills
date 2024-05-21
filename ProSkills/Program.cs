@@ -65,6 +65,8 @@ namespace ProSkills
             builder.Services.AddScoped<IRepository<instructor>, InstructorRepository>();
             builder.Services.AddScoped<IRepository<Category>, CategoryRepository>();
             builder.Services.AddScoped<IRepository<Course>, CourseRepository>();
+            builder.Services.AddScoped<IRepository<Trainee>, TraineeRepository>();
+            builder.Services.AddScoped<IRepository<CourseTrainee>, CourseTraineeRepository>();
 
             builder.Services.AddScoped<IRepository<Package>, PackageRepository>();
             builder.Services.AddScoped<IRepository<RedeemCode>, RedeemCodeRepository>();

@@ -14,9 +14,14 @@ namespace ProSkills.Controllers
         #region Repository 
         private IRepository<Course> _courseRepository;
         private IRepository<instructor> _instructorRepository;
+        private IRepository<Trainee> _traineeRepository;
+
         private IRepository<Category> _categoryRepository;
         private IRepository<RedeemCode> _redeemCodeRepository;
         private IRepository<Package> _packageRepository;
+
+
+
         public CourseController(IRepository<Course> CourseRepository, IRepository<instructor> InstructorRepository, IRepository<Category> CategoryRepository, IRepository<RedeemCode> RedeemCodeRepository, IRepository<Package> PackageRepository)
         {
             _courseRepository = CourseRepository;
@@ -26,15 +31,31 @@ namespace ProSkills.Controllers
             _packageRepository = PackageRepository;
         }
         #endregion
-        
-        //Filter By Instractor id
-        public IActionResult index(int Id)          // Get Instructor Id from quary string 
+
+
+
+        public IActionResult TraineesInCourse(int courseId)
+        {
+            var course = _courseRepository.GetById(courseId);
+            if (course == null)
             {
-                List<Course> Courses = _courseRepository.GetAll();
-                List<Course> instructorCourses = Courses.Where(x => x.instructorId == Id).ToList();
-                ViewBag.InstructorID = Id;          // Send_Instructor ID Again to the View
-                return View("index", instructorCourses);
+                return NotFound();
             }
+
+            var trainees = course.Trainees.Select(ct => ct.Trainee).ToList();
+            ViewBag.CourseName = course.Name;
+            return View(trainees);
+        }
+
+
+        //Filter By Instractor id
+        public IActionResult Index(int id)
+        {
+            var courses = _courseRepository.GetAll();
+            var instructorCourses = courses.Where(x => x.instructorId == id).ToList();
+            ViewBag.InstructorID = id;
+            return View("Index", instructorCourses);
+        }
 
         public IActionResult New(int instructorId)  // Get Instructor ID From Course Page as Hidden
         {
@@ -79,7 +100,7 @@ namespace ProSkills.Controllers
 
             CourseFromReq.NumberOfAssessment = Package.NumberOfAssesments;
             CourseFromReq.NumberOfLessons = Package.NumberOfLessons;
-            CourseFromReq.NumberOfStudents = Package.NumberOfTrainees;
+            CourseFromReq.NumberOfTrainees = Package.NumberOfTrainees;
             CourseFromReq.Hours = Package.Hours;
             CourseFromReq.TotalFilesSize = Package.TotlaFileSize;
             CourseFromReq.CourseImagePath = Category.Image;
