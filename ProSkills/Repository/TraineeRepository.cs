@@ -1,4 +1,5 @@
-﻿using ProSkills.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using ProSkills.Interfaces;
 using ProSkills.Models.ClientSide;
 
 namespace ProSkills.Repository;
@@ -14,20 +15,50 @@ public class TraineeRepository : IRepository<Trainee>
     }
 
     // Retrieves all Data from the database
-    public List<Trainee> GetAll() => context.Trainee.ToList();
-
+    public List<Trainee> GetAll()
+    {
+        return context.Trainee
+                      .Include(t => t.Courses)
+                      .ThenInclude(ct => ct.Course)
+                      .ToList();
+    }
     // Retrieves a Data by its ID
-    public Trainee GetById(int id) => context.Trainee.FirstOrDefault(d => d.Id == id);
+    public Trainee GetById(int id)
+    {
+        var trainees = context.Trainee
+                      .Include(t => t.Courses)
+                      .ThenInclude(ct => ct.Course)
+                      .FirstOrDefault(t => t.Id == id);
 
+        if (trainees == null)
+        {
+            throw new KeyNotFoundException("No trainees found.");
+        }
+        return trainees;
+    }
     // Checks if a Data with the given name exists
     public Trainee CheckName(string name) => context.Trainee.FirstOrDefault(e => e.Name.ToLower() == name.ToLower());
 
     // Inserts a new Data into the database
-    public void Insert(Trainee obj) => context.Add(obj);
+    public void Insert(Trainee obj)
+    {
+        if (obj == null)
+        {
+            throw new ArgumentNullException(nameof(obj), "Trainee cannot be null.");
+        }
 
+        context.Add(obj);
+    }
     // Updates Data in the database
-    public void Update(Trainee obj) => context.Update(obj);
+    public void Update(Trainee obj)
+    {
+        if (obj == null)
+        {
+            throw new ArgumentNullException(nameof(obj), "Trainee cannot be null.");
+        }
 
+        context.Update(obj);
+    }
     // Delete Data from the database by its ID
     public void Delete(int id)
     {

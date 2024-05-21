@@ -27,46 +27,41 @@ lazm 3lshan el paging yesht3'l wel header en el data ely fel title column t7teha
         <!-- Columns Head -->
         <thead>
             <tr>
-                <th scope="col"></th>
-                <th scope="col">ID</th>
-                <th scope="col">Name</th>
-                <th scope="col">Email</th>
-                <th scope="col">Password</th>
-                <th scope="col">CreatedAt</th>
-                <th scope="col">Courses</th>
-                <th scope="col">Profile</th>
-                <th scope="col">Edit</th>
-                <th scope="col">Delete</th>
+            <th scope="col">#</th>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Number of Trainees</th>
+            <th scope="col">Number of Lessons</th>
+            <th scope="col">Number of Assessments</th>
+            <th scope="col">Trainees</th>
+            <th scope="col">Profile</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
             </tr>
         </thead>
         <tbody>
             @{
                 var counter = 1;
             }
-            @foreach (var item in Model)
+        @foreach (var course in Model)
+        {
+            if (course != null && !course.IsDeleted)
             {
-                @if (item != null)
-                {
-                    @if (item.IsDeleted == false)
-                    {
-
-
-                        <tr>
-                            <th scope="row">@counter</th>
-                            <td>@item.Id</td>
-                            <td>@item.Name</td>
-                            <td>@item.NumberOfStudents</td>
-                            <td>@item.NumberOfLessons</td>
-                            <td>@item.NumberOfAssessment</td>
-                            <td><a href="/instructor/GetByID?ID=@item.Id">Courses</a></td>
-                            <td><a href="/instructor/GetByID?ID=@item.Id">Profile</a></td>
-                            <td><a style="padding-bottom:10px" href="/instructor/Edit?ID=@item.Id" class="btn btn-block bg-gradient-secondary btn-xs">Edit</a></td>
-                            <td><a href="/instructor/SoftDelete?ID=@item.Id" class="btn btn-block bg-gradient-danger btn-xs" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
-                        </tr>
-                        counter++;
-
-                    }
-                }
+                <tr>
+                    <th scope="row">@counter</th>
+                    <td>@course.Id</td>
+                    <td>@course.Name</td>
+                    <td>@course.NumberOfTrainees</td>
+                    <td>@course.NumberOfLessons</td>
+                    <td>@course.NumberOfAssessment</td>
+                    <td><a href="/Course/TraineesInCourse?courseId=@course.Id">Trainees</a></td>
+                    <td><a href="/instructor/GetByID?ID=@course.Id">Profile</a></td>
+                    <td><a href="/instructor/Edit?ID=@course.Id" class="btn btn-block bg-gradient-secondary btn-xs">Edit</a></td>
+                    <td><a href="/instructor/SoftDelete?ID=@course.Id" class="btn btn-block bg-gradient-danger btn-xs" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
+                </tr>
+                counter++;
+            }
+        }
             }
         </tbody>
     </table>
