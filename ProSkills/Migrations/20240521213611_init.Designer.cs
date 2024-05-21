@@ -12,7 +12,7 @@ using ProSkills.Models;
 namespace ProSkills.Migrations
 {
     [DbContext(typeof(ITIContext))]
-    [Migration("20240521162944_init")]
+    [Migration("20240521213611_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -198,7 +198,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 1,
                             Bio = "Bio for Instructor 1",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "instructor1@example.com",
                             IsDeleted = false,
                             Name = "Instructor 1",
@@ -208,7 +208,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 2,
                             Bio = "Bio for Instructor 2",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "instructor2@example.com",
                             IsDeleted = false,
                             Name = "Instructor 2",
@@ -218,7 +218,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 3,
                             Bio = "Bio for Instructor 3",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "instructor3@example.com",
                             IsDeleted = false,
                             Name = "Instructor 3",
@@ -228,7 +228,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 4,
                             Bio = "Bio for Instructor 4",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "instructor4@example.com",
                             IsDeleted = false,
                             Name = "Instructor 4",
@@ -238,7 +238,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 5,
                             Bio = "Bio for Instructor 5",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "instructor5@example.com",
                             IsDeleted = false,
                             Name = "Instructor 5",
@@ -248,7 +248,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 6,
                             Bio = "Bio for Instructor 6",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "instructor6@example.com",
                             IsDeleted = false,
                             Name = "Instructor 6",
@@ -258,7 +258,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 7,
                             Bio = "Bio for Instructor 7",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "instructor7@example.com",
                             IsDeleted = false,
                             Name = "Instructor 7",
@@ -268,7 +268,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 8,
                             Bio = "Bio for Instructor 8",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "instructor8@example.com",
                             IsDeleted = false,
                             Name = "Instructor 8",
@@ -278,7 +278,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 9,
                             Bio = "Bio for Instructor 9",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "instructor9@example.com",
                             IsDeleted = false,
                             Name = "Instructor 9",
@@ -288,7 +288,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 10,
                             Bio = "Bio for Instructor 10",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "instructor10@example.com",
                             IsDeleted = false,
                             Name = "Instructor 10",
@@ -298,7 +298,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 11,
                             Bio = "Bio for Instructor 11",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "instructor11@example.com",
                             IsDeleted = false,
                             Name = "Instructor 11",
@@ -308,7 +308,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 12,
                             Bio = "Bio for Instructor 12",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "instructor12@example.com",
                             IsDeleted = false,
                             Name = "Instructor 12",
@@ -318,7 +318,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 13,
                             Bio = "Bio for Instructor 13",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "instructor13@example.com",
                             IsDeleted = false,
                             Name = "Instructor 13",
@@ -328,7 +328,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 14,
                             Bio = "Bio for Instructor 14",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "instructor14@example.com",
                             IsDeleted = false,
                             Name = "Instructor 14",
@@ -338,7 +338,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 15,
                             Bio = "Bio for Instructor 15",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "instructor15@example.com",
                             IsDeleted = false,
                             Name = "Instructor 15",
@@ -348,7 +348,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 16,
                             Bio = "Bio for Instructor 16",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "instructor16@example.com",
                             IsDeleted = false,
                             Name = "Instructor 16",
@@ -358,7 +358,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 17,
                             Bio = "Bio for Instructor 17",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "instructor17@example.com",
                             IsDeleted = false,
                             Name = "Instructor 17",
@@ -368,7 +368,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 18,
                             Bio = "Bio for Instructor 18",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "instructor18@example.com",
                             IsDeleted = false,
                             Name = "Instructor 18",
@@ -378,7 +378,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 19,
                             Bio = "Bio for Instructor 19",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "instructor19@example.com",
                             IsDeleted = false,
                             Name = "Instructor 19",
@@ -388,7 +388,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 20,
                             Bio = "Bio for Instructor 20",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "instructor20@example.com",
                             IsDeleted = false,
                             Name = "Instructor 20",
@@ -398,7 +398,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 21,
                             Bio = "Bio for Instructor 21",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "instructor21@example.com",
                             IsDeleted = false,
                             Name = "Instructor 21",
@@ -408,7 +408,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 22,
                             Bio = "Bio for Instructor 22",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "instructor22@example.com",
                             IsDeleted = false,
                             Name = "Instructor 22",
@@ -418,7 +418,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 23,
                             Bio = "Bio for Instructor 23",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "instructor23@example.com",
                             IsDeleted = false,
                             Name = "Instructor 23",
@@ -428,7 +428,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 24,
                             Bio = "Bio for Instructor 24",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "instructor24@example.com",
                             IsDeleted = false,
                             Name = "Instructor 24",
@@ -438,7 +438,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 25,
                             Bio = "Bio for Instructor 25",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "instructor25@example.com",
                             IsDeleted = false,
                             Name = "Instructor 25",
@@ -448,7 +448,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 26,
                             Bio = "Bio for Instructor 26",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "instructor26@example.com",
                             IsDeleted = false,
                             Name = "Instructor 26",
@@ -458,7 +458,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 27,
                             Bio = "Bio for Instructor 27",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "instructor27@example.com",
                             IsDeleted = false,
                             Name = "Instructor 27",
@@ -468,7 +468,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 28,
                             Bio = "Bio for Instructor 28",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "instructor28@example.com",
                             IsDeleted = false,
                             Name = "Instructor 28",
@@ -478,7 +478,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 29,
                             Bio = "Bio for Instructor 29",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "instructor29@example.com",
                             IsDeleted = false,
                             Name = "Instructor 29",
@@ -488,7 +488,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 30,
                             Bio = "Bio for Instructor 30",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "instructor30@example.com",
                             IsDeleted = false,
                             Name = "Instructor 30",
@@ -599,7 +599,7 @@ namespace ProSkills.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Image = "",
                             IsDeleted = false,
                             Name = "Revit"
@@ -607,7 +607,7 @@ namespace ProSkills.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Image = "",
                             IsDeleted = false,
                             Name = "Sap"
@@ -615,7 +615,7 @@ namespace ProSkills.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Image = "",
                             IsDeleted = false,
                             Name = "Etabs"
@@ -623,7 +623,7 @@ namespace ProSkills.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Image = "",
                             IsDeleted = false,
                             Name = "Forge"
@@ -631,7 +631,7 @@ namespace ProSkills.Migrations
                         new
                         {
                             Id = 5,
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Image = "",
                             IsDeleted = false,
                             Name = "primavera"
@@ -639,7 +639,7 @@ namespace ProSkills.Migrations
                         new
                         {
                             Id = 6,
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Image = "",
                             IsDeleted = false,
                             Name = "wpf"
@@ -647,7 +647,7 @@ namespace ProSkills.Migrations
                         new
                         {
                             Id = 7,
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Image = "",
                             IsDeleted = false,
                             Name = "Windows Form"
@@ -655,7 +655,7 @@ namespace ProSkills.Migrations
                         new
                         {
                             Id = 8,
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Image = "",
                             IsDeleted = false,
                             Name = "NavisWorks"
@@ -663,7 +663,7 @@ namespace ProSkills.Migrations
                         new
                         {
                             Id = 9,
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Image = "",
                             IsDeleted = false,
                             Name = "Graphics"
@@ -735,9 +735,9 @@ namespace ProSkills.Migrations
                         {
                             Id = 1,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Description = "This course provides an introduction to programming concepts and techniques.",
-                            EndAt = new DateTime(2024, 6, 20, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6465),
+                            EndAt = new DateTime(2024, 6, 21, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2162),
                             Hours = 40,
                             IsDeleted = false,
                             Location = "Online",
@@ -745,17 +745,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 5,
                             NumberOfLessons = 20,
                             NumberOfTrainees = 25,
-                            StartAt = new DateTime(2024, 5, 28, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6461),
+                            StartAt = new DateTime(2024, 5, 29, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2157),
                             TotalFilesSize = 10.5,
-                            instructorId = 14
+                            instructorId = 5
                         },
                         new
                         {
                             Id = 2,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Description = "This course covers the basics of web development including HTML, CSS, and JavaScript.",
-                            EndAt = new DateTime(2024, 7, 5, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6510),
+                            EndAt = new DateTime(2024, 7, 6, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2220),
                             Hours = 60,
                             IsDeleted = false,
                             Location = "Online",
@@ -763,17 +763,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 7,
                             NumberOfLessons = 25,
                             NumberOfTrainees = 30,
-                            StartAt = new DateTime(2024, 6, 4, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6509),
+                            StartAt = new DateTime(2024, 6, 5, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2218),
                             TotalFilesSize = 15.199999999999999,
-                            instructorId = 2
+                            instructorId = 6
                         },
                         new
                         {
                             Id = 3,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Description = "This course covers fundamental data structures and algorithms.",
-                            EndAt = new DateTime(2024, 6, 25, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6521),
+                            EndAt = new DateTime(2024, 6, 26, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2233),
                             Hours = 45,
                             IsDeleted = false,
                             Location = "Online",
@@ -781,17 +781,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 22,
                             NumberOfTrainees = 20,
-                            StartAt = new DateTime(2024, 5, 26, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6520),
+                            StartAt = new DateTime(2024, 5, 27, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2232),
                             TotalFilesSize = 11.699999999999999,
-                            instructorId = 1
+                            instructorId = 15
                         },
                         new
                         {
                             Id = 4,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Description = "This course provides an introduction to machine learning concepts and techniques.",
-                            EndAt = new DateTime(2024, 7, 20, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6541),
+                            EndAt = new DateTime(2024, 7, 21, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2246),
                             Hours = 55,
                             IsDeleted = false,
                             Location = "Online",
@@ -799,17 +799,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 23,
                             NumberOfTrainees = 25,
-                            StartAt = new DateTime(2024, 5, 31, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6539),
+                            StartAt = new DateTime(2024, 6, 1, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2244),
                             TotalFilesSize = 13.5,
-                            instructorId = 12
+                            instructorId = 6
                         },
                         new
                         {
                             Id = 5,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Description = "This course covers the design and management of relational databases.",
-                            EndAt = new DateTime(2024, 6, 30, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6551),
+                            EndAt = new DateTime(2024, 7, 1, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2268),
                             Hours = 50,
                             IsDeleted = false,
                             Location = "Online",
@@ -817,17 +817,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 7,
                             NumberOfLessons = 25,
                             NumberOfTrainees = 30,
-                            StartAt = new DateTime(2024, 5, 28, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6550),
+                            StartAt = new DateTime(2024, 5, 29, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2266),
                             TotalFilesSize = 14.1,
-                            instructorId = 7
+                            instructorId = 13
                         },
                         new
                         {
                             Id = 6,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Description = "This course provides an overview of cybersecurity concepts and principles.",
-                            EndAt = new DateTime(2024, 7, 10, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6561),
+                            EndAt = new DateTime(2024, 7, 11, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2281),
                             Hours = 55,
                             IsDeleted = false,
                             Location = "Online",
@@ -835,17 +835,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 24,
                             NumberOfTrainees = 25,
-                            StartAt = new DateTime(2024, 6, 2, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6560),
+                            StartAt = new DateTime(2024, 6, 3, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2279),
                             TotalFilesSize = 12.300000000000001,
-                            instructorId = 1
+                            instructorId = 9
                         },
                         new
                         {
                             Id = 7,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Description = "This course covers fundamental concepts and techniques in artificial intelligence.",
-                            EndAt = new DateTime(2024, 7, 15, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6572),
+                            EndAt = new DateTime(2024, 7, 16, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2293),
                             Hours = 50,
                             IsDeleted = false,
                             Location = "Online",
@@ -853,7 +853,7 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 23,
                             NumberOfTrainees = 20,
-                            StartAt = new DateTime(2024, 5, 29, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6570),
+                            StartAt = new DateTime(2024, 5, 30, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2291),
                             TotalFilesSize = 12.800000000000001,
                             instructorId = 1
                         },
@@ -861,9 +861,9 @@ namespace ProSkills.Migrations
                         {
                             Id = 8,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Description = "This course covers software engineering principles and best practices.",
-                            EndAt = new DateTime(2024, 6, 25, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6585),
+                            EndAt = new DateTime(2024, 6, 26, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2348),
                             Hours = 45,
                             IsDeleted = false,
                             Location = "Online",
@@ -871,17 +871,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 22,
                             NumberOfTrainees = 30,
-                            StartAt = new DateTime(2024, 5, 27, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6583),
+                            StartAt = new DateTime(2024, 5, 28, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2345),
                             TotalFilesSize = 13.199999999999999,
-                            instructorId = 1
+                            instructorId = 10
                         },
                         new
                         {
                             Id = 9,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Description = "This course covers the basics of Python programming language.",
-                            EndAt = new DateTime(2024, 6, 30, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6595),
+                            EndAt = new DateTime(2024, 7, 1, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2365),
                             Hours = 40,
                             IsDeleted = false,
                             Location = "Online",
@@ -889,17 +889,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 5,
                             NumberOfLessons = 20,
                             NumberOfTrainees = 25,
-                            StartAt = new DateTime(2024, 5, 30, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6594),
+                            StartAt = new DateTime(2024, 5, 31, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2363),
                             TotalFilesSize = 10.800000000000001,
-                            instructorId = 13
+                            instructorId = 1
                         },
                         new
                         {
                             Id = 10,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Description = "This course covers data analysis techniques using Python programming language.",
-                            EndAt = new DateTime(2024, 7, 5, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6605),
+                            EndAt = new DateTime(2024, 7, 6, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2377),
                             Hours = 50,
                             IsDeleted = false,
                             Location = "Online",
@@ -907,17 +907,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 22,
                             NumberOfTrainees = 20,
-                            StartAt = new DateTime(2024, 6, 1, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6604),
+                            StartAt = new DateTime(2024, 6, 2, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2375),
                             TotalFilesSize = 12.199999999999999,
-                            instructorId = 5
+                            instructorId = 14
                         },
                         new
                         {
                             Id = 11,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Description = "This course covers the fundamentals of Java programming language.",
-                            EndAt = new DateTime(2024, 7, 10, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6615),
+                            EndAt = new DateTime(2024, 7, 11, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2389),
                             Hours = 55,
                             IsDeleted = false,
                             Location = "Online",
@@ -925,17 +925,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 24,
                             NumberOfTrainees = 25,
-                            StartAt = new DateTime(2024, 6, 3, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6614),
+                            StartAt = new DateTime(2024, 6, 4, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2387),
                             TotalFilesSize = 13.5,
-                            instructorId = 3
+                            instructorId = 12
                         },
                         new
                         {
                             Id = 12,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Description = "This course covers essential concepts in computer networks.",
-                            EndAt = new DateTime(2024, 6, 30, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6628),
+                            EndAt = new DateTime(2024, 7, 1, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2400),
                             Hours = 45,
                             IsDeleted = false,
                             Location = "Online",
@@ -943,17 +943,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 22,
                             NumberOfTrainees = 30,
-                            StartAt = new DateTime(2024, 5, 31, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6626),
+                            StartAt = new DateTime(2024, 6, 1, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2399),
                             TotalFilesSize = 13.1,
-                            instructorId = 8
+                            instructorId = 14
                         },
                         new
                         {
                             Id = 13,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Description = "This course provides an introduction to the Linux operating system.",
-                            EndAt = new DateTime(2024, 6, 25, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6638),
+                            EndAt = new DateTime(2024, 6, 26, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2414),
                             Hours = 40,
                             IsDeleted = false,
                             Location = "Online",
@@ -961,17 +961,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 5,
                             NumberOfLessons = 20,
                             NumberOfTrainees = 25,
-                            StartAt = new DateTime(2024, 5, 29, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6636),
+                            StartAt = new DateTime(2024, 5, 30, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2412),
                             TotalFilesSize = 10.6,
-                            instructorId = 8
+                            instructorId = 5
                         },
                         new
                         {
                             Id = 14,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Description = "This course covers the basics of mobile app development.",
-                            EndAt = new DateTime(2024, 6, 20, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6647),
+                            EndAt = new DateTime(2024, 6, 21, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2426),
                             Hours = 35,
                             IsDeleted = false,
                             Location = "Online",
@@ -979,17 +979,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 5,
                             NumberOfLessons = 18,
                             NumberOfTrainees = 20,
-                            StartAt = new DateTime(2024, 5, 28, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6646),
+                            StartAt = new DateTime(2024, 5, 29, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2425),
                             TotalFilesSize = 11.199999999999999,
-                            instructorId = 14
+                            instructorId = 10
                         },
                         new
                         {
                             Id = 15,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Description = "This course covers frontend web development technologies and frameworks.",
-                            EndAt = new DateTime(2024, 7, 5, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6657),
+                            EndAt = new DateTime(2024, 7, 6, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2438),
                             Hours = 60,
                             IsDeleted = false,
                             Location = "Online",
@@ -997,17 +997,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 7,
                             NumberOfLessons = 25,
                             NumberOfTrainees = 30,
-                            StartAt = new DateTime(2024, 6, 4, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6656),
+                            StartAt = new DateTime(2024, 6, 5, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2436),
                             TotalFilesSize = 15.800000000000001,
-                            instructorId = 11
+                            instructorId = 4
                         },
                         new
                         {
                             Id = 16,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Description = "This course provides an introduction to cloud computing concepts and services.",
-                            EndAt = new DateTime(2024, 6, 25, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6670),
+                            EndAt = new DateTime(2024, 6, 26, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2450),
                             Hours = 45,
                             IsDeleted = false,
                             Location = "Online",
@@ -1015,17 +1015,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 22,
                             NumberOfTrainees = 25,
-                            StartAt = new DateTime(2024, 5, 26, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6668),
+                            StartAt = new DateTime(2024, 5, 27, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2448),
                             TotalFilesSize = 12.5,
-                            instructorId = 8
+                            instructorId = 12
                         },
                         new
                         {
                             Id = 17,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Description = "This course covers the fundamentals of React.js library for building user interfaces.",
-                            EndAt = new DateTime(2024, 7, 10, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6679),
+                            EndAt = new DateTime(2024, 7, 11, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2464),
                             Hours = 55,
                             IsDeleted = false,
                             Location = "Online",
@@ -1033,17 +1033,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 24,
                             NumberOfTrainees = 30,
-                            StartAt = new DateTime(2024, 6, 2, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6678),
+                            StartAt = new DateTime(2024, 6, 3, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2462),
                             TotalFilesSize = 13.800000000000001,
-                            instructorId = 13
+                            instructorId = 7
                         },
                         new
                         {
                             Id = 18,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Description = "This course covers server-side development with Node.js runtime environment.",
-                            EndAt = new DateTime(2024, 7, 15, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6689),
+                            EndAt = new DateTime(2024, 7, 16, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2475),
                             Hours = 50,
                             IsDeleted = false,
                             Location = "Online",
@@ -1051,17 +1051,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 23,
                             NumberOfTrainees = 20,
-                            StartAt = new DateTime(2024, 5, 29, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6688),
+                            StartAt = new DateTime(2024, 5, 30, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2474),
                             TotalFilesSize = 12.300000000000001,
-                            instructorId = 3
+                            instructorId = 11
                         },
                         new
                         {
                             Id = 19,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Description = "This course covers database concepts and technologies for developers.",
-                            EndAt = new DateTime(2024, 6, 25, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6699),
+                            EndAt = new DateTime(2024, 6, 26, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2487),
                             Hours = 45,
                             IsDeleted = false,
                             Location = "Online",
@@ -1069,17 +1069,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 22,
                             NumberOfTrainees = 25,
-                            StartAt = new DateTime(2024, 5, 27, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6698),
+                            StartAt = new DateTime(2024, 5, 28, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2485),
                             TotalFilesSize = 13.1,
-                            instructorId = 14
+                            instructorId = 12
                         },
                         new
                         {
                             Id = 20,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Description = "This course provides an introduction to deep learning concepts and techniques.",
-                            EndAt = new DateTime(2024, 6, 30, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6711),
+                            EndAt = new DateTime(2024, 7, 1, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2499),
                             Hours = 40,
                             IsDeleted = false,
                             Location = "Online",
@@ -1087,17 +1087,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 5,
                             NumberOfLessons = 20,
                             NumberOfTrainees = 30,
-                            StartAt = new DateTime(2024, 5, 30, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6710),
+                            StartAt = new DateTime(2024, 5, 31, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2497),
                             TotalFilesSize = 11.800000000000001,
-                            instructorId = 13
+                            instructorId = 1
                         },
                         new
                         {
                             Id = 21,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Description = "This course covers essential cybersecurity concepts and practices.",
-                            EndAt = new DateTime(2024, 7, 5, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6748),
+                            EndAt = new DateTime(2024, 7, 6, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2513),
                             Hours = 50,
                             IsDeleted = false,
                             Location = "Online",
@@ -1105,17 +1105,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 22,
                             NumberOfTrainees = 20,
-                            StartAt = new DateTime(2024, 6, 1, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6746),
+                            StartAt = new DateTime(2024, 6, 2, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2511),
                             TotalFilesSize = 12.5,
-                            instructorId = 15
+                            instructorId = 4
                         },
                         new
                         {
                             Id = 22,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Description = "This course covers the basics of Ruby programming language.",
-                            EndAt = new DateTime(2024, 7, 10, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6759),
+                            EndAt = new DateTime(2024, 7, 11, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2525),
                             Hours = 55,
                             IsDeleted = false,
                             Location = "Online",
@@ -1123,17 +1123,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 24,
                             NumberOfTrainees = 25,
-                            StartAt = new DateTime(2024, 6, 3, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6757),
+                            StartAt = new DateTime(2024, 6, 4, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2523),
                             TotalFilesSize = 13.199999999999999,
-                            instructorId = 11
+                            instructorId = 1
                         },
                         new
                         {
                             Id = 23,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Description = "This course covers fundamental concepts in computer architecture.",
-                            EndAt = new DateTime(2024, 6, 30, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6769),
+                            EndAt = new DateTime(2024, 7, 1, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2537),
                             Hours = 45,
                             IsDeleted = false,
                             Location = "Online",
@@ -1141,17 +1141,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 22,
                             NumberOfTrainees = 30,
-                            StartAt = new DateTime(2024, 5, 31, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6767),
+                            StartAt = new DateTime(2024, 6, 1, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2535),
                             TotalFilesSize = 13.6,
-                            instructorId = 8
+                            instructorId = 1
                         },
                         new
                         {
                             Id = 24,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Description = "This course covers the basics of JavaScript programming language.",
-                            EndAt = new DateTime(2024, 6, 25, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6781),
+                            EndAt = new DateTime(2024, 6, 26, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2548),
                             Hours = 40,
                             IsDeleted = false,
                             Location = "Online",
@@ -1159,17 +1159,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 5,
                             NumberOfLessons = 20,
                             NumberOfTrainees = 25,
-                            StartAt = new DateTime(2024, 5, 29, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6780),
+                            StartAt = new DateTime(2024, 5, 30, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2547),
                             TotalFilesSize = 10.9,
-                            instructorId = 9
+                            instructorId = 5
                         },
                         new
                         {
                             Id = 25,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Description = "This course covers fundamental concepts and techniques in software testing.",
-                            EndAt = new DateTime(2024, 6, 20, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6791),
+                            EndAt = new DateTime(2024, 6, 21, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2563),
                             Hours = 35,
                             IsDeleted = false,
                             Location = "Online",
@@ -1177,17 +1177,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 5,
                             NumberOfLessons = 18,
                             NumberOfTrainees = 20,
-                            StartAt = new DateTime(2024, 5, 28, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6790),
+                            StartAt = new DateTime(2024, 5, 29, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2560),
                             TotalFilesSize = 11.4,
-                            instructorId = 1
+                            instructorId = 3
                         },
                         new
                         {
                             Id = 26,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Description = "This course covers the fundamentals of Angular framework for building web applications.",
-                            EndAt = new DateTime(2024, 7, 5, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6801),
+                            EndAt = new DateTime(2024, 7, 6, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2574),
                             Hours = 60,
                             IsDeleted = false,
                             Location = "Online",
@@ -1195,17 +1195,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 7,
                             NumberOfLessons = 25,
                             NumberOfTrainees = 30,
-                            StartAt = new DateTime(2024, 6, 4, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6800),
+                            StartAt = new DateTime(2024, 6, 5, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2572),
                             TotalFilesSize = 15.199999999999999,
-                            instructorId = 9
+                            instructorId = 4
                         },
                         new
                         {
                             Id = 27,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Description = "This course covers the basics of iOS app development using Swift programming language.",
-                            EndAt = new DateTime(2024, 6, 25, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6811),
+                            EndAt = new DateTime(2024, 6, 26, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2586),
                             Hours = 45,
                             IsDeleted = false,
                             Location = "Online",
@@ -1213,7 +1213,7 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 22,
                             NumberOfTrainees = 25,
-                            StartAt = new DateTime(2024, 5, 26, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6810),
+                            StartAt = new DateTime(2024, 5, 27, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2584),
                             TotalFilesSize = 13.699999999999999,
                             instructorId = 3
                         },
@@ -1221,9 +1221,9 @@ namespace ProSkills.Migrations
                         {
                             Id = 28,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Description = "This course covers server-side web development with ASP.NET Core framework.",
-                            EndAt = new DateTime(2024, 7, 10, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6823),
+                            EndAt = new DateTime(2024, 7, 11, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2598),
                             Hours = 55,
                             IsDeleted = false,
                             Location = "Online",
@@ -1231,17 +1231,17 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 24,
                             NumberOfTrainees = 30,
-                            StartAt = new DateTime(2024, 6, 2, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6822),
+                            StartAt = new DateTime(2024, 6, 3, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2596),
                             TotalFilesSize = 14.300000000000001,
-                            instructorId = 2
+                            instructorId = 10
                         },
                         new
                         {
                             Id = 29,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Description = "This course covers the fundamentals of C# programming language.",
-                            EndAt = new DateTime(2024, 7, 15, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6833),
+                            EndAt = new DateTime(2024, 7, 16, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2612),
                             Hours = 50,
                             IsDeleted = false,
                             Location = "Online",
@@ -1249,7 +1249,7 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 23,
                             NumberOfTrainees = 20,
-                            StartAt = new DateTime(2024, 5, 29, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6831),
+                            StartAt = new DateTime(2024, 5, 30, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2610),
                             TotalFilesSize = 12.6,
                             instructorId = 5
                         },
@@ -1257,9 +1257,9 @@ namespace ProSkills.Migrations
                         {
                             Id = 30,
                             CourseImagePath = "path/to/trainee/image.jpg",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Description = "This course covers the fundamentals of game development using Unity game engine.",
-                            EndAt = new DateTime(2024, 6, 25, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6842),
+                            EndAt = new DateTime(2024, 6, 26, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2624),
                             Hours = 45,
                             IsDeleted = false,
                             Location = "Online",
@@ -1267,9 +1267,9 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 22,
                             NumberOfTrainees = 25,
-                            StartAt = new DateTime(2024, 5, 27, 19, 29, 44, 366, DateTimeKind.Local).AddTicks(6841),
+                            StartAt = new DateTime(2024, 5, 28, 0, 36, 11, 510, DateTimeKind.Local).AddTicks(2623),
                             TotalFilesSize = 13.9,
-                            instructorId = 6
+                            instructorId = 15
                         });
                 });
 
@@ -1302,702 +1302,702 @@ namespace ProSkills.Migrations
                         new
                         {
                             Id = 1,
-                            CourseId = 21,
-                            Result = 19.1749337106689m,
-                            TraineeId = 19
+                            CourseId = 20,
+                            Result = 71.1613564945595m,
+                            TraineeId = 29
                         },
                         new
                         {
                             Id = 2,
-                            CourseId = 26,
-                            Result = 46.6796768458176m,
-                            TraineeId = 9
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CourseId = 29,
-                            Result = 62.7003887232847m,
-                            TraineeId = 6
-                        },
-                        new
-                        {
-                            Id = 4,
-                            CourseId = 11,
-                            Result = 37.4084053574589m,
-                            TraineeId = 8
-                        },
-                        new
-                        {
-                            Id = 5,
-                            CourseId = 15,
-                            Result = 40.5699687964192m,
-                            TraineeId = 29
-                        },
-                        new
-                        {
-                            Id = 6,
-                            CourseId = 8,
-                            Result = 82.5664183311241m,
-                            TraineeId = 13
-                        },
-                        new
-                        {
-                            Id = 7,
-                            CourseId = 8,
-                            Result = 78.0749065582054m,
+                            CourseId = 24,
+                            Result = 92.4907439582707m,
                             TraineeId = 18
                         },
                         new
                         {
-                            Id = 8,
-                            CourseId = 9,
-                            Result = 65.3502171816766m,
-                            TraineeId = 26
-                        },
-                        new
-                        {
-                            Id = 9,
-                            CourseId = 7,
-                            Result = 74.1341561146674m,
-                            TraineeId = 30
-                        },
-                        new
-                        {
-                            Id = 10,
-                            CourseId = 19,
-                            Result = 55.3219891421489m,
-                            TraineeId = 9
-                        },
-                        new
-                        {
-                            Id = 11,
-                            CourseId = 17,
-                            Result = 75.3388857721978m,
-                            TraineeId = 14
-                        },
-                        new
-                        {
-                            Id = 12,
-                            CourseId = 9,
-                            Result = 80.1451020833722m,
-                            TraineeId = 16
-                        },
-                        new
-                        {
-                            Id = 13,
-                            CourseId = 19,
-                            Result = 68.3096739650878m,
-                            TraineeId = 21
-                        },
-                        new
-                        {
-                            Id = 14,
+                            Id = 3,
                             CourseId = 2,
-                            Result = 21.0977265382282m,
-                            TraineeId = 15
-                        },
-                        new
-                        {
-                            Id = 15,
-                            CourseId = 3,
-                            Result = 47.6951970099906m,
-                            TraineeId = 17
-                        },
-                        new
-                        {
-                            Id = 16,
-                            CourseId = 3,
-                            Result = 38.2444102428454m,
-                            TraineeId = 10
-                        },
-                        new
-                        {
-                            Id = 17,
-                            CourseId = 18,
-                            Result = 87.2865106999846m,
-                            TraineeId = 25
-                        },
-                        new
-                        {
-                            Id = 18,
-                            CourseId = 12,
-                            Result = 30.727214995569m,
-                            TraineeId = 4
-                        },
-                        new
-                        {
-                            Id = 19,
-                            CourseId = 14,
-                            Result = 5.7866581186213m,
-                            TraineeId = 20
-                        },
-                        new
-                        {
-                            Id = 20,
-                            CourseId = 20,
-                            Result = 81.8649308811601m,
-                            TraineeId = 26
-                        },
-                        new
-                        {
-                            Id = 21,
-                            CourseId = 3,
-                            Result = 16.2863620230387m,
-                            TraineeId = 22
-                        },
-                        new
-                        {
-                            Id = 22,
-                            CourseId = 14,
-                            Result = 91.9954547840499m,
-                            TraineeId = 12
-                        },
-                        new
-                        {
-                            Id = 23,
-                            CourseId = 11,
-                            Result = 53.4130835903366m,
-                            TraineeId = 20
-                        },
-                        new
-                        {
-                            Id = 24,
-                            CourseId = 13,
-                            Result = 61.3851491094783m,
-                            TraineeId = 29
-                        },
-                        new
-                        {
-                            Id = 25,
-                            CourseId = 3,
-                            Result = 2.02132861604816m,
-                            TraineeId = 20
-                        },
-                        new
-                        {
-                            Id = 26,
-                            CourseId = 27,
-                            Result = 50.7807075258199m,
-                            TraineeId = 27
-                        },
-                        new
-                        {
-                            Id = 27,
-                            CourseId = 18,
-                            Result = 83.9060470282443m,
-                            TraineeId = 25
-                        },
-                        new
-                        {
-                            Id = 28,
-                            CourseId = 6,
-                            Result = 4.5557779063121m,
-                            TraineeId = 15
-                        },
-                        new
-                        {
-                            Id = 29,
-                            CourseId = 27,
-                            Result = 69.6673272192654m,
-                            TraineeId = 26
-                        },
-                        new
-                        {
-                            Id = 30,
-                            CourseId = 15,
-                            Result = 12.1990048795385m,
-                            TraineeId = 30
-                        },
-                        new
-                        {
-                            Id = 31,
-                            CourseId = 26,
-                            Result = 75.8789188056828m,
-                            TraineeId = 25
-                        },
-                        new
-                        {
-                            Id = 32,
-                            CourseId = 23,
-                            Result = 56.5519965248669m,
-                            TraineeId = 5
-                        },
-                        new
-                        {
-                            Id = 33,
-                            CourseId = 2,
-                            Result = 25.5863837585953m,
-                            TraineeId = 8
-                        },
-                        new
-                        {
-                            Id = 34,
-                            CourseId = 30,
-                            Result = 95.3258815527437m,
-                            TraineeId = 15
-                        },
-                        new
-                        {
-                            Id = 35,
-                            CourseId = 18,
-                            Result = 33.1998936758888m,
-                            TraineeId = 14
-                        },
-                        new
-                        {
-                            Id = 36,
-                            CourseId = 6,
-                            Result = 24.3992420065169m,
-                            TraineeId = 2
-                        },
-                        new
-                        {
-                            Id = 37,
-                            CourseId = 1,
-                            Result = 77.585760254887m,
-                            TraineeId = 15
-                        },
-                        new
-                        {
-                            Id = 38,
-                            CourseId = 22,
-                            Result = 33.4171985478989m,
+                            Result = 12.9025662252994m,
                             TraineeId = 19
                         },
                         new
                         {
-                            Id = 39,
-                            CourseId = 10,
-                            Result = 72.5408504416773m,
-                            TraineeId = 12
-                        },
-                        new
-                        {
-                            Id = 40,
+                            Id = 4,
                             CourseId = 3,
-                            Result = 90.9334698863028m,
-                            TraineeId = 10
+                            Result = 37.7301943626074m,
+                            TraineeId = 3
                         },
                         new
                         {
-                            Id = 41,
-                            CourseId = 8,
-                            Result = 48.3397284161816m,
-                            TraineeId = 30
+                            Id = 5,
+                            CourseId = 4,
+                            Result = 31.6867157531469m,
+                            TraineeId = 5
                         },
                         new
                         {
-                            Id = 42,
-                            CourseId = 18,
-                            Result = 64.5294063775591m,
+                            Id = 6,
+                            CourseId = 2,
+                            Result = 40.7925317353526m,
+                            TraineeId = 20
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CourseId = 10,
+                            Result = 57.0923623681206m,
+                            TraineeId = 22
+                        },
+                        new
+                        {
+                            Id = 8,
+                            CourseId = 15,
+                            Result = 38.0620238384585m,
+                            TraineeId = 19
+                        },
+                        new
+                        {
+                            Id = 9,
+                            CourseId = 24,
+                            Result = 81.3724931776416m,
+                            TraineeId = 24
+                        },
+                        new
+                        {
+                            Id = 10,
+                            CourseId = 26,
+                            Result = 13.3557429146208m,
+                            TraineeId = 21
+                        },
+                        new
+                        {
+                            Id = 11,
+                            CourseId = 13,
+                            Result = 70.1447682081679m,
+                            TraineeId = 15
+                        },
+                        new
+                        {
+                            Id = 12,
+                            CourseId = 22,
+                            Result = 95.3605836207342m,
+                            TraineeId = 3
+                        },
+                        new
+                        {
+                            Id = 13,
+                            CourseId = 24,
+                            Result = 83.6084560882318m,
+                            TraineeId = 24
+                        },
+                        new
+                        {
+                            Id = 14,
+                            CourseId = 14,
+                            Result = 70.8110661248603m,
+                            TraineeId = 25
+                        },
+                        new
+                        {
+                            Id = 15,
+                            CourseId = 20,
+                            Result = 44.733141144009m,
+                            TraineeId = 18
+                        },
+                        new
+                        {
+                            Id = 16,
+                            CourseId = 9,
+                            Result = 53.0721816087976m,
                             TraineeId = 17
                         },
                         new
                         {
-                            Id = 43,
+                            Id = 17,
+                            CourseId = 4,
+                            Result = 58.474939678364m,
+                            TraineeId = 24
+                        },
+                        new
+                        {
+                            Id = 18,
+                            CourseId = 19,
+                            Result = 65.9728141082256m,
+                            TraineeId = 11
+                        },
+                        new
+                        {
+                            Id = 19,
+                            CourseId = 18,
+                            Result = 21.677144570921m,
+                            TraineeId = 22
+                        },
+                        new
+                        {
+                            Id = 20,
+                            CourseId = 22,
+                            Result = 83.2028729601518m,
+                            TraineeId = 13
+                        },
+                        new
+                        {
+                            Id = 21,
+                            CourseId = 22,
+                            Result = 53.1340170636616m,
+                            TraineeId = 8
+                        },
+                        new
+                        {
+                            Id = 22,
+                            CourseId = 22,
+                            Result = 81.0363177624544m,
+                            TraineeId = 3
+                        },
+                        new
+                        {
+                            Id = 23,
+                            CourseId = 15,
+                            Result = 24.1515382688823m,
+                            TraineeId = 22
+                        },
+                        new
+                        {
+                            Id = 24,
+                            CourseId = 14,
+                            Result = 65.2684078430843m,
+                            TraineeId = 20
+                        },
+                        new
+                        {
+                            Id = 25,
+                            CourseId = 17,
+                            Result = 1.04267310528149m,
+                            TraineeId = 7
+                        },
+                        new
+                        {
+                            Id = 26,
+                            CourseId = 22,
+                            Result = 90.0470547683466m,
+                            TraineeId = 28
+                        },
+                        new
+                        {
+                            Id = 27,
+                            CourseId = 14,
+                            Result = 46.1513249390682m,
+                            TraineeId = 11
+                        },
+                        new
+                        {
+                            Id = 28,
+                            CourseId = 12,
+                            Result = 14.1357229005456m,
+                            TraineeId = 26
+                        },
+                        new
+                        {
+                            Id = 29,
+                            CourseId = 3,
+                            Result = 72.1222062336048m,
+                            TraineeId = 23
+                        },
+                        new
+                        {
+                            Id = 30,
+                            CourseId = 23,
+                            Result = 45.7031320795825m,
+                            TraineeId = 23
+                        },
+                        new
+                        {
+                            Id = 31,
+                            CourseId = 11,
+                            Result = 80.2233991341976m,
+                            TraineeId = 28
+                        },
+                        new
+                        {
+                            Id = 32,
+                            CourseId = 13,
+                            Result = 89.3837419874334m,
+                            TraineeId = 15
+                        },
+                        new
+                        {
+                            Id = 33,
+                            CourseId = 20,
+                            Result = 41.7045441036839m,
+                            TraineeId = 22
+                        },
+                        new
+                        {
+                            Id = 34,
+                            CourseId = 4,
+                            Result = 35.2279553674243m,
+                            TraineeId = 11
+                        },
+                        new
+                        {
+                            Id = 35,
+                            CourseId = 15,
+                            Result = 9.76290859274842m,
+                            TraineeId = 23
+                        },
+                        new
+                        {
+                            Id = 36,
+                            CourseId = 4,
+                            Result = 67.8011244903698m,
+                            TraineeId = 5
+                        },
+                        new
+                        {
+                            Id = 37,
+                            CourseId = 6,
+                            Result = 76.2124657162286m,
+                            TraineeId = 5
+                        },
+                        new
+                        {
+                            Id = 38,
                             CourseId = 24,
-                            Result = 11.9182232194373m,
+                            Result = 97.342842701762m,
+                            TraineeId = 7
+                        },
+                        new
+                        {
+                            Id = 39,
+                            CourseId = 3,
+                            Result = 15.2115179720644m,
+                            TraineeId = 3
+                        },
+                        new
+                        {
+                            Id = 40,
+                            CourseId = 30,
+                            Result = 17.4607751899115m,
+                            TraineeId = 20
+                        },
+                        new
+                        {
+                            Id = 41,
+                            CourseId = 22,
+                            Result = 68.800003423162m,
+                            TraineeId = 9
+                        },
+                        new
+                        {
+                            Id = 42,
+                            CourseId = 16,
+                            Result = 18.6199002851801m,
+                            TraineeId = 8
+                        },
+                        new
+                        {
+                            Id = 43,
+                            CourseId = 29,
+                            Result = 99.5200876793074m,
                             TraineeId = 19
                         },
                         new
                         {
                             Id = 44,
-                            CourseId = 1,
-                            Result = 90.2550192608888m,
-                            TraineeId = 7
+                            CourseId = 20,
+                            Result = 19.3470159456515m,
+                            TraineeId = 30
                         },
                         new
                         {
                             Id = 45,
-                            CourseId = 20,
-                            Result = 26.5566647154284m,
-                            TraineeId = 6
-                        },
-                        new
-                        {
-                            Id = 46,
-                            CourseId = 12,
-                            Result = 65.7972518720607m,
-                            TraineeId = 10
-                        },
-                        new
-                        {
-                            Id = 47,
-                            CourseId = 10,
-                            Result = 27.1890820132206m,
-                            TraineeId = 11
-                        },
-                        new
-                        {
-                            Id = 48,
-                            CourseId = 19,
-                            Result = 19.4819658754278m,
-                            TraineeId = 23
-                        },
-                        new
-                        {
-                            Id = 49,
-                            CourseId = 3,
-                            Result = 6.33020425237062m,
-                            TraineeId = 1
-                        },
-                        new
-                        {
-                            Id = 50,
-                            CourseId = 12,
-                            Result = 77.838114806634m,
-                            TraineeId = 8
-                        },
-                        new
-                        {
-                            Id = 51,
-                            CourseId = 21,
-                            Result = 59.5922285840699m,
-                            TraineeId = 7
-                        },
-                        new
-                        {
-                            Id = 52,
-                            CourseId = 5,
-                            Result = 93.7522670459113m,
-                            TraineeId = 4
-                        },
-                        new
-                        {
-                            Id = 53,
-                            CourseId = 18,
-                            Result = 78.5097480367326m,
-                            TraineeId = 26
-                        },
-                        new
-                        {
-                            Id = 54,
-                            CourseId = 18,
-                            Result = 47.4693405604489m,
-                            TraineeId = 22
-                        },
-                        new
-                        {
-                            Id = 55,
-                            CourseId = 16,
-                            Result = 90.0030150304717m,
-                            TraineeId = 8
-                        },
-                        new
-                        {
-                            Id = 56,
-                            CourseId = 19,
-                            Result = 6.15272030534172m,
-                            TraineeId = 28
-                        },
-                        new
-                        {
-                            Id = 57,
-                            CourseId = 5,
-                            Result = 5.0974448864768m,
-                            TraineeId = 2
-                        },
-                        new
-                        {
-                            Id = 58,
-                            CourseId = 3,
-                            Result = 78.5946991956794m,
-                            TraineeId = 2
-                        },
-                        new
-                        {
-                            Id = 59,
-                            CourseId = 26,
-                            Result = 11.3149150062716m,
-                            TraineeId = 20
-                        },
-                        new
-                        {
-                            Id = 60,
-                            CourseId = 13,
-                            Result = 26.8265105233371m,
-                            TraineeId = 20
-                        },
-                        new
-                        {
-                            Id = 61,
-                            CourseId = 1,
-                            Result = 71.7046935257582m,
-                            TraineeId = 2
-                        },
-                        new
-                        {
-                            Id = 62,
-                            CourseId = 16,
-                            Result = 29.1815735063864m,
-                            TraineeId = 6
-                        },
-                        new
-                        {
-                            Id = 63,
-                            CourseId = 25,
-                            Result = 93.2720870998049m,
-                            TraineeId = 29
-                        },
-                        new
-                        {
-                            Id = 64,
-                            CourseId = 26,
-                            Result = 88.8366625236615m,
-                            TraineeId = 26
-                        },
-                        new
-                        {
-                            Id = 65,
-                            CourseId = 18,
-                            Result = 12.9179962970898m,
-                            TraineeId = 28
-                        },
-                        new
-                        {
-                            Id = 66,
-                            CourseId = 1,
-                            Result = 23.8812237715772m,
-                            TraineeId = 13
-                        },
-                        new
-                        {
-                            Id = 67,
-                            CourseId = 17,
-                            Result = 91.2487607857698m,
-                            TraineeId = 5
-                        },
-                        new
-                        {
-                            Id = 68,
-                            CourseId = 16,
-                            Result = 19.8247123602721m,
-                            TraineeId = 23
-                        },
-                        new
-                        {
-                            Id = 69,
-                            CourseId = 1,
-                            Result = 5.6714732499634m,
-                            TraineeId = 11
-                        },
-                        new
-                        {
-                            Id = 70,
-                            CourseId = 27,
-                            Result = 36.5281698740443m,
-                            TraineeId = 26
-                        },
-                        new
-                        {
-                            Id = 71,
-                            CourseId = 28,
-                            Result = 3.93470025996839m,
-                            TraineeId = 17
-                        },
-                        new
-                        {
-                            Id = 72,
-                            CourseId = 2,
-                            Result = 82.5702791111988m,
-                            TraineeId = 1
-                        },
-                        new
-                        {
-                            Id = 73,
-                            CourseId = 29,
-                            Result = 65.9762750787748m,
-                            TraineeId = 26
-                        },
-                        new
-                        {
-                            Id = 74,
-                            CourseId = 24,
-                            Result = 4.94241347339177m,
-                            TraineeId = 12
-                        },
-                        new
-                        {
-                            Id = 75,
-                            CourseId = 21,
-                            Result = 55.2809761151237m,
-                            TraineeId = 16
-                        },
-                        new
-                        {
-                            Id = 76,
-                            CourseId = 6,
-                            Result = 82.903618176327m,
-                            TraineeId = 4
-                        },
-                        new
-                        {
-                            Id = 77,
-                            CourseId = 9,
-                            Result = 18.3088054561647m,
-                            TraineeId = 24
-                        },
-                        new
-                        {
-                            Id = 78,
-                            CourseId = 9,
-                            Result = 4.11466199072354m,
-                            TraineeId = 2
-                        },
-                        new
-                        {
-                            Id = 79,
-                            CourseId = 15,
-                            Result = 26.4022625646932m,
-                            TraineeId = 20
-                        },
-                        new
-                        {
-                            Id = 80,
-                            CourseId = 3,
-                            Result = 17.4617714544885m,
-                            TraineeId = 16
-                        },
-                        new
-                        {
-                            Id = 81,
-                            CourseId = 30,
-                            Result = 6.48022604192027m,
-                            TraineeId = 13
-                        },
-                        new
-                        {
-                            Id = 82,
-                            CourseId = 22,
-                            Result = 53.0048864425279m,
+                            CourseId = 7,
+                            Result = 99.8431462397312m,
                             TraineeId = 21
                         },
                         new
                         {
-                            Id = 83,
-                            CourseId = 21,
-                            Result = 60.4575864454783m,
+                            Id = 46,
+                            CourseId = 29,
+                            Result = 48.8934210040138m,
+                            TraineeId = 12
+                        },
+                        new
+                        {
+                            Id = 47,
+                            CourseId = 19,
+                            Result = 97.2539183913734m,
+                            TraineeId = 23
+                        },
+                        new
+                        {
+                            Id = 48,
+                            CourseId = 10,
+                            Result = 0.0621498745850713m,
+                            TraineeId = 22
+                        },
+                        new
+                        {
+                            Id = 49,
+                            CourseId = 25,
+                            Result = 2.28132999920877m,
                             TraineeId = 13
                         },
                         new
                         {
+                            Id = 50,
+                            CourseId = 16,
+                            Result = 57.3858374123308m,
+                            TraineeId = 30
+                        },
+                        new
+                        {
+                            Id = 51,
+                            CourseId = 22,
+                            Result = 84.1850954172496m,
+                            TraineeId = 19
+                        },
+                        new
+                        {
+                            Id = 52,
+                            CourseId = 4,
+                            Result = 17.3540486475692m,
+                            TraineeId = 27
+                        },
+                        new
+                        {
+                            Id = 53,
+                            CourseId = 17,
+                            Result = 29.9701309723748m,
+                            TraineeId = 15
+                        },
+                        new
+                        {
+                            Id = 54,
+                            CourseId = 27,
+                            Result = 89.2896822073602m,
+                            TraineeId = 23
+                        },
+                        new
+                        {
+                            Id = 55,
+                            CourseId = 8,
+                            Result = 47.7359800428418m,
+                            TraineeId = 26
+                        },
+                        new
+                        {
+                            Id = 56,
+                            CourseId = 12,
+                            Result = 55.301824447828m,
+                            TraineeId = 20
+                        },
+                        new
+                        {
+                            Id = 57,
+                            CourseId = 21,
+                            Result = 62.1606711516248m,
+                            TraineeId = 18
+                        },
+                        new
+                        {
+                            Id = 58,
+                            CourseId = 18,
+                            Result = 88.8210264764184m,
+                            TraineeId = 28
+                        },
+                        new
+                        {
+                            Id = 59,
+                            CourseId = 23,
+                            Result = 63.1835572602905m,
+                            TraineeId = 7
+                        },
+                        new
+                        {
+                            Id = 60,
+                            CourseId = 11,
+                            Result = 3.92482094979036m,
+                            TraineeId = 22
+                        },
+                        new
+                        {
+                            Id = 61,
+                            CourseId = 28,
+                            Result = 10.3360631788836m,
+                            TraineeId = 17
+                        },
+                        new
+                        {
+                            Id = 62,
+                            CourseId = 17,
+                            Result = 63.8098088242855m,
+                            TraineeId = 16
+                        },
+                        new
+                        {
+                            Id = 63,
+                            CourseId = 10,
+                            Result = 90.2842674936858m,
+                            TraineeId = 19
+                        },
+                        new
+                        {
+                            Id = 64,
+                            CourseId = 4,
+                            Result = 92.0960082429779m,
+                            TraineeId = 30
+                        },
+                        new
+                        {
+                            Id = 65,
+                            CourseId = 12,
+                            Result = 18.2828211705224m,
+                            TraineeId = 22
+                        },
+                        new
+                        {
+                            Id = 66,
+                            CourseId = 28,
+                            Result = 37.9681971691773m,
+                            TraineeId = 15
+                        },
+                        new
+                        {
+                            Id = 67,
+                            CourseId = 14,
+                            Result = 49.180835544546m,
+                            TraineeId = 15
+                        },
+                        new
+                        {
+                            Id = 68,
+                            CourseId = 17,
+                            Result = 11.0709022980153m,
+                            TraineeId = 10
+                        },
+                        new
+                        {
+                            Id = 69,
+                            CourseId = 20,
+                            Result = 68.2443056394096m,
+                            TraineeId = 7
+                        },
+                        new
+                        {
+                            Id = 70,
+                            CourseId = 4,
+                            Result = 70.4067995030111m,
+                            TraineeId = 12
+                        },
+                        new
+                        {
+                            Id = 71,
+                            CourseId = 11,
+                            Result = 87.2274094868946m,
+                            TraineeId = 15
+                        },
+                        new
+                        {
+                            Id = 72,
+                            CourseId = 23,
+                            Result = 75.9061166107247m,
+                            TraineeId = 2
+                        },
+                        new
+                        {
+                            Id = 73,
+                            CourseId = 25,
+                            Result = 25.410835350131m,
+                            TraineeId = 18
+                        },
+                        new
+                        {
+                            Id = 74,
+                            CourseId = 26,
+                            Result = 30.3273550143638m,
+                            TraineeId = 21
+                        },
+                        new
+                        {
+                            Id = 75,
+                            CourseId = 14,
+                            Result = 14.1385934697575m,
+                            TraineeId = 1
+                        },
+                        new
+                        {
+                            Id = 76,
+                            CourseId = 4,
+                            Result = 80.7118921545628m,
+                            TraineeId = 23
+                        },
+                        new
+                        {
+                            Id = 77,
+                            CourseId = 29,
+                            Result = 58.2888189746469m,
+                            TraineeId = 4
+                        },
+                        new
+                        {
+                            Id = 78,
+                            CourseId = 12,
+                            Result = 0.519404163787707m,
+                            TraineeId = 22
+                        },
+                        new
+                        {
+                            Id = 79,
+                            CourseId = 5,
+                            Result = 47.1260235091441m,
+                            TraineeId = 4
+                        },
+                        new
+                        {
+                            Id = 80,
+                            CourseId = 5,
+                            Result = 93.2698730689095m,
+                            TraineeId = 10
+                        },
+                        new
+                        {
+                            Id = 81,
+                            CourseId = 26,
+                            Result = 72.9170197855459m,
+                            TraineeId = 6
+                        },
+                        new
+                        {
+                            Id = 82,
+                            CourseId = 25,
+                            Result = 86.8243057853334m,
+                            TraineeId = 22
+                        },
+                        new
+                        {
+                            Id = 83,
+                            CourseId = 15,
+                            Result = 77.6300596527255m,
+                            TraineeId = 18
+                        },
+                        new
+                        {
                             Id = 84,
-                            CourseId = 2,
-                            Result = 4.08313486754807m,
+                            CourseId = 9,
+                            Result = 24.4653279205569m,
                             TraineeId = 15
                         },
                         new
                         {
                             Id = 85,
-                            CourseId = 10,
-                            Result = 9.93252631636748m,
-                            TraineeId = 8
+                            CourseId = 5,
+                            Result = 83.8342103771048m,
+                            TraineeId = 10
                         },
                         new
                         {
                             Id = 86,
-                            CourseId = 18,
-                            Result = 63.5658489336782m,
-                            TraineeId = 14
-                        },
-                        new
-                        {
-                            Id = 87,
-                            CourseId = 2,
-                            Result = 43.4987310825468m,
+                            CourseId = 24,
+                            Result = 71.9779584375532m,
                             TraineeId = 3
                         },
                         new
                         {
-                            Id = 88,
-                            CourseId = 28,
-                            Result = 81.4568181365481m,
-                            TraineeId = 19
-                        },
-                        new
-                        {
-                            Id = 89,
-                            CourseId = 9,
-                            Result = 82.6170502288305m,
-                            TraineeId = 19
-                        },
-                        new
-                        {
-                            Id = 90,
-                            CourseId = 15,
-                            Result = 38.8460583954367m,
+                            Id = 87,
+                            CourseId = 3,
+                            Result = 97.7003080062211m,
                             TraineeId = 6
                         },
                         new
                         {
+                            Id = 88,
+                            CourseId = 12,
+                            Result = 93.0302130844177m,
+                            TraineeId = 24
+                        },
+                        new
+                        {
+                            Id = 89,
+                            CourseId = 24,
+                            Result = 98.562026249366m,
+                            TraineeId = 21
+                        },
+                        new
+                        {
+                            Id = 90,
+                            CourseId = 18,
+                            Result = 4.24208368843516m,
+                            TraineeId = 3
+                        },
+                        new
+                        {
                             Id = 91,
-                            CourseId = 19,
-                            Result = 78.9899807619574m,
-                            TraineeId = 13
+                            CourseId = 1,
+                            Result = 75.2972187987208m,
+                            TraineeId = 14
                         },
                         new
                         {
                             Id = 92,
-                            CourseId = 26,
-                            Result = 23.933482378688m,
-                            TraineeId = 4
-                        },
-                        new
-                        {
-                            Id = 93,
-                            CourseId = 26,
-                            Result = 53.1558540050751m,
-                            TraineeId = 7
-                        },
-                        new
-                        {
-                            Id = 94,
-                            CourseId = 25,
-                            Result = 88.5831574621364m,
-                            TraineeId = 2
-                        },
-                        new
-                        {
-                            Id = 95,
-                            CourseId = 26,
-                            Result = 19.492958541044m,
-                            TraineeId = 15
-                        },
-                        new
-                        {
-                            Id = 96,
-                            CourseId = 3,
-                            Result = 6.38022297341125m,
-                            TraineeId = 12
-                        },
-                        new
-                        {
-                            Id = 97,
-                            CourseId = 22,
-                            Result = 65.435108146968m,
-                            TraineeId = 15
-                        },
-                        new
-                        {
-                            Id = 98,
-                            CourseId = 30,
-                            Result = 14.6441193806448m,
-                            TraineeId = 15
-                        },
-                        new
-                        {
-                            Id = 99,
-                            CourseId = 17,
-                            Result = 87.0904835632484m,
+                            CourseId = 28,
+                            Result = 37.5011865958001m,
                             TraineeId = 26
                         },
                         new
                         {
-                            Id = 100,
-                            CourseId = 18,
-                            Result = 60.8813308384751m,
+                            Id = 93,
+                            CourseId = 17,
+                            Result = 68.1738648647406m,
+                            TraineeId = 12
+                        },
+                        new
+                        {
+                            Id = 94,
+                            CourseId = 24,
+                            Result = 13.8406939544188m,
+                            TraineeId = 25
+                        },
+                        new
+                        {
+                            Id = 95,
+                            CourseId = 7,
+                            Result = 99.4019171514611m,
+                            TraineeId = 25
+                        },
+                        new
+                        {
+                            Id = 96,
+                            CourseId = 22,
+                            Result = 21.2985019870264m,
+                            TraineeId = 3
+                        },
+                        new
+                        {
+                            Id = 97,
+                            CourseId = 9,
+                            Result = 39.9154127218535m,
+                            TraineeId = 16
+                        },
+                        new
+                        {
+                            Id = 98,
+                            CourseId = 25,
+                            Result = 29.3481386863979m,
                             TraineeId = 29
+                        },
+                        new
+                        {
+                            Id = 99,
+                            CourseId = 1,
+                            Result = 4.56972482477093m,
+                            TraineeId = 1
+                        },
+                        new
+                        {
+                            Id = 100,
+                            CourseId = 30,
+                            Result = 21.6426539838833m,
+                            TraineeId = 27
                         });
                 });
 
@@ -2046,7 +2046,7 @@ namespace ProSkills.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Hours = 10,
                             Image = "image1.jpg",
                             IsDeleted = false,
@@ -2059,7 +2059,7 @@ namespace ProSkills.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Hours = 10,
                             Image = "image2.jpg",
                             IsDeleted = false,
@@ -2072,7 +2072,7 @@ namespace ProSkills.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Hours = 10,
                             Image = "image3.jpg",
                             IsDeleted = false,
@@ -2120,7 +2120,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 3,
                             Code = "gamal",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             IsDeleted = false,
                             PackageName = "premium",
                             isAvalible = true,
@@ -2161,7 +2161,6 @@ namespace ProSkills.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CreatedAt")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
@@ -2185,7 +2184,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 1,
                             Bio = "Bio for Trainee 1",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "Trainee1@example.com",
                             IsDeleted = false,
                             Name = "Trainee 1",
@@ -2195,7 +2194,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 2,
                             Bio = "Bio for Trainee 2",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "Trainee2@example.com",
                             IsDeleted = false,
                             Name = "Trainee 2",
@@ -2205,7 +2204,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 3,
                             Bio = "Bio for Trainee 3",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "Trainee3@example.com",
                             IsDeleted = false,
                             Name = "Trainee 3",
@@ -2215,7 +2214,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 4,
                             Bio = "Bio for Trainee 4",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "Trainee4@example.com",
                             IsDeleted = false,
                             Name = "Trainee 4",
@@ -2225,7 +2224,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 5,
                             Bio = "Bio for Trainee 5",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "Trainee5@example.com",
                             IsDeleted = false,
                             Name = "Trainee 5",
@@ -2235,7 +2234,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 6,
                             Bio = "Bio for Trainee 6",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "Trainee6@example.com",
                             IsDeleted = false,
                             Name = "Trainee 6",
@@ -2245,7 +2244,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 7,
                             Bio = "Bio for Trainee 7",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "Trainee7@example.com",
                             IsDeleted = false,
                             Name = "Trainee 7",
@@ -2255,7 +2254,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 8,
                             Bio = "Bio for Trainee 8",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "Trainee8@example.com",
                             IsDeleted = false,
                             Name = "Trainee 8",
@@ -2265,7 +2264,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 9,
                             Bio = "Bio for Trainee 9",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "Trainee9@example.com",
                             IsDeleted = false,
                             Name = "Trainee 9",
@@ -2275,7 +2274,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 10,
                             Bio = "Bio for Trainee 10",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "Trainee10@example.com",
                             IsDeleted = false,
                             Name = "Trainee 10",
@@ -2285,7 +2284,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 11,
                             Bio = "Bio for Trainee 11",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "Trainee11@example.com",
                             IsDeleted = false,
                             Name = "Trainee 11",
@@ -2295,7 +2294,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 12,
                             Bio = "Bio for Trainee 12",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "Trainee12@example.com",
                             IsDeleted = false,
                             Name = "Trainee 12",
@@ -2305,7 +2304,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 13,
                             Bio = "Bio for Trainee 13",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "Trainee13@example.com",
                             IsDeleted = false,
                             Name = "Trainee 13",
@@ -2315,7 +2314,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 14,
                             Bio = "Bio for Trainee 14",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "Trainee14@example.com",
                             IsDeleted = false,
                             Name = "Trainee 14",
@@ -2325,7 +2324,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 15,
                             Bio = "Bio for Trainee 15",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "Trainee15@example.com",
                             IsDeleted = false,
                             Name = "Trainee 15",
@@ -2335,7 +2334,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 16,
                             Bio = "Bio for Trainee 16",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "Trainee16@example.com",
                             IsDeleted = false,
                             Name = "Trainee 16",
@@ -2345,7 +2344,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 17,
                             Bio = "Bio for Trainee 17",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "Trainee17@example.com",
                             IsDeleted = false,
                             Name = "Trainee 17",
@@ -2355,7 +2354,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 18,
                             Bio = "Bio for Trainee 18",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "Trainee18@example.com",
                             IsDeleted = false,
                             Name = "Trainee 18",
@@ -2365,7 +2364,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 19,
                             Bio = "Bio for Trainee 19",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "Trainee19@example.com",
                             IsDeleted = false,
                             Name = "Trainee 19",
@@ -2375,7 +2374,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 20,
                             Bio = "Bio for Trainee 20",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "Trainee20@example.com",
                             IsDeleted = false,
                             Name = "Trainee 20",
@@ -2385,7 +2384,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 21,
                             Bio = "Bio for Trainee 21",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "Trainee21@example.com",
                             IsDeleted = false,
                             Name = "Trainee 21",
@@ -2395,7 +2394,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 22,
                             Bio = "Bio for Trainee 22",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "Trainee22@example.com",
                             IsDeleted = false,
                             Name = "Trainee 22",
@@ -2405,7 +2404,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 23,
                             Bio = "Bio for Trainee 23",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "Trainee23@example.com",
                             IsDeleted = false,
                             Name = "Trainee 23",
@@ -2415,7 +2414,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 24,
                             Bio = "Bio for Trainee 24",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "Trainee24@example.com",
                             IsDeleted = false,
                             Name = "Trainee 24",
@@ -2425,7 +2424,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 25,
                             Bio = "Bio for Trainee 25",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "Trainee25@example.com",
                             IsDeleted = false,
                             Name = "Trainee 25",
@@ -2435,7 +2434,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 26,
                             Bio = "Bio for Trainee 26",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "Trainee26@example.com",
                             IsDeleted = false,
                             Name = "Trainee 26",
@@ -2445,7 +2444,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 27,
                             Bio = "Bio for Trainee 27",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "Trainee27@example.com",
                             IsDeleted = false,
                             Name = "Trainee 27",
@@ -2455,7 +2454,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 28,
                             Bio = "Bio for Trainee 28",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "Trainee28@example.com",
                             IsDeleted = false,
                             Name = "Trainee 28",
@@ -2465,7 +2464,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 29,
                             Bio = "Bio for Trainee 29",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "Trainee29@example.com",
                             IsDeleted = false,
                             Name = "Trainee 29",
@@ -2475,7 +2474,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 30,
                             Bio = "Bio for Trainee 30",
-                            CreatedAt = "21/05/2024 7:29:44 pm",
+                            CreatedAt = "22/05/2024 00:36:11",
                             Email = "Trainee30@example.com",
                             IsDeleted = false,
                             Name = "Trainee 30",
@@ -2488,7 +2487,7 @@ namespace ProSkills.Migrations
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
                 });
 
@@ -2497,7 +2496,7 @@ namespace ProSkills.Migrations
                     b.HasOne("ProSkills.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
                 });
 
@@ -2506,7 +2505,7 @@ namespace ProSkills.Migrations
                     b.HasOne("ProSkills.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
                 });
 
@@ -2515,13 +2514,13 @@ namespace ProSkills.Migrations
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("ProSkills.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
                 });
 
@@ -2530,7 +2529,7 @@ namespace ProSkills.Migrations
                     b.HasOne("ProSkills.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
                 });
 
@@ -2539,7 +2538,7 @@ namespace ProSkills.Migrations
                     b.HasOne("ProSkills.Models.AdminPanel.InstructorManger.instructor", "Instructor")
                         .WithMany()
                         .HasForeignKey("instructorId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Instructor");
@@ -2550,13 +2549,13 @@ namespace ProSkills.Migrations
                     b.HasOne("ProSkills.Models.ClientSide.Course", "Course")
                         .WithMany("Trainees")
                         .HasForeignKey("CourseId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("ProSkills.Models.ClientSide.Trainee", "Trainee")
                         .WithMany("Courses")
                         .HasForeignKey("TraineeId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Course");
@@ -2569,7 +2568,7 @@ namespace ProSkills.Migrations
                     b.HasOne("ProSkills.Models.ClientSide.Course", "Course")
                         .WithMany("steps")
                         .HasForeignKey("CourseId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Course");

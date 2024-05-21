@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ProSkills Website </title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/M_AECI.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Particles JS/css/style.css">
+    <style>
+        /* Ensure the particles cover the whole screen */
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Ensure it's behind other content */
+        }
+
+        .footer {
+            position: fixed; /* Fixed mean it will use the top and bottom and left and right */
+            bottom: 0;
+            width: 100%;
+            background-color: #f8f9fa; /* You can change the background color as needed */
+            padding: 10px; /* Add padding for better appearance */
+            text-align: center; /* Center-align text */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <partial name="_NavPartial"></partial>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            <!-- Particles Java Script -->
+            <div id="particles-js"></div>
+            <script src="/Particles JS/js/particles.js"></script>
+            <script src="/Particles JS/js/app.js"></script>
+            <!-- End of Particles Java Script -->
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - M_AECI - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

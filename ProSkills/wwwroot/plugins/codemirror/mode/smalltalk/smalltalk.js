@@ -82,7 +82,7 @@ CodeMirror.defineMode('smalltalk', function(config) {
     } else if (specialChars.test(aChar)) {
       stream.eatWhile(specialChars);
       token.name = 'operator';
-      token.eos = aChar !== ';'; // ; cascaded message expression
+      token.eos = aChar !== ';'; // ; NoActiond message expression
 
     } else if (/\d/.test(aChar)) {
       stream.eatWhile(/[\w\d]/);
