@@ -124,7 +124,7 @@ namespace ProSkills.Controllers
 
                         // Sign in with the claims
                         await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity), new AuthenticationProperties { IsPersistent = userfromReq.RememberMe });
-
+                        //await signInManager.SignInAsync(userfromdatabase, userfromReq.RememberMe);
                         return RedirectToAction("Index", "Home");
                     }
                 }
@@ -140,8 +140,11 @@ namespace ProSkills.Controllers
 
         //logout
         //destroy the cookie
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> logout()
         {
+            // Using SignInManager
             await signInManager.SignOutAsync();
             return RedirectToAction(nameof(Login));
         }

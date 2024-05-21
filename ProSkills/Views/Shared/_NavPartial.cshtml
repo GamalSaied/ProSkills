@@ -17,16 +17,19 @@
 
                 @if (User.Identity.IsAuthenticated)
                 {
-                  @*   <li style="color:white">@User.FindFirst(ClaimTypes.NameIdentifier)?.Value</li> *@
                     <li class="nav-item" style="color:white"> Welcome @User.Identity.Name</li>
-                    <li class="nav-item"><a class="nav-link" asp-controller="Account" asp-action="logout">Sign Out</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Account" asp-action="Logout">Sign Out</a>
+                    </li>
                 }
                 else
                 {
-                    @* <li><a href="/Account/Login">Login</a></li>
-                    <li><a href="/Account/Register">Register</a></li> *@
-                    <li class="nav-item"><a class="nav-link" asp-controller="Account" asp-action="Login">Login</a></li>
-                    <li class="nav-item"><a class="nav-link" asp-controller="Account" asp-action="Register">Register</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Account" asp-action="Login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Account" asp-action="Register">Register</a>
+                    </li>
                 }
                
             </ul>

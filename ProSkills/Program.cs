@@ -60,7 +60,7 @@ namespace ProSkills
 
 
 
-            //inject dbcontext options //nject iticontext
+            //inject dbcontext options //inject iticontext
             //register 
             builder.Services.AddScoped<IRepository<instructor>, InstructorRepository>();
             builder.Services.AddScoped<IRepository<Category>, CategoryRepository>();
