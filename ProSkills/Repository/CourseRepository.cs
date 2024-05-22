@@ -4,7 +4,7 @@ using ProSkills.Models.ClientSide;
 
 namespace ProSkills.Repository
 {
-    public class CourseRepository : IRepository<Course>
+    public class CourseRepository : IRepository<Course> , ICourseRepository
     {
 
         ITIContext context;
@@ -111,7 +111,21 @@ namespace ProSkills.Repository
         // Saves changes made to the database
         public void Save() => context.SaveChanges();
 
-        // Get By Name
+        public IEnumerable<Course> GetAllCoursesWithDetails()
+        {
+            return context.Course
+                .Include(c => c.Chapters)
+                .ThenInclude(ch => ch.Lessons)
+                .ToList();
+        }
+
+        public Course GetCourseWithDetails(int courseId)
+        {
+            return context.Course
+                .Include(c => c.Chapters)
+                .ThenInclude(ch => ch.Lessons)
+                .FirstOrDefault(c => c.Id == courseId);
+        }
 
     }
 }
