@@ -4,7 +4,7 @@ namespace ProSkills.ViewModels
 {
     public class LoginUserViewModel
     {
-        public string UsreName { get; set; }
+        public string UserName { get; set; }
 
         [DataType(DataType.Password)]
         public string Password { get; set; }

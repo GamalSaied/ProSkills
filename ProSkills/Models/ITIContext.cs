@@ -18,6 +18,8 @@ namespace ProSkills.Models
         public DbSet<Category> Category{ get; set; }
         public DbSet<Package> Package { get; set; }
         public DbSet<RedeemCode> RedeemCode { get; set; }
+        public DbSet<Chapter> Chapters { get; set; }
+        public DbSet<Lesson> Lessons { get; set; }
 
 
         // --------------------------------------------------------------------
@@ -136,6 +138,47 @@ namespace ProSkills.Models
                 new Course { Id = 29, Name = "C# Programming Fundamentals", CourseImagePath = "path/to/trainee/image.jpg", Description = "This course covers the fundamentals of C# programming language.", StartAt = DateTime.Now.AddDays(8), EndAt = DateTime.Now.AddDays(55), CreatedAt = DateTime.Now.ToString(), Hours = 50, NumberOfTrainees = 20, TotalFilesSize = 12.6, NumberOfAssessment = 6, NumberOfLessons = 23, Location = "Online", IsDeleted = false, instructorId = new Random().Next(1, 16) },
                 new Course { Id = 30, Name = "Unity Game Development Fundamentals", CourseImagePath = "path/to/trainee/image.jpg", Description = "This course covers the fundamentals of game development using Unity game engine.", StartAt = DateTime.Now.AddDays(6), EndAt = DateTime.Now.AddDays(35), CreatedAt = DateTime.Now.ToString(), Hours = 45, NumberOfTrainees = 25, TotalFilesSize = 13.9, NumberOfAssessment = 6, NumberOfLessons = 22, Location = "Online", IsDeleted = false, instructorId = new Random().Next(1, 16) }
             );
+
+            // Seed Chapters and Lessons
+            var random1 = new Random();
+            var chapterId = 1;
+            var lessonId = 1;
+            var chapters = new List<Chapter>();
+            var lessons = new List<Lesson>();
+
+            for (int courseId = 1; courseId <= 10; courseId++)
+            {
+                var numberOfChapters = random1.Next(2, 4); // Each course has between 3 and 7 chapters
+                for (int i = 1; i <= numberOfChapters; i++)
+                {
+                    chapters.Add(new Chapter
+                    {
+                        Id = chapterId,
+                        Title = $"Chapter {i} for Course {courseId}",
+                        Description = $"Description for Chapter {i} in Course {courseId}",
+                        CourseId = courseId
+                    });
+
+                    var numberOfLessons = random1.Next(2, 4); // Each chapter has between 3 and 10 lessons
+                    for (int j = 1; j <= numberOfLessons; j++)
+                    {
+                        lessons.Add(new Lesson
+                        {
+                            Id = lessonId,
+                            Title = $"Lesson {j} for Chapter {chapterId}",
+                            Content = $"Content for Lesson {j} in Chapter {chapterId}",
+                            Time = TimeSpan.FromMinutes(random1.Next(10, 60)), // Random lesson time between 10 and 60 minutes
+                            ChapterId = chapterId
+                        });
+                        lessonId++;
+                    }
+                    chapterId++;
+                }
+            }
+
+            modelBuilder.Entity<Chapter>().HasData(chapters);
+            modelBuilder.Entity<Lesson>().HasData(lessons);
+
             // Generate random CourseTrainee relations
             var random = new Random();
             var courseTraineeData = new List<CourseTrainee>();

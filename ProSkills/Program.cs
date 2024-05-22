@@ -7,6 +7,7 @@ using ProSkills.Interfaces;
 using ProSkills.Models;
 using ProSkills.Models.AdminPanel.InstructorManger;
 using ProSkills.Models.ClientSide;
+using ProSkills.Repositories;
 using ProSkills.Repository;
 
 namespace ProSkills
@@ -70,10 +71,10 @@ namespace ProSkills
 
             builder.Services.AddScoped<IRepository<Package>, PackageRepository>();
             builder.Services.AddScoped<IRepository<RedeemCode>, RedeemCodeRepository>();
-            //builder.Services.AddScoped<IRepository, CourseRepository>();
-            //builder.Services.AddScoped<ICourseRepository, CourseRepository>();
-            //builder.Services.AddScoped<ITraineeRepository, TraineeRepository>();
-            // Add services to the container.
+            builder.Services.AddScoped<IRepository<Lesson>, LessonRepository>();
+            builder.Services.AddScoped<IRepository<Chapter>, ChapterRepository>();
+
+
 
             var app = builder.Build();
 

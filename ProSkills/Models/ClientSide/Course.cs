@@ -30,7 +30,11 @@ namespace ProSkills.Models.ClientSide
         public instructor? Instructor { get; set; }
 
         public List<Steps>? steps  { get; set; }
-        public List<CourseTrainee>? Trainees {  get; set; } 
+        public List<CourseTrainee>? Trainees {  get; set; }
+
+        // One-to-many relationship with Chapter
+        public List<Chapter> Chapters { get; set; } = new List<Chapter>();
+
         #endregion
 
     }

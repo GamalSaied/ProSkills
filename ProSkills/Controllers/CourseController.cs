@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using ProSkills.Interfaces;
 using ProSkills.Models.AdminPanel.InstructorManger;
 using ProSkills.Models.ClientSide;
+using ProSkills.Repositories;
 using ProSkills.Repository;
 using System.Collections.Generic;
 using System.Drawing;
@@ -19,16 +20,22 @@ namespace ProSkills.Controllers
         private IRepository<Category> _categoryRepository;
         private IRepository<RedeemCode> _redeemCodeRepository;
         private IRepository<Package> _packageRepository;
+        private IRepository<Chapter> _chapterRepository;
+        private readonly IRepository<Lesson> _lessonRepository;
 
+        private readonly ITIContext _context;
 
-
-        public CourseController(IRepository<Course> CourseRepository, IRepository<instructor> InstructorRepository, IRepository<Category> CategoryRepository, IRepository<RedeemCode> RedeemCodeRepository, IRepository<Package> PackageRepository)
+        public CourseController(IRepository<Lesson> lessonRepository,IRepository<Chapter> chapterRepository, IRepository<Course> CourseRepository, IRepository<instructor> InstructorRepository, IRepository<Category> CategoryRepository, IRepository<RedeemCode> RedeemCodeRepository, IRepository<Package> PackageRepository)
         {
             _courseRepository = CourseRepository;
             _instructorRepository = InstructorRepository;
             _categoryRepository = CategoryRepository;
             _redeemCodeRepository = RedeemCodeRepository;
             _packageRepository = PackageRepository;
+            _chapterRepository = chapterRepository;
+            _lessonRepository = lessonRepository;
+
+
         }
         #endregion
 
@@ -78,6 +85,33 @@ namespace ProSkills.Controllers
 
         }
 
+        public IActionResult ChaptersInCourse(int courseId)
+        {
+            var course = _courseRepository.GetById(courseId);
+            if (course == null)
+            {
+                return NotFound();
+            }
+
+            var chapters = _chapterRepository.GetAll().Where(c => c.CourseId == courseId).ToList();
+
+            ViewBag.CourseName = course.Name;
+            return View(chapters);
+        }
+
+
+        public IActionResult LessonsInChapter(int chapterId)
+        {
+            var chapter = _chapterRepository.GetById(chapterId);
+            if (chapter == null)
+            {
+                return NotFound();
+            }
+
+            var lessons = _lessonRepository.GetAll().Where(l => l.ChapterId == chapterId).ToList();
+            ViewBag.ChapterName = chapter.Title;
+            return View(lessons);
+        }
 
         public IActionResult SaveNew(Course CourseFromReq,int instructorId)  // Get_InstructorID from Hidden
         {

@@ -1,0 +1,42 @@
+﻿@model List<ProSkills.Models.ClientSide.Lesson>
+
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    var chapterName = ViewBag.ChapterName;
+}
+
+<div class="card-body">
+    <h2>@chapterName - Lessons</h2>
+    <div>
+        <a href="/Lesson/AddNew?chapterId=@Model.FirstOrDefault()?.ChapterId" class="btn btn-info btn-block btn-flat" style="margin-bottom:10px;">New Lesson</a>
+    </div>
+
+    <table id="example1" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Title</th>
+                <th scope="col">Content</th>
+                <th scope="col">Time</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var lesson in Model)
+            {
+                if (lesson != null)
+                {
+                    <tr>
+                        <td>@lesson.Id</td>
+                        <td>@lesson.Title</td>
+                        <td>@lesson.Content</td>
+                        <td>@lesson.Time</td>
+                        <td><a href="/Lesson/Edit?ID=@lesson.Id" class="btn btn-block bg-gradient-secondary btn-xs">Edit</a></td>
+                        <td><a href="/Lesson/Delete?ID=@lesson.Id" class="btn btn-block bg-gradient-danger btn-xs" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
