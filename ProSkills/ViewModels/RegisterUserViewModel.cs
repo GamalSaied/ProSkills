@@ -9,6 +9,7 @@ namespace ProSkills.ViewModels
     {
         [Required(ErrorMessage = "Please enter your full name")]
         public string FullName { get; set; }
+
         [Required(ErrorMessage = "Please enter your User name")]
         public string UserName { get; set; }
 

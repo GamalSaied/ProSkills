@@ -38,14 +38,15 @@ namespace ProSkills.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(RegisterUserViewModel userfromrequest)
         {
-            if (ModelState.IsValid) // server side validation
+            if (ModelState.IsValid)
             {
                 ApplicationUser user = new ApplicationUser
                 {
-                    UserName = userfromrequest.Email,
+                 
+                    UserName = userfromrequest.Email.Split('@')[0],
                     Email = userfromrequest.Email,
                     PhoneNumber = userfromrequest.Phone,
-                  Country = userfromrequest.Country
+                    Country = userfromrequest.Country
                 };
 
                 var result = await _userManager.CreateAsync(user, userfromrequest.Password);
@@ -54,16 +55,16 @@ namespace ProSkills.Controllers
                 {
                     // Map to Trainee
                     var trainee = userfromrequest.ToTrainee();
+                    //trainee.ApplicationUserId = user.Id;
+                    trainee.Email = user.Email;
 
                     // Save Trainee to Database
                     _traineeRepository.Insert(trainee);
                     _traineeRepository.Save();
 
                     await _signInManager.SignInAsync(user, false); // session Cookie
-                    return RedirectToAction("Login", "Account");
+                    return RedirectToAction(nameof(Login));
                 }
-
-                    // Fail to save db
                 else
                 {
                     foreach (var error in result.Errors)
@@ -71,11 +72,9 @@ namespace ProSkills.Controllers
                         ModelState.AddModelError(string.Empty, error.Description);
                     }
                 }
-             
-
-               
             }
-            return View("Register", userfromrequest);
+
+            return View(userfromrequest);
         }
 
         #endregion

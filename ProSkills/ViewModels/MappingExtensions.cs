@@ -8,7 +8,8 @@ namespace ProSkills.ViewModels
         {
             return new Trainee
             {
-                Name = model.UserName,
+               
+                Name = model.FullName,
                 Email = model.Email,
                 Password = model.Password,
                 Phone = model.Phone,
