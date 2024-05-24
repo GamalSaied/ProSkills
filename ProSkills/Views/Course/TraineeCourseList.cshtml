@@ -1,0 +1,48 @@
+﻿@model List<ProSkills.Models.ClientSide.Course>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFT Card Component</title>
+    <link rel="stylesheet" href="~/css/CardStyle.css">
+</head>
+
+<body>
+
+    <div class="container">
+        @foreach (var course in Model)
+        {
+            int totalDays = (int)(course.EndAt - course.StartAt).TotalDays;
+
+            <div class="nft" onclick="window.location.href='https://www.google.com'">
+                <div class='main'>
+                    <img class='tokenImage' src="@course.CourseImagePath" alt="NFT" />
+                    <h2>@course.Name</h2>
+                    <p class='description'>@course.Description</p>
+                    <div class='tokenInfo'>
+                        <div class="price">
+                            <ins>◘</ins>
+                            <p>@course.TotalFilesSize GB</p>
+                        </div>
+                        <div class="duration">
+                            <ins>◷</ins>
+                            <p>@totalDays days</p>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class='creator'>
+                        <div class='wrapper'>
+                            <img src="https://via.placeholder.com/40" alt="Creator" />
+                        </div>
+                        <p><ins>Created by</ins> @course.Instructor?.Name</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</body>
+
+</html>

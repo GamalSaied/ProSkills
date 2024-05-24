@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ProSkills.Interfaces;
 using ProSkills.Models.ClientSide;
+using ProSkills.Models.ClientSide.Backup;
 
 namespace ProSkills.Repository
 {
@@ -129,6 +130,23 @@ namespace ProSkills.Repository
         public void MarkAsDeleted(int id)
         {
             throw new NotImplementedException();
+        }
+
+        public List<Course> GetCourseTraineeWithDetails(int TraineeId)
+        {
+            // Mini to Mini Relationship
+            var trainee = context.Trainee
+                       .Include(t => t.Courses)
+                       .ThenInclude(ct => ct.Course) // Assuming CourseTrainee has a property Course
+                       .FirstOrDefault(t => t.Id == TraineeId);
+
+            if (trainee == null)
+            {
+                // Return an empty list or handle the case when the trainee is not found
+                return new List<Course>();
+            }
+
+            return trainee.Courses.Select(ct => ct.Course).ToList();
         }
 
     }

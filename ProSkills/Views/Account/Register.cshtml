@@ -5,30 +5,103 @@
 
 @{
     ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h1>Registeration Form</h1>
 
 <hr />
-<div class="row">
+<link rel="stylesheet" type="text/css" href="~/css/register.css">
+<div class="form-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+                <div class="form-container">
+                    <h3 class="title">Register</h3>
+                    <form class="form-horizontal">
+                        
+                        <div class="form-group">
+                            <label  class="control-label">Full Name</label>
+                            <input asp-for="FullName" class="form-control" placeholder="Full Name" />
+                            <span asp-validation-for="FullName" class="text-danger"></span>
+                        </div>
+                  
+                        <div class="form-group">
+
+                                <label  class="control-label">Email</label>
+                                <input asp-for="Email" class="form-control" placeholder="Email Address" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+
+                        </div>
+                        <div class="form-group">
+                       
+                            <label  class="control-label">Password</label>
+                     
+                            <input asp-for="Password" class="form-control" placeholder="Password" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                      
+                            <label  class="control-label">Confirm Password</label>
+                            <input asp-for="ConfirmPassword" class="form-control" placeholder="Confirm Password " />
+                            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                        </div>
+                        <h4 class="sub-title">Personal Information</h4>
+                        <div class="form-group">
+                            <label  class="control-label">Phone No.</label>
+                            <input type="text" class="form-control" placeholder="Phone Number">
+                            <input asp-for="Phone" class="form-control" placeholder="Phone Number" />
+                            <span asp-validation-for="Phone" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label   class="control-label">Country</label>
+                            <select asp-for="Country" class="form-control" asp-items="Html.GetEnumSelectList<Country>()"></select>
+                            <span asp-validation-for="Country" class="text-danger"></span>
+                        </div>
+                        <div class="check-terms">
+                            <input type="checkbox" class="checkbox">
+                            <span class="check-label">I agree to the terms</span>
+                        </div>
+                        <span class="signin-link">Already have an account? Click here to <a href="account/Login">Login</a></span>
+                        <button class="btn signup" type="submit">Create Account</button>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Login">Login</a>
+</div>
+
+
+@* <div class="row">
     <div class="col-md-4">
-        <form asp-action="Register" method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger" ></div>
-            <div class="form-group">
-                <label asp-for="UserName" class="control-label"></label>
-                <input asp-for="UserName" class="form-control" placeholder="Please enter your name" />
-                <span asp-validation-for="UserName" class="text-danger"></span>
+    @*     <form asp-action="Register" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @*     <div class="form-group">
+            <label asp-for="UserName" class="control-label"></label>
+            <input asp-for="UserName" class="form-control" placeholder="Please enter your name" />
+            <span asp-validation-for="UserName" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control" placeholder="Please enter your password"  />
-                <span asp-validation-for="Password" class="text-danger"></span>
+                <label asp-for="FullName" class="control-label"></label>
+                <input asp-for="FullName" class="form-control" placeholder="Please enter your Full name" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="ConfirmPassword" class="control-label"></label>
-                <input asp-for="ConfirmPassword" class="form-control" placeholder="Please enter your password" />
-                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" placeholder="Please enter your email" />
+                <span asp-validation-for="Email" class="text-danger"></span>
             </div>
+
+
             <div class="form-group">
                 <label asp-for="Phone"></label>
                 <input asp-for="Phone" class="form-control" placeholder="Please enter your Phone" />
@@ -39,26 +112,22 @@
                 <select asp-for="country" class="form-control" asp-items="Html.GetEnumSelectList<Country>()"></select>
                 <span asp-validation-for="country" class="text-danger"></span>
             </div>
-      
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" placeholder="Please enter your email" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div> 
 
-       
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" placeholder="Please enter your password" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConfirmPassword" class="control-label"></label>
+                <input asp-for="ConfirmPassword" class="form-control" placeholder="Please enter your password" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+
+
             <div class="form-group">
                 <input type="submit" value="Signup" class="btn btn-primary" />
             </div>
         </form>
-    </div>
-</div>
-
-<div>
-    <a asp-action="Login">Login</a>
-</div>
-
-@section Scripts {
-   @*  @{await Html.RenderPartialAsync("_ValidationScriptsPartial");} *@
-    <partial name="_ValidationScriptsPartial"></partial>
-}
+    </div> 
+</div> *@
