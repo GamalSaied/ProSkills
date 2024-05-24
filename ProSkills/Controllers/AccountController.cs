@@ -35,34 +35,36 @@ namespace ProSkills.Controllers
             return View();
         }
 
+
         [HttpPost]
         public async Task<IActionResult> Register(RegisterUserViewModel userfromrequest)
         {
             if (ModelState.IsValid)
-            {
+
+            {     
+
                 ApplicationUser user = new ApplicationUser
                 {
-                 
-                    UserName = userfromrequest.Email.Split('@')[0],
+                    FullName = userfromrequest.FullName,
                     Email = userfromrequest.Email,
-                    PhoneNumber = userfromrequest.Phone,
-                    Country = userfromrequest.Country
+                   
+                    //PhoneNumber = userfromrequest.Phone,
+                    Country = userfromrequest.Country,
+                    UserName = userfromrequest.Email
                 };
 
                 var result = await _userManager.CreateAsync(user, userfromrequest.Password);
 
                 if (result.Succeeded)
                 {
-                    // Map to Trainee
                     var trainee = userfromrequest.ToTrainee();
                     //trainee.ApplicationUserId = user.Id;
                     trainee.Email = user.Email;
 
-                    // Save Trainee to Database
                     _traineeRepository.Insert(trainee);
-                    _traineeRepository.Save();
+                     _traineeRepository.Save();
 
-                    await _signInManager.SignInAsync(user, false); // session Cookie
+                    await _signInManager.SignInAsync(user, isPersistent: false);
                     return RedirectToAction(nameof(Login));
                 }
                 else
@@ -70,6 +72,16 @@ namespace ProSkills.Controllers
                     foreach (var error in result.Errors)
                     {
                         ModelState.AddModelError(string.Empty, error.Description);
+                    }
+                }
+            }
+            else
+            {
+                foreach (var modelState in ModelState.Values)
+                {
+                    foreach (var error in modelState.Errors)
+                    {
+                        ModelState.AddModelError(string.Empty, error.ErrorMessage);
                     }
                 }
             }

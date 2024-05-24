@@ -194,8 +194,8 @@ namespace ProSkills.Models
                 courseTraineeData.Add(new CourseTrainee
                 {
                     Id = i,
-                    TraineeId = random.Next(1, 31), // Trainee IDs between 1 and 30
-                    CourseId = random.Next(1, 31), // Course IDs between 1 and 30
+                    TraineeId = random.Next(1, 29), // Trainee IDs between 1 and 30
+                    CourseId = random.Next(1, 29), // Course IDs between 1 and 30
                     Result = (decimal)(random.NextDouble() * 100), // Random result between 0 and 100
                 });
             }

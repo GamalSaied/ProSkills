@@ -10,8 +10,7 @@ namespace ProSkills.ViewModels
         [Required(ErrorMessage = "Please enter your full name")]
         public string FullName { get; set; }
 
-        [Required(ErrorMessage = "Please enter your User name")]
-        public string UserName { get; set; }
+   
 
         [Required(ErrorMessage = "Please enter your email address")]
         [EmailAddress(ErrorMessage = "Please enter a valid email address")]
@@ -26,9 +25,6 @@ namespace ProSkills.ViewModels
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
-        [Required(ErrorMessage = "Please enter your phone number")]
-        [Phone(ErrorMessage = "Please enter a valid phone number")]
-        public string Phone { get; set; }
 
         [Required(ErrorMessage = "Please select your country")]
         public Country Country { get; set; }
