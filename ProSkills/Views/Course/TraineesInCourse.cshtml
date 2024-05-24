@@ -20,6 +20,7 @@
                 <th scope="col">Email</th>
                 <th scope="col">Password</th>
                 <th scope="col">CreatedAt</th>
+                <th scope="col">CoursesClientSide</th>
                 <th scope="col">Profile</th>
                 <th scope="col">Edit</th>
                 <th scope="col">Delete</th>
@@ -40,6 +41,7 @@
                         <td>@item.Email</td>
                         <td>@item.Password</td>
                         <td>@item.CreatedAt</td>
+                        <td><a href="/Course/TraineeCourseList?traineeId=@item.Id">Courses</a></td>
                         <td><a href="/Trainee/GetByID?ID=@item.Id">Profile</a></td>
                         <td><a href="/Trainee/Edit?ID=@item.Id" class="btn btn-block bg-gradient-secondary btn-xs">Edit</a></td>
                         <td><a href="/Trainee/SoftDelete?ID=@item.Id" class="btn btn-block bg-gradient-danger btn-xs" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>

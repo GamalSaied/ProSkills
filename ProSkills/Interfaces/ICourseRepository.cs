@@ -7,5 +7,7 @@ namespace ProSkills.Interfaces
     {
         IEnumerable<Course> GetAllCoursesWithDetails();
         Course GetCourseWithDetails(int courseId);
+
+        List<Course> GetCourseTraineeWithDetails(int courseId);
     }
 }

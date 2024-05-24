@@ -117,9 +117,6 @@ namespace ProSkills.Controllers
         public IActionResult SaveNew(Course CourseFromReq,int instructorId)  // Get_InstructorID from Hidden
         {
 
-
-                
-
             string redeemCodeFromReq = CourseFromReq.RedeemCode;
             var RedeemCode = _redeemCodeRepository.GetByName(redeemCodeFromReq);
             if (RedeemCode == null) 
@@ -159,6 +156,13 @@ namespace ProSkills.Controllers
         {
             var course = _courseRepositoryVersion2.GetCourseWithDetails(courseId);
             return View("TraineeCourse", course);
+        }
+
+        public IActionResult TraineeCourseList(int traineeId)
+        {
+            var course = _courseRepositoryVersion2.GetCourseTraineeWithDetails(traineeId);
+            return View("TraineeCourseList", course);
+            
         }
     }
 }

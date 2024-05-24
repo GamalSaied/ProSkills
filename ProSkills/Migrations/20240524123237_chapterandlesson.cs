@@ -3,91 +3,14 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
-
 namespace ProSkills.Migrations
 {
     /// <inheritdoc />
-    public partial class chpters : Migration
+    public partial class chapterandlesson : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DeleteData(
-                table: "Lessons",
-                keyColumn: "Id",
-                keyValue: 59);
-
-            migrationBuilder.DeleteData(
-                table: "Lessons",
-                keyColumn: "Id",
-                keyValue: 60);
-
-            migrationBuilder.DeleteData(
-                table: "Lessons",
-                keyColumn: "Id",
-                keyValue: 61);
-
-            migrationBuilder.DeleteData(
-                table: "Lessons",
-                keyColumn: "Id",
-                keyValue: 62);
-
-            migrationBuilder.DeleteData(
-                table: "Lessons",
-                keyColumn: "Id",
-                keyValue: 63);
-
-            migrationBuilder.DeleteData(
-                table: "Lessons",
-                keyColumn: "Id",
-                keyValue: 64);
-
-            migrationBuilder.DeleteData(
-                table: "Lessons",
-                keyColumn: "Id",
-                keyValue: 65);
-
-            migrationBuilder.DeleteData(
-                table: "Lessons",
-                keyColumn: "Id",
-                keyValue: 66);
-
-            migrationBuilder.DeleteData(
-                table: "Lessons",
-                keyColumn: "Id",
-                keyValue: 67);
-
-            migrationBuilder.DeleteData(
-                table: "Lessons",
-                keyColumn: "Id",
-                keyValue: 68);
-
-            migrationBuilder.DeleteData(
-                table: "Lessons",
-                keyColumn: "Id",
-                keyValue: 69);
-
-            migrationBuilder.DeleteData(
-                table: "Lessons",
-                keyColumn: "Id",
-                keyValue: 70);
-
-            migrationBuilder.DeleteData(
-                table: "Lessons",
-                keyColumn: "Id",
-                keyValue: 71);
-
-            migrationBuilder.DeleteData(
-                table: "Chapters",
-                keyColumn: "Id",
-                keyValue: 24);
-
-            migrationBuilder.DeleteData(
-                table: "Chapters",
-                keyColumn: "Id",
-                keyValue: 25);
-
             migrationBuilder.DeleteData(
                 table: "Chapters",
                 keyColumn: "Id",
@@ -98,4017 +21,3785 @@ namespace ProSkills.Migrations
                 keyColumn: "Id",
                 keyValue: 1,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "Category",
                 keyColumn: "Id",
                 keyValue: 2,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "Category",
                 keyColumn: "Id",
                 keyValue: 3,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "Category",
                 keyColumn: "Id",
                 keyValue: 4,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "Category",
                 keyColumn: "Id",
                 keyValue: 5,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "Category",
                 keyColumn: "Id",
                 keyValue: 6,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "Category",
                 keyColumn: "Id",
                 keyValue: 7,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "Category",
                 keyColumn: "Id",
                 keyValue: 8,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "Category",
                 keyColumn: "Id",
                 keyValue: 9,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
-
-            migrationBuilder.UpdateData(
-                table: "Chapters",
-                keyColumn: "Id",
-                keyValue: 1,
-                column: "downloadLink",
-                value: "https://sadat.vip/");
-
-            migrationBuilder.UpdateData(
-                table: "Chapters",
-                keyColumn: "Id",
-                keyValue: 2,
-                column: "downloadLink",
-                value: "https://sadat.vip/");
-
-            migrationBuilder.UpdateData(
-                table: "Chapters",
-                keyColumn: "Id",
-                keyValue: 3,
-                columns: new[] { "CourseId", "Description", "Title", "downloadLink" },
-                values: new object[] { 2, "Description for Chapter 1 in Course 2", "Chapter 1 for Course 2", "https://sadat.vip/" });
-
-            migrationBuilder.UpdateData(
-                table: "Chapters",
-                keyColumn: "Id",
-                keyValue: 4,
-                columns: new[] { "Description", "Title", "downloadLink" },
-                values: new object[] { "Description for Chapter 2 in Course 2", "Chapter 2 for Course 2", "https://sadat.vip/" });
-
-            migrationBuilder.UpdateData(
-                table: "Chapters",
-                keyColumn: "Id",
-                keyValue: 5,
-                columns: new[] { "CourseId", "Description", "Title", "downloadLink" },
-                values: new object[] { 3, "Description for Chapter 1 in Course 3", "Chapter 1 for Course 3", "https://sadat.vip/" });
-
-            migrationBuilder.UpdateData(
-                table: "Chapters",
-                keyColumn: "Id",
-                keyValue: 6,
-                columns: new[] { "Description", "Title", "downloadLink" },
-                values: new object[] { "Description for Chapter 2 in Course 3", "Chapter 2 for Course 3", "https://sadat.vip/" });
-
-            migrationBuilder.UpdateData(
-                table: "Chapters",
-                keyColumn: "Id",
-                keyValue: 7,
-                columns: new[] { "CourseId", "Description", "Title", "downloadLink" },
-                values: new object[] { 4, "Description for Chapter 1 in Course 4", "Chapter 1 for Course 4", "https://sadat.vip/" });
-
-            migrationBuilder.UpdateData(
-                table: "Chapters",
-                keyColumn: "Id",
-                keyValue: 8,
-                columns: new[] { "Description", "Title", "downloadLink" },
-                values: new object[] { "Description for Chapter 2 in Course 4", "Chapter 2 for Course 4", "https://sadat.vip/" });
-
-            migrationBuilder.UpdateData(
-                table: "Chapters",
-                keyColumn: "Id",
-                keyValue: 9,
-                columns: new[] { "Description", "Title", "downloadLink" },
-                values: new object[] { "Description for Chapter 3 in Course 4", "Chapter 3 for Course 4", "https://sadat.vip/" });
-
-            migrationBuilder.UpdateData(
-                table: "Chapters",
-                keyColumn: "Id",
-                keyValue: 10,
-                column: "downloadLink",
-                value: "https://sadat.vip/");
-
-            migrationBuilder.UpdateData(
-                table: "Chapters",
-                keyColumn: "Id",
-                keyValue: 11,
-                column: "downloadLink",
-                value: "https://sadat.vip/");
-
-            migrationBuilder.UpdateData(
-                table: "Chapters",
-                keyColumn: "Id",
-                keyValue: 12,
-                columns: new[] { "CourseId", "Description", "Title", "downloadLink" },
-                values: new object[] { 5, "Description for Chapter 3 in Course 5", "Chapter 3 for Course 5", "https://sadat.vip/" });
-
-            migrationBuilder.UpdateData(
-                table: "Chapters",
-                keyColumn: "Id",
-                keyValue: 13,
-                columns: new[] { "Description", "Title", "downloadLink" },
-                values: new object[] { "Description for Chapter 1 in Course 6", "Chapter 1 for Course 6", "https://sadat.vip/" });
-
-            migrationBuilder.UpdateData(
-                table: "Chapters",
-                keyColumn: "Id",
-                keyValue: 14,
-                columns: new[] { "Description", "Title", "downloadLink" },
-                values: new object[] { "Description for Chapter 2 in Course 6", "Chapter 2 for Course 6", "https://sadat.vip/" });
-
-            migrationBuilder.UpdateData(
-                table: "Chapters",
-                keyColumn: "Id",
-                keyValue: 15,
-                column: "downloadLink",
-                value: "https://sadat.vip/");
-
-            migrationBuilder.UpdateData(
-                table: "Chapters",
-                keyColumn: "Id",
-                keyValue: 16,
-                column: "downloadLink",
-                value: "https://sadat.vip/");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "Chapters",
                 keyColumn: "Id",
                 keyValue: 17,
-                columns: new[] { "CourseId", "Description", "Title", "downloadLink" },
-                values: new object[] { 8, "Description for Chapter 1 in Course 8", "Chapter 1 for Course 8", "https://sadat.vip/" });
+                columns: new[] { "CourseId", "Description", "Title" },
+                values: new object[] { 6, "Description for Chapter 3 in Course 6", "Chapter 3 for Course 6" });
 
             migrationBuilder.UpdateData(
                 table: "Chapters",
                 keyColumn: "Id",
                 keyValue: 18,
-                columns: new[] { "Description", "Title", "downloadLink" },
-                values: new object[] { "Description for Chapter 2 in Course 8", "Chapter 2 for Course 8", "https://sadat.vip/" });
+                columns: new[] { "Description", "Title" },
+                values: new object[] { "Description for Chapter 1 in Course 7", "Chapter 1 for Course 7" });
 
             migrationBuilder.UpdateData(
                 table: "Chapters",
                 keyColumn: "Id",
                 keyValue: 19,
-                columns: new[] { "CourseId", "Description", "Title", "downloadLink" },
-                values: new object[] { 9, "Description for Chapter 1 in Course 9", "Chapter 1 for Course 9", "https://sadat.vip/" });
+                columns: new[] { "Description", "Title" },
+                values: new object[] { "Description for Chapter 2 in Course 7", "Chapter 2 for Course 7" });
 
             migrationBuilder.UpdateData(
                 table: "Chapters",
                 keyColumn: "Id",
-                keyValue: 20,
-                columns: new[] { "CourseId", "Description", "Title", "downloadLink" },
-                values: new object[] { 9, "Description for Chapter 2 in Course 9", "Chapter 2 for Course 9", "https://sadat.vip/" });
+                keyValue: 24,
+                columns: new[] { "CourseId", "Description", "Title" },
+                values: new object[] { 10, "Description for Chapter 1 in Course 10", "Chapter 1 for Course 10" });
 
             migrationBuilder.UpdateData(
                 table: "Chapters",
                 keyColumn: "Id",
-                keyValue: 21,
-                columns: new[] { "Description", "Title", "downloadLink" },
-                values: new object[] { "Description for Chapter 3 in Course 9", "Chapter 3 for Course 9", "https://sadat.vip/" });
-
-            migrationBuilder.UpdateData(
-                table: "Chapters",
-                keyColumn: "Id",
-                keyValue: 22,
-                columns: new[] { "CourseId", "Description", "Title", "downloadLink" },
-                values: new object[] { 10, "Description for Chapter 1 in Course 10", "Chapter 1 for Course 10", "https://sadat.vip/" });
-
-            migrationBuilder.UpdateData(
-                table: "Chapters",
-                keyColumn: "Id",
-                keyValue: 23,
-                columns: new[] { "CourseId", "Description", "Title", "downloadLink" },
-                values: new object[] { 10, "Description for Chapter 2 in Course 10", "Chapter 2 for Course 10", "https://sadat.vip/" });
+                keyValue: 25,
+                columns: new[] { "Description", "Title" },
+                values: new object[] { "Description for Chapter 2 in Course 10", "Chapter 2 for Course 10" });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 1,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 08:07:36", new DateTime(2024, 6, 21, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(666), new DateTime(2024, 5, 29, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(661), 10 });
+                values: new object[] { "24/05/2024 15:32:36", new DateTime(2024, 6, 23, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(1543), new DateTime(2024, 5, 31, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(1538), 10 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 2,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 08:07:36", new DateTime(2024, 7, 6, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(721), new DateTime(2024, 6, 5, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(719), 7 });
+                values: new object[] { "24/05/2024 15:32:36", new DateTime(2024, 7, 8, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(1600), new DateTime(2024, 6, 7, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(1598), 7 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 3,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 08:07:36", new DateTime(2024, 6, 26, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(748), new DateTime(2024, 5, 27, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(745), 13 });
+                values: new object[] { "24/05/2024 15:32:36", new DateTime(2024, 6, 28, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(1613), new DateTime(2024, 5, 29, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(1611), 10 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 4,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 08:07:36", new DateTime(2024, 7, 21, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(761), new DateTime(2024, 6, 1, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(759), 5 });
+                values: new object[] { "24/05/2024 15:32:36", new DateTime(2024, 7, 23, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(1627), new DateTime(2024, 6, 3, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(1625), 7 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 5,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 08:07:36", new DateTime(2024, 7, 1, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(774), new DateTime(2024, 5, 29, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(771), 1 });
+                values: new object[] { "24/05/2024 15:32:36", new DateTime(2024, 7, 3, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(1650), new DateTime(2024, 5, 31, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(1647), 9 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 6,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 08:07:36", new DateTime(2024, 7, 11, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(785), new DateTime(2024, 6, 3, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(783), 1 });
+                values: new object[] { "24/05/2024 15:32:36", new DateTime(2024, 7, 13, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(1662), new DateTime(2024, 6, 5, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(1660), 3 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 7,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 08:07:36", new DateTime(2024, 7, 16, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(800), new DateTime(2024, 5, 30, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(798), 12 });
+                values: new object[] { "24/05/2024 15:32:36", new DateTime(2024, 7, 18, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(1674), new DateTime(2024, 6, 1, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(1672), 13 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 8,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 08:07:36", new DateTime(2024, 6, 26, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(812), new DateTime(2024, 5, 28, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(810), 3 });
+                values: new object[] { "24/05/2024 15:32:36", new DateTime(2024, 6, 28, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(1686), new DateTime(2024, 5, 30, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(1684), 10 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 9,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 08:07:36", new DateTime(2024, 7, 1, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(823), new DateTime(2024, 5, 31, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(822), 8 });
+                values: new object[] { "24/05/2024 15:32:36", new DateTime(2024, 7, 3, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(1702), new DateTime(2024, 6, 2, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(1700), 10 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 10,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 08:07:36", new DateTime(2024, 7, 6, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(835), new DateTime(2024, 6, 2, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(833), 15 });
+                values: new object[] { "24/05/2024 15:32:36", new DateTime(2024, 7, 8, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(1714), new DateTime(2024, 6, 4, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(1712), 3 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 11,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 08:07:36", new DateTime(2024, 7, 11, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(853), new DateTime(2024, 6, 4, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(851), 13 });
+                values: new object[] { "24/05/2024 15:32:36", new DateTime(2024, 7, 13, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(1727), new DateTime(2024, 6, 6, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(1725), 3 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 12,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 08:07:36", new DateTime(2024, 7, 1, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(865), new DateTime(2024, 6, 1, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(863), 7 });
+                values: new object[] { "24/05/2024 15:32:36", new DateTime(2024, 7, 3, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(1739), new DateTime(2024, 6, 3, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(1737), 12 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 13,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 08:07:36", new DateTime(2024, 6, 26, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(877), new DateTime(2024, 5, 30, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(875), 4 });
+                values: new object[] { "24/05/2024 15:32:36", new DateTime(2024, 6, 28, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(1753), new DateTime(2024, 6, 1, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(1751), 10 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 14,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 08:07:36", new DateTime(2024, 6, 21, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(889), new DateTime(2024, 5, 29, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(887), 2 });
+                values: new object[] { "24/05/2024 15:32:36", new DateTime(2024, 6, 23, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(1766), new DateTime(2024, 5, 31, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(1764), 14 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 15,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 08:07:36", new DateTime(2024, 7, 6, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(903), new DateTime(2024, 6, 5, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(901), 12 });
+                values: new object[] { "24/05/2024 15:32:36", new DateTime(2024, 7, 8, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(1778), new DateTime(2024, 6, 7, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(1776), 3 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 16,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 08:07:36", new DateTime(2024, 6, 26, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(915), new DateTime(2024, 5, 27, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(913), 8 });
+                values: new object[] { "24/05/2024 15:32:36", new DateTime(2024, 6, 28, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(1790), new DateTime(2024, 5, 29, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(1788), 13 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 17,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 08:07:36", new DateTime(2024, 7, 11, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(926), new DateTime(2024, 6, 3, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(924), 2 });
+                values: new object[] { "24/05/2024 15:32:36", new DateTime(2024, 7, 13, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(1804), new DateTime(2024, 6, 5, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(1802), 12 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 18,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 08:07:36", new DateTime(2024, 7, 16, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(938), new DateTime(2024, 5, 30, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(936), 13 });
+                values: new object[] { "24/05/2024 15:32:36", new DateTime(2024, 7, 18, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(1816), new DateTime(2024, 6, 1, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(1814), 8 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 19,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 08:07:36", new DateTime(2024, 6, 26, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(952), new DateTime(2024, 5, 28, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(950), 11 });
+                values: new object[] { "24/05/2024 15:32:36", new DateTime(2024, 6, 28, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(1828), new DateTime(2024, 5, 30, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(1826), 4 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 20,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 08:07:36", new DateTime(2024, 7, 1, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(1011), new DateTime(2024, 5, 31, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(1008), 1 });
+                values: new object[] { "24/05/2024 15:32:36", new DateTime(2024, 7, 3, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(2271), new DateTime(2024, 6, 2, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(2268), 10 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 21,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 08:07:36", new DateTime(2024, 7, 6, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(1025), new DateTime(2024, 6, 2, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(1024), 6 });
+                values: new object[] { "24/05/2024 15:32:36", new DateTime(2024, 7, 8, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(2288), new DateTime(2024, 6, 4, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(2286), 2 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 22,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 08:07:36", new DateTime(2024, 7, 11, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(1037), new DateTime(2024, 6, 4, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(1035), 10 });
+                values: new object[] { "24/05/2024 15:32:36", new DateTime(2024, 7, 13, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(2301), new DateTime(2024, 6, 6, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(2299), 3 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 23,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 08:07:36", new DateTime(2024, 7, 1, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(1053), new DateTime(2024, 6, 1, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(1051), 15 });
+                values: new object[] { "24/05/2024 15:32:36", new DateTime(2024, 7, 3, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(2313), new DateTime(2024, 6, 3, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(2311), 15 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 24,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 08:07:36", new DateTime(2024, 6, 26, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(1065), new DateTime(2024, 5, 30, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(1063), 5 });
+                values: new object[] { "24/05/2024 15:32:36", new DateTime(2024, 6, 28, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(2325), new DateTime(2024, 6, 1, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(2323), 10 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 25,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 08:07:36", new DateTime(2024, 6, 21, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(1077), new DateTime(2024, 5, 29, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(1075), 12 });
+                values: new object[] { "24/05/2024 15:32:36", new DateTime(2024, 6, 23, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(2339), new DateTime(2024, 5, 31, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(2337), 11 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 26,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 08:07:36", new DateTime(2024, 7, 6, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(1089), new DateTime(2024, 6, 5, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(1088), 9 });
+                values: new object[] { "24/05/2024 15:32:36", new DateTime(2024, 7, 8, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(2351), new DateTime(2024, 6, 7, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(2349), 15 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 27,
-                columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 08:07:36", new DateTime(2024, 6, 26, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(1104), new DateTime(2024, 5, 27, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(1102), 15 });
+                columns: new[] { "CreatedAt", "EndAt", "StartAt" },
+                values: new object[] { "24/05/2024 15:32:36", new DateTime(2024, 6, 28, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(2363), new DateTime(2024, 5, 29, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(2361) });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 28,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 08:07:36", new DateTime(2024, 7, 11, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(1116), new DateTime(2024, 6, 3, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(1114), 2 });
+                values: new object[] { "24/05/2024 15:32:36", new DateTime(2024, 7, 13, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(2375), new DateTime(2024, 6, 5, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(2373), 14 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 29,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 08:07:36", new DateTime(2024, 7, 16, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(1128), new DateTime(2024, 5, 30, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(1126), 12 });
+                values: new object[] { "24/05/2024 15:32:36", new DateTime(2024, 7, 18, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(2390), new DateTime(2024, 6, 1, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(2388), 5 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 30,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 08:07:36", new DateTime(2024, 6, 26, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(1140), new DateTime(2024, 5, 28, 8, 7, 36, 916, DateTimeKind.Local).AddTicks(1138), 9 });
+                values: new object[] { "24/05/2024 15:32:36", new DateTime(2024, 6, 28, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(2402), new DateTime(2024, 5, 30, 15, 32, 36, 318, DateTimeKind.Local).AddTicks(2400), 14 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 1,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 18, 82.8140473016216m, 17 });
+                values: new object[] { 18, 34.3838199585314m, 14 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 2,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 30, 52.870605664444m, 22 });
+                values: new object[] { 23, 88.3023611673383m, 11 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 3,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 5, 93.6611993110084m, 26 });
+                values: new object[] { 17, 60.1717482504511m, 4 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 4,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 2, 57.9068455539501m, 23 });
+                values: new object[] { 10, 96.277977751814m, 26 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 5,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 19, 82.8939958942981m, 13 });
+                values: new object[] { 30, 50.7925808139935m, 10 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 6,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 23, 75.9474375062104m, 26 });
+                values: new object[] { 19, 70.3313148323202m, 17 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 7,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 4, 31.3422837399989m, 8 });
+                values: new object[] { 3, 12.4296853289371m, 7 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 8,
-                columns: new[] { "Result", "TraineeId" },
-                values: new object[] { 90.3672110426584m, 20 });
+                columns: new[] { "CourseId", "Result", "TraineeId" },
+                values: new object[] { 29, 47.2200336630706m, 2 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 9,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 24, 56.83578445136m, 3 });
+                values: new object[] { 8, 71.015525034857m, 1 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 10,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 15, 37.6125510518142m, 15 });
+                values: new object[] { 14, 10.6570913671663m, 12 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 11,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 16, 7.97721646305344m, 2 });
+                values: new object[] { 25, 47.8528086338664m, 15 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 12,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 9, 79.3621922601725m, 8 });
+                values: new object[] { 23, 42.7897510877506m, 7 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 13,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 20, 66.616144517367m, 10 });
+                values: new object[] { 12, 5.01453242966312m, 23 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 14,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 27, 65.8614287763862m, 19 });
+                values: new object[] { 16, 55.6004333408984m, 25 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 15,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 9, 93.985820036911m, 3 });
+                values: new object[] { 16, 86.6392817573534m, 20 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 16,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 18, 31.7470706091697m, 30 });
+                values: new object[] { 14, 14.3281746685096m, 25 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 17,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 11, 19.446870118966m, 3 });
+                values: new object[] { 6, 84.7776868649202m, 19 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 18,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 20, 45.002051356315m, 1 });
+                values: new object[] { 9, 92.8523270416994m, 21 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 19,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 16, 10.8270918108261m, 24 });
+                values: new object[] { 21, 48.1521045637908m, 28 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 20,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 25, 43.5928999642214m, 9 });
+                values: new object[] { 17, 75.5521295664957m, 17 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 21,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 9, 78.1185482112418m, 5 });
+                values: new object[] { 18, 26.3932380953833m, 24 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 22,
-                columns: new[] { "Result", "TraineeId" },
-                values: new object[] { 98.6320145320974m, 22 });
+                columns: new[] { "CourseId", "Result", "TraineeId" },
+                values: new object[] { 5, 63.6817782710603m, 20 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 23,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 22, 14.4181287237562m, 30 });
+                values: new object[] { 25, 29.2870902205559m, 12 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 24,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 9, 53.8562591234962m, 4 });
+                values: new object[] { 17, 12.494926037796m, 7 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 25,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 8, 49.1997195606339m, 19 });
+                values: new object[] { 29, 59.5366091225084m, 2 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 26,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 17, 24.435941973659m, 10 });
+                values: new object[] { 9, 67.7226771970251m, 27 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 27,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 27, 66.6508462416312m, 5 });
+                values: new object[] { 19, 24.2697668981533m, 6 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 28,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 6, 42.4274229240685m, 28 });
+                values: new object[] { 5, 87.6022931719078m, 21 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 29,
-                columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 14, 25.7477228394095m, 12 });
+                columns: new[] { "CourseId", "Result" },
+                values: new object[] { 10, 33.6077064817174m });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 30,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 25, 37.2566780686171m, 25 });
+                values: new object[] { 5, 87.8140169231233m, 8 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 31,
-                columns: new[] { "CourseId", "Result" },
-                values: new object[] { 2, 51.7791873666458m });
+                columns: new[] { "CourseId", "Result", "TraineeId" },
+                values: new object[] { 21, 59.7449357383949m, 14 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 32,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 29, 90.0901879066012m, 28 });
+                values: new object[] { 28, 26.6153175858051m, 26 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 33,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 4, 99.9061811651702m, 4 });
+                values: new object[] { 15, 40.8907080460504m, 16 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 34,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 30, 12.1937697172821m, 23 });
+                values: new object[] { 3, 56.6974165442874m, 8 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 35,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 24, 35.9101428759785m, 7 });
+                values: new object[] { 24, 4.51904521864043m, 6 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 36,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 23, 57.5059797894224m, 9 });
+                values: new object[] { 4, 89.6349087917199m, 10 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 37,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 11, 25.7109041400169m, 1 });
+                values: new object[] { 15, 98.1621946412244m, 8 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 38,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 3, 11.9756272492762m, 28 });
+                values: new object[] { 27, 87.0220932114896m, 20 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 39,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 23, 4.47679579745534m, 29 });
+                values: new object[] { 16, 32.7017036939198m, 14 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 40,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 20, 92.3502953842794m, 17 });
+                values: new object[] { 7, 60.3468278385698m, 11 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 41,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 6, 63.8605419797085m, 29 });
+                values: new object[] { 25, 78.3858395165178m, 6 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 42,
-                columns: new[] { "Result", "TraineeId" },
-                values: new object[] { 29.5865703264069m, 16 });
+                columns: new[] { "CourseId", "Result", "TraineeId" },
+                values: new object[] { 12, 64.2267144086699m, 22 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 43,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 23, 52.2540389205962m, 29 });
+                values: new object[] { 1, 59.9041480657899m, 29 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 44,
-                columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 28, 71.5951792537969m, 21 });
+                columns: new[] { "CourseId", "Result" },
+                values: new object[] { 3, 64.9536822153613m });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 45,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 10, 67.0113075130606m, 3 });
+                values: new object[] { 20, 25.1027494138993m, 21 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 46,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 14, 39.4663193771102m, 24 });
+                values: new object[] { 24, 84.9345732341876m, 8 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 47,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 12, 29.6283214876633m, 4 });
+                values: new object[] { 10, 40.5920825021119m, 16 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 48,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 22, 94.6544392200151m, 1 });
+                values: new object[] { 13, 79.091482193904m, 17 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 49,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 10, 98.1050712184014m, 1 });
+                values: new object[] { 14, 5.36255894035967m, 14 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 50,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 12, 77.277740281176m, 10 });
+                values: new object[] { 11, 22.433525225997m, 11 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 51,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 15, 59.2012021228411m, 24 });
+                values: new object[] { 18, 37.5773171167364m, 23 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 52,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 12, 53.0348439252833m, 16 });
+                values: new object[] { 12, 97.5340485606094m, 26 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 53,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 20, 29.2619168412851m, 23 });
+                values: new object[] { 7, 38.1566273953445m, 6 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 54,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 2, 72.644112786985m, 15 });
+                values: new object[] { 20, 58.6562352182957m, 15 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 55,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 29, 36.6463062112709m, 22 });
+                values: new object[] { 2, 86.816921629703m, 6 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 56,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 4, 40.6317279022722m, 3 });
+                values: new object[] { 3, 14.8885653950444m, 21 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 57,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 26, 50.1149529166523m, 20 });
+                values: new object[] { 4, 27.7287517619201m, 26 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 58,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 22, 76.720755640904m, 15 });
+                values: new object[] { 4, 4.19772917092535m, 27 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 59,
-                columns: new[] { "CourseId", "Result" },
-                values: new object[] { 27, 60.5249953339909m });
+                columns: new[] { "Result", "TraineeId" },
+                values: new object[] { 46.7604606877138m, 16 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 60,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 3, 34.5744272682045m, 4 });
+                values: new object[] { 2, 52.114776795779m, 19 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 61,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 24, 82.1889874467124m, 23 });
+                values: new object[] { 29, 29.6957639796751m, 12 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 62,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 23, 96.9146043003948m, 5 });
+                values: new object[] { 19, 73.5476520937904m, 9 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 63,
-                columns: new[] { "Result", "TraineeId" },
-                values: new object[] { 13.9596404158093m, 18 });
+                columns: new[] { "CourseId", "Result", "TraineeId" },
+                values: new object[] { 13, 52.1662162304113m, 26 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 64,
-                columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 11, 81.4667981130458m, 23 });
+                columns: new[] { "Result", "TraineeId" },
+                values: new object[] { 19.4954035530916m, 22 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 65,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 26, 3.64033793523707m, 5 });
+                values: new object[] { 25, 32.7596659172034m, 17 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 66,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 23, 32.4532838742729m, 23 });
+                values: new object[] { 20, 31.332173108954m, 16 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 67,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 8, 19.5663347357642m, 26 });
+                values: new object[] { 14, 54.3982783891342m, 23 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 68,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 24, 5.76198141250163m, 11 });
+                values: new object[] { 24, 0.60697345643892m, 10 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 69,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 15, 75.8570612332846m, 11 });
+                values: new object[] { 12, 8.70605489448181m, 30 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 70,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 21, 44.5081204274753m, 11 });
+                values: new object[] { 3, 91.6991647367827m, 27 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 71,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 1, 2.85967917938023m, 22 });
+                values: new object[] { 30, 49.1524152514106m, 18 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 72,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 12, 58.6145523786507m, 14 });
+                values: new object[] { 24, 31.4730926041025m, 11 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 73,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 28, 19.2922289339899m, 15 });
+                values: new object[] { 25, 22.4835773186325m, 16 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 74,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 8, 92.6048689739322m, 30 });
+                values: new object[] { 14, 8.29783519480816m, 12 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 75,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 2, 61.143659925951m, 3 });
+                values: new object[] { 23, 43.4120829286999m, 2 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 76,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 21, 33.7994882452183m, 16 });
+                values: new object[] { 10, 32.3908928554487m, 22 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 77,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 25, 4.13653440114712m, 20 });
+                values: new object[] { 27, 55.1702566166691m, 19 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 78,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 13, 58.484063219717m, 7 });
+                values: new object[] { 4, 61.5823439372001m, 26 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 79,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 17, 48.5219863919705m, 3 });
+                values: new object[] { 19, 78.1292469066354m, 21 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 80,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 2, 4.45028656187941m, 5 });
+                values: new object[] { 5, 99.5926380435397m, 4 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 81,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 18, 30.8972223705415m, 6 });
+                values: new object[] { 9, 94.8319742706619m, 4 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 82,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 21, 6.99213362143702m, 2 });
+                values: new object[] { 15, 67.2655382820489m, 11 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 83,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 22, 56.7542438682385m, 5 });
+                values: new object[] { 25, 23.1925046471915m, 21 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 84,
-                columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 3, 67.6827084048858m, 10 });
+                columns: new[] { "Result", "TraineeId" },
+                values: new object[] { 57.4435142505981m, 5 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 85,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 22, 40.6954102770298m, 6 });
+                values: new object[] { 10, 21.2779339966969m, 25 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 86,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 13, 77.4361935988137m, 27 });
+                values: new object[] { 17, 58.8119653976868m, 7 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 87,
-                columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 23, 42.6059820467051m, 19 });
+                columns: new[] { "Result", "TraineeId" },
+                values: new object[] { 13.6855004838361m, 2 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 88,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 30, 8.04838126082759m, 22 });
+                values: new object[] { 29, 33.4407882841445m, 24 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 89,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 9, 93.1967131067614m, 13 });
+                values: new object[] { 25, 27.3051908139579m, 9 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 90,
-                columns: new[] { "CourseId", "Result" },
-                values: new object[] { 16, 28.6869465410544m });
+                columns: new[] { "CourseId", "Result", "TraineeId" },
+                values: new object[] { 17, 70.2792224666796m, 8 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 91,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 5, 26.4408793916483m, 20 });
+                values: new object[] { 3, 16.0518376738366m, 19 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 92,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 15, 22.9065578648098m, 23 });
+                values: new object[] { 22, 9.29616481549623m, 25 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 93,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 6, 24.3380572208627m, 21 });
+                values: new object[] { 14, 25.0290255430754m, 17 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 94,
-                columns: new[] { "Result", "TraineeId" },
-                values: new object[] { 3.08252481731258m, 29 });
+                columns: new[] { "CourseId", "Result", "TraineeId" },
+                values: new object[] { 6, 33.3233758891505m, 30 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 95,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 23, 18.7974406557162m, 20 });
+                values: new object[] { 15, 51.5779620483889m, 25 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 96,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 3, 1.09875929740103m, 24 });
+                values: new object[] { 26, 58.5424086360256m, 29 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 97,
-                columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 17, 53.6906899634719m, 29 });
+                columns: new[] { "CourseId", "Result" },
+                values: new object[] { 22, 42.5342086094179m });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 98,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 22, 61.352278268484m, 18 });
+                values: new object[] { 7, 76.3900562859464m, 5 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 99,
-                columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 3, 74.5729911769748m, 19 });
+                columns: new[] { "CourseId", "Result" },
+                values: new object[] { 10, 35.1109135639002m });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 100,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 28, 56.8243306189725m, 24 });
+                values: new object[] { 7, 2.85740271162159m, 22 });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 1,
-                columns: new[] { "TaskLink", "Time", "downloadLink" },
-                values: new object[] { "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 37, 0, 0), "https://sadat.vip/" });
+                column: "Time",
+                value: new TimeSpan(0, 0, 21, 0, 0));
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 2,
-                columns: new[] { "TaskLink", "Time", "downloadLink" },
-                values: new object[] { "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 22, 0, 0), "https://sadat.vip/" });
+                column: "Time",
+                value: new TimeSpan(0, 0, 14, 0, 0));
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 3,
-                columns: new[] { "TaskLink", "Time", "downloadLink" },
-                values: new object[] { "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 55, 0, 0), "https://sadat.vip/" });
+                column: "Time",
+                value: new TimeSpan(0, 0, 28, 0, 0));
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 4,
-                columns: new[] { "TaskLink", "Time", "downloadLink" },
-                values: new object[] { "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 16, 0, 0), "https://sadat.vip/" });
+                column: "Time",
+                value: new TimeSpan(0, 0, 44, 0, 0));
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 5,
-                columns: new[] { "TaskLink", "Time", "downloadLink" },
-                values: new object[] { "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 16, 0, 0), "https://sadat.vip/" });
+                column: "Time",
+                value: new TimeSpan(0, 0, 52, 0, 0));
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 6,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 3, "Content for Lesson 1 in Chapter 3", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 37, 0, 0), "Lesson 1 for Chapter 3", "https://sadat.vip/" });
+                column: "Time",
+                value: new TimeSpan(0, 0, 50, 0, 0));
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 7,
-                columns: new[] { "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { "Content for Lesson 2 in Chapter 3", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 29, 0, 0), "Lesson 2 for Chapter 3", "https://sadat.vip/" });
+                column: "Time",
+                value: new TimeSpan(0, 0, 49, 0, 0));
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 8,
-                columns: new[] { "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { "Content for Lesson 3 in Chapter 3", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 36, 0, 0), "Lesson 3 for Chapter 3", "https://sadat.vip/" });
+                column: "Time",
+                value: new TimeSpan(0, 0, 29, 0, 0));
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 9,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 4, "Content for Lesson 1 in Chapter 4", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 45, 0, 0), "Lesson 1 for Chapter 4", "https://sadat.vip/" });
+                column: "Time",
+                value: new TimeSpan(0, 0, 37, 0, 0));
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 10,
-                columns: new[] { "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { "Content for Lesson 2 in Chapter 4", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 17, 0, 0), "Lesson 2 for Chapter 4", "https://sadat.vip/" });
+                column: "Time",
+                value: new TimeSpan(0, 0, 56, 0, 0));
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 11,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 5, "Content for Lesson 1 in Chapter 5", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 41, 0, 0), "Lesson 1 for Chapter 5", "https://sadat.vip/" });
+                column: "Time",
+                value: new TimeSpan(0, 0, 35, 0, 0));
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 12,
-                columns: new[] { "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { "Content for Lesson 2 in Chapter 5", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 43, 0, 0), "Lesson 2 for Chapter 5", "https://sadat.vip/" });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 5, "Content for Lesson 3 in Chapter 5", new TimeSpan(0, 0, 27, 0, 0), "Lesson 3 for Chapter 5" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 13,
-                columns: new[] { "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { "Content for Lesson 3 in Chapter 5", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 38, 0, 0), "Lesson 3 for Chapter 5", "https://sadat.vip/" });
+                columns: new[] { "Content", "Time", "Title" },
+                values: new object[] { "Content for Lesson 1 in Chapter 6", new TimeSpan(0, 0, 33, 0, 0), "Lesson 1 for Chapter 6" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 14,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 6, "Content for Lesson 1 in Chapter 6", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 37, 0, 0), "Lesson 1 for Chapter 6", "https://sadat.vip/" });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 6, "Content for Lesson 2 in Chapter 6", new TimeSpan(0, 0, 47, 0, 0), "Lesson 2 for Chapter 6" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 15,
-                columns: new[] { "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { "Content for Lesson 2 in Chapter 6", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 24, 0, 0), "Lesson 2 for Chapter 6", "https://sadat.vip/" });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 6, "Content for Lesson 3 in Chapter 6", new TimeSpan(0, 0, 38, 0, 0), "Lesson 3 for Chapter 6" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 16,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 7, "Content for Lesson 1 in Chapter 7", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 16, 0, 0), "Lesson 1 for Chapter 7", "https://sadat.vip/" });
+                columns: new[] { "Content", "Time", "Title" },
+                values: new object[] { "Content for Lesson 1 in Chapter 7", new TimeSpan(0, 0, 16, 0, 0), "Lesson 1 for Chapter 7" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 17,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 7, "Content for Lesson 2 in Chapter 7", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 24, 0, 0), "Lesson 2 for Chapter 7", "https://sadat.vip/" });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 7, "Content for Lesson 2 in Chapter 7", new TimeSpan(0, 0, 46, 0, 0), "Lesson 2 for Chapter 7" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 18,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 8, "Content for Lesson 1 in Chapter 8", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 21, 0, 0), "Lesson 1 for Chapter 8", "https://sadat.vip/" });
+                columns: new[] { "Content", "Title" },
+                values: new object[] { "Content for Lesson 1 in Chapter 8", "Lesson 1 for Chapter 8" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 19,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 8, "Content for Lesson 2 in Chapter 8", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 15, 0, 0), "Lesson 2 for Chapter 8", "https://sadat.vip/" });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 8, "Content for Lesson 2 in Chapter 8", new TimeSpan(0, 0, 10, 0, 0), "Lesson 2 for Chapter 8" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 20,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 9, "Content for Lesson 1 in Chapter 9", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 59, 0, 0), "Lesson 1 for Chapter 9", "https://sadat.vip/" });
+                columns: new[] { "Content", "Time", "Title" },
+                values: new object[] { "Content for Lesson 1 in Chapter 9", new TimeSpan(0, 0, 19, 0, 0), "Lesson 1 for Chapter 9" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 21,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 9, "Content for Lesson 2 in Chapter 9", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 25, 0, 0), "Lesson 2 for Chapter 9", "https://sadat.vip/" });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 9, "Content for Lesson 2 in Chapter 9", new TimeSpan(0, 0, 33, 0, 0), "Lesson 2 for Chapter 9" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 22,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 9, "Content for Lesson 3 in Chapter 9", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 18, 0, 0), "Lesson 3 for Chapter 9", "https://sadat.vip/" });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 9, "Content for Lesson 3 in Chapter 9", new TimeSpan(0, 0, 14, 0, 0), "Lesson 3 for Chapter 9" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 23,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 10, "Content for Lesson 1 in Chapter 10", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 39, 0, 0), "Lesson 1 for Chapter 10", "https://sadat.vip/" });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 10, "Content for Lesson 1 in Chapter 10", new TimeSpan(0, 0, 39, 0, 0), "Lesson 1 for Chapter 10" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 24,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 10, "Content for Lesson 2 in Chapter 10", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 40, 0, 0), "Lesson 2 for Chapter 10", "https://sadat.vip/" });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 10, "Content for Lesson 2 in Chapter 10", new TimeSpan(0, 0, 16, 0, 0), "Lesson 2 for Chapter 10" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 25,
-                columns: new[] { "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { "Content for Lesson 3 in Chapter 10", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 20, 0, 0), "Lesson 3 for Chapter 10", "https://sadat.vip/" });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 10, "Content for Lesson 3 in Chapter 10", new TimeSpan(0, 0, 13, 0, 0), "Lesson 3 for Chapter 10" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 26,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 11, "Content for Lesson 1 in Chapter 11", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 35, 0, 0), "Lesson 1 for Chapter 11", "https://sadat.vip/" });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 11, "Content for Lesson 1 in Chapter 11", new TimeSpan(0, 0, 10, 0, 0), "Lesson 1 for Chapter 11" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 27,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 11, "Content for Lesson 2 in Chapter 11", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 28, 0, 0), "Lesson 2 for Chapter 11", "https://sadat.vip/" });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 11, "Content for Lesson 2 in Chapter 11", new TimeSpan(0, 0, 15, 0, 0), "Lesson 2 for Chapter 11" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 28,
-                columns: new[] { "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { "Content for Lesson 3 in Chapter 11", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 12, 0, 0), "Lesson 3 for Chapter 11", "https://sadat.vip/" });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 12, "Content for Lesson 1 in Chapter 12", new TimeSpan(0, 0, 10, 0, 0), "Lesson 1 for Chapter 12" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 29,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 12, "Content for Lesson 1 in Chapter 12", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 39, 0, 0), "Lesson 1 for Chapter 12", "https://sadat.vip/" });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 12, "Content for Lesson 2 in Chapter 12", new TimeSpan(0, 0, 51, 0, 0), "Lesson 2 for Chapter 12" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 30,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 12, "Content for Lesson 2 in Chapter 12", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 58, 0, 0), "Lesson 2 for Chapter 12", "https://sadat.vip/" });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 12, "Content for Lesson 3 in Chapter 12", new TimeSpan(0, 0, 51, 0, 0), "Lesson 3 for Chapter 12" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 31,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 13, "Content for Lesson 1 in Chapter 13", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 36, 0, 0), "Lesson 1 for Chapter 13", "https://sadat.vip/" });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 13, "Content for Lesson 1 in Chapter 13", new TimeSpan(0, 0, 16, 0, 0), "Lesson 1 for Chapter 13" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 32,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 13, "Content for Lesson 2 in Chapter 13", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 57, 0, 0), "Lesson 2 for Chapter 13", "https://sadat.vip/" });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 13, "Content for Lesson 2 in Chapter 13", new TimeSpan(0, 0, 47, 0, 0), "Lesson 2 for Chapter 13" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 33,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 14, "Content for Lesson 1 in Chapter 14", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 36, 0, 0), "Lesson 1 for Chapter 14", "https://sadat.vip/" });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 14, "Content for Lesson 1 in Chapter 14", new TimeSpan(0, 0, 33, 0, 0), "Lesson 1 for Chapter 14" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 34,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 14, "Content for Lesson 2 in Chapter 14", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 45, 0, 0), "Lesson 2 for Chapter 14", "https://sadat.vip/" });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 14, "Content for Lesson 2 in Chapter 14", new TimeSpan(0, 0, 49, 0, 0), "Lesson 2 for Chapter 14" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 35,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 15, "Content for Lesson 1 in Chapter 15", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 51, 0, 0), "Lesson 1 for Chapter 15", "https://sadat.vip/" });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 14, "Content for Lesson 3 in Chapter 14", new TimeSpan(0, 0, 52, 0, 0), "Lesson 3 for Chapter 14" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 36,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 15, "Content for Lesson 2 in Chapter 15", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 32, 0, 0), "Lesson 2 for Chapter 15", "https://sadat.vip/" });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 15, "Content for Lesson 1 in Chapter 15", new TimeSpan(0, 0, 32, 0, 0), "Lesson 1 for Chapter 15" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 37,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 16, "Content for Lesson 1 in Chapter 16", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 11, 0, 0), "Lesson 1 for Chapter 16", "https://sadat.vip/" });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 15, "Content for Lesson 2 in Chapter 15", new TimeSpan(0, 0, 49, 0, 0), "Lesson 2 for Chapter 15" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 38,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 16, "Content for Lesson 2 in Chapter 16", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 39, 0, 0), "Lesson 2 for Chapter 16", "https://sadat.vip/" });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 16, "Content for Lesson 1 in Chapter 16", new TimeSpan(0, 0, 18, 0, 0), "Lesson 1 for Chapter 16" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 39,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 17, "Content for Lesson 1 in Chapter 17", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 10, 0, 0), "Lesson 1 for Chapter 17", "https://sadat.vip/" });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 16, "Content for Lesson 2 in Chapter 16", new TimeSpan(0, 0, 14, 0, 0), "Lesson 2 for Chapter 16" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 40,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 17, "Content for Lesson 2 in Chapter 17", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 12, 0, 0), "Lesson 2 for Chapter 17", "https://sadat.vip/" });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 17, "Content for Lesson 1 in Chapter 17", new TimeSpan(0, 0, 52, 0, 0), "Lesson 1 for Chapter 17" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 41,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 17, "Content for Lesson 3 in Chapter 17", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 30, 0, 0), "Lesson 3 for Chapter 17", "https://sadat.vip/" });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 17, "Content for Lesson 2 in Chapter 17", new TimeSpan(0, 0, 31, 0, 0), "Lesson 2 for Chapter 17" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 42,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 18, "Content for Lesson 1 in Chapter 18", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 59, 0, 0), "Lesson 1 for Chapter 18", "https://sadat.vip/" });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 18, "Content for Lesson 1 in Chapter 18", new TimeSpan(0, 0, 27, 0, 0), "Lesson 1 for Chapter 18" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 43,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 18, "Content for Lesson 2 in Chapter 18", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 38, 0, 0), "Lesson 2 for Chapter 18", "https://sadat.vip/" });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 18, "Content for Lesson 2 in Chapter 18", new TimeSpan(0, 0, 59, 0, 0), "Lesson 2 for Chapter 18" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 44,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 18, "Content for Lesson 3 in Chapter 18", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 24, 0, 0), "Lesson 3 for Chapter 18", "https://sadat.vip/" });
+                columns: new[] { "Content", "Time", "Title" },
+                values: new object[] { "Content for Lesson 1 in Chapter 19", new TimeSpan(0, 0, 54, 0, 0), "Lesson 1 for Chapter 19" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 45,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 19, "Content for Lesson 1 in Chapter 19", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 25, 0, 0), "Lesson 1 for Chapter 19", "https://sadat.vip/" });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 19, "Content for Lesson 2 in Chapter 19", new TimeSpan(0, 0, 25, 0, 0), "Lesson 2 for Chapter 19" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 46,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 19, "Content for Lesson 2 in Chapter 19", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 30, 0, 0), "Lesson 2 for Chapter 19", "https://sadat.vip/" });
+                columns: new[] { "Content", "Time", "Title" },
+                values: new object[] { "Content for Lesson 1 in Chapter 20", new TimeSpan(0, 0, 36, 0, 0), "Lesson 1 for Chapter 20" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 47,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 19, "Content for Lesson 3 in Chapter 19", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 21, 0, 0), "Lesson 3 for Chapter 19", "https://sadat.vip/" });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 20, "Content for Lesson 2 in Chapter 20", new TimeSpan(0, 0, 23, 0, 0), "Lesson 2 for Chapter 20" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 48,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 20, "Content for Lesson 1 in Chapter 20", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 46, 0, 0), "Lesson 1 for Chapter 20", "https://sadat.vip/" });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 20, "Content for Lesson 3 in Chapter 20", new TimeSpan(0, 0, 37, 0, 0), "Lesson 3 for Chapter 20" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 49,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 20, "Content for Lesson 2 in Chapter 20", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 44, 0, 0), "Lesson 2 for Chapter 20", "https://sadat.vip/" });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 21, "Content for Lesson 1 in Chapter 21", new TimeSpan(0, 0, 46, 0, 0), "Lesson 1 for Chapter 21" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 50,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 20, "Content for Lesson 3 in Chapter 20", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 29, 0, 0), "Lesson 3 for Chapter 20", "https://sadat.vip/" });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 21, "Content for Lesson 2 in Chapter 21", new TimeSpan(0, 0, 36, 0, 0), "Lesson 2 for Chapter 21" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 51,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 21, "Content for Lesson 1 in Chapter 21", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 31, 0, 0), "Lesson 1 for Chapter 21", "https://sadat.vip/" });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 21, "Content for Lesson 3 in Chapter 21", new TimeSpan(0, 0, 29, 0, 0), "Lesson 3 for Chapter 21" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 52,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 21, "Content for Lesson 2 in Chapter 21", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 22, 0, 0), "Lesson 2 for Chapter 21", "https://sadat.vip/" });
+                columns: new[] { "ChapterId", "Content", "Title" },
+                values: new object[] { 22, "Content for Lesson 1 in Chapter 22", "Lesson 1 for Chapter 22" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 53,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 21, "Content for Lesson 3 in Chapter 21", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 14, 0, 0), "Lesson 3 for Chapter 21", "https://sadat.vip/" });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 22, "Content for Lesson 2 in Chapter 22", new TimeSpan(0, 0, 25, 0, 0), "Lesson 2 for Chapter 22" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 54,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 22, "Content for Lesson 1 in Chapter 22", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 39, 0, 0), "Lesson 1 for Chapter 22", "https://sadat.vip/" });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 22, "Content for Lesson 3 in Chapter 22", new TimeSpan(0, 0, 48, 0, 0), "Lesson 3 for Chapter 22" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 55,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 22, "Content for Lesson 2 in Chapter 22", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 45, 0, 0), "Lesson 2 for Chapter 22", "https://sadat.vip/" });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 23, "Content for Lesson 1 in Chapter 23", new TimeSpan(0, 0, 19, 0, 0), "Lesson 1 for Chapter 23" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 56,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 23, "Content for Lesson 1 in Chapter 23", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 53, 0, 0), "Lesson 1 for Chapter 23", "https://sadat.vip/" });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 23, "Content for Lesson 2 in Chapter 23", new TimeSpan(0, 0, 19, 0, 0), "Lesson 2 for Chapter 23" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 57,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 23, "Content for Lesson 2 in Chapter 23", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 45, 0, 0), "Lesson 2 for Chapter 23", "https://sadat.vip/" });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 24, "Content for Lesson 1 in Chapter 24", new TimeSpan(0, 0, 43, 0, 0), "Lesson 1 for Chapter 24" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 58,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 23, "Content for Lesson 3 in Chapter 23", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 48, 0, 0), "Lesson 3 for Chapter 23", "https://sadat.vip/" });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 24, "Content for Lesson 2 in Chapter 24", new TimeSpan(0, 0, 25, 0, 0), "Lesson 2 for Chapter 24" });
+
+            migrationBuilder.UpdateData(
+                table: "Lessons",
+                keyColumn: "Id",
+                keyValue: 59,
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 24, "Content for Lesson 3 in Chapter 24", new TimeSpan(0, 0, 18, 0, 0), "Lesson 3 for Chapter 24" });
+
+            migrationBuilder.UpdateData(
+                table: "Lessons",
+                keyColumn: "Id",
+                keyValue: 60,
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 25, "Content for Lesson 1 in Chapter 25", new TimeSpan(0, 0, 45, 0, 0), "Lesson 1 for Chapter 25" });
+
+            migrationBuilder.UpdateData(
+                table: "Lessons",
+                keyColumn: "Id",
+                keyValue: 61,
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 25, "Content for Lesson 2 in Chapter 25", new TimeSpan(0, 0, 53, 0, 0), "Lesson 2 for Chapter 25" });
+
+            migrationBuilder.InsertData(
+                table: "Lessons",
+                columns: new[] { "Id", "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
+                values: new object[] { 62, 25, "Content for Lesson 3 in Chapter 25", "https://www.youtube.com/watch?v=0W4KRuw7m9U", new TimeSpan(0, 0, 44, 0, 0), "Lesson 3 for Chapter 25", "https://sadat.vip/" });
 
             migrationBuilder.UpdateData(
                 table: "Package",
                 keyColumn: "Id",
                 keyValue: 1,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "Package",
                 keyColumn: "Id",
                 keyValue: 2,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "Package",
                 keyColumn: "Id",
                 keyValue: 3,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "RedeemCode",
                 keyColumn: "Id",
                 keyValue: 3,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 1,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 2,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 3,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 4,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 5,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 6,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 7,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 8,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 9,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 10,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 11,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 12,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 13,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 14,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 15,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 16,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 17,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 18,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 19,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 20,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 21,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 22,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 23,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 24,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 25,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 26,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 27,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 28,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 29,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 30,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 1,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 2,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 3,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 4,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 5,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 6,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 7,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 8,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 9,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 10,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 11,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 12,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 13,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 14,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 15,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 16,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 17,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 18,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 19,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 20,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 21,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 22,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 23,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 24,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 25,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 26,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 27,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 28,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 29,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 30,
                 column: "CreatedAt",
-                value: "22/05/2024 08:07:36");
+                value: "24/05/2024 15:32:36");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DeleteData(
+                table: "Lessons",
+                keyColumn: "Id",
+                keyValue: 62);
+
             migrationBuilder.UpdateData(
                 table: "Category",
                 keyColumn: "Id",
                 keyValue: 1,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "Category",
                 keyColumn: "Id",
                 keyValue: 2,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "Category",
                 keyColumn: "Id",
                 keyValue: 3,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "Category",
                 keyColumn: "Id",
                 keyValue: 4,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "Category",
                 keyColumn: "Id",
                 keyValue: 5,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "Category",
                 keyColumn: "Id",
                 keyValue: 6,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "Category",
                 keyColumn: "Id",
                 keyValue: 7,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "Category",
                 keyColumn: "Id",
                 keyValue: 8,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "Category",
                 keyColumn: "Id",
                 keyValue: 9,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
-
-            migrationBuilder.UpdateData(
-                table: "Chapters",
-                keyColumn: "Id",
-                keyValue: 1,
-                column: "downloadLink",
-                value: null);
-
-            migrationBuilder.UpdateData(
-                table: "Chapters",
-                keyColumn: "Id",
-                keyValue: 2,
-                column: "downloadLink",
-                value: null);
-
-            migrationBuilder.UpdateData(
-                table: "Chapters",
-                keyColumn: "Id",
-                keyValue: 3,
-                columns: new[] { "CourseId", "Description", "Title", "downloadLink" },
-                values: new object[] { 1, "Description for Chapter 3 in Course 1", "Chapter 3 for Course 1", null });
-
-            migrationBuilder.UpdateData(
-                table: "Chapters",
-                keyColumn: "Id",
-                keyValue: 4,
-                columns: new[] { "Description", "Title", "downloadLink" },
-                values: new object[] { "Description for Chapter 1 in Course 2", "Chapter 1 for Course 2", null });
-
-            migrationBuilder.UpdateData(
-                table: "Chapters",
-                keyColumn: "Id",
-                keyValue: 5,
-                columns: new[] { "CourseId", "Description", "Title", "downloadLink" },
-                values: new object[] { 2, "Description for Chapter 2 in Course 2", "Chapter 2 for Course 2", null });
-
-            migrationBuilder.UpdateData(
-                table: "Chapters",
-                keyColumn: "Id",
-                keyValue: 6,
-                columns: new[] { "Description", "Title", "downloadLink" },
-                values: new object[] { "Description for Chapter 1 in Course 3", "Chapter 1 for Course 3", null });
-
-            migrationBuilder.UpdateData(
-                table: "Chapters",
-                keyColumn: "Id",
-                keyValue: 7,
-                columns: new[] { "CourseId", "Description", "Title", "downloadLink" },
-                values: new object[] { 3, "Description for Chapter 2 in Course 3", "Chapter 2 for Course 3", null });
-
-            migrationBuilder.UpdateData(
-                table: "Chapters",
-                keyColumn: "Id",
-                keyValue: 8,
-                columns: new[] { "Description", "Title", "downloadLink" },
-                values: new object[] { "Description for Chapter 1 in Course 4", "Chapter 1 for Course 4", null });
-
-            migrationBuilder.UpdateData(
-                table: "Chapters",
-                keyColumn: "Id",
-                keyValue: 9,
-                columns: new[] { "Description", "Title", "downloadLink" },
-                values: new object[] { "Description for Chapter 2 in Course 4", "Chapter 2 for Course 4", null });
-
-            migrationBuilder.UpdateData(
-                table: "Chapters",
-                keyColumn: "Id",
-                keyValue: 10,
-                column: "downloadLink",
-                value: null);
-
-            migrationBuilder.UpdateData(
-                table: "Chapters",
-                keyColumn: "Id",
-                keyValue: 11,
-                column: "downloadLink",
-                value: null);
-
-            migrationBuilder.UpdateData(
-                table: "Chapters",
-                keyColumn: "Id",
-                keyValue: 12,
-                columns: new[] { "CourseId", "Description", "Title", "downloadLink" },
-                values: new object[] { 6, "Description for Chapter 1 in Course 6", "Chapter 1 for Course 6", null });
-
-            migrationBuilder.UpdateData(
-                table: "Chapters",
-                keyColumn: "Id",
-                keyValue: 13,
-                columns: new[] { "Description", "Title", "downloadLink" },
-                values: new object[] { "Description for Chapter 2 in Course 6", "Chapter 2 for Course 6", null });
-
-            migrationBuilder.UpdateData(
-                table: "Chapters",
-                keyColumn: "Id",
-                keyValue: 14,
-                columns: new[] { "Description", "Title", "downloadLink" },
-                values: new object[] { "Description for Chapter 3 in Course 6", "Chapter 3 for Course 6", null });
-
-            migrationBuilder.UpdateData(
-                table: "Chapters",
-                keyColumn: "Id",
-                keyValue: 15,
-                column: "downloadLink",
-                value: null);
-
-            migrationBuilder.UpdateData(
-                table: "Chapters",
-                keyColumn: "Id",
-                keyValue: 16,
-                column: "downloadLink",
-                value: null);
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "Chapters",
                 keyColumn: "Id",
                 keyValue: 17,
-                columns: new[] { "CourseId", "Description", "Title", "downloadLink" },
-                values: new object[] { 7, "Description for Chapter 3 in Course 7", "Chapter 3 for Course 7", null });
+                columns: new[] { "CourseId", "Description", "Title" },
+                values: new object[] { 7, "Description for Chapter 1 in Course 7", "Chapter 1 for Course 7" });
 
             migrationBuilder.UpdateData(
                 table: "Chapters",
                 keyColumn: "Id",
                 keyValue: 18,
-                columns: new[] { "Description", "Title", "downloadLink" },
-                values: new object[] { "Description for Chapter 1 in Course 8", "Chapter 1 for Course 8", null });
+                columns: new[] { "Description", "Title" },
+                values: new object[] { "Description for Chapter 2 in Course 7", "Chapter 2 for Course 7" });
 
             migrationBuilder.UpdateData(
                 table: "Chapters",
                 keyColumn: "Id",
                 keyValue: 19,
-                columns: new[] { "CourseId", "Description", "Title", "downloadLink" },
-                values: new object[] { 8, "Description for Chapter 2 in Course 8", "Chapter 2 for Course 8", null });
+                columns: new[] { "Description", "Title" },
+                values: new object[] { "Description for Chapter 3 in Course 7", "Chapter 3 for Course 7" });
 
             migrationBuilder.UpdateData(
                 table: "Chapters",
                 keyColumn: "Id",
-                keyValue: 20,
-                columns: new[] { "CourseId", "Description", "Title", "downloadLink" },
-                values: new object[] { 8, "Description for Chapter 3 in Course 8", "Chapter 3 for Course 8", null });
+                keyValue: 24,
+                columns: new[] { "CourseId", "Description", "Title" },
+                values: new object[] { 9, "Description for Chapter 3 in Course 9", "Chapter 3 for Course 9" });
 
             migrationBuilder.UpdateData(
                 table: "Chapters",
                 keyColumn: "Id",
-                keyValue: 21,
-                columns: new[] { "Description", "Title", "downloadLink" },
-                values: new object[] { "Description for Chapter 1 in Course 9", "Chapter 1 for Course 9", null });
-
-            migrationBuilder.UpdateData(
-                table: "Chapters",
-                keyColumn: "Id",
-                keyValue: 22,
-                columns: new[] { "CourseId", "Description", "Title", "downloadLink" },
-                values: new object[] { 9, "Description for Chapter 2 in Course 9", "Chapter 2 for Course 9", null });
-
-            migrationBuilder.UpdateData(
-                table: "Chapters",
-                keyColumn: "Id",
-                keyValue: 23,
-                columns: new[] { "CourseId", "Description", "Title", "downloadLink" },
-                values: new object[] { 9, "Description for Chapter 3 in Course 9", "Chapter 3 for Course 9", null });
+                keyValue: 25,
+                columns: new[] { "Description", "Title" },
+                values: new object[] { "Description for Chapter 1 in Course 10", "Chapter 1 for Course 10" });
 
             migrationBuilder.InsertData(
                 table: "Chapters",
                 columns: new[] { "Id", "CourseId", "Description", "Title", "downloadLink" },
-                values: new object[,]
-                {
-                    { 24, 10, "Description for Chapter 1 in Course 10", "Chapter 1 for Course 10", null },
-                    { 25, 10, "Description for Chapter 2 in Course 10", "Chapter 2 for Course 10", null },
-                    { 26, 10, "Description for Chapter 3 in Course 10", "Chapter 3 for Course 10", null }
-                });
+                values: new object[] { 26, 10, "Description for Chapter 2 in Course 10", "Chapter 2 for Course 10", "https://sadat.vip/" });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 1,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 06:01:27", new DateTime(2024, 6, 21, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3144), new DateTime(2024, 5, 29, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3140), 7 });
+                values: new object[] { "24/05/2024 15:31:41", new DateTime(2024, 6, 23, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4186), new DateTime(2024, 5, 31, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4180), 3 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 2,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 06:01:27", new DateTime(2024, 7, 6, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3249), new DateTime(2024, 6, 5, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3247), 13 });
+                values: new object[] { "24/05/2024 15:31:41", new DateTime(2024, 7, 8, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4238), new DateTime(2024, 6, 7, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4235), 8 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 3,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 06:01:27", new DateTime(2024, 6, 26, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3264), new DateTime(2024, 5, 27, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3262), 1 });
+                values: new object[] { "24/05/2024 15:31:41", new DateTime(2024, 6, 28, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4250), new DateTime(2024, 5, 29, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4248), 8 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 4,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 06:01:27", new DateTime(2024, 7, 21, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3277), new DateTime(2024, 6, 1, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3275), 12 });
+                values: new object[] { "24/05/2024 15:31:41", new DateTime(2024, 7, 23, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4264), new DateTime(2024, 6, 3, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4262), 6 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 5,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 06:01:27", new DateTime(2024, 7, 1, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3289), new DateTime(2024, 5, 29, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3288), 5 });
+                values: new object[] { "24/05/2024 15:31:41", new DateTime(2024, 7, 3, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4288), new DateTime(2024, 5, 31, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4286), 8 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 6,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 06:01:27", new DateTime(2024, 7, 11, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3304), new DateTime(2024, 6, 3, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3302), 5 });
+                values: new object[] { "24/05/2024 15:31:41", new DateTime(2024, 7, 13, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4301), new DateTime(2024, 6, 5, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4299), 7 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 7,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 06:01:27", new DateTime(2024, 7, 16, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3318), new DateTime(2024, 5, 30, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3316), 7 });
+                values: new object[] { "24/05/2024 15:31:41", new DateTime(2024, 7, 18, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4313), new DateTime(2024, 6, 1, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4311), 14 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 8,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 06:01:27", new DateTime(2024, 6, 26, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3329), new DateTime(2024, 5, 28, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3327), 11 });
+                values: new object[] { "24/05/2024 15:31:41", new DateTime(2024, 6, 28, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4325), new DateTime(2024, 5, 30, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4323), 6 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 9,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 06:01:27", new DateTime(2024, 7, 1, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3341), new DateTime(2024, 5, 31, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3339), 7 });
+                values: new object[] { "24/05/2024 15:31:41", new DateTime(2024, 7, 3, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4342), new DateTime(2024, 6, 2, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4339), 13 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 10,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 06:01:27", new DateTime(2024, 7, 6, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3355), new DateTime(2024, 6, 2, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3354), 8 });
+                values: new object[] { "24/05/2024 15:31:41", new DateTime(2024, 7, 8, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4354), new DateTime(2024, 6, 4, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4352), 2 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 11,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 06:01:27", new DateTime(2024, 7, 11, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3368), new DateTime(2024, 6, 4, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3366), 6 });
+                values: new object[] { "24/05/2024 15:31:41", new DateTime(2024, 7, 13, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4366), new DateTime(2024, 6, 6, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4365), 12 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 12,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 06:01:27", new DateTime(2024, 7, 1, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3379), new DateTime(2024, 6, 1, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3377), 9 });
+                values: new object[] { "24/05/2024 15:31:41", new DateTime(2024, 7, 3, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4378), new DateTime(2024, 6, 3, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4376), 11 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 13,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 06:01:27", new DateTime(2024, 6, 26, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3391), new DateTime(2024, 5, 30, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3389), 14 });
+                values: new object[] { "24/05/2024 15:31:41", new DateTime(2024, 6, 28, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4394), new DateTime(2024, 6, 1, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4392), 13 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 14,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 06:01:27", new DateTime(2024, 6, 21, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3405), new DateTime(2024, 5, 29, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3403), 14 });
+                values: new object[] { "24/05/2024 15:31:41", new DateTime(2024, 6, 23, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4406), new DateTime(2024, 5, 31, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4404), 12 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 15,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 06:01:27", new DateTime(2024, 7, 6, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3420), new DateTime(2024, 6, 5, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3418), 1 });
+                values: new object[] { "24/05/2024 15:31:41", new DateTime(2024, 7, 8, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4418), new DateTime(2024, 6, 7, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4416), 7 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 16,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 06:01:27", new DateTime(2024, 6, 26, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3432), new DateTime(2024, 5, 27, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3430), 9 });
+                values: new object[] { "24/05/2024 15:31:41", new DateTime(2024, 6, 28, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4431), new DateTime(2024, 5, 29, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4430), 14 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 17,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 06:01:27", new DateTime(2024, 7, 11, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3444), new DateTime(2024, 6, 3, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3443), 13 });
+                values: new object[] { "24/05/2024 15:31:41", new DateTime(2024, 7, 13, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4446), new DateTime(2024, 6, 5, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4444), 6 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 18,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 06:01:27", new DateTime(2024, 7, 16, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3458), new DateTime(2024, 5, 30, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3456), 4 });
+                values: new object[] { "24/05/2024 15:31:41", new DateTime(2024, 7, 18, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4458), new DateTime(2024, 6, 1, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4456), 15 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 19,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 06:01:27", new DateTime(2024, 6, 26, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3470), new DateTime(2024, 5, 28, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3468), 5 });
+                values: new object[] { "24/05/2024 15:31:41", new DateTime(2024, 6, 28, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4470), new DateTime(2024, 5, 30, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4468), 10 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 20,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 06:01:27", new DateTime(2024, 7, 1, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3527), new DateTime(2024, 5, 31, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3525), 10 });
+                values: new object[] { "24/05/2024 15:31:41", new DateTime(2024, 7, 3, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4525), new DateTime(2024, 6, 2, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4522), 15 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 21,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 06:01:27", new DateTime(2024, 7, 6, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3541), new DateTime(2024, 6, 2, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3540), 4 });
+                values: new object[] { "24/05/2024 15:31:41", new DateTime(2024, 7, 8, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4541), new DateTime(2024, 6, 4, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4539), 7 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 22,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 06:01:27", new DateTime(2024, 7, 11, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3556), new DateTime(2024, 6, 4, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3554), 14 });
+                values: new object[] { "24/05/2024 15:31:41", new DateTime(2024, 7, 13, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4553), new DateTime(2024, 6, 6, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4551), 13 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 23,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 06:01:27", new DateTime(2024, 7, 1, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3568), new DateTime(2024, 6, 1, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3566), 3 });
+                values: new object[] { "24/05/2024 15:31:41", new DateTime(2024, 7, 3, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4565), new DateTime(2024, 6, 3, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4563), 7 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 24,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 06:01:27", new DateTime(2024, 6, 26, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3581), new DateTime(2024, 5, 30, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3579), 6 });
+                values: new object[] { "24/05/2024 15:31:41", new DateTime(2024, 6, 28, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4577), new DateTime(2024, 6, 1, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4575), 6 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 25,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 06:01:27", new DateTime(2024, 6, 21, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3592), new DateTime(2024, 5, 29, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3590), 1 });
+                values: new object[] { "24/05/2024 15:31:41", new DateTime(2024, 6, 23, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4592), new DateTime(2024, 5, 31, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4589), 3 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 26,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 06:01:27", new DateTime(2024, 7, 6, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3607), new DateTime(2024, 6, 5, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3605), 6 });
+                values: new object[] { "24/05/2024 15:31:41", new DateTime(2024, 7, 8, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4604), new DateTime(2024, 6, 7, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4602), 4 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 27,
-                columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 06:01:27", new DateTime(2024, 6, 26, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3620), new DateTime(2024, 5, 27, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3618), 7 });
+                columns: new[] { "CreatedAt", "EndAt", "StartAt" },
+                values: new object[] { "24/05/2024 15:31:41", new DateTime(2024, 6, 28, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4616), new DateTime(2024, 5, 29, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4614) });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 28,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 06:01:27", new DateTime(2024, 7, 11, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3632), new DateTime(2024, 6, 3, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3630), 7 });
+                values: new object[] { "24/05/2024 15:31:41", new DateTime(2024, 7, 13, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4628), new DateTime(2024, 6, 5, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4626), 9 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 29,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 06:01:27", new DateTime(2024, 7, 16, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3643), new DateTime(2024, 5, 30, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3642), 3 });
+                values: new object[] { "24/05/2024 15:31:41", new DateTime(2024, 7, 18, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4643), new DateTime(2024, 6, 1, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4641), 11 });
 
             migrationBuilder.UpdateData(
                 table: "Course",
                 keyColumn: "Id",
                 keyValue: 30,
                 columns: new[] { "CreatedAt", "EndAt", "StartAt", "instructorId" },
-                values: new object[] { "22/05/2024 06:01:27", new DateTime(2024, 6, 26, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3658), new DateTime(2024, 5, 28, 6, 1, 27, 690, DateTimeKind.Local).AddTicks(3656), 14 });
+                values: new object[] { "24/05/2024 15:31:41", new DateTime(2024, 6, 28, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4655), new DateTime(2024, 5, 30, 15, 31, 41, 28, DateTimeKind.Local).AddTicks(4653), 3 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 1,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 7, 95.1830523028127m, 15 });
+                values: new object[] { 3, 81.2804774441258m, 2 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 2,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 13, 87.0967537118982m, 4 });
+                values: new object[] { 22, 71.9595815594982m, 22 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 3,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 2, 79.3693078161534m, 13 });
+                values: new object[] { 20, 74.8493582630084m, 28 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 4,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 12, 78.5245677317938m, 22 });
+                values: new object[] { 12, 51.3566873739359m, 13 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 5,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 2, 94.4275410073437m, 1 });
+                values: new object[] { 14, 89.8449260234023m, 3 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 6,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 19, 66.2413586068184m, 16 });
+                values: new object[] { 29, 18.2881167255378m, 25 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 7,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 25, 13.6638686598027m, 11 });
+                values: new object[] { 22, 11.0514614822378m, 15 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 8,
-                columns: new[] { "Result", "TraineeId" },
-                values: new object[] { 57.7717607531089m, 22 });
+                columns: new[] { "CourseId", "Result", "TraineeId" },
+                values: new object[] { 28, 90.9269688539021m, 17 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 9,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 28, 38.0079429154451m, 18 });
+                values: new object[] { 28, 44.4964871192524m, 25 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 10,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 22, 38.111474407544m, 6 });
+                values: new object[] { 1, 65.434155377333m, 27 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 11,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 15, 61.6700822134533m, 26 });
+                values: new object[] { 21, 5.99450257891387m, 13 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 12,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 23, 67.0651469744494m, 21 });
+                values: new object[] { 4, 0.134079298178247m, 23 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 13,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 14, 93.0750449701216m, 7 });
+                values: new object[] { 16, 44.1037546972156m, 24 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 14,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 10, 19.6439312944601m, 4 });
+                values: new object[] { 28, 73.9037574365472m, 15 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 15,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 12, 76.8613115620373m, 17 });
+                values: new object[] { 6, 77.3437691014569m, 25 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 16,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 11, 58.2434500362282m, 11 });
+                values: new object[] { 4, 64.952370409513m, 8 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 17,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 19, 30.1087675417281m, 16 });
+                values: new object[] { 30, 24.179278817068m, 18 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 18,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 17, 91.97543994663m, 6 });
+                values: new object[] { 7, 18.3464020583567m, 15 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 19,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 14, 32.872938568452m, 9 });
+                values: new object[] { 10, 16.9663300670855m, 25 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 20,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 24, 21.960162903106m, 26 });
+                values: new object[] { 2, 59.3851927294548m, 8 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 21,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 8, 3.19502144933148m, 7 });
+                values: new object[] { 23, 97.1327467062642m, 14 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 22,
-                columns: new[] { "Result", "TraineeId" },
-                values: new object[] { 40.5213779842661m, 10 });
+                columns: new[] { "CourseId", "Result", "TraineeId" },
+                values: new object[] { 25, 88.9763445939675m, 19 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 23,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 24, 45.8004846625121m, 26 });
+                values: new object[] { 29, 22.5933377518911m, 9 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 24,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 2, 41.2988823159094m, 21 });
+                values: new object[] { 20, 87.4344407179992m, 14 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 25,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 29, 15.5163519564237m, 22 });
+                values: new object[] { 28, 30.4852981991604m, 3 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 26,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 8, 86.7353050065908m, 30 });
+                values: new object[] { 15, 86.9287267640403m, 2 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 27,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 23, 6.89273728746637m, 18 });
+                values: new object[] { 8, 2.59433335461042m, 25 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 28,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 9, 75.5582994937424m, 12 });
+                values: new object[] { 23, 84.3159758663372m, 7 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 29,
-                columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 19, 2.00292068759136m, 7 });
+                columns: new[] { "CourseId", "Result" },
+                values: new object[] { 23, 47.98227925872m });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 30,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 8, 9.1341416522749m, 1 });
+                values: new object[] { 17, 75.4310941268303m, 25 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 31,
-                columns: new[] { "CourseId", "Result" },
-                values: new object[] { 12, 64.7760170892097m });
+                columns: new[] { "CourseId", "Result", "TraineeId" },
+                values: new object[] { 4, 45.4465101033633m, 6 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 32,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 14, 49.9759484868719m, 9 });
+                values: new object[] { 14, 2.60567561723963m, 13 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 33,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 24, 74.0692382350289m, 3 });
+                values: new object[] { 25, 34.3334350819235m, 11 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 34,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 5, 83.7357956668835m, 29 });
+                values: new object[] { 30, 47.0591961586097m, 30 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 35,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 11, 66.6842296146362m, 13 });
+                values: new object[] { 13, 33.0425349152463m, 29 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 36,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 7, 98.5293823658679m, 20 });
+                values: new object[] { 30, 41.296387874231m, 4 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 37,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 30, 1.78820253947151m, 22 });
+                values: new object[] { 27, 90.091544611856m, 13 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 38,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 5, 47.8282223760957m, 18 });
+                values: new object[] { 22, 62.791269830242m, 6 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 39,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 24, 19.6149135388507m, 17 });
+                values: new object[] { 28, 4.64372117762886m, 17 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 40,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 25, 2.95275067127573m, 3 });
+                values: new object[] { 15, 59.8875815321108m, 6 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 41,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 27, 13.3271195842427m, 20 });
+                values: new object[] { 14, 16.4642089165916m, 3 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 42,
-                columns: new[] { "Result", "TraineeId" },
-                values: new object[] { 89.9306776192999m, 15 });
+                columns: new[] { "CourseId", "Result", "TraineeId" },
+                values: new object[] { 30, 90.9502501883792m, 5 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 43,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 10, 40.4927874716999m, 4 });
+                values: new object[] { 11, 5.73900230370822m, 28 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 44,
-                columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 15, 74.4458592095196m, 18 });
+                columns: new[] { "CourseId", "Result" },
+                values: new object[] { 10, 74.7623682681034m });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 45,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 13, 18.9013559159102m, 1 });
+                values: new object[] { 19, 69.9405144431166m, 23 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 46,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 21, 19.5807613493128m, 11 });
+                values: new object[] { 7, 82.6734701390467m, 27 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 47,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 5, 17.6846918462917m, 9 });
+                values: new object[] { 3, 34.1398940084843m, 18 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 48,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 13, 11.9168291688508m, 24 });
+                values: new object[] { 16, 57.2132007505302m, 7 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 49,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 28, 79.8853516699861m, 17 });
+                values: new object[] { 10, 52.4119855799568m, 13 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 50,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 17, 0.477994093745993m, 6 });
+                values: new object[] { 14, 93.696831000589m, 17 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 51,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 17, 39.5171638616661m, 1 });
+                values: new object[] { 25, 25.4324850448353m, 15 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 52,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 13, 44.9303510467839m, 23 });
+                values: new object[] { 19, 92.8338517498968m, 11 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 53,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 29, 89.0945595096323m, 9 });
+                values: new object[] { 10, 98.5714176941547m, 24 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 54,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 22, 72.4319430937536m, 6 });
+                values: new object[] { 18, 94.1326980414403m, 13 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 55,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 19, 55.5088718855958m, 17 });
+                values: new object[] { 27, 92.7774241727385m, 25 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 56,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 2, 43.5374756887351m, 16 });
+                values: new object[] { 15, 83.8983581662097m, 29 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 57,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 6, 2.86011770646851m, 25 });
+                values: new object[] { 3, 15.0801898949434m, 16 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 58,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 11, 23.7206851852479m, 24 });
+                values: new object[] { 5, 53.4074073247239m, 30 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 59,
-                columns: new[] { "CourseId", "Result" },
-                values: new object[] { 26, 50.30879745813m });
+                columns: new[] { "Result", "TraineeId" },
+                values: new object[] { 82.5152213500561m, 8 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 60,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 22, 64.2223496227949m, 24 });
+                values: new object[] { 22, 88.9398072929225m, 3 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 61,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 1, 20.8090567972928m, 13 });
+                values: new object[] { 22, 79.2015871719404m, 22 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 62,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 30, 43.2793693797569m, 2 });
+                values: new object[] { 20, 6.39319296673166m, 29 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 63,
-                columns: new[] { "Result", "TraineeId" },
-                values: new object[] { 75.6918278858614m, 15 });
+                columns: new[] { "CourseId", "Result", "TraineeId" },
+                values: new object[] { 4, 80.3323545500709m, 27 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 64,
-                columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 23, 7.18368119627447m, 7 });
+                columns: new[] { "Result", "TraineeId" },
+                values: new object[] { 26.4281010401767m, 21 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 65,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 1, 41.2940205143334m, 1 });
+                values: new object[] { 11, 32.3337473033857m, 28 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 66,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 28, 91.0144995805391m, 5 });
+                values: new object[] { 5, 79.120617294603m, 23 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 67,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 11, 90.0690947771404m, 11 });
+                values: new object[] { 26, 96.2969800403621m, 2 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 68,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 16, 37.8541802741809m, 17 });
+                values: new object[] { 29, 48.1468320199564m, 15 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 69,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 20, 42.1375343006439m, 30 });
+                values: new object[] { 8, 65.6480349751126m, 1 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 70,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 23, 51.2416903453446m, 22 });
+                values: new object[] { 28, 30.1523489318172m, 14 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 71,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 18, 85.2558019312752m, 30 });
+                values: new object[] { 1, 54.2438046396111m, 4 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 72,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 16, 35.0218822028181m, 12 });
+                values: new object[] { 29, 24.3454106919503m, 22 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 73,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 19, 47.2664170120585m, 25 });
+                values: new object[] { 8, 21.1947447426098m, 10 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 74,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 3, 19.8975474992023m, 21 });
+                values: new object[] { 23, 43.9889563001081m, 14 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 75,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 27, 5.70345820165116m, 2 });
+                values: new object[] { 15, 33.0269610965019m, 17 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 76,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 14, 64.3054498500926m, 5 });
+                values: new object[] { 4, 25.3859936117145m, 7 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 77,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 21, 71.8105702149174m, 16 });
+                values: new object[] { 11, 1.64167300793103m, 13 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 78,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 25, 14.3793628753474m, 4 });
+                values: new object[] { 7, 82.88323728321m, 30 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 79,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 2, 32.6522310079836m, 13 });
+                values: new object[] { 22, 41.9616741450583m, 29 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 80,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 6, 45.6337044008892m, 12 });
+                values: new object[] { 30, 73.2101513544002m, 12 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 81,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 23, 90.1180956617521m, 16 });
+                values: new object[] { 19, 27.4066464012263m, 22 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 82,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 10, 96.346701594709m, 23 });
+                values: new object[] { 13, 4.92750248841729m, 1 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 83,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 11, 16.0846119762525m, 26 });
+                values: new object[] { 30, 2.36832523888306m, 8 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 84,
-                columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 23, 67.9817619260614m, 19 });
+                columns: new[] { "Result", "TraineeId" },
+                values: new object[] { 40.8923248297979m, 22 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 85,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 4, 95.326167091381m, 25 });
+                values: new object[] { 23, 0.197782938747038m, 30 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 86,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 4, 3.04749917331352m, 9 });
+                values: new object[] { 1, 82.15889919407m, 22 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 87,
-                columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 17, 91.935563738559m, 2 });
+                columns: new[] { "Result", "TraineeId" },
+                values: new object[] { 85.3048190381481m, 21 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 88,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 2, 37.3478946253843m, 28 });
+                values: new object[] { 15, 18.7407199907105m, 6 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 89,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 14, 12.497697339639m, 28 });
+                values: new object[] { 3, 63.9238234784064m, 1 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 90,
-                columns: new[] { "CourseId", "Result" },
-                values: new object[] { 20, 7.38598213417832m });
+                columns: new[] { "CourseId", "Result", "TraineeId" },
+                values: new object[] { 10, 15.6367715228294m, 10 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 91,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 6, 71.2981244544709m, 2 });
+                values: new object[] { 23, 31.7469046516386m, 10 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 92,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 21, 57.3143886517684m, 16 });
+                values: new object[] { 4, 9.20307264664661m, 15 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 93,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 27, 46.6195847012297m, 18 });
+                values: new object[] { 19, 14.5588706443065m, 8 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 94,
-                columns: new[] { "Result", "TraineeId" },
-                values: new object[] { 37.2419201650997m, 24 });
+                columns: new[] { "CourseId", "Result", "TraineeId" },
+                values: new object[] { 1, 72.9633316083263m, 2 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 95,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 9, 90.5566288418496m, 24 });
+                values: new object[] { 18, 24.5328126402906m, 3 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 96,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 19, 3.24801886180023m, 29 });
+                values: new object[] { 14, 99.6850520105273m, 24 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 97,
-                columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 5, 27.6922824176196m, 18 });
+                columns: new[] { "CourseId", "Result" },
+                values: new object[] { 9, 70.2337943685004m });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 98,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 17, 70.4287994406775m, 2 });
+                values: new object[] { 19, 94.3214068167706m, 18 });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 99,
-                columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 6, 41.0277593223561m, 17 });
+                columns: new[] { "CourseId", "Result" },
+                values: new object[] { 7, 25.9444511829357m });
 
             migrationBuilder.UpdateData(
                 table: "CourseTrainee",
                 keyColumn: "Id",
                 keyValue: 100,
                 columns: new[] { "CourseId", "Result", "TraineeId" },
-                values: new object[] { 29, 22.8772889835886m, 8 });
+                values: new object[] { 15, 58.659943395956m, 2 });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 1,
-                columns: new[] { "TaskLink", "Time", "downloadLink" },
-                values: new object[] { null, new TimeSpan(0, 0, 53, 0, 0), null });
+                column: "Time",
+                value: new TimeSpan(0, 0, 58, 0, 0));
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 2,
-                columns: new[] { "TaskLink", "Time", "downloadLink" },
-                values: new object[] { null, new TimeSpan(0, 0, 17, 0, 0), null });
+                column: "Time",
+                value: new TimeSpan(0, 0, 54, 0, 0));
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 3,
-                columns: new[] { "TaskLink", "Time", "downloadLink" },
-                values: new object[] { null, new TimeSpan(0, 0, 20, 0, 0), null });
+                column: "Time",
+                value: new TimeSpan(0, 0, 47, 0, 0));
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 4,
-                columns: new[] { "TaskLink", "Time", "downloadLink" },
-                values: new object[] { null, new TimeSpan(0, 0, 42, 0, 0), null });
+                column: "Time",
+                value: new TimeSpan(0, 0, 13, 0, 0));
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 5,
-                columns: new[] { "TaskLink", "Time", "downloadLink" },
-                values: new object[] { null, new TimeSpan(0, 0, 23, 0, 0), null });
+                column: "Time",
+                value: new TimeSpan(0, 0, 15, 0, 0));
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 6,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 2, "Content for Lesson 3 in Chapter 2", null, new TimeSpan(0, 0, 39, 0, 0), "Lesson 3 for Chapter 2", null });
+                column: "Time",
+                value: new TimeSpan(0, 0, 10, 0, 0));
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 7,
-                columns: new[] { "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { "Content for Lesson 1 in Chapter 3", null, new TimeSpan(0, 0, 48, 0, 0), "Lesson 1 for Chapter 3", null });
+                column: "Time",
+                value: new TimeSpan(0, 0, 19, 0, 0));
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 8,
-                columns: new[] { "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { "Content for Lesson 2 in Chapter 3", null, new TimeSpan(0, 0, 59, 0, 0), "Lesson 2 for Chapter 3", null });
+                column: "Time",
+                value: new TimeSpan(0, 0, 27, 0, 0));
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 9,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 3, "Content for Lesson 3 in Chapter 3", null, new TimeSpan(0, 0, 39, 0, 0), "Lesson 3 for Chapter 3", null });
+                column: "Time",
+                value: new TimeSpan(0, 0, 57, 0, 0));
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 10,
-                columns: new[] { "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { "Content for Lesson 1 in Chapter 4", null, new TimeSpan(0, 0, 40, 0, 0), "Lesson 1 for Chapter 4", null });
+                column: "Time",
+                value: new TimeSpan(0, 0, 24, 0, 0));
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 11,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 4, "Content for Lesson 2 in Chapter 4", null, new TimeSpan(0, 0, 28, 0, 0), "Lesson 2 for Chapter 4", null });
+                column: "Time",
+                value: new TimeSpan(0, 0, 28, 0, 0));
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 12,
-                columns: new[] { "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { "Content for Lesson 1 in Chapter 5", null, new TimeSpan(0, 0, 16, 0, 0), "Lesson 1 for Chapter 5", null });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 6, "Content for Lesson 1 in Chapter 6", new TimeSpan(0, 0, 33, 0, 0), "Lesson 1 for Chapter 6" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 13,
-                columns: new[] { "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { "Content for Lesson 2 in Chapter 5", null, new TimeSpan(0, 0, 20, 0, 0), "Lesson 2 for Chapter 5", null });
+                columns: new[] { "Content", "Time", "Title" },
+                values: new object[] { "Content for Lesson 2 in Chapter 6", new TimeSpan(0, 0, 38, 0, 0), "Lesson 2 for Chapter 6" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 14,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 5, "Content for Lesson 3 in Chapter 5", null, new TimeSpan(0, 0, 56, 0, 0), "Lesson 3 for Chapter 5", null });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 7, "Content for Lesson 1 in Chapter 7", new TimeSpan(0, 0, 57, 0, 0), "Lesson 1 for Chapter 7" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 15,
-                columns: new[] { "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { "Content for Lesson 1 in Chapter 6", null, new TimeSpan(0, 0, 33, 0, 0), "Lesson 1 for Chapter 6", null });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 7, "Content for Lesson 2 in Chapter 7", new TimeSpan(0, 0, 10, 0, 0), "Lesson 2 for Chapter 7" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 16,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 6, "Content for Lesson 2 in Chapter 6", null, new TimeSpan(0, 0, 42, 0, 0), "Lesson 2 for Chapter 6", null });
+                columns: new[] { "Content", "Time", "Title" },
+                values: new object[] { "Content for Lesson 3 in Chapter 7", new TimeSpan(0, 0, 40, 0, 0), "Lesson 3 for Chapter 7" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 17,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 6, "Content for Lesson 3 in Chapter 6", null, new TimeSpan(0, 0, 46, 0, 0), "Lesson 3 for Chapter 6", null });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 8, "Content for Lesson 1 in Chapter 8", new TimeSpan(0, 0, 31, 0, 0), "Lesson 1 for Chapter 8" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 18,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 7, "Content for Lesson 1 in Chapter 7", null, new TimeSpan(0, 0, 34, 0, 0), "Lesson 1 for Chapter 7", null });
+                columns: new[] { "Content", "Title" },
+                values: new object[] { "Content for Lesson 2 in Chapter 8", "Lesson 2 for Chapter 8" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 19,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 7, "Content for Lesson 2 in Chapter 7", null, new TimeSpan(0, 0, 27, 0, 0), "Lesson 2 for Chapter 7", null });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 9, "Content for Lesson 1 in Chapter 9", new TimeSpan(0, 0, 52, 0, 0), "Lesson 1 for Chapter 9" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 20,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 8, "Content for Lesson 1 in Chapter 8", null, new TimeSpan(0, 0, 19, 0, 0), "Lesson 1 for Chapter 8", null });
+                columns: new[] { "Content", "Time", "Title" },
+                values: new object[] { "Content for Lesson 2 in Chapter 9", new TimeSpan(0, 0, 18, 0, 0), "Lesson 2 for Chapter 9" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 21,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 8, "Content for Lesson 2 in Chapter 8", null, new TimeSpan(0, 0, 38, 0, 0), "Lesson 2 for Chapter 8", null });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 10, "Content for Lesson 1 in Chapter 10", new TimeSpan(0, 0, 15, 0, 0), "Lesson 1 for Chapter 10" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 22,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 8, "Content for Lesson 3 in Chapter 8", null, new TimeSpan(0, 0, 58, 0, 0), "Lesson 3 for Chapter 8", null });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 10, "Content for Lesson 2 in Chapter 10", new TimeSpan(0, 0, 15, 0, 0), "Lesson 2 for Chapter 10" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 23,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 9, "Content for Lesson 1 in Chapter 9", null, new TimeSpan(0, 0, 12, 0, 0), "Lesson 1 for Chapter 9", null });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 11, "Content for Lesson 1 in Chapter 11", new TimeSpan(0, 0, 33, 0, 0), "Lesson 1 for Chapter 11" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 24,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 9, "Content for Lesson 2 in Chapter 9", null, new TimeSpan(0, 0, 51, 0, 0), "Lesson 2 for Chapter 9", null });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 11, "Content for Lesson 2 in Chapter 11", new TimeSpan(0, 0, 36, 0, 0), "Lesson 2 for Chapter 11" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 25,
-                columns: new[] { "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { "Content for Lesson 1 in Chapter 10", null, new TimeSpan(0, 0, 18, 0, 0), "Lesson 1 for Chapter 10", null });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 12, "Content for Lesson 1 in Chapter 12", new TimeSpan(0, 0, 45, 0, 0), "Lesson 1 for Chapter 12" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 26,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 10, "Content for Lesson 2 in Chapter 10", null, new TimeSpan(0, 0, 41, 0, 0), "Lesson 2 for Chapter 10", null });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 12, "Content for Lesson 2 in Chapter 12", new TimeSpan(0, 0, 47, 0, 0), "Lesson 2 for Chapter 12" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 27,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 10, "Content for Lesson 3 in Chapter 10", null, new TimeSpan(0, 0, 59, 0, 0), "Lesson 3 for Chapter 10", null });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 12, "Content for Lesson 3 in Chapter 12", new TimeSpan(0, 0, 53, 0, 0), "Lesson 3 for Chapter 12" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 28,
-                columns: new[] { "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { "Content for Lesson 1 in Chapter 11", null, new TimeSpan(0, 0, 28, 0, 0), "Lesson 1 for Chapter 11", null });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 13, "Content for Lesson 1 in Chapter 13", new TimeSpan(0, 0, 42, 0, 0), "Lesson 1 for Chapter 13" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 29,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 11, "Content for Lesson 2 in Chapter 11", null, new TimeSpan(0, 0, 31, 0, 0), "Lesson 2 for Chapter 11", null });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 13, "Content for Lesson 2 in Chapter 13", new TimeSpan(0, 0, 16, 0, 0), "Lesson 2 for Chapter 13" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 30,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 11, "Content for Lesson 3 in Chapter 11", null, new TimeSpan(0, 0, 27, 0, 0), "Lesson 3 for Chapter 11", null });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 14, "Content for Lesson 1 in Chapter 14", new TimeSpan(0, 0, 45, 0, 0), "Lesson 1 for Chapter 14" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 31,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 12, "Content for Lesson 1 in Chapter 12", null, new TimeSpan(0, 0, 44, 0, 0), "Lesson 1 for Chapter 12", null });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 14, "Content for Lesson 2 in Chapter 14", new TimeSpan(0, 0, 52, 0, 0), "Lesson 2 for Chapter 14" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 32,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 12, "Content for Lesson 2 in Chapter 12", null, new TimeSpan(0, 0, 12, 0, 0), "Lesson 2 for Chapter 12", null });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 15, "Content for Lesson 1 in Chapter 15", new TimeSpan(0, 0, 37, 0, 0), "Lesson 1 for Chapter 15" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 33,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 12, "Content for Lesson 3 in Chapter 12", null, new TimeSpan(0, 0, 56, 0, 0), "Lesson 3 for Chapter 12", null });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 15, "Content for Lesson 2 in Chapter 15", new TimeSpan(0, 0, 42, 0, 0), "Lesson 2 for Chapter 15" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 34,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 13, "Content for Lesson 1 in Chapter 13", null, new TimeSpan(0, 0, 30, 0, 0), "Lesson 1 for Chapter 13", null });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 16, "Content for Lesson 1 in Chapter 16", new TimeSpan(0, 0, 21, 0, 0), "Lesson 1 for Chapter 16" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 35,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 13, "Content for Lesson 2 in Chapter 13", null, new TimeSpan(0, 0, 50, 0, 0), "Lesson 2 for Chapter 13", null });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 16, "Content for Lesson 2 in Chapter 16", new TimeSpan(0, 0, 21, 0, 0), "Lesson 2 for Chapter 16" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 36,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 13, "Content for Lesson 3 in Chapter 13", null, new TimeSpan(0, 0, 20, 0, 0), "Lesson 3 for Chapter 13", null });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 16, "Content for Lesson 3 in Chapter 16", new TimeSpan(0, 0, 26, 0, 0), "Lesson 3 for Chapter 16" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 37,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 14, "Content for Lesson 1 in Chapter 14", null, new TimeSpan(0, 0, 59, 0, 0), "Lesson 1 for Chapter 14", null });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 17, "Content for Lesson 1 in Chapter 17", new TimeSpan(0, 0, 39, 0, 0), "Lesson 1 for Chapter 17" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 38,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 14, "Content for Lesson 2 in Chapter 14", null, new TimeSpan(0, 0, 11, 0, 0), "Lesson 2 for Chapter 14", null });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 17, "Content for Lesson 2 in Chapter 17", new TimeSpan(0, 0, 58, 0, 0), "Lesson 2 for Chapter 17" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 39,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 14, "Content for Lesson 3 in Chapter 14", null, new TimeSpan(0, 0, 17, 0, 0), "Lesson 3 for Chapter 14", null });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 18, "Content for Lesson 1 in Chapter 18", new TimeSpan(0, 0, 26, 0, 0), "Lesson 1 for Chapter 18" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 40,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 15, "Content for Lesson 1 in Chapter 15", null, new TimeSpan(0, 0, 28, 0, 0), "Lesson 1 for Chapter 15", null });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 18, "Content for Lesson 2 in Chapter 18", new TimeSpan(0, 0, 54, 0, 0), "Lesson 2 for Chapter 18" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 41,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 15, "Content for Lesson 2 in Chapter 15", null, new TimeSpan(0, 0, 38, 0, 0), "Lesson 2 for Chapter 15", null });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 18, "Content for Lesson 3 in Chapter 18", new TimeSpan(0, 0, 33, 0, 0), "Lesson 3 for Chapter 18" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 42,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 15, "Content for Lesson 3 in Chapter 15", null, new TimeSpan(0, 0, 30, 0, 0), "Lesson 3 for Chapter 15", null });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 19, "Content for Lesson 1 in Chapter 19", new TimeSpan(0, 0, 13, 0, 0), "Lesson 1 for Chapter 19" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 43,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 16, "Content for Lesson 1 in Chapter 16", null, new TimeSpan(0, 0, 26, 0, 0), "Lesson 1 for Chapter 16", null });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 19, "Content for Lesson 2 in Chapter 19", new TimeSpan(0, 0, 58, 0, 0), "Lesson 2 for Chapter 19" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 44,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 16, "Content for Lesson 2 in Chapter 16", null, new TimeSpan(0, 0, 37, 0, 0), "Lesson 2 for Chapter 16", null });
+                columns: new[] { "Content", "Time", "Title" },
+                values: new object[] { "Content for Lesson 3 in Chapter 19", new TimeSpan(0, 0, 47, 0, 0), "Lesson 3 for Chapter 19" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 45,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 16, "Content for Lesson 3 in Chapter 16", null, new TimeSpan(0, 0, 49, 0, 0), "Lesson 3 for Chapter 16", null });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 20, "Content for Lesson 1 in Chapter 20", new TimeSpan(0, 0, 54, 0, 0), "Lesson 1 for Chapter 20" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 46,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 17, "Content for Lesson 1 in Chapter 17", null, new TimeSpan(0, 0, 23, 0, 0), "Lesson 1 for Chapter 17", null });
+                columns: new[] { "Content", "Time", "Title" },
+                values: new object[] { "Content for Lesson 2 in Chapter 20", new TimeSpan(0, 0, 49, 0, 0), "Lesson 2 for Chapter 20" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 47,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 17, "Content for Lesson 2 in Chapter 17", null, new TimeSpan(0, 0, 28, 0, 0), "Lesson 2 for Chapter 17", null });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 21, "Content for Lesson 1 in Chapter 21", new TimeSpan(0, 0, 49, 0, 0), "Lesson 1 for Chapter 21" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 48,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 18, "Content for Lesson 1 in Chapter 18", null, new TimeSpan(0, 0, 12, 0, 0), "Lesson 1 for Chapter 18", null });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 21, "Content for Lesson 2 in Chapter 21", new TimeSpan(0, 0, 56, 0, 0), "Lesson 2 for Chapter 21" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 49,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 18, "Content for Lesson 2 in Chapter 18", null, new TimeSpan(0, 0, 15, 0, 0), "Lesson 2 for Chapter 18", null });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 22, "Content for Lesson 1 in Chapter 22", new TimeSpan(0, 0, 59, 0, 0), "Lesson 1 for Chapter 22" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 50,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 18, "Content for Lesson 3 in Chapter 18", null, new TimeSpan(0, 0, 43, 0, 0), "Lesson 3 for Chapter 18", null });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 22, "Content for Lesson 2 in Chapter 22", new TimeSpan(0, 0, 49, 0, 0), "Lesson 2 for Chapter 22" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 51,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 19, "Content for Lesson 1 in Chapter 19", null, new TimeSpan(0, 0, 17, 0, 0), "Lesson 1 for Chapter 19", null });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 23, "Content for Lesson 1 in Chapter 23", new TimeSpan(0, 0, 19, 0, 0), "Lesson 1 for Chapter 23" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 52,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 19, "Content for Lesson 2 in Chapter 19", null, new TimeSpan(0, 0, 10, 0, 0), "Lesson 2 for Chapter 19", null });
+                columns: new[] { "ChapterId", "Content", "Title" },
+                values: new object[] { 23, "Content for Lesson 2 in Chapter 23", "Lesson 2 for Chapter 23" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 53,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 20, "Content for Lesson 1 in Chapter 20", null, new TimeSpan(0, 0, 44, 0, 0), "Lesson 1 for Chapter 20", null });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 23, "Content for Lesson 3 in Chapter 23", new TimeSpan(0, 0, 32, 0, 0), "Lesson 3 for Chapter 23" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 54,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 20, "Content for Lesson 2 in Chapter 20", null, new TimeSpan(0, 0, 57, 0, 0), "Lesson 2 for Chapter 20", null });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 24, "Content for Lesson 1 in Chapter 24", new TimeSpan(0, 0, 49, 0, 0), "Lesson 1 for Chapter 24" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 55,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 20, "Content for Lesson 3 in Chapter 20", null, new TimeSpan(0, 0, 58, 0, 0), "Lesson 3 for Chapter 20", null });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 24, "Content for Lesson 2 in Chapter 24", new TimeSpan(0, 0, 55, 0, 0), "Lesson 2 for Chapter 24" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 56,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 21, "Content for Lesson 1 in Chapter 21", null, new TimeSpan(0, 0, 38, 0, 0), "Lesson 1 for Chapter 21", null });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 24, "Content for Lesson 3 in Chapter 24", new TimeSpan(0, 0, 49, 0, 0), "Lesson 3 for Chapter 24" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 57,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 21, "Content for Lesson 2 in Chapter 21", null, new TimeSpan(0, 0, 21, 0, 0), "Lesson 2 for Chapter 21", null });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 25, "Content for Lesson 1 in Chapter 25", new TimeSpan(0, 0, 14, 0, 0), "Lesson 1 for Chapter 25" });
 
             migrationBuilder.UpdateData(
                 table: "Lessons",
                 keyColumn: "Id",
                 keyValue: 58,
-                columns: new[] { "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[] { 22, "Content for Lesson 1 in Chapter 22", null, new TimeSpan(0, 0, 25, 0, 0), "Lesson 1 for Chapter 22", null });
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 25, "Content for Lesson 2 in Chapter 25", new TimeSpan(0, 0, 32, 0, 0), "Lesson 2 for Chapter 25" });
 
-            migrationBuilder.InsertData(
+            migrationBuilder.UpdateData(
                 table: "Lessons",
-                columns: new[] { "Id", "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[,]
-                {
-                    { 59, 22, "Content for Lesson 2 in Chapter 22", null, new TimeSpan(0, 0, 41, 0, 0), "Lesson 2 for Chapter 22", null },
-                    { 60, 22, "Content for Lesson 3 in Chapter 22", null, new TimeSpan(0, 0, 54, 0, 0), "Lesson 3 for Chapter 22", null },
-                    { 61, 23, "Content for Lesson 1 in Chapter 23", null, new TimeSpan(0, 0, 25, 0, 0), "Lesson 1 for Chapter 23", null },
-                    { 62, 23, "Content for Lesson 2 in Chapter 23", null, new TimeSpan(0, 0, 16, 0, 0), "Lesson 2 for Chapter 23", null },
-                    { 63, 23, "Content for Lesson 3 in Chapter 23", null, new TimeSpan(0, 0, 23, 0, 0), "Lesson 3 for Chapter 23", null }
-                });
+                keyColumn: "Id",
+                keyValue: 59,
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 26, "Content for Lesson 1 in Chapter 26", new TimeSpan(0, 0, 20, 0, 0), "Lesson 1 for Chapter 26" });
+
+            migrationBuilder.UpdateData(
+                table: "Lessons",
+                keyColumn: "Id",
+                keyValue: 60,
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 26, "Content for Lesson 2 in Chapter 26", new TimeSpan(0, 0, 50, 0, 0), "Lesson 2 for Chapter 26" });
+
+            migrationBuilder.UpdateData(
+                table: "Lessons",
+                keyColumn: "Id",
+                keyValue: 61,
+                columns: new[] { "ChapterId", "Content", "Time", "Title" },
+                values: new object[] { 26, "Content for Lesson 3 in Chapter 26", new TimeSpan(0, 0, 23, 0, 0), "Lesson 3 for Chapter 26" });
 
             migrationBuilder.UpdateData(
                 table: "Package",
                 keyColumn: "Id",
                 keyValue: 1,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "Package",
                 keyColumn: "Id",
                 keyValue: 2,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "Package",
                 keyColumn: "Id",
                 keyValue: 3,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "RedeemCode",
                 keyColumn: "Id",
                 keyValue: 3,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 1,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 2,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 3,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 4,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 5,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 6,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 7,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 8,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 9,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 10,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 11,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 12,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 13,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 14,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 15,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 16,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 17,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 18,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 19,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 20,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 21,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 22,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 23,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 24,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 25,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 26,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 27,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 28,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 29,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "Trainee",
                 keyColumn: "Id",
                 keyValue: 30,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 1,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 2,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 3,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 4,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 5,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 6,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 7,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 8,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 9,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 10,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 11,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 12,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 13,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 14,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 15,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 16,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 17,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 18,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 19,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 20,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 21,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 22,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 23,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 24,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 25,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 26,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 27,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 28,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 29,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
+                value: "24/05/2024 15:31:41");
 
             migrationBuilder.UpdateData(
                 table: "instructor",
                 keyColumn: "Id",
                 keyValue: 30,
                 column: "CreatedAt",
-                value: "22/05/2024 06:01:27");
-
-            migrationBuilder.InsertData(
-                table: "Lessons",
-                columns: new[] { "Id", "ChapterId", "Content", "TaskLink", "Time", "Title", "downloadLink" },
-                values: new object[,]
-                {
-                    { 64, 24, "Content for Lesson 1 in Chapter 24", null, new TimeSpan(0, 0, 31, 0, 0), "Lesson 1 for Chapter 24", null },
-                    { 65, 24, "Content for Lesson 2 in Chapter 24", null, new TimeSpan(0, 0, 24, 0, 0), "Lesson 2 for Chapter 24", null },
-                    { 66, 24, "Content for Lesson 3 in Chapter 24", null, new TimeSpan(0, 0, 13, 0, 0), "Lesson 3 for Chapter 24", null },
-                    { 67, 25, "Content for Lesson 1 in Chapter 25", null, new TimeSpan(0, 0, 42, 0, 0), "Lesson 1 for Chapter 25", null },
-                    { 68, 25, "Content for Lesson 2 in Chapter 25", null, new TimeSpan(0, 0, 44, 0, 0), "Lesson 2 for Chapter 25", null },
-                    { 69, 26, "Content for Lesson 1 in Chapter 26", null, new TimeSpan(0, 0, 19, 0, 0), "Lesson 1 for Chapter 26", null },
-                    { 70, 26, "Content for Lesson 2 in Chapter 26", null, new TimeSpan(0, 0, 34, 0, 0), "Lesson 2 for Chapter 26", null },
-                    { 71, 26, "Content for Lesson 3 in Chapter 26", null, new TimeSpan(0, 0, 13, 0, 0), "Lesson 3 for Chapter 26", null }
-                });
+                value: "24/05/2024 15:31:41");
         }
     }
 }
