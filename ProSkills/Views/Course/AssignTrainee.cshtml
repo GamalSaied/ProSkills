@@ -1,0 +1,20 @@
+﻿@model ProSkills.ViewModels.CourseTraineeViewModel
+
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    var courseName = ViewBag.CourseName;
+    var courseId = ViewBag.CourseId;
+}
+
+<div class="card-body">
+    <h2>Assign Trainee to @courseName</h2>
+    <form asp-action="AssignTrainee" method="post">
+        <input type="hidden" asp-for="CourseId" value="@courseId" />
+        <div class="form-group">
+            <label for="Email">Trainee Email</label>
+            <input type="email" class="form-control" asp-for="Email" required />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Assign Trainee</button>
+    </form>
+</div>

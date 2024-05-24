@@ -5,6 +5,7 @@ using ProSkills.Models.AdminPanel.InstructorManger;
 using ProSkills.Models.ClientSide;
 using ProSkills.Repositories;
 using ProSkills.Repository;
+using ProSkills.ViewModels;
 using System.Collections.Generic;
 using System.Drawing;
 
@@ -16,6 +17,7 @@ namespace ProSkills.Controllers
         private IRepository<Course> _courseRepository;
         private IRepository<instructor> _instructorRepository;
         private IRepository<Trainee> _traineeRepository;
+        private IRepository<CourseTrainee> _courseTraineeRepository;
 
         private IRepository<Category> _categoryRepository;
         private IRepository<RedeemCode> _redeemCodeRepository;
@@ -28,7 +30,7 @@ namespace ProSkills.Controllers
 
         private readonly ITIContext _context;
 
-        public CourseController(IRepository<Lesson> lessonRepository,IRepository<Chapter> chapterRepository, IRepository<Course> CourseRepository, IRepository<instructor> InstructorRepository, IRepository<Category> CategoryRepository, IRepository<RedeemCode> RedeemCodeRepository, IRepository<Package> PackageRepository , ICourseRepository courseRepositoryVersion2)
+        public CourseController(IRepository<Trainee> traineeRepository, IRepository<CourseTrainee> courseTraineeRepository,IRepository<Lesson> lessonRepository,IRepository<Chapter> chapterRepository, IRepository<Course> CourseRepository, IRepository<instructor> InstructorRepository, IRepository<Category> CategoryRepository, IRepository<RedeemCode> RedeemCodeRepository, IRepository<Package> PackageRepository , ICourseRepository courseRepositoryVersion2)
         {
             _courseRepository = CourseRepository;
             _instructorRepository = InstructorRepository;
@@ -38,9 +40,81 @@ namespace ProSkills.Controllers
             _chapterRepository = chapterRepository;
             _lessonRepository = lessonRepository;
             _courseRepositoryVersion2 = courseRepositoryVersion2;
+            _courseTraineeRepository = courseTraineeRepository;
+            _traineeRepository = traineeRepository;
+
 
         }
         #endregion
+
+        [HttpPost]
+        public IActionResult UnassignTrainee(int courseId, int traineeId)
+        {
+            var courseTrainee = _courseTraineeRepository.GetAll()
+                .FirstOrDefault(ct => ct.CourseId == courseId && ct.TraineeId == traineeId);
+
+            if (courseTrainee != null)
+            {
+                _courseTraineeRepository.Delete(courseTrainee.Id);
+                _courseTraineeRepository.Save();
+            }
+
+            return RedirectToAction("TraineesInCourse", new { courseId });
+        }
+
+
+        // GET: Course/AssignTrainee
+        [HttpGet]
+        public IActionResult AssignTrainee(int courseId)
+        {
+            var course = _courseRepository.GetById(courseId);
+            if (course == null)
+            {
+                return NotFound();
+            }
+
+            ViewBag.CourseName = course.Name;
+            ViewBag.CourseId = courseId;
+            return View(new CourseTraineeViewModel { CourseId = courseId });
+        }
+
+        // POST: Course/AssignTrainee
+        [HttpPost]
+        public IActionResult AssignTrainee(CourseTraineeViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                if (string.IsNullOrEmpty(model.Email))
+                {
+                    ModelState.AddModelError("", "Email is required.");
+                    return View(model);
+                }
+
+                var trainee = _traineeRepository.GetAll()?.FirstOrDefault(t => t.Email == model.Email && !t.IsDeleted);
+                if (trainee == null)
+                {
+                    ModelState.AddModelError("", "Trainee with the given email does not exist or is deleted.");
+                }
+                else
+                {
+                    var courseTrainee = new CourseTrainee
+                    {
+                        CourseId = model.CourseId,
+                        TraineeId = trainee.Id
+                    };
+
+                    _courseTraineeRepository.Insert(courseTrainee);
+                    _courseTraineeRepository.Save();
+
+                    return RedirectToAction("TraineesInCourse", new { courseId = model.CourseId });
+                }
+            }
+
+            var course = _courseRepository.GetById(model.CourseId);
+            ViewBag.CourseName = course?.Name;
+            return View(model);
+        }
+
 
         public IActionResult TraineesInCourse(int courseId)
         {
@@ -52,6 +126,7 @@ namespace ProSkills.Controllers
 
             var trainees = course.Trainees.Select(ct => ct.Trainee).ToList();
             ViewBag.CourseName = course.Name;
+            ViewBag.CourseId = courseId;
             return View(trainees);
         }
 
