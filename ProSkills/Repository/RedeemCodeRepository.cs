@@ -36,6 +36,10 @@ namespace ProSkills.Repository
                 context.Remove(obj);
             }
         }
+        public void MarkAsDeleted(int id)
+        {
+            throw new NotImplementedException();
+        }
 
         // Saves changes made to the database
         public void Save() => context.SaveChanges();

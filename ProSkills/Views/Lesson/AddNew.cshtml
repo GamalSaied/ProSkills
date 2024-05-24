@@ -1,0 +1,34 @@
+﻿@model ProSkills.Models.ClientSide.Lesson
+
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    var chapterId = ViewBag.ChapterId;
+}
+
+<div class="card-body">
+    <h2>Add New Lesson</h2>
+    <form asp-action="AddNew" method="post">
+        <div class="form-group">
+            <label for="Title">Title</label>
+            <input type="text" class="form-control" id="Title" name="Title" required />
+        </div>
+        <div class="form-group">
+            <label for="Content">Content</label>
+            <textarea class="form-control" id="Content" name="Content"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="downloadLink">Download Link</label>
+            <input type="url" class="form-control" id="downloadLink" name="downloadLink" />
+        </div>
+        <div class="form-group">
+            <label for="TaskLink">Task Link</label>
+            <input type="url" class="form-control" id="TaskLink" name="TaskLink" />
+        </div>
+        <div class="form-group">
+            <label for="Time">Time (HH:MM:SS)</label>
+            <input type="text" class="form-control" id="Time" name="Time" placeholder="HH:MM:SS" required />
+        </div>
+        <input type="hidden" name="ChapterId" value="@chapterId" />
+        <button type="submit" class="btn btn-primary">Add Lesson</button>
+    </form>
+</div>

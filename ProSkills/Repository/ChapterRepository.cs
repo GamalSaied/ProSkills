@@ -59,5 +59,17 @@ namespace ProSkills.Repositories
         {
             context.SaveChanges();
         }
+        public void MarkAsDeleted(int id)
+        {
+            var chapter = GetById(id);
+            if (chapter != null)
+            {
+                chapter.IsDeleted = true;
+                Update(chapter);
+                Save();
+            }
+        }
+
+
     }
 }

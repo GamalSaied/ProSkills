@@ -43,5 +43,9 @@ namespace ProSkills.Repository
         public void Save() => context.SaveChanges();
 
         public Package GetByName(string Name) => context.Package.FirstOrDefault(d => d.Name == Name);
+        public void MarkAsDeleted(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

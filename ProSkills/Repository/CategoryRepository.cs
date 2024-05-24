@@ -41,6 +41,11 @@ namespace ProSkills.Repository
         public void Save() => context.SaveChanges();
 
         public Category GetByName(string Name) => context.Category.FirstOrDefault(d => d.Name == Name);
+
+        public void MarkAsDeleted(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
         
    

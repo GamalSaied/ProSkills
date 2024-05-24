@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using ProSkills.Interfaces;
 using ProSkills.Models.ClientSide;
@@ -16,22 +17,22 @@ namespace ProSkills.Repositories
 
         public List<Lesson> GetAll()
         {
-            return context.Lessons.ToList();
+            return context.Lessons.Where(l => !l.IsDeleted).ToList();
         }
 
         public Lesson GetById(int id)
         {
-            return context.Lessons.FirstOrDefault(l => l.Id == id);
+            return context.Lessons.FirstOrDefault(l => l.Id == id && !l.IsDeleted);
         }
 
         public Lesson GetByName(string name)
         {
-            return context.Lessons.FirstOrDefault(l => l.Title == name);
+            return context.Lessons.FirstOrDefault(l => l.Title == name && !l.IsDeleted);
         }
 
         public Lesson CheckName(string name)
         {
-            return context.Lessons.FirstOrDefault(l => l.Title.ToLower() == name.ToLower());
+            return context.Lessons.FirstOrDefault(l => l.Title.ToLower() == name.ToLower() && !l.IsDeleted);
         }
 
         public void Insert(Lesson obj)
@@ -56,6 +57,17 @@ namespace ProSkills.Repositories
         public void Save()
         {
             context.SaveChanges();
+        }
+
+        public void MarkAsDeleted(int id)
+        {
+            var lesson = GetById(id);
+            if (lesson != null)
+            {
+                lesson.IsDeleted = true;
+                Update(lesson);
+                Save();
+            }
         }
     }
 }
