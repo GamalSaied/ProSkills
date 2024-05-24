@@ -42,8 +42,6 @@ namespace ProSkills.Controllers
         }
         #endregion
 
-
-
         public IActionResult TraineesInCourse(int courseId)
         {
             var course = _courseRepository.GetById(courseId);
