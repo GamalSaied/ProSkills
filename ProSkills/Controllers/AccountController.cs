@@ -43,7 +43,7 @@ namespace ProSkills.Controllers
                     UserName = userfromrequest.Email,
                     Email = userfromrequest.Email,
                     PhoneNumber = userfromrequest.Phone,
-                    country = userfromrequest.country
+                    country = userfromrequest.Country
                 };
 
                 var result = await _userManager.CreateAsync(user, userfromrequest.Password);
