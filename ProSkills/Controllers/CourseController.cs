@@ -166,5 +166,47 @@ namespace ProSkills.Controllers
             return View("TraineeCourseList", course);
 
         }
+
+
+        // GET: Course/Edit
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var course = _courseRepository.GetById(id);
+            if (course == null)
+            {
+                return NotFound();
+            }
+            return View(course);
+        }
+
+        // POST: Course/Edit
+        [HttpPost]
+        public IActionResult Edit(Course course)
+        {
+            if (ModelState.IsValid)
+            {
+                _courseRepository.Update(course);
+                _courseRepository.Save();
+                return RedirectToAction("Index");
+            }
+            return View(course);
+        }
+
+        // POST: Course/Delete
+        [HttpPost]
+        public IActionResult Delete(int id)
+        {
+            var course = _courseRepository.GetById(id);
+            if (course != null)
+            {
+                course.IsDeleted = true;
+                _courseRepository.Update(course);
+                _courseRepository.Save();
+                return RedirectToAction("Index");
+            }
+            return NotFound();
+        }
+
     }
 }
