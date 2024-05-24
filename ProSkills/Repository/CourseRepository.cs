@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ProSkills.Interfaces;
 using ProSkills.Models.ClientSide;
-using ProSkills.Models.ClientSide.Backup;
+using ProSkills.Models.ClientSide;
 
 namespace ProSkills.Repository
 {

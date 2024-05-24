@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-md-offset-4 col-md-4 col-sm-offset-3 col-sm-6">
                 <div class="form-container">
-                    <form class="form-horizontal">
+                    <form class="form-horizontal" asp-action="Login" method="post">
                         <h3 class="title">Login Form</h3>
                         <div class="form-group">
                             <span class="input-icon"><i class="fa fa-user"></i></span>
@@ -36,9 +36,12 @@
                             </label>
                         </div>
 
-                        <button class="btn signin" type="submit">Login</button>
+                       @*  <button class="btn signin" type="submit">Login</button> *@
+                        <div class="form-group">
+                            <input type="submit" value="Login" class="btn signin" />
+                        </div>
                         <span class="forgot-pass"><a href="#">Lost password?</a></span>
-                        <span class="register"><a href="account/register">Register / Signup</a></span>
+                        <span class="register"> <a asp-action="Register"> Register / Signup</a></span>
                     </form>
                 </div>
             </div>
