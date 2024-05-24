@@ -156,7 +156,8 @@ namespace ProSkills.Models
                         Id = chapterId,
                         Title = $"Chapter {i} for Course {courseId}",
                         Description = $"Description for Chapter {i} in Course {courseId}",
-                        CourseId = courseId
+                        CourseId = courseId,
+                        downloadLink = "https://sadat.vip/",
                     });
 
                     var numberOfLessons = random1.Next(2, 4); // Each chapter has between 3 and 10 lessons
@@ -168,7 +169,9 @@ namespace ProSkills.Models
                             Title = $"Lesson {j} for Chapter {chapterId}",
                             Content = $"Content for Lesson {j} in Chapter {chapterId}",
                             Time = TimeSpan.FromMinutes(random1.Next(10, 60)), // Random lesson time between 10 and 60 minutes
-                            ChapterId = chapterId
+                            ChapterId = chapterId,
+                            downloadLink = "https://sadat.vip/",
+                            TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
                         });
                         lessonId++;
                     }

@@ -73,7 +73,7 @@ namespace ProSkills
             builder.Services.AddScoped<IRepository<RedeemCode>, RedeemCodeRepository>();
             builder.Services.AddScoped<IRepository<Lesson>, LessonRepository>();
             builder.Services.AddScoped<IRepository<Chapter>, ChapterRepository>();
-
+            builder.Services.AddScoped<ICourseRepository, CourseRepository>();
 
 
             var app = builder.Build();

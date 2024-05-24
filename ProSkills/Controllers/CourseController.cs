@@ -21,11 +21,14 @@ namespace ProSkills.Controllers
         private IRepository<RedeemCode> _redeemCodeRepository;
         private IRepository<Package> _packageRepository;
         private IRepository<Chapter> _chapterRepository;
+
+        private ICourseRepository _courseRepositoryVersion2;
+
         private readonly IRepository<Lesson> _lessonRepository;
 
         private readonly ITIContext _context;
 
-        public CourseController(IRepository<Lesson> lessonRepository,IRepository<Chapter> chapterRepository, IRepository<Course> CourseRepository, IRepository<instructor> InstructorRepository, IRepository<Category> CategoryRepository, IRepository<RedeemCode> RedeemCodeRepository, IRepository<Package> PackageRepository)
+        public CourseController(IRepository<Lesson> lessonRepository,IRepository<Chapter> chapterRepository, IRepository<Course> CourseRepository, IRepository<instructor> InstructorRepository, IRepository<Category> CategoryRepository, IRepository<RedeemCode> RedeemCodeRepository, IRepository<Package> PackageRepository , ICourseRepository courseRepositoryVersion2)
         {
             _courseRepository = CourseRepository;
             _instructorRepository = InstructorRepository;
@@ -34,12 +37,10 @@ namespace ProSkills.Controllers
             _packageRepository = PackageRepository;
             _chapterRepository = chapterRepository;
             _lessonRepository = lessonRepository;
-
+            _courseRepositoryVersion2 = courseRepositoryVersion2;
 
         }
         #endregion
-
-
 
         public IActionResult TraineesInCourse(int courseId)
         {
@@ -152,6 +153,12 @@ namespace ProSkills.Controllers
             return RedirectToAction("Index", "Course");
       
 
+        }
+
+        public IActionResult TraineeCourse(int courseId)
+        {
+            var course = _courseRepositoryVersion2.GetCourseWithDetails(courseId);
+            return View("TraineeCourse", course);
         }
     }
 }

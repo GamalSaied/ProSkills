@@ -16,6 +16,7 @@ namespace ProSkills.Models.ClientSide
 
         public string? downloadLink { get; set; }
 
+
         [ForeignKey("Course")]
         public int CourseId { get; set; }
         public Course? Course { get; set; }

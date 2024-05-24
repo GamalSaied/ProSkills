@@ -21,6 +21,7 @@
                 <th scope="col">End At</th>
                 <th scope="col">Trainees</th>
                 <th scope="col">Chapters</th>
+                <th scope="col">ChaptersStudentSide</th>
                 <th scope="col">Profile</th>
                 <th scope="col">Edit</th>
                 <th scope="col">Delete</th>
@@ -40,6 +41,7 @@
                         <td>@course.EndAt.ToString("yyyy-MM-dd")</td>
                         <td><a href="/Course/TraineesInCourse?courseId=@course.Id">View Trainees</a></td>
                         <td><a href="/Course/ChaptersInCourse?courseId=@course.Id">View Chapters</a></td>
+                        <td><a href="/Course/TraineeCourse?courseId=@course.Id">View Chapters</a></td>
                         <td><a href="/Course/GetByID?ID=@course.Id">Profile</a></td>
                         <td><a href="/Course/Edit?ID=@course.Id" class="btn btn-block bg-gradient-secondary btn-xs">Edit</a></td>
                         <td><a href="/Course/SoftDelete?ID=@course.Id" class="btn btn-block bg-gradient-danger btn-xs" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
