@@ -1,0 +1,44 @@
+﻿@model List<ProSkills.Models.ClientSide.Chapter>
+
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    var courseName = ViewBag.CourseName;
+}
+
+<div class="card-body">
+    <h2>@courseName - Chapters</h2>
+    <div>
+        <a href="/Chapter/AddNew?courseId=@Model.FirstOrDefault()?.CourseId" class="btn btn-info btn-block btn-flat" style="margin-bottom:10px;">New Chapter</a>
+    </div>
+
+    <table id="example1" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Total Time</th>
+                <th scope="col">Lessons</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var chapter in Model)
+            {
+                if (chapter != null)
+                {
+                    <tr>
+                        <td>@chapter.Id</td>
+                        <td>@chapter.Title</td>
+                        <td>@chapter.Description</td>
+                        <td>@chapter.TotalTime</td>
+                        <td><a href="/Course/LessonsInChapter?chapterId=@chapter.Id">View Lessons</a></td>
+                        <td><a href="/Chapter/Edit?ID=@chapter.Id" class="btn btn-block bg-gradient-secondary btn-xs">Edit</a></td>
+                        <td><a href="/Chapter/Delete?ID=@chapter.Id" class="btn btn-block bg-gradient-danger btn-xs" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

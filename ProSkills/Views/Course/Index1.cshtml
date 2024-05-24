@@ -1,0 +1,51 @@
+﻿@model List<ProSkills.Models.ClientSide.Course>
+
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="card-body">
+    <h2>All Courses</h2>
+    <div>
+        <a href="/Course/AddNew" class="btn btn-info btn-block btn-flat" style="margin-bottom:10px;">New Course</a>
+    </div>
+
+    <table id="example1" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Instructor</th>
+                <th scope="col">Description</th>
+                <th scope="col">Start At</th>
+                <th scope="col">End At</th>
+                <th scope="col">Trainees</th>
+                <th scope="col">Chapters</th>
+                <th scope="col">Profile</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var course in Model)
+            {
+                if (course != null && !course.IsDeleted)
+                {
+                    <tr>
+                        <td>@course.Id</td>
+                        <td>@course.Name</td>
+                        <td>@course.Instructor?.Name</td>
+                        <td>@course.Description</td>
+                        <td>@course.StartAt.ToString("yyyy-MM-dd")</td>
+                        <td>@course.EndAt.ToString("yyyy-MM-dd")</td>
+                        <td><a href="/Course/TraineesInCourse?courseId=@course.Id">View Trainees</a></td>
+                        <td><a href="/Course/ChaptersInCourse?courseId=@course.Id">View Chapters</a></td>
+                        <td><a href="/Course/GetByID?ID=@course.Id">Profile</a></td>
+                        <td><a href="/Course/Edit?ID=@course.Id" class="btn btn-block bg-gradient-secondary btn-xs">Edit</a></td>
+                        <td><a href="/Course/SoftDelete?ID=@course.Id" class="btn btn-block bg-gradient-danger btn-xs" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

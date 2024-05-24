@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using ProSkills.Models.ClientSide.Enumerators;
 using System.ComponentModel.DataAnnotations;
 
 namespace ProSkills.Models

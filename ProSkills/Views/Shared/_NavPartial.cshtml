@@ -1,4 +1,6 @@
-﻿<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4" id="mainNav">
+﻿@using System.Security.Claims
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4" id="mainNav">
     <div class="container">
         <a class="navbar-brand" href="#page-top">Pro Skills</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -6,12 +8,30 @@
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">Home</a></li>
                 <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Privacy">Privacy</a></li>
-                <li class="nav-item"><a class="nav-link" asp-controller="Register" asp-action="Showall">Instructors</a></li>
+                <li class="nav-item"><a class="nav-link" asp-controller="instructor" asp-action="index">Instructors</a></li>
                 <li class="nav-item"><a class="nav-link" asp-controller="Courses" asp-action="Index">Courses</a></li>
-                <li class="nav-item"><a class="nav-link" asp-controller="Courses" asp-action="Index">Service</a></li>
+                <li class="nav-item"><a class="nav-link" asp-controller="Package" asp-action="Index">Service</a></li>
                 <li class="nav-item"><a class="nav-link" asp-controller="Courses" asp-action="Index">Courses</a></li>
                 <li class="nav-item"><a class="nav-link" asp-controller="Courses" asp-action="Index">Contact Us</a></li>
                 <li class="nav-item"><a class="nav-link" asp-controller="Courses" asp-action="Index">About Us</a></li>
+
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li class="nav-item" style="color:white"> Welcome @User.Identity.Name</li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Account" asp-action="logout">Sign Out</a>
+                    </li>
+                }
+                else
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Account" asp-action="Login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Account" asp-action="Register">Register</a>
+                    </li>
+                }
+               
             </ul>
         </div>
     </div>

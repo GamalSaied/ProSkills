@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using ProSkills.Interfaces;
 using ProSkills.Models.ClientSide;
 using ProSkills.Repository;
@@ -7,12 +8,14 @@ namespace ProSkills.Controllers
 {
     public class RedeemCodeController : Controller
     {
-        private readonly IRepository<RedeemCode> _RedeemCodeRepository;  
+        private readonly IRepository<RedeemCode> _RedeemCodeRepository;
+        private readonly IRepository<Package> _PackageRepository;
 
-        public RedeemCodeController(IRepository<RedeemCode> RedeemCodeRepository)
+        public RedeemCodeController(IRepository<RedeemCode> RedeemCodeRepository, IRepository<Package> PackageRepository)
         {
             _RedeemCodeRepository = RedeemCodeRepository;
-           
+            _PackageRepository = PackageRepository;
+
         }
         public IActionResult Index()
         {
@@ -22,8 +25,7 @@ namespace ProSkills.Controllers
 
         }
 
-   
-
+  
         [HttpPost]//action attribute
         public ActionResult Delete(int id)
         {
@@ -46,28 +48,36 @@ namespace ProSkills.Controllers
         public IActionResult New()
         {
 
+            // Send Combobox Data to View
+            List<Package> PackageData = _PackageRepository.GetAll().ToList();
+            List<SelectListItem> PackageNames = PackageData
+                .Select(c => new SelectListItem { Text = c.Name, Value = c.Name })
+                .ToList();
+
+            // Send Data To View
+            ViewBag.PackageNames = PackageNames;
+
             return View("New");
+
         }
 
-        //press submit button
-
-        //action saveNew
 
         [HttpPost]//action attribute
         public IActionResult SaveNew(RedeemCode RedeemCodefromreq)
         {
 
-            if (ModelState.IsValid)
-            {
+                // Create GUID 
+                string uniqueGuid = "PRO" + (Guid.NewGuid().ToString()).Substring(0,4);
+                // Insert Data to Database
+
+                RedeemCodefromreq.Code = uniqueGuid;
+                RedeemCodefromreq.isAvalible = true; 
                 RedeemCodefromreq.CreatedAt = "Created At " + DateTime.Now;
+
                 _RedeemCodeRepository.Insert(RedeemCodefromreq);
                 _RedeemCodeRepository.Save();
+                 return RedirectToAction("Index", "RedeemCode");
 
-                return RedirectToAction("Index", "RedeemCode");
-            }
-
-
-            return View("New", RedeemCodefromreq);
         }
 
 
@@ -79,8 +89,6 @@ namespace ProSkills.Controllers
             var redeemcode = _RedeemCodeRepository.GetById(id);
 
             return View("Edit", redeemcode);          //Open Edit Page
-
-
         }
 
 
@@ -93,6 +101,7 @@ namespace ProSkills.Controllers
             RedeemCodeformdb.PackageName = RedeemCodefromreq.PackageName;
             RedeemCodeformdb.CreatedAt = "Edited" + DateTime.Now;
 
+
             if (ModelState.IsValid)
             {
                 try
@@ -104,6 +113,7 @@ namespace ProSkills.Controllers
                 catch (Exception e)
                 {
                     ModelState.AddModelError("", "Something Went wrong Please Make Sure you set Everything right");
+
                 }
             }
 

@@ -15,28 +15,28 @@ lazm 3lshan el paging yesht3'l wel header en el data ely fel title column t7teha
 <div class="card-body">
     <form action="/Course/New" method="post">
         <input type="hidden" id="instructorId" name="instructorId" value="@instructorId" />
-        <button type="submit" class="btn btn-info btn-block btn-flat" style="margin-bottom:10px;">Submit</button>
+        <button type="submit" class="btn btn-info btn-block btn-flat" style="margin-bottom:10px;">New</button>
     </form>
 </div>
 <!-- --------------------------------------------------------------------------------------------------------------->
 
    
 
-
+<div>
     <table id="example1" class="table table-bordered table-striped">
         <!-- Columns Head -->
         <thead>
             <tr>
-                <th scope="col"></th>
-                <th scope="col">ID</th>
-                <th scope="col">Name</th>
-                <th scope="col">Email</th>
-                <th scope="col">Password</th>
-                <th scope="col">CreatedAt</th>
-                <th scope="col">Courses</th>
-                <th scope="col">Profile</th>
-                <th scope="col">Edit</th>
-                <th scope="col">Delete</th>
+            <th scope="col">#</th>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Number of Trainees</th>
+            <th scope="col">Number of Lessons</th>
+            <th scope="col">Number of Assessments</th>
+            <th scope="col">Trainees</th>
+            <th scope="col">Profile</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -55,7 +55,7 @@ lazm 3lshan el paging yesht3'l wel header en el data ely fel title column t7teha
                             <th scope="row">@counter</th>
                             <td>@item.Id</td>
                             <td>@item.Name</td>
-                            <td>@item.NumberOfStudents</td>
+                            <td>@item.NumberOfTrainees</td>
                             <td>@item.NumberOfLessons</td>
                             <td>@item.NumberOfAssessment</td>
                             <td><a href="/instructor/GetByID?ID=@item.Id">Courses</a></td>

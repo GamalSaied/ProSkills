@@ -1,4 +1,5 @@
-﻿using ProSkills.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using ProSkills.Interfaces;
 using ProSkills.Models.ClientSide;
 
 namespace ProSkills.Repository
@@ -15,20 +16,88 @@ namespace ProSkills.Repository
         }
 
         // Retrieves all Data from the database
-        public List<Course> GetAll() => context.Course.ToList();
+        public List<Course> GetAll()
+        {
+            var courses = context.Course
+                                 .Include(c => c.Instructor)
+                                 .Include(c => c.Trainees)
+                                 .ThenInclude(ct => ct.Trainee)
+                                 .ToList();
 
+            if (courses == null || courses.Count == 0)
+            {
+                throw new KeyNotFoundException("No courses found.");
+            }
+
+            return courses;
+        }
         // Retrieves a Data by its ID
-        public Course GetById(int id) => context.Course.FirstOrDefault(d => d.Id == id);
+        public Course GetById(int id)
+        {
+            var course = context.Course
+                                .Include(c => c.Instructor)
+                                .Include(c => c.Trainees)
+                                .ThenInclude(ct => ct.Trainee)
+                                .FirstOrDefault(d => d.Id == id);
 
+            if (course == null)
+            {
+                throw new KeyNotFoundException($"Course with Id {id} not found.");
+            }
+
+            return course;
+        }
+
+        public Course GetByName(string name)
+        {
+            var course = context.Course.Include(c => c.Instructor)
+                                .Include(c => c.Trainees)
+                                .ThenInclude(ct => ct.Trainee)
+                                .FirstOrDefault(d => d.Name == name);
+
+            if (course == null)
+            {
+                throw new KeyNotFoundException($"Course with Name '{name}' not found.");
+            }
+
+            return course;
+        }
         // Checks if a Data with the given name exists
-        public Course CheckName(string name) => context.Course.FirstOrDefault(e => e.Name.ToLower() == name.ToLower());
+        public Course CheckName(string name)
+        {
+            var course = context.Course.Include(c => c.Instructor)
+                                .Include(c => c.Trainees)
+                                .ThenInclude(ct => ct.Trainee)
+                                .FirstOrDefault(e => e.Name.ToLower() == name.ToLower());
+
+            if (course == null)
+            {
+                throw new KeyNotFoundException($"Course with Name '{name}' not found.");
+            }
+
+            return course;
+        }
 
         // Inserts a new Data into the database
-        public void Insert(Course obj) => context.Add(obj);
+        public void Insert(Course obj)
+        {
+            if (obj == null)
+            {
+                throw new ArgumentNullException(nameof(obj), "Course cannot be null.");
+            }
 
+            context.Add(obj);
+        }
         // Updates Data in the database
-        public void Update(Course obj) => context.Update(obj);
+        public void Update(Course obj)
+        {
+            if (obj == null)
+            {
+                throw new ArgumentNullException(nameof(obj), "Course cannot be null.");
+            }
 
+            context.Update(obj);
+        }
         // Delete Data from the database by its ID
         public void Delete(int id)
         {
@@ -43,7 +112,6 @@ namespace ProSkills.Repository
         public void Save() => context.SaveChanges();
 
         // Get By Name
-        public Course GetByName(string Name) => context.Course.FirstOrDefault(d => d.Name == Name);
 
     }
 }

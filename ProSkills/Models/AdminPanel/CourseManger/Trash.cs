@@ -2,6 +2,6 @@
 {
     public class Trash
     {
-        // Ha3mil felview en feh trash lel student we lel course we lel Files wel lel videos 
+        // Ha3mil felview en feh trash lel Trainee we lel course we lel Files wel lel videos 
     }
 }
