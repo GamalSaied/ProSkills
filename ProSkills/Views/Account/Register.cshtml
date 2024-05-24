@@ -18,43 +18,43 @@
             <div class="col-md-offset-3 col-md-6">
                 <div class="form-container">
                     <h3 class="title">Register</h3>
-                    <form class="form-horizontal" asp-action="Register" method="post">
-                        
+                    <form  asp-action="Register" class="form-horizontal"  method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                         <div class="form-group">
-                            <label  class="control-label">Full Name</label>
-                            <input asp-for="FullName" class="form-control" placeholder="Full Name" />
+                            <label class="control-label">Full Name</label>
+                            <input asp-for="FullName" class="form-control" placeholder="Full Name"/>
                             <span asp-validation-for="FullName" class="text-danger"></span>
                         </div>
-                  
+
                         <div class="form-group">
 
-                                <label  class="control-label">Email</label>
-                                <input asp-for="Email" class="form-control" placeholder="Email Address" />
-                                <span asp-validation-for="Email" class="text-danger"></span>
+                            <label class="control-label">Email</label>
+                            <input asp-for="Email" class="form-control" placeholder="Email Address"/>
+                            <span asp-validation-for="Email" class="text-danger"></span>
 
                         </div>
                         <div class="form-group">
-                       
-                            <label  class="control-label">Password</label>
-                     
-                            <input asp-for="Password" class="form-control" placeholder="Password" />
+
+                            <label class="control-label">Password</label>
+
+                            <input asp-for="Password" class="form-control" placeholder="Password"/>
                             <span asp-validation-for="Password" class="text-danger"></span>
                         </div>
 
                         <div class="form-group">
-                      
-                            <label  class="control-label">Confirm Password</label>
-                            <input asp-for="ConfirmPassword" class="form-control" placeholder="Confirm Password " />
+
+                            <label class="control-label">Confirm Password</label>
+                            <input asp-for="ConfirmPassword" class="form-control" placeholder="Confirm Password "/>
                             <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
                         </div>
                         <h4 class="sub-title">Personal Information</h4>
                         <div class="form-group">
-                            <label  class="control-label">Phone No.</label>
-                            <input asp-for="Phone" class="form-control" placeholder="Phone Number" />
+                            <label class="control-label">Phone No.</label>
+                            <input asp-for="Phone" class="form-control" placeholder="Phone Number"/>
                             <span asp-validation-for="Phone" class="text-danger"></span>
                         </div>
                         <div class="form-group">
-                            <label   class="control-label">Country</label>
+                            <label class="control-label">Country</label>
                             <select asp-for="Country" class="form-control" asp-items="Html.GetEnumSelectList<Country>()"></select>
                             <span asp-validation-for="Country" class="text-danger"></span>
                         </div>
@@ -63,11 +63,14 @@
                             <span class="check-label">I agree to the terms</span>
                         </div>
                         <span class="signin-link">Already have an account? Click here to <a asp-action="Login">Login</a></span>
-                       @*  <button class="btn signup" type="submit">Create Account</button> *@
+                        @*  <button class="btn signup" type="submit">Create Account</button> *@
 
+                        
+             
                         <div class="form-group">
-                            <input type="submit" value="Create Account" class="btn signup" />
+                            <input type="submit" value="Signup" class="btn btn-primary" />
                         </div>
+              
                     </form>
                 </div>
             </div>
