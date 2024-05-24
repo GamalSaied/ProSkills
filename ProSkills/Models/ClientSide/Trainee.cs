@@ -10,7 +10,8 @@ namespace ProSkills.Models.ClientSide
         public string? Password { get; set; }
         public string? Phone { get; set; }
         public Country? country  { get; set; }
-         
+      
+
         public string? Bio { get; set; }
         public string? CreatedAt { get; set; }
         public bool IsDeleted { get; set; }
