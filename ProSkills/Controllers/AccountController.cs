@@ -58,9 +58,7 @@ namespace ProSkills.Controllers
                 if (result.Succeeded)
                 {
                     var trainee = userfromrequest.ToTrainee();
-                    //trainee.ApplicationUserId = user.Id;
                     trainee.Email = user.Email;
-
                     _traineeRepository.Insert(trainee);
                      _traineeRepository.Save();
 
