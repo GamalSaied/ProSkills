@@ -157,15 +157,14 @@ namespace ProSkills.Controllers
 
         public IActionResult TraineeCourse(int courseId)
         {
-
+            var course = _courseRepositoryVersion2.GetCourseWithDetails(courseId);
+            return View("TraineeCourse", course);
+        }
         public IActionResult TraineeCourseList(int traineeId)
         {
             var course = _courseRepositoryVersion2.GetCourseTraineeWithDetails(traineeId);
             return View("TraineeCourseList", course);
-            
-        }
-            var course = _courseRepositoryVersion2.GetCourseWithDetails(courseId);
-            return View("TraineeCourse", course);
+
         }
     }
 }
