@@ -45,7 +45,7 @@ namespace ProSkills.Controllers
                     UserName = userfromrequest.Email,
                     Email = userfromrequest.Email,
                     PhoneNumber = userfromrequest.Phone,
-                    Country = userfromrequest.Country
+                  Country = userfromrequest.Country
                 };
 
                 var result = await _userManager.CreateAsync(user, userfromrequest.Password);
@@ -63,11 +63,19 @@ namespace ProSkills.Controllers
                     return RedirectToAction("Login", "Account");
                 }
 
-                // Fail to save db
-                foreach (var error in result.Errors)
-                {
-                    ModelState.AddModelError(string.Empty, error.Description);
+                    // Fail to save db
+                  
                 }
+                else
+                {
+                    foreach (var error in result.Errors)
+                    {
+                        ModelState.AddModelError(string.Empty, error.Description);
+                    }
+                }
+             
+
+               
             }
             return View("Register", userfromrequest);
         }
