@@ -158,6 +158,8 @@ namespace ProSkills.Models
                         Description = $"Description for Chapter {i} in Course {courseId}",
                         CourseId = courseId,
                         downloadLink = "https://sadat.vip/",
+                        IsDeleted = false
+
                     });
 
                     var numberOfLessons = random1.Next(2, 4); // Each chapter has between 3 and 10 lessons
@@ -172,6 +174,7 @@ namespace ProSkills.Models
                             ChapterId = chapterId,
                             downloadLink = "https://sadat.vip/",
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
+                            IsDeleted = false
                         });
                         lessonId++;
                     }
