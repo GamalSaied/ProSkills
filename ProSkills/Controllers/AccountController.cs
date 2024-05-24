@@ -35,7 +35,7 @@ namespace ProSkills.Controllers
             if (ModelState.IsValid)
             {
                 ApplicationUser user = new ApplicationUser();
-                user.UserName = userfromrequest.UserName;
+                user.UserName = userfromrequest.Email;
                 user.Email = userfromrequest.Email;
                 user.PasswordHash = userfromrequest.Password;
                 user.Phone = userfromrequest.Phone;
