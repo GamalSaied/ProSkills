@@ -44,10 +44,11 @@ namespace ProSkills.Controllers
                 user.Email = userfromrequest.Email;
                 user.PasswordHash = userfromrequest.Password;
                 user.Phone = userfromrequest.Phone;
+                user.FullName = userfromrequest.FullName;
                 //user.ConfirmPassword = userfromrequest.ConfirmPassword;
                 user.country = userfromrequest.Country;
 
-                
+                var result = await _userManager.CreateAsync(user, userfromrequest.Password);
 
                 if (result.Succeeded)
                 {
