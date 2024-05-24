@@ -64,8 +64,6 @@ namespace ProSkills.Controllers
                 }
 
                     // Fail to save db
-                  
-                }
                 else
                 {
                     foreach (var error in result.Errors)
