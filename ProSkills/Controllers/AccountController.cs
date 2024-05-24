@@ -1,6 +1,5 @@
 ﻿using System.Drawing;
 using System.Security.Claims;
-using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
@@ -39,18 +38,18 @@ namespace ProSkills.Controllers
         {
             if (ModelState.IsValid)   //server side validation
             {
-                ApplicationUser user = new ApplicationUser();
-                user.UserName = userfromrequest.Email;
-                user.Email = userfromrequest.Email;
-                user.PasswordHash = userfromrequest.Password;
-                user.Phone = userfromrequest.Phone;
-                //user.ConfirmPassword = userfromrequest.ConfirmPassword;
-                user.country = userfromrequest.country;
+                ApplicationUser user = new ApplicationUser
+                {
+                    UserName = userfromrequest.Email,
+                    Email = userfromrequest.Email,
+                    PhoneNumber = userfromrequest.Phone,
+                    country = userfromrequest.country
+                };
 
+                var result = await _userManager.CreateAsync(user, userfromrequest.Password);
 
                 if (result.Succeeded)
                 {
-
                     // Map to Trainee
                     var trainee = userfromrequest.ToTrainee();
 
@@ -60,35 +59,25 @@ namespace ProSkills.Controllers
 
                     await _signInManager.SignInAsync(user, false); // session Cookie
                     return RedirectToAction("Index", "Home");
-
                 }
-                //fail to save db
+
+                // Fail to save db
                 foreach (var error in result.Errors)
                 {
                     ModelState.AddModelError(string.Empty, error.Description);
                 }
-
             }
             return View("Register", userfromrequest);
         }
         #endregion
 
-
-
-
-
         #region Login
 
-        //login
         [HttpGet]
         public IActionResult Login()
         {
-
             return View("Login");
         }
-
-
-
 
         [HttpPost]
         public async Task<IActionResult> Login(LoginUserViewModel model)
@@ -110,8 +99,6 @@ namespace ProSkills.Controllers
         }
         #endregion
 
-
-
         #region Logout
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -129,7 +116,6 @@ namespace ProSkills.Controllers
             return View();
         }
 
-
         [HttpPost]
         public async Task<IActionResult> SendEmail(ForgetPasswordViewmodel modelformreq)
         {
@@ -138,28 +124,24 @@ namespace ProSkills.Controllers
                 var user = await _userManager.FindByEmailAsync(modelformreq.Email);
                 if (user is not null)
                 {
-                    var token = _userManager.GeneratePasswordResetTokenAsync(user); //token valid for this user only one time
-                    var passwordresetLink = Url.Action("ResetPassword", "Account", new{Email=user.Email,token=token});
+                    var token = await _userManager.GeneratePasswordResetTokenAsync(user); //token valid for this user only one time
+                    var passwordresetLink = Url.Action("ResetPassword", "Account", new { Email = user.Email, token = token });
 
-                    var email = new Email()
+                    var email = new Email
                     {
                         subject = "Reset password",
                         body = passwordresetLink,
                         To = user.Email
-
-
                     };
+
                     EmailSettings.Sendemail(email);
-                    RedirectToAction("CheckyourInbox");
+                    return RedirectToAction("CheckyourInbox");
                 }
 
                 ModelState.AddModelError("", "Email is not found");
-
             }
 
             return View();
-
-          
         }
 
         public IActionResult CheckyourInbox()
@@ -167,6 +149,5 @@ namespace ProSkills.Controllers
             return View();
         }
         #endregion
-
     }
 }

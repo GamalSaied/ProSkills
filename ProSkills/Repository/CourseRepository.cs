@@ -126,6 +126,10 @@ namespace ProSkills.Repository
                 .ThenInclude(ch => ch.Lessons)
                 .FirstOrDefault(c => c.Id == courseId);
         }
+        public void MarkAsDeleted(int id)
+        {
+            throw new NotImplementedException();
+        }
 
     }
 }

@@ -47,6 +47,10 @@ namespace ProSkills.Repository
         // Get By Name
         public instructor GetByName(string Name) => context.instructor.FirstOrDefault(d => d.Name == Name);
 
+        public void MarkAsDeleted(int id)
+        {
+            throw new NotImplementedException();
+        }
 
     }
 }

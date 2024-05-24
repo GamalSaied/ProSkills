@@ -12,7 +12,7 @@ namespace ProSkills.ViewModels
                 Email = model.Email,
                 Password = model.Password,
                 Phone = model.Phone,
-                country = model.Country,
+                country = model.country,
                 CreatedAt = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
                 IsDeleted = false
             };

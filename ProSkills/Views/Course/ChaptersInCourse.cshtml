@@ -17,6 +17,7 @@
                 <th scope="col">ID</th>
                 <th scope="col">Title</th>
                 <th scope="col">Description</th>
+                <th scope="col">Download Link</th>
                 <th scope="col">Total Time</th>
                 <th scope="col">Lessons</th>
                 <th scope="col">Edit</th>
@@ -26,16 +27,22 @@
         <tbody>
             @foreach (var chapter in Model)
             {
-                if (chapter != null)
+                if (chapter != null && !chapter.IsDeleted)
                 {
                     <tr>
                         <td>@chapter.Id</td>
                         <td>@chapter.Title</td>
                         <td>@chapter.Description</td>
+                        <td>@chapter.downloadLink</td>
                         <td>@chapter.TotalTime</td>
                         <td><a href="/Course/LessonsInChapter?chapterId=@chapter.Id">View Lessons</a></td>
-                        <td><a href="/Chapter/Edit?ID=@chapter.Id" class="btn btn-block bg-gradient-secondary btn-xs">Edit</a></td>
-                        <td><a href="/Chapter/Delete?ID=@chapter.Id" class="btn btn-block bg-gradient-danger btn-xs" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
+                        <td><a href="/Chapter/Edit?id=@chapter.Id" class="btn btn-block bg-gradient-secondary btn-xs">Edit</a></td>
+                        <td>
+                            <form action="/Chapter/Delete" method="post" onsubmit="return confirm('Are you sure you want to delete this chapter?');">
+                                <input type="hidden" name="id" value="@chapter.Id" />
+                                <button type="submit" class="btn btn-block bg-gradient-danger btn-xs">Delete</button>
+                            </form>
+                        </td>
                     </tr>
                 }
             }

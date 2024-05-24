@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -16,7 +17,6 @@ namespace ProSkills.Models.ClientSide
 
         public string? downloadLink { get; set; }
 
-
         [ForeignKey("Course")]
         public int CourseId { get; set; }
         public Course? Course { get; set; }
@@ -31,5 +31,7 @@ namespace ProSkills.Models.ClientSide
                 return Lessons?.Aggregate(TimeSpan.Zero, (sum, lesson) => sum.Add((TimeSpan)lesson.Time)) ?? TimeSpan.Zero;
             }
         }
+
+        public bool IsDeleted { get; set; }
     }
 }

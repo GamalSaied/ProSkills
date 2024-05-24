@@ -27,7 +27,7 @@ namespace ProSkills.ViewModels
         [Required(ErrorMessage = "Please select a country")]
         [Display(Name = "Country")]
      
-        public Country Country { get; set; }
+        public Country country { get; set; }
 
         [Required(ErrorMessage = "Email is required")]
         [EmailAddress(ErrorMessage = "Invalid Email ")]

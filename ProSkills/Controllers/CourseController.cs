@@ -86,6 +86,8 @@ namespace ProSkills.Controllers
 
         }
 
+
+
         public IActionResult ChaptersInCourse(int courseId)
         {
             var course = _courseRepository.GetById(courseId);
@@ -116,10 +118,6 @@ namespace ProSkills.Controllers
 
         public IActionResult SaveNew(Course CourseFromReq,int instructorId)  // Get_InstructorID from Hidden
         {
-
-
-                
-
             string redeemCodeFromReq = CourseFromReq.RedeemCode;
             var RedeemCode = _redeemCodeRepository.GetByName(redeemCodeFromReq);
             if (RedeemCode == null) 
@@ -151,8 +149,6 @@ namespace ProSkills.Controllers
             _courseRepository.Save();
 
             return RedirectToAction("Index", "Course");
-      
-
         }
 
         public IActionResult TraineeCourse(int courseId)
@@ -160,5 +156,11 @@ namespace ProSkills.Controllers
             var course = _courseRepositoryVersion2.GetCourseWithDetails(courseId);
             return View("TraineeCourse", course);
         }
+
+ 
+
+
+
+
     }
 }

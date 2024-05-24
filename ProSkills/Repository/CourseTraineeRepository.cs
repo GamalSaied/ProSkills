@@ -59,6 +59,10 @@ namespace ProSkills.Repository
         {
             throw new NotImplementedException();
         }
+        public void MarkAsDeleted(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }

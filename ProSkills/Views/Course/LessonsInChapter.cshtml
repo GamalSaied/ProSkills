@@ -25,15 +25,20 @@
         <tbody>
             @foreach (var lesson in Model)
             {
-                if (lesson != null)
+                if (lesson != null && !lesson.IsDeleted)
                 {
                     <tr>
                         <td>@lesson.Id</td>
                         <td>@lesson.Title</td>
                         <td>@lesson.Content</td>
                         <td>@lesson.Time</td>
-                        <td><a href="/Lesson/Edit?ID=@lesson.Id" class="btn btn-block bg-gradient-secondary btn-xs">Edit</a></td>
-                        <td><a href="/Lesson/Delete?ID=@lesson.Id" class="btn btn-block bg-gradient-danger btn-xs" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
+                        <td><a href="/Lesson/Edit?id=@lesson.Id" class="btn btn-block bg-gradient-secondary btn-xs">Edit</a></td>
+                        <td>
+                            <form action="/Lesson/Delete" method="post" onsubmit="return confirm('Are you sure you want to delete this lesson?');">
+                                <input type="hidden" name="id" value="@lesson.Id" />
+                                <button type="submit" class="btn btn-block bg-gradient-danger btn-xs">Delete</button>
+                            </form>
+                        </td>
                     </tr>
                 }
             }

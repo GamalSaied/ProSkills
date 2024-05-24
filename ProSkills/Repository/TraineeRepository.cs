@@ -74,6 +74,10 @@ public class TraineeRepository : IRepository<Trainee>
 
     // Get By Name
     public Trainee GetByName(string Name) => context.Trainee.FirstOrDefault(d => d.Name == Name);
+    public void MarkAsDeleted(int id)
+    {
+        throw new NotImplementedException();
+    }
 
 
 }
