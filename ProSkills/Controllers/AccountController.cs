@@ -58,8 +58,7 @@ namespace ProSkills.Controllers
                     _traineeRepository.Save();
 
                     await _signInManager.SignInAsync(user, false); // session Cookie
-                    return RedirectToAction("Index", "Home");
-                }
+                    return RedirectToAction("Login", "Account");
 
                 // Fail to save db
                 foreach (var error in result.Errors)

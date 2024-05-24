@@ -13,7 +13,8 @@
         <div class="row">
             <div class="col-md-offset-4 col-md-4 col-sm-offset-3 col-sm-6">
                 <div class="form-container">
-                    <form class="form-horizontal">
+                    <form class="form-horizontal" asp-action="Login" method="post">
+                        <div asp-validation-summary="All" class="text-danger"></div>
                         <h3 class="title">Login Form</h3>
                         <div class="form-group">
                             <span class="input-icon"><i class="fa fa-user"></i></span>
@@ -24,9 +25,9 @@
                         </div>
                         <div class="form-group">
                             <span class="input-icon"><i class="fa fa-lock"></i></span>
-                            <input class="form-control" asp-for="Password" placeholder="Password" />
+                            <input class="form-control" asp-for="Password" placeholder="Password"/>
                             <span asp-validation-for="Password" class="text-danger"></span>
-                         
+
                         </div>
                         <div class="form-group form-check">
                             <span class="form-check-label"><i class="fa fa-user"></i></span>
@@ -36,9 +37,12 @@
                             </label>
                         </div>
 
-                        <button class="btn signin" type="submit">Login</button>
+                        @*  <button class="btn signin" type="submit">Login</button> *@
+                        <div class="form-group">
+                            <input type="submit" value="Login" class="btn signin"/>
+                        </div>
                         <span class="forgot-pass"><a href="#">Lost password?</a></span>
-                        <span class="register"><a href="account/register">Register / Signup</a></span>
+                        <input  class="register"> <a asp-action="Register"> Register / Signup</a></input>
                     </form>
                 </div>
             </div>
