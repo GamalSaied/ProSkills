@@ -8,6 +8,7 @@ namespace ProSkills.Models
        
         public String Email { get; set; }
 
+        public string Fullname { get; set; }
         public int Phone { get; set; }
         public string country { get; set; }
     }
