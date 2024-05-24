@@ -7,32 +7,31 @@ namespace ProSkills.ViewModels
 {
     public class RegisterUserViewModel
     {
+        [Required(ErrorMessage = "Please enter your full name")]
+        public string FullName { get; set; }
+        [Required(ErrorMessage = "Please enter your User name")]
         public string UserName { get; set; }
 
-        public string FullName { get; set; }
+        [Required(ErrorMessage = "Please enter your email address")]
+        [EmailAddress(ErrorMessage = "Please enter a valid email address")]
+        public string Email { get; set; }
 
+        [Required(ErrorMessage = "Please enter a password")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
+        [Required(ErrorMessage = "Please confirm your password")]
         [DataType(DataType.Password)]
-        [Compare("Password")]
+        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
-        
-
-        [DataType(DataType.PhoneNumber)]
+        [Required(ErrorMessage = "Please enter your phone number")]
+        [Phone(ErrorMessage = "Please enter a valid phone number")]
         public string Phone { get; set; }
 
-  
-        [Required(ErrorMessage = "Please select a country")]
-        [Display(Name = "Country")]
-     
-        public Country country { get; set; }
-
-        [Required(ErrorMessage = "Email is required")]
-        [EmailAddress(ErrorMessage = "Invalid Email ")]
-        [DataType(DataType.EmailAddress)]
-        public string Email { get; set; }
-
+        [Required(ErrorMessage = "Please select your country")]
+        public Country Country { get; set; }
     }
+
 }
+

@@ -19,7 +19,8 @@ namespace ProSkills.Controllers
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IRepository<Trainee> _traineeRepository;
 
-        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, IRepository<Trainee> traineeRepository)
+        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager,
+            IRepository<Trainee> traineeRepository)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -27,6 +28,7 @@ namespace ProSkills.Controllers
         }
 
         #region Register
+
         [HttpGet]
         public IActionResult Register()
         {
@@ -36,14 +38,14 @@ namespace ProSkills.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(RegisterUserViewModel userfromrequest)
         {
-            if (ModelState.IsValid)   //server side validation
+            if (ModelState.IsValid) // server side validation
             {
                 ApplicationUser user = new ApplicationUser
                 {
                     UserName = userfromrequest.Email,
                     Email = userfromrequest.Email,
                     PhoneNumber = userfromrequest.Phone,
-                    country = userfromrequest.country
+                    Country = userfromrequest.Country
                 };
 
                 var result = await _userManager.CreateAsync(user, userfromrequest.Password);
@@ -59,94 +61,112 @@ namespace ProSkills.Controllers
 
                     await _signInManager.SignInAsync(user, false); // session Cookie
                     return RedirectToAction("Login", "Account");
-
-                // Fail to save db
-                foreach (var error in result.Errors)
+                }
+                else
                 {
-                    ModelState.AddModelError(string.Empty, error.Description);
+                    // Fail to save to db
+                    foreach (var error in result.Errors)
+                    {
+                        ModelState.AddModelError(string.Empty, error.Description);
+                    }
                 }
             }
+
+            // If ModelState is invalid or registration failed, return the view with errors
             return View("Register", userfromrequest);
         }
+
         #endregion
 
         #region Login
 
         [HttpGet]
-        public IActionResult Login()
-        {
-            return View("Login");
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Login(LoginUserViewModel model)
-        {
-            if (ModelState.IsValid)
+            public IActionResult Login()
             {
-                var user = await _userManager.FindByNameAsync(model.UserName);
-                if (user != null)
+                return View("Login");
+            }
+
+            [HttpPost]
+            public async Task<IActionResult> Login(LoginUserViewModel model)
+            {
+                if (ModelState.IsValid)
                 {
-                    var result = await _signInManager.PasswordSignInAsync(user, model.Password, model.RememberMe, false);
-                    if (result.Succeeded)
+                    var user = await _userManager.FindByNameAsync(model.UserName);
+                    if (user != null)
                     {
-                        return RedirectToAction("Index", "Home");
+                        var result =
+                            await _signInManager.PasswordSignInAsync(user, model.Password, model.RememberMe, false);
+                        if (result.Succeeded)
+                        {
+                            return RedirectToAction("Index", "Home");
+                        }
                     }
+
+                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
                 }
-                ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+
+                return View(model);
             }
-            return View(model);
-        }
-        #endregion
 
-        #region Logout
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Logout()
-        {
-            await _signInManager.SignOutAsync();
-            return RedirectToAction(nameof(Login));
-        }
-        #endregion
+            #endregion
 
-        #region Forget Password
-        [HttpGet]
-        public IActionResult ForgetPassword()
-        {
-            return View();
-        }
+            #region Logout
 
-        [HttpPost]
-        public async Task<IActionResult> SendEmail(ForgetPasswordViewmodel modelformreq)
-        {
-            if (ModelState.IsValid)
+            [HttpPost]
+            [ValidateAntiForgeryToken]
+            public async Task<IActionResult> Logout()
             {
-                var user = await _userManager.FindByEmailAsync(modelformreq.Email);
-                if (user is not null)
-                {
-                    var token = await _userManager.GeneratePasswordResetTokenAsync(user); //token valid for this user only one time
-                    var passwordresetLink = Url.Action("ResetPassword", "Account", new { Email = user.Email, token = token });
-
-                    var email = new Email
-                    {
-                        subject = "Reset password",
-                        body = passwordresetLink,
-                        To = user.Email
-                    };
-
-                    EmailSettings.Sendemail(email);
-                    return RedirectToAction("CheckyourInbox");
-                }
-
-                ModelState.AddModelError("", "Email is not found");
+                await _signInManager.SignOutAsync();
+                return RedirectToAction(nameof(Login));
             }
 
-            return View();
-        }
+            #endregion
 
-        public IActionResult CheckyourInbox()
-        {
-            return View();
-        }
-        #endregion
+            #region Forget Password
+
+            [HttpGet]
+            public IActionResult ForgetPassword()
+            {
+                return View();
+            }
+
+            [HttpPost]
+            public async Task<IActionResult> SendEmail(ForgetPasswordViewmodel modelformreq)
+            {
+                if (ModelState.IsValid)
+                {
+                    var user = await _userManager.FindByEmailAsync(modelformreq.Email);
+                    if (user is not null)
+                    {
+                        var token = await _userManager
+                            .GeneratePasswordResetTokenAsync(user); //token valid for this user only one time
+                        var passwordresetLink = Url.Action("ResetPassword", "Account",
+                            new { Email = user.Email, token = token });
+
+                        var email = new Email
+                        {
+                            subject = "Reset password",
+                            body = passwordresetLink,
+                            To = user.Email
+                        };
+
+                        EmailSettings.Sendemail(email);
+                        return RedirectToAction("CheckyourInbox");
+                    }
+
+                    ModelState.AddModelError("", "Email is not found");
+                }
+
+                return View();
+            }
+
+            public IActionResult CheckyourInbox()
+            {
+                return View();
+            }
+
+            #endregion
+        
     }
 }
+

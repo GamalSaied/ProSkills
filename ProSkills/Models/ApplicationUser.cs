@@ -11,6 +11,6 @@ namespace ProSkills.Models
 
         public string FullName { get; set; }
         public string Phone { get; set; }
-        public Country country { get; set; }
+        public Country Country { get; set; }
     }
 }
