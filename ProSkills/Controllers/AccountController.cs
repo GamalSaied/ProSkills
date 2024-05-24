@@ -39,16 +39,16 @@ namespace ProSkills.Controllers
         {
             if (ModelState.IsValid)   //server side validation
             {
-                var user = new ApplicationUser
-                {
-                    UserName = userfromrequest.UserName,
-                    Email = userfromrequest.Email,
-                    Phone = userfromrequest.Phone,
-                    Country = userfromrequest.Country,
-                    PasswordHash = userfromrequest.Password
-                };
-            var result = await _userManager.CreateAsync(user, userfromrequest.Password);
+                ApplicationUser user = new ApplicationUser();
+                user.UserName = userfromrequest.Email;
+                user.Email = userfromrequest.Email;
+                user.PasswordHash = userfromrequest.Password;
+                user.Phone = userfromrequest.Phone;
+                user.FullName = userfromrequest.FullName;
+                //user.ConfirmPassword = userfromrequest.ConfirmPassword;
+                user.country = userfromrequest.Country;
 
+                var result = await _userManager.CreateAsync(user, userfromrequest.Password);
 
                 if (result.Succeeded)
                 {
