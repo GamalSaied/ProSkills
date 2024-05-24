@@ -45,7 +45,7 @@ namespace ProSkills.Controllers
                     UserName = userfromrequest.Email,
                     Email = userfromrequest.Email,
                     PhoneNumber = userfromrequest.Phone,
-                    Country = userfromrequest.Country
+                    country = userfromrequest.Country
                 };
 
                 var result = await _userManager.CreateAsync(user, userfromrequest.Password);
@@ -61,18 +61,13 @@ namespace ProSkills.Controllers
 
                     await _signInManager.SignInAsync(user, false); // session Cookie
                     return RedirectToAction("Login", "Account");
-                }
-                else
+
+                // Fail to save db
+                foreach (var error in result.Errors)
                 {
-                    // Fail to save to db
-                    foreach (var error in result.Errors)
-                    {
-                        ModelState.AddModelError(string.Empty, error.Description);
-                    }
+                    ModelState.AddModelError(string.Empty, error.Description);
                 }
             }
-
-            // If ModelState is invalid or registration failed, return the view with errors
             return View("Register", userfromrequest);
         }
 
