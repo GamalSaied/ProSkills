@@ -45,7 +45,7 @@ namespace ProSkills.Controllers
                     UserName = userfromrequest.Email,
                     Email = userfromrequest.Email,
                     PhoneNumber = userfromrequest.Phone,
-                    country = userfromrequest.Country
+                    Country = userfromrequest.Country
                 };
 
                 var result = await _userManager.CreateAsync(user, userfromrequest.Password);
@@ -61,6 +61,7 @@ namespace ProSkills.Controllers
 
                     await _signInManager.SignInAsync(user, false); // session Cookie
                     return RedirectToAction("Login", "Account");
+                }
 
                 // Fail to save db
                 foreach (var error in result.Errors)
