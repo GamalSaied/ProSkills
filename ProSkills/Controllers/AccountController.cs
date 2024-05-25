@@ -19,8 +19,7 @@ namespace ProSkills.Controllers
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IRepository<Trainee> _traineeRepository;
 
-        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager,
-            IRepository<Trainee> traineeRepository)
+        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, IRepository<Trainee> traineeRepository)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -37,131 +36,104 @@ namespace ProSkills.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> Register(RegisterUserViewModel userfromrequest)
+        public async Task<IActionResult> Register(RegisterUserViewModel userFromRequest)
         {
             if (ModelState.IsValid)
-
-            {     
-
-                ApplicationUser user = new ApplicationUser
+            {
+                var user = new ApplicationUser
                 {
-                    FullName = userfromrequest.FullName,
-                    Email = userfromrequest.Email,
-                   
-                    //PhoneNumber = userfromrequest.Phone,
-                    Country = userfromrequest.Country,
-                    UserName = userfromrequest.Email
+                    FullName = userFromRequest.FullName,
+                    Email = userFromRequest.Email,
+                    Phone = userFromRequest.Phone,
+                    Country = userFromRequest.Country,
+                    UserName = userFromRequest.Email
                 };
 
-                var result = await _userManager.CreateAsync(user, userfromrequest.Password);
+                var result = await _userManager.CreateAsync(user, userFromRequest.Password);
 
                 if (result.Succeeded)
                 {
-                    var trainee = userfromrequest.ToTrainee();
+                    var trainee = userFromRequest.ToTrainee();
                     trainee.Email = user.Email;
                     _traineeRepository.Insert(trainee);
-                     _traineeRepository.Save();
+                    _traineeRepository.Save();
 
                     await _signInManager.SignInAsync(user, isPersistent: false);
                     return RedirectToAction(nameof(Login));
                 }
-                else
-                {
-                    foreach (var error in result.Errors)
-                    {
-                        ModelState.AddModelError(string.Empty, error.Description);
-                    }
-                }
-            }
-            else
-            {
-                foreach (var modelState in ModelState.Values)
-                {
-                    foreach (var error in modelState.Errors)
-                    {
-                        ModelState.AddModelError(string.Empty, error.ErrorMessage);
-                    }
-                }
-            }
 
-            return View(userfromrequest);
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
+                }
+            }
+            return View(userFromRequest);
         }
-
         #endregion
 
         #region Login
 
         [HttpGet]
-            public IActionResult Login()
-            {
-                return View("Login");
-            }
+        public IActionResult Login()
+        {
+            return View();
+        }
 
-            [HttpPost]
-            public async Task<IActionResult> Login(LoginUserViewModel model)
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginUserViewModel model)
+        {
+            if (ModelState.IsValid)
             {
-                if (ModelState.IsValid)
+                var result = await _signInManager.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, lockoutOnFailure: false);
+
+                if (result.Succeeded)
                 {
-                    var result = await _signInManager.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, lockoutOnFailure: false);
-
-                    if (result.Succeeded)
+                    var user = await _userManager.FindByEmailAsync(model.UserName);
+                    if (user != null)
                     {
-                        var user = await _userManager.FindByEmailAsync(model.UserName);
-                        var trainee = _traineeRepository.GetByName(user.FullName);
+                        var claims = new List<Claim>
+                {
+                    new Claim(ClaimTypes.Name, user.UserName),
+                    new Claim("FullName", user.FullName) // Add FullName claim
+                };
 
-                        if (trainee != null)
-                        {
-                            // Redirect to the TraineeCourseList view with the traineeId
-                            return RedirectToAction("TraineeCourseList", "Course", new { traineeId = trainee.Id });
-                        }
+                        var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                        await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
 
                         return RedirectToAction("Index", "Home");
                     }
-                    else
-                    {
-                        ModelState.AddModelError(string.Empty, "Invalid login attempt.");
-                    }
+
+                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
                 }
-
-                return View(model);
-            }
-        //if (ModelState.IsValid)
-        //{
-        //    var user = await _userManager.FindByNameAsync(model.UserName);
-        //    if (user != null)
-        //    {
-        //        var result =
-        //            await _signInManager.PasswordSignInAsync(user, model.Password, model.RememberMe, false);
-        //        if (result.Succeeded)
-        //        {
-        //            return RedirectToAction("TraineeCourseList", "Course");
-
-        //        }
-        //    }
-
-        //    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
-        //}
-
-        //return View(model);
-    
-
-            #endregion
-
-            #region Logout
-
-        
-      
-            public async Task<IActionResult> Logout()
-            {
-                await _signInManager.SignOutAsync();
-                return RedirectToAction(nameof(Login));
+                else
+                {
+                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                }
             }
 
-            #endregion
+            return View(model);
+        }
 
-            #region Forget Password
 
-            [HttpGet]
+
+        #endregion
+
+        #region Logout
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction(nameof(Login));
+        }
+
+
+        #endregion
+
+        #region Forget Password
+
+        [HttpGet]
             public IActionResult ForgetPassword()
             {
                 return View();

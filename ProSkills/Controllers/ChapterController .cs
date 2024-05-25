@@ -19,7 +19,7 @@ namespace ProSkills.Controllers
         public IActionResult AddNew(int courseId)
         {
             ViewBag.CourseId = courseId;
-            return View();
+            return View(new Chapter { CourseId = courseId });
         }
 
         // POST: Chapter/AddNew
@@ -33,6 +33,7 @@ namespace ProSkills.Controllers
                 return RedirectToAction("ChaptersInCourse", "Course", new { courseId = chapter.CourseId });
             }
 
+            ViewBag.CourseId = chapter.CourseId;
             return View(chapter);
         }
 

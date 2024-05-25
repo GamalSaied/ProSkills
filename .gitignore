@@ -391,3 +391,6 @@ FodyWeavers.xsd
 /ProSkills/Migrations/20240524210822_init.cs
 /ProSkills/Migrations/20240524223303_ritoo.Designer.cs
 /ProSkills/Migrations/20240524223303_ritoo.cs
+/ProSkills/Migrations/20240524222557_init.cs
+/ProSkills/Migrations/20240524235113_addcourse.cs
+/ProSkills/Migrations/20240525010455_phono.cs

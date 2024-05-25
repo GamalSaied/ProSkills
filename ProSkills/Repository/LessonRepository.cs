@@ -38,6 +38,7 @@ namespace ProSkills.Repositories
         public void Insert(Lesson obj)
         {
             context.Lessons.Add(obj);
+
         }
 
         public void Update(Lesson obj)

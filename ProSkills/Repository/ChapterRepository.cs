@@ -39,6 +39,7 @@ namespace ProSkills.Repositories
         public void Insert(Chapter obj)
         {
             context.Chapters.Add(obj);
+
         }
 
         public void Update(Chapter obj)

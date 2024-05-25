@@ -11,7 +11,6 @@ namespace ProSkills.ViewModels
                
                 Name = model.FullName,
                 Email = model.Email,
-               
                 Phone = model.Phone,
                 Country = model.Country,
                 CreatedAt = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),

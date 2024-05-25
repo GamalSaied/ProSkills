@@ -2,6 +2,7 @@
 using ProSkills.Interfaces;
 using ProSkills.Models.ClientSide;
 using ProSkills.Models.ClientSide;
+using System.Data.OleDb;
 
 namespace ProSkills.Repository
 {
@@ -86,7 +87,6 @@ namespace ProSkills.Repository
             {
                 throw new ArgumentNullException(nameof(obj), "Course cannot be null.");
             }
-
             context.Add(obj);
         }
         // Updates Data in the database
@@ -148,6 +148,8 @@ namespace ProSkills.Repository
 
             return trainee.Courses.Select(ct => ct.Course).ToList();
         }
+
+
 
     }
 }
