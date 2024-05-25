@@ -49,6 +49,7 @@ namespace ProSkills.Controllers
                     Email = userfromrequest.Email,
 
                     Phone = userfromrequest.Phone,
+
                     Country = userfromrequest.Country,
                     UserName = userfromrequest.Email
                 };
@@ -102,22 +103,48 @@ namespace ProSkills.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var user = await _userManager.FindByNameAsync(model.UserName);
-                    if (user != null)
-                    {
-                        var result =
-                            await _signInManager.PasswordSignInAsync(user, model.Password, model.RememberMe, false);
-                        if (result.Succeeded)
-                        {
-                            return RedirectToAction("Index", "Home");
-                        }
-                    }
+                    var result = await _signInManager.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, lockoutOnFailure: false);
 
-                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    if (result.Succeeded)
+                    {
+                        var user = await _userManager.FindByEmailAsync(model.UserName);
+                        var trainee = _traineeRepository.GetByName(user.FullName);
+
+                        if (trainee != null)
+                        {
+                            // Redirect to the TraineeCourseList view with the traineeId
+                            return RedirectToAction("TraineeCourseList", "Course", new { traineeId = trainee.Id });
+                        }
+
+                        return RedirectToAction("Index", "Home");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    }
                 }
 
                 return View(model);
             }
+        //if (ModelState.IsValid)
+        //{
+        //    var user = await _userManager.FindByNameAsync(model.UserName);
+        //    if (user != null)
+        //    {
+        //        var result =
+        //            await _signInManager.PasswordSignInAsync(user, model.Password, model.RememberMe, false);
+        //        if (result.Succeeded)
+        //        {
+        //            return RedirectToAction("TraineeCourseList", "Course");
+
+        //        }
+        //    }
+
+        //    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+        //}
+
+        //return View(model);
+    
 
             #endregion
 
