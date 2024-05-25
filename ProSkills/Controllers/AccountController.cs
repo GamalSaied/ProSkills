@@ -41,15 +41,14 @@ namespace ProSkills.Controllers
         {
             if (ModelState.IsValid)
 
-            {     
+            {
 
                 ApplicationUser user = new ApplicationUser
                 {
                     FullName = userfromrequest.FullName,
                     Email = userfromrequest.Email,
 
-                    Phone = userfromrequest.Phone,
-
+                    //PhoneNumber = userfromrequest.Phone,
                     Country = userfromrequest.Country,
                     UserName = userfromrequest.Email
                 };
@@ -61,7 +60,7 @@ namespace ProSkills.Controllers
                     var trainee = userfromrequest.ToTrainee();
                     trainee.Email = user.Email;
                     _traineeRepository.Insert(trainee);
-                     _traineeRepository.Save();
+                    _traineeRepository.Save();
 
                     await _signInManager.SignInAsync(user, isPersistent: false);
                     return RedirectToAction(nameof(Login));
@@ -93,39 +92,39 @@ namespace ProSkills.Controllers
         #region Login
 
         [HttpGet]
-            public IActionResult Login()
-            {
-                return View("Login");
-            }
+        public IActionResult Login()
+        {
+            return View("Login");
+        }
 
-            [HttpPost]
-            public async Task<IActionResult> Login(LoginUserViewModel model)
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginUserViewModel model)
+        {
+            if (ModelState.IsValid)
             {
-                if (ModelState.IsValid)
+                var result = await _signInManager.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, lockoutOnFailure: false);
+
+                if (result.Succeeded)
                 {
-                    var result = await _signInManager.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, lockoutOnFailure: false);
+                    var user = await _userManager.FindByEmailAsync(model.UserName);
+                    var trainee = _traineeRepository.GetByName(user.FullName);
 
-                    if (result.Succeeded)
+                    if (trainee != null)
                     {
-                        var user = await _userManager.FindByEmailAsync(model.UserName);
-                        var trainee = _traineeRepository.GetByName(user.FullName);
-
-                        if (trainee != null)
-                        {
-                            // Redirect to the TraineeCourseList view with the traineeId
-                            return RedirectToAction("TraineeCourseList", "Course", new { traineeId = trainee.Id });
-                        }
-
-                        return RedirectToAction("Index", "Home");
+                        // Redirect to the TraineeCourseList view with the traineeId
+                        return RedirectToAction("TraineeCourseList", "Course", new { traineeId = trainee.Id });
                     }
-                    else
-                    {
-                        ModelState.AddModelError(string.Empty, "Invalid login attempt.");
-                    }
+
+                    return RedirectToAction("Index", "Home");
                 }
-
-                return View(model);
+                else
+                {
+                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                }
             }
+
+            return View(model);
+        }
         //if (ModelState.IsValid)
         //{
         //    var user = await _userManager.FindByNameAsync(model.UserName);
@@ -144,67 +143,67 @@ namespace ProSkills.Controllers
         //}
 
         //return View(model);
-    
 
-            #endregion
 
-            #region Logout
+        #endregion
 
-            [HttpPost]
-            [ValidateAntiForgeryToken]
-            public async Task<IActionResult> Logout()
+        #region Logout
+
+
+
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction(nameof(Login));
+        }
+
+        #endregion
+
+        #region Forget Password
+
+        [HttpGet]
+        public IActionResult ForgetPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> SendEmail(ForgetPasswordViewmodel modelformreq)
+        {
+            if (ModelState.IsValid)
             {
-                await _signInManager.SignOutAsync();
-                return RedirectToAction(nameof(Login));
-            }
-
-            #endregion
-
-            #region Forget Password
-
-            [HttpGet]
-            public IActionResult ForgetPassword()
-            {
-                return View();
-            }
-
-            [HttpPost]
-            public async Task<IActionResult> SendEmail(ForgetPasswordViewmodel modelformreq)
-            {
-                if (ModelState.IsValid)
+                var user = await _userManager.FindByEmailAsync(modelformreq.Email);
+                if (user is not null)
                 {
-                    var user = await _userManager.FindByEmailAsync(modelformreq.Email);
-                    if (user is not null)
+                    var token = await _userManager
+                        .GeneratePasswordResetTokenAsync(user); //token valid for this user only one time
+                    var passwordresetLink = Url.Action("ResetPassword", "Account",
+                        new { Email = user.Email, token = token });
+
+                    var email = new Email
                     {
-                        var token = await _userManager
-                            .GeneratePasswordResetTokenAsync(user); //token valid for this user only one time
-                        var passwordresetLink = Url.Action("ResetPassword", "Account",
-                            new { Email = user.Email, token = token });
+                        subject = "Reset password",
+                        body = passwordresetLink,
+                        To = user.Email
+                    };
 
-                        var email = new Email
-                        {
-                            subject = "Reset password",
-                            body = passwordresetLink,
-                            To = user.Email
-                        };
-
-                        EmailSettings.Sendemail(email);
-                        return RedirectToAction("CheckyourInbox");
-                    }
-
-                    ModelState.AddModelError("", "Email is not found");
+                    EmailSettings.Sendemail(email);
+                    return RedirectToAction("CheckyourInbox");
                 }
 
-                return View();
+                ModelState.AddModelError("", "Email is not found");
             }
 
-            public IActionResult CheckyourInbox()
-            {
-                return View();
-            }
+            return View();
+        }
 
-            #endregion
-        
+        public IActionResult CheckyourInbox()
+        {
+            return View();
+        }
+
+        #endregion
+
     }
 }
 
