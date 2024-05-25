@@ -3,12 +3,13 @@
 @{
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
     var courseName = ViewBag.CourseName;
+    var courseId = ViewBag.CourseId;
 }
 
 <div class="card-body">
     <h2>@courseName - Trainees</h2>
     <div>
-        <a href="/Trainee/AddNew" class="btn btn-info btn-block btn-flat" style="margin-bottom:10px;">New</a>
+        <a href="/Course/AssignTrainee?courseId=@courseId" class="btn btn-info btn-block btn-flat" style="margin-bottom:10px;">Assign Trainee</a>
     </div>
 
     <table id="example1" class="table table-bordered table-striped">
@@ -18,12 +19,10 @@
                 <th scope="col">ID</th>
                 <th scope="col">Name</th>
                 <th scope="col">Email</th>
-                <th scope="col">Password</th>
                 <th scope="col">CreatedAt</th>
                 <th scope="col">CoursesClientSide</th>
                 <th scope="col">Profile</th>
-                <th scope="col">Edit</th>
-                <th scope="col">Delete</th>
+                <th scope="col">Unassign</th>
             </tr>
         </thead>
         <tbody>
@@ -39,12 +38,16 @@
                         <td>@item.Id</td>
                         <td>@item.Name</td>
                         <td>@item.Email</td>
-                        <td>@item.Password</td>
                         <td>@item.CreatedAt</td>
                         <td><a href="/Course/TraineeCourseList?traineeId=@item.Id">Courses</a></td>
                         <td><a href="/Trainee/GetByID?ID=@item.Id">Profile</a></td>
-                        <td><a href="/Trainee/Edit?ID=@item.Id" class="btn btn-block bg-gradient-secondary btn-xs">Edit</a></td>
-                        <td><a href="/Trainee/SoftDelete?ID=@item.Id" class="btn btn-block bg-gradient-danger btn-xs" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
+                        <td>
+                            <form action="/Course/UnassignTrainee" method="post" onsubmit="return confirm('Are you sure you want to unassign this trainee?');">
+                                <input type="hidden" name="courseId" value="@courseId" />
+                                <input type="hidden" name="traineeId" value="@item.Id" />
+                                <button type="submit" class="btn btn-block bg-gradient-danger btn-xs">Unassign</button>
+                            </form>
+                        </td>
                     </tr>
                     counter++;
                 }

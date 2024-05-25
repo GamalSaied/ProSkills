@@ -47,7 +47,8 @@ namespace ProSkills.Controllers
                 {
                     FullName = userfromrequest.FullName,
                     Email = userfromrequest.Email,
-                   
+
+                    Phone = userfromrequest.Phone,
                     Country = userfromrequest.Country,
                     UserName = userfromrequest.Email
                 };
@@ -57,9 +58,7 @@ namespace ProSkills.Controllers
                 if (result.Succeeded)
                 {
                     var trainee = userfromrequest.ToTrainee();
-                    //trainee.ApplicationUserId = user.Id;
                     trainee.Email = user.Email;
-
                     _traineeRepository.Insert(trainee);
                      _traineeRepository.Save();
 
