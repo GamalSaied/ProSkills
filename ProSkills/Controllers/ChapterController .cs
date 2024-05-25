@@ -33,6 +33,7 @@ namespace ProSkills.Controllers
                 return RedirectToAction("ChaptersInCourse", "Course", new { courseId = chapter.CourseId });
             }
 
+            ViewBag.CourseId = chapter.CourseId;
             return View(chapter);
         }
 

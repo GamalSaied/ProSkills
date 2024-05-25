@@ -212,10 +212,11 @@ namespace ProSkills.Controllers
             var chapters = _chapterRepository.GetAll().Where(c => c.CourseId == courseId).ToList();
 
             ViewBag.CourseName = course.Name;
-            ViewBag.CourseId = course.Id;
+            ViewBag.CourseId = courseId;  // Ensure CourseId is set correctly
 
             return View(chapters);
         }
+
 
 
         public IActionResult LessonsInChapter(int chapterId)
