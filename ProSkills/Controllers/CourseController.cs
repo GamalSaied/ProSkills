@@ -161,7 +161,44 @@ namespace ProSkills.Controllers
 
         }
 
+        public IActionResult SaveNew(Course CourseFromReq, int instructorId)  // Get_InstructorID from Hidden
+        {
 
+
+
+
+            string redeemCodeFromReq = CourseFromReq.RedeemCode;
+            var RedeemCode = _redeemCodeRepository.GetByName(redeemCodeFromReq);
+            if (RedeemCode == null)
+            {
+                //out message the code is expird 
+                // return view
+                return View("New");
+            }
+            else if (RedeemCode.isAvalible == false)
+            {
+                // Ur Code is Expired
+                // return view
+                return View("New");
+            }
+
+            var Package = _packageRepository.GetByName(RedeemCode.PackageName);
+            var Category = _categoryRepository.GetByName(CourseFromReq.Name);
+
+            CourseFromReq.NumberOfAssessment = Package.NumberOfAssesments;
+            CourseFromReq.NumberOfLessons = Package.NumberOfLessons;
+            CourseFromReq.NumberOfTrainees = Package.NumberOfTrainees;
+            CourseFromReq.Hours = Package.Hours;
+            CourseFromReq.TotalFilesSize = Package.TotlaFileSize;
+            CourseFromReq.CourseImagePath = Category.Image;
+            CourseFromReq.CreatedAt = "Created At " + DateTime.Now;
+            CourseFromReq.instructorId = (int)instructorId;
+            RedeemCode.isAvalible = false;
+            _courseRepository.Insert(CourseFromReq);
+            _courseRepository.Save();
+
+            return RedirectToAction("Index", "Course");
+        }
 
         public IActionResult ChaptersInCourse(int courseId)
         {
@@ -191,44 +228,7 @@ namespace ProSkills.Controllers
             return View(lessons);
         }
 
-        public IActionResult SaveNew(Course CourseFromReq,int instructorId)  // Get_InstructorID from Hidden
-        {
 
-
-                
-
-            string redeemCodeFromReq = CourseFromReq.RedeemCode;
-            var RedeemCode = _redeemCodeRepository.GetByName(redeemCodeFromReq);
-            if (RedeemCode == null) 
-            {
-                //out message the code is expird 
-                // return view
-                return View("New");
-            }
-            else if (RedeemCode.isAvalible ==false)
-            {
-                // Ur Code is Expired
-                // return view
-                return View("New");
-            }
-
-            var Package = _packageRepository.GetByName(RedeemCode.PackageName);
-            var Category = _categoryRepository.GetByName(CourseFromReq.Name);
-
-            CourseFromReq.NumberOfAssessment = Package.NumberOfAssesments;
-            CourseFromReq.NumberOfLessons = Package.NumberOfLessons;
-            CourseFromReq.NumberOfTrainees = Package.NumberOfTrainees;
-            CourseFromReq.Hours = Package.Hours;
-            CourseFromReq.TotalFilesSize = Package.TotlaFileSize;
-            CourseFromReq.CourseImagePath = Category.Image;
-            CourseFromReq.CreatedAt = "Created At " + DateTime.Now;
-            CourseFromReq.instructorId = (int)instructorId;
-            RedeemCode.isAvalible = false;
-            _courseRepository.Insert(CourseFromReq);
-            _courseRepository.Save();
-
-            return RedirectToAction("Index", "Course");
-        }
 
         public IActionResult TraineeCourse(int courseId)
         {

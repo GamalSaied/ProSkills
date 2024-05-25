@@ -38,6 +38,11 @@ namespace ProSkills.Repositories
         public void Insert(Lesson obj)
         {
             context.Lessons.Add(obj);
+            if (obj.Id == 0)
+            {
+                var lastCourse = context.Lessons.OrderByDescending(c => c.Id).FirstOrDefault();
+                obj.Id = (lastCourse != null) ? lastCourse.Id + 1 : 1;
+            }
         }
 
         public void Update(Lesson obj)

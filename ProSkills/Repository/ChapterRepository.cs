@@ -39,6 +39,11 @@ namespace ProSkills.Repositories
         public void Insert(Chapter obj)
         {
             context.Chapters.Add(obj);
+            if (obj.Id == 0)
+            {
+                var lastCourse = context.Chapters.OrderByDescending(c => c.Id).FirstOrDefault();
+                obj.Id = (lastCourse != null) ? lastCourse.Id + 1 : 1;
+            }
         }
 
         public void Update(Chapter obj)
