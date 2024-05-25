@@ -88,22 +88,27 @@ namespace ProSkills.Controllers
 
                 if (result.Succeeded)
                 {
-                    var user = await _userManager.FindByNameAsync(model.UserName);
+                    var user = await _userManager.FindByEmailAsync(model.UserName);
                     if (user != null)
                     {
                         var claims = new List<Claim>
-                        {
-                            new Claim("FullName", user.FullName)
-                        };
+                {
+                    new Claim(ClaimTypes.Name, user.UserName),
+                    new Claim("FullName", user.FullName) // Add FullName claim
+                };
 
                         var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                         await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
 
                         return RedirectToAction("Index", "Home");
                     }
-                }
 
-                ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                }
+                else
+                {
+                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                }
             }
 
             return View(model);
