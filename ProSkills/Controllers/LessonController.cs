@@ -14,24 +14,25 @@ namespace ProSkills.Controllers
             _lessonRepository = lessonRepository;
         }
 
-        // GET: Lesson/AddNew
         [HttpGet]
         public IActionResult AddNew(int chapterId)
         {
             ViewBag.ChapterId = chapterId;
-            return View();
+            return View(new Lesson { ChapterId = chapterId });
         }
 
         // POST: Lesson/AddNew
         [HttpPost]
         public IActionResult AddNew(Lesson lesson)
         {
+            if (ModelState.IsValid)
+            {
+                _lessonRepository.Insert(lesson);
+                _lessonRepository.Save();
+                return RedirectToAction("LessonsInChapter", "Course", new { chapterId = lesson.ChapterId });
+            }
 
-            _lessonRepository.Insert(lesson);
-            _lessonRepository.Save();
-            return RedirectToAction("LessonsInChapter", "Course", new { chapterId = lesson.ChapterId });
-
-            ViewBag.ChapterId = lesson.ChapterId; // Preserve the ChapterId in case of an error
+            ViewBag.ChapterId = lesson.ChapterId;
             return View(lesson);
         }
 
