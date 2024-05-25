@@ -47,9 +47,8 @@ namespace ProSkills.Controllers
                 {
                     FullName = userfromrequest.FullName,
                     Email = userfromrequest.Email,
-
+                   
                     //PhoneNumber = userfromrequest.Phone,
-
                     Country = userfromrequest.Country,
                     UserName = userfromrequest.Email
                 };
@@ -150,8 +149,8 @@ namespace ProSkills.Controllers
 
             #region Logout
 
-            [HttpPost]
-            [ValidateAntiForgeryToken]
+        
+      
             public async Task<IActionResult> Logout()
             {
                 await _signInManager.SignOutAsync();
