@@ -149,6 +149,8 @@ namespace ProSkills.Repository
             return trainee.Courses.Select(ct => ct.Course).ToList();
         }
 
+
+
     }
 }
 

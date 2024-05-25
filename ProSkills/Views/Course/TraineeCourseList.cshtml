@@ -1,4 +1,8 @@
 ﻿@model List<ProSkills.Models.ClientSide.Course>
+@{
+    // int traineeId = ViewBag.traineeId;
+
+}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,10 +20,11 @@
         @foreach (var course in Model)
         {
             int totalDays = (int)(course.EndAt - course.StartAt).TotalDays;
+            
 
-            <div class="nft" onclick="window.location.href='https://www.google.com'">
+            <div class="nft" onclick="window.location.href='/Course/TraineeCourse?courseId=@course.Id'">
                 <div class='main'>
-                    <img class='tokenImage' src="@course.CourseImagePath" alt="NFT" />
+                    <img class='tokenImage' src="/images/@course.CourseImagePath" alt="NFT" />
                     <h2>@course.Name</h2>
                     <p class='description'>@course.Description</p>
                     <div class='tokenInfo'>
@@ -37,7 +42,7 @@
                         <div class='wrapper'>
                             <img src="https://via.placeholder.com/40" alt="Creator" />
                         </div>
-                        <p><ins>Created by</ins> @course.Instructor?.Name</p>
+                        <p><ins>Created by</ins> @(course.instructorId)</p>
                     </div>
                 </div>
             </div>

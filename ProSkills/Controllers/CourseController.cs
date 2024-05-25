@@ -243,6 +243,9 @@ namespace ProSkills.Controllers
         public IActionResult TraineeCourseList(int traineeId)
         {
             var course = _courseRepositoryVersion2.GetCourseTraineeWithDetails(traineeId);
+            var Instructors= _instructorRepository.GetAll();
+
+            ViewBag.Instructors = Instructors;
             return View("TraineeCourseList", course);
 
         }
