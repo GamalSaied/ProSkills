@@ -52,7 +52,8 @@ namespace ProSkills
             builder.Services.AddScoped<IRepository<Lesson>, LessonRepository>();
             builder.Services.AddScoped<IRepository<Chapter>, ChapterRepository>();
             builder.Services.AddScoped<ICourseRepository, CourseRepository>();
-
+            builder.Services.AddScoped<ITraineeRepository, TraineeRepository>();
+           
             var app = builder.Build();
 
             // Register Syncfusion license

@@ -4,7 +4,7 @@ using ProSkills.Models.ClientSide;
 
 namespace ProSkills.Repository;
 
-public class TraineeRepository : IRepository<Trainee>
+public class TraineeRepository : ITraineeRepository
 {
     ITIContext context;
 
@@ -79,5 +79,10 @@ public class TraineeRepository : IRepository<Trainee>
         throw new NotImplementedException();
     }
 
+    public Trainee GetTraineeByEmail(string email)
+    {
+        // Your logic to retrieve the trainee by email
+        return context.Trainee.FirstOrDefault(t => t.Email == email);
+    }
 
 }

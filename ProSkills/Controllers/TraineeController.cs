@@ -8,11 +8,11 @@ namespace ProSkills.Controllers;
 public class TraineeController : Controller
 {
 
-    private readonly IRepository<Trainee> _traineeRepository;
+    private readonly ITraineeRepository  _traineeRepository;
     private readonly IRepository<Course> _courseRepository;
     private readonly IRepository<CourseTrainee> _courseTraineeRepository;
 
-    public TraineeController(IRepository<Trainee> traineeRepository, IRepository<Course> courseRepository, IRepository<CourseTrainee> courseTraineeRepository )
+    public TraineeController(ITraineeRepository traineeRepository, IRepository<Course> courseRepository, IRepository<CourseTrainee> courseTraineeRepository )
     {
         _traineeRepository = traineeRepository;
         _courseRepository = courseRepository;
