@@ -87,12 +87,6 @@ namespace ProSkills.Repository
             {
                 throw new ArgumentNullException(nameof(obj), "Course cannot be null.");
             }
-
-            if (obj.Id == 0)
-            {
-                var lastCourse = context.Course.OrderByDescending(c => c.Id).FirstOrDefault();
-                obj.Id = (lastCourse != null) ? lastCourse.Id + 1 : 1;
-            }
             context.Add(obj);
         }
         // Updates Data in the database

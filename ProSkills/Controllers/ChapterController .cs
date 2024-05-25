@@ -13,13 +13,12 @@ namespace ProSkills.Controllers
             _chapterRepository = chapterRepository;
         }
 
-
         // GET: Chapter/AddNew
         [HttpGet]
         public IActionResult AddNew(int courseId)
         {
             ViewBag.CourseId = courseId;
-            return View();
+            return View(new Chapter { CourseId = courseId });
         }
 
         // POST: Chapter/AddNew
@@ -33,9 +32,9 @@ namespace ProSkills.Controllers
                 return RedirectToAction("ChaptersInCourse", "Course", new { courseId = chapter.CourseId });
             }
 
+            ViewBag.CourseId = chapter.CourseId;
             return View(chapter);
         }
-
 
         // GET: Chapter/Edit
         [HttpGet]
@@ -77,6 +76,5 @@ namespace ProSkills.Controllers
             }
             return NotFound();
         }
-
     }
 }
