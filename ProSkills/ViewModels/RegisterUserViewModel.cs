@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using ProSkills.Models.ClientSide;
 using ProSkills.Models.ClientSide.Enumerators;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.Metrics;
@@ -29,6 +30,20 @@ namespace ProSkills.ViewModels
 
         [Required(ErrorMessage = "Please select your country")]
         public Country Country { get; set; }
+
+
+        public Trainee ToTrainee()
+        {
+            return new Trainee
+            {
+                Name = FullName,
+                Email = Email,
+                Phone = Phone,
+                Country = Country,
+                IsDeleted = false,
+                CreatedAt = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss")
+            };
+        }
     }
 
 }

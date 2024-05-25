@@ -1,8 +1,6 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using NuGet.Protocol.Core.Types;
-using ProSkills.Controllers;
 using ProSkills.Interfaces;
 using ProSkills.Models;
 using ProSkills.Models.AdminPanel.InstructorManger;
@@ -20,76 +18,53 @@ namespace ProSkills
 
             builder.Services.AddControllersWithViews();
 
-
-
-            builder.Services.AddIdentity<ApplicationUser, IdentityRole>(
-       options =>
-       {
-           options.Password.RequiredLength = 4;
-           options.Password.RequireNonAlphanumeric = false;
-           options.Password.RequireDigit = false;
-           options.Password.RequireUppercase = false;
-
-       }).AddEntityFrameworkStores<ITIContext>().AddDefaultTokenProviders();
-
-
-            //to change the session time
-            builder.Services.AddSession(
-                Options =>
-                {
-                    Options.IdleTimeout = TimeSpan.FromMinutes(5);   //change session time out
-                }
-
-                ); //add settings  we should put it before builder
-
-         
-
-
-            builder.Services.AddDbContext<ITIContext>(
-                Options => Options.UseSqlServer(builder.Configuration.GetConnectionString("cs")));
-
-
-            //where users are redirected when they are not authenticated. In this case, if an unauthenticated user tries to
-            //access a protected resource, they will be redirected to the "Account/login" page.
-            //redirected when they do not have permission to access a resource (authorization failure) => "Home/Error".
-            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(Options =>
+            builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
             {
-                Options.LoginPath = "/Account/Login";
-                Options.LogoutPath = "/Account/logout";
-                Options.AccessDeniedPath = "/Home/Error";
+                options.Password.RequiredLength = 4;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireDigit = false;
+                options.Password.RequireUppercase = false;
+            }).AddEntityFrameworkStores<ITIContext>().AddDefaultTokenProviders();
+
+            builder.Services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(5);
             });
 
+            builder.Services.AddDbContext<ITIContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("cs")));
 
+            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
+            {
+                options.LoginPath = "/Account/Login";
+                options.LogoutPath = "/Account/Logout"; // Ensure correct case
+                options.AccessDeniedPath = "/Home/Error";
+            });
 
-            //inject dbcontext options //inject iticontext
-            //register 
+            // Register repositories
             builder.Services.AddScoped<IRepository<instructor>, InstructorRepository>();
             builder.Services.AddScoped<IRepository<Category>, CategoryRepository>();
             builder.Services.AddScoped<IRepository<Course>, CourseRepository>();
             builder.Services.AddScoped<IRepository<Trainee>, TraineeRepository>();
             builder.Services.AddScoped<IRepository<CourseTrainee>, CourseTraineeRepository>();
-
             builder.Services.AddScoped<IRepository<Package>, PackageRepository>();
             builder.Services.AddScoped<IRepository<RedeemCode>, RedeemCodeRepository>();
             builder.Services.AddScoped<IRepository<Lesson>, LessonRepository>();
             builder.Services.AddScoped<IRepository<Chapter>, ChapterRepository>();
             builder.Services.AddScoped<ICourseRepository, CourseRepository>();
 
-
             var app = builder.Build();
 
-            //Register Syncfusion license
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Ngo9BigBOggjHTQxAR8/V1NBaF5cXmZCe0x3RHxbf1x0ZFdMYF5bR3dPMyBoS35RckVmWXtecnRXRWFbVkF/");
+            // Register Syncfusion license
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("YourLicenseKeyHere");
 
-            // Configure the HTTP request pipeline.
+            // Configure the HTTP request pipeline
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-            
-            app.UseSession();
-           
 
+            app.UseSession();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 

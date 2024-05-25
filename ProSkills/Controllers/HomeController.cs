@@ -15,6 +15,7 @@ namespace ProSkills.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.FullName = User.Claims.FirstOrDefault(c => c.Type == "FullName")?.Value;
             return View();
         }
 
