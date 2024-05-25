@@ -49,6 +49,7 @@ namespace ProSkills.Controllers
                     Email = userfromrequest.Email,
 
                     Phone = userfromrequest.Phone,
+
                     Country = userfromrequest.Country,
                     UserName = userfromrequest.Email
                 };
