@@ -18,6 +18,9 @@ namespace ProSkills
 
             builder.Services.AddControllersWithViews();
 
+            builder.Services.AddDbContext<ITIContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("cs")));
+
             builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
             {
                 options.Password.RequiredLength = 4;
@@ -31,13 +34,10 @@ namespace ProSkills
                 options.IdleTimeout = TimeSpan.FromMinutes(5);
             });
 
-            builder.Services.AddDbContext<ITIContext>(options =>
-                options.UseSqlServer(builder.Configuration.GetConnectionString("cs")));
-
             builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
             {
                 options.LoginPath = "/Account/Login";
-                options.LogoutPath = "/Account/Logout"; // Ensure correct case
+                options.LogoutPath = "/Account/Logout";
                 options.AccessDeniedPath = "/Home/Error";
             });
 
@@ -53,13 +53,9 @@ namespace ProSkills
             builder.Services.AddScoped<IRepository<Chapter>, ChapterRepository>();
             builder.Services.AddScoped<ICourseRepository, CourseRepository>();
             builder.Services.AddScoped<ITraineeRepository, TraineeRepository>();
-           
+
             var app = builder.Build();
 
-            // Register Syncfusion license
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("YourLicenseKeyHere");
-
-            // Configure the HTTP request pipeline
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");

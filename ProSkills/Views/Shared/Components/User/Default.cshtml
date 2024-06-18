@@ -1,0 +1,15 @@
+﻿@model ProSkills.Models.ApplicationUser
+
+@if (Model != null)
+{
+    <span class="navbar-text me-1">@Model.FullName</span>
+    <form asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
+        @Html.AntiForgeryToken()
+        <button type="submit" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Logout<i class="fa fa-arrow-right ms-3"></i></button>
+    </form>
+}
+else
+{
+    <a asp-controller="Account" asp-action="Login" class="nav-item nav-link active">Login</a>
+    <a asp-controller="Account" asp-action="Register" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Us<i class="fa fa-arrow-right ms-3"></i></a>
+}

@@ -43,21 +43,10 @@
             </div>
         </div>
         <div class="d-flex align-items-center">
-            @if (User.Identity.IsAuthenticated)
-            {
-                <a asp-controller="Account" class="navbar-text me-1">@User.Identity.Name</a>
-                <form asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
-                    @Html.AntiForgeryToken()
-                    <button type="submit" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Logout<i class="fa fa-arrow-right ms-3"></i></button>
-                </form>
-            }
-            else
-            {
-                <a asp-controller="Account" asp-action="Login" class="nav-item nav-link active">Login</a>
-                <a asp-controller="Account" asp-action="Register" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Us<i class="fa fa-arrow-right ms-3"></i></a>
-            }
+            @await Component.InvokeAsync("User")
         </div>
     </nav>
+
 
     @RenderBody()
 
