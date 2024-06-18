@@ -2,11 +2,29 @@
 
 @if (Model != null)
 {
-    <span class="navbar-text me-1">@Model.FullName</span>
-    <form asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
-        @Html.AntiForgeryToken()
-        <button type="submit" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Logout<i class="fa fa-arrow-right ms-3"></i></button>
-    </form>
+    <div class="dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            @if (!string.IsNullOrEmpty(Model.ProfilePictureUrl))
+            {
+                <img src="@Model.ProfilePictureUrl" alt="User Image" class="rounded-circle" width="30" height="30">
+            }
+            @Model.FullName
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+            <li><a class="dropdown-item" href="/Account/Programs">My Programs</a></li>
+            <li><a class="dropdown-item" href="/Account/Assignments">My Assignments</a></li>
+            <li><a class="dropdown-item" href="/Account/Profile">My Profile</a></li>
+            <li>
+                <hr class="dropdown-divider">
+            </li>
+            <li>
+                <form asp-controller="Account" asp-action="Logout" method="post" class="dropdown-item">
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="btn btn-link p-0">Log out</button>
+                </form>
+            </li>
+        </ul>
+    </div>
 }
 else
 {
