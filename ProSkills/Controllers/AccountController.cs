@@ -46,7 +46,7 @@ namespace ProSkills.Controllers
                     Email = userFromRequest.Email,
                     Phone = userFromRequest.Phone,
                     Country = userFromRequest.Country,
-                    UserName = userFromRequest.Email
+                    UserName = userFromRequest.FullName
                 };
 
                 var result = await _userManager.CreateAsync(user, userFromRequest.Password);
@@ -64,11 +64,12 @@ namespace ProSkills.Controllers
 
                 foreach (var error in result.Errors)
                 {
-                    ModelState.AddModelError(string.Empty, error.Description);
+                    ModelState.AddModelError("", error.Description);
                 }
             }
             return View(userFromRequest);
         }
+
         #endregion
 
         #region Login
@@ -84,16 +85,16 @@ namespace ProSkills.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await _signInManager.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, lockoutOnFailure: false);
+                var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, lockoutOnFailure: false);
 
                 if (result.Succeeded)
                 {
-                    var user = await _userManager.FindByEmailAsync(model.UserName);
+                    var user = await _userManager.FindByEmailAsync(model.Email);
                     if (user != null)
                     {
                         var claims = new List<Claim>
                 {
-                    new Claim(ClaimTypes.Name, user.UserName),
+                    new Claim(ClaimTypes.Name, user.Email),
                     new Claim("FullName", user.FullName) // Add FullName claim
                 };
 
