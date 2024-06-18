@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using ProSkills.Models.ClientSide.Enumerators;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ProSkills.Models.ClientSide
 {
@@ -16,5 +17,7 @@ namespace ProSkills.Models.ClientSide
         public decimal Result { get; set; }
         List<ActivityLog>? ActivitylogList { get; set; }
         List<Certificate>? CertificateList { get; set; }
+        Level level { get; set; }
+        int points { get; set; }
     }
 }
