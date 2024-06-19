@@ -22,7 +22,7 @@ namespace ProSkills.Controllers
 
         public IActionResult Index()
         {
-            var services = _serviceRepository.GetAll();
+            var services = _serviceRepository.GetAll().Where(s => !s.IsDeleted);
             var serviceViewModels = services.Select(service => new ServiceViewModel
             {
                 Id = service.Id,
@@ -40,7 +40,7 @@ namespace ProSkills.Controllers
             {
                 return View("NoServices");
             }
-
+            
             return View(serviceViewModels);
         }
 
@@ -91,7 +91,6 @@ namespace ProSkills.Controllers
 
             return View(serviceViewModel);
         }
-
         public IActionResult Edit(int id)
         {
             var service = _serviceRepository.GetById(id);
@@ -100,22 +99,76 @@ namespace ProSkills.Controllers
                 return NotFound();
             }
 
-            return View(service);
+            var serviceViewModel = new ServiceViewModel
+            {
+                Id = service.Id,
+                Name = service.Name,
+                Description = service.Description,
+                Price = service.Price,
+                ImageUrl = service.ImageUrl,
+                InstructorName = service.InstructorName,
+                Duration = service.Duration,
+                Rating = service.Rating,
+                ReviewCount = service.ReviewCount
+            };
+
+            return View(serviceViewModel);
         }
 
         [HttpPost]
-        public IActionResult Edit(Service service)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, ServiceViewModel serviceViewModel, IFormFile image)
         {
-            if (ModelState.IsValid)
+            if (id != serviceViewModel.Id)
             {
-                _serviceRepository.Update(service);
-                _serviceRepository.Save();
-                return RedirectToAction(nameof(Index));
+                return NotFound();
             }
 
-            return View(service);
-        }
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    var service = _serviceRepository.GetById(id);
+                    if (service == null)
+                    {
+                        return NotFound();
+                    }
 
+                    if (image != null && image.Length > 0)
+                    {
+                        string uploadsFolder = Path.Combine(_environment.WebRootPath, "images");
+                        string uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(image.FileName);
+                        string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                        using (var fileStream = new FileStream(filePath, FileMode.Create))
+                        {
+                            await image.CopyToAsync(fileStream);
+                        }
+
+                        service.ImageUrl = "/images/" + uniqueFileName; // Update the image URL
+                    }
+
+                    service.Name = serviceViewModel.Name;
+                    service.Description = serviceViewModel.Description;
+                    service.Price = serviceViewModel.Price;
+                    service.InstructorName = serviceViewModel.InstructorName;
+                    service.Duration = serviceViewModel.Duration;
+                    service.Rating = serviceViewModel.Rating;
+                    service.ReviewCount = serviceViewModel.ReviewCount;
+
+                    _serviceRepository.Update(service);
+                    _serviceRepository.Save();
+
+                    return RedirectToAction(nameof(Index));
+                }
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists, see your system administrator.");
+                }
+            }
+
+            return View(serviceViewModel);
+        }
         public IActionResult Delete(int id)
         {
             var service = _serviceRepository.GetById(id);
@@ -124,15 +177,34 @@ namespace ProSkills.Controllers
                 return NotFound();
             }
 
-            return View(service);
+            var serviceViewModel = new ServiceViewModel
+            {
+                Id = service.Id,
+                Name = service.Name,
+                Description = service.Description,
+                Price = service.Price,
+                ImageUrl = service.ImageUrl,
+                InstructorName = service.InstructorName,
+                Duration = service.Duration,
+                Rating = service.Rating,
+                ReviewCount = service.ReviewCount
+            };
+
+            return View(serviceViewModel);
         }
 
-        [HttpPost, ActionName("Delete")]
-        public IActionResult DeleteConfirmed(int id)
+        [HttpPost]
+        public IActionResult SoftDelete(int id)
         {
-            _serviceRepository.Delete(id);
-            _serviceRepository.Save();
+            var service = _serviceRepository.GetById(id);
+            if (service != null)
+            {
+                service.IsDeleted = true;
+                _serviceRepository.Update(service);
+                _serviceRepository.Save();
+            }
             return RedirectToAction(nameof(Index));
         }
+
     }
 }
