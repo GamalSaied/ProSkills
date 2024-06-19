@@ -14,7 +14,12 @@ namespace ProSkills.Models
         public Country Country { get; set; }
 
         public string  Phone {  get; set; }
-        public string? ProfilePictureUrl { get; set; } // Add this property
+        public string? ProfilePictureUrl { get; set; } 
+        public string? City { get; set; } 
+        public string? CountryCode { get; set; }
+
+
+
 
     }
 }

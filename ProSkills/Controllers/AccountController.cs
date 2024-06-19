@@ -10,6 +10,9 @@ using ProSkills.Models.ClientSide;
 using ProSkills.Interfaces;
 using System.Threading.Tasks;
 using ProSkills.Models.AdminPanel.AccountManger;
+using ProSkills.Helpers;
+using ProSkills.Models.ClientSide.Enumerators;
+using System;
 
 namespace ProSkills.Controllers
 {
@@ -18,16 +21,120 @@ namespace ProSkills.Controllers
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly ITraineeRepository _traineeRepository;
+        private readonly IWebHostEnvironment _environment;
 
-        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ITraineeRepository traineeRepository)
+        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ITraineeRepository traineeRepository, IWebHostEnvironment environment)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _traineeRepository = traineeRepository;
+            _environment = environment;
+
         }
 
-      
 
+        [HttpPost]
+        public async Task<IActionResult> UploadProfilePicture(IFormFile croppedImage)
+        {
+            if (croppedImage == null || croppedImage.Length == 0)
+            {
+                return Json(new { success = false, message = "Invalid image file" });
+            }
+
+            try
+            {
+                string uploadsFolder = Path.Combine(_environment.WebRootPath, "images/profiles");
+                if (!Directory.Exists(uploadsFolder))
+                {
+                    Directory.CreateDirectory(uploadsFolder);
+                }
+
+                string uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(croppedImage.FileName);
+                string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    await croppedImage.CopyToAsync(fileStream);
+                }
+
+                var user = await _userManager.GetUserAsync(User);
+                if (user != null)
+                {
+                    user.ProfilePictureUrl = "/images/profiles/" + uniqueFileName;
+                    var result = await _userManager.UpdateAsync(user);
+                    if (result.Succeeded)
+                    {
+                        return Json(new { success = true, imageUrl = user.ProfilePictureUrl });
+                    }
+                    else
+                    {
+                        return Json(new { success = false, message = "Failed to update user profile" });
+                    }
+                }
+                else
+                {
+                    return Json(new { success = false, message = "User not found" });
+                }
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = ex.Message });
+            }
+        }
+
+
+
+        [HttpGet]
+        public async Task<IActionResult> Profile()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+            var model = new ApplicationUser
+            {
+                UserName = user.UserName,
+                Email = user.Email,
+                PhoneNumber = user.PhoneNumber,
+                FullName = user.FullName,
+                City = user.City,
+                Country = user.Country,
+                ProfilePictureUrl = user.ProfilePictureUrl
+            };
+
+            return View(model);
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> EditProfile(ApplicationUser model)
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                return NotFound("User not found");
+            }
+
+            user.FullName = model.FullName;
+            user.PhoneNumber = model.PhoneNumber;
+            user.Country = model.Country;
+            user.City = model.City;
+
+            var result = await _userManager.UpdateAsync(user);
+            if (result.Succeeded)
+            {
+                return RedirectToAction("Profile");
+            }
+
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError(string.Empty, error.Description);
+            }
+
+            return View("Profile", user);
+        }
         #region Register
 
         [HttpGet]

@@ -1,0 +1,407 @@
+﻿@model ProSkills.Models.ApplicationUser
+@using ProSkills.Models.ClientSide.Enumerators
+@using ProSkills.Helpers
+@using Newtonsoft.Json
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .profile-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .profile-sidebar {
+            width: 30%;
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+            .profile-sidebar img {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+            }
+
+            .profile-sidebar h2 {
+                margin: 10px 0;
+            }
+
+            .profile-sidebar p {
+                color: #777;
+            }
+
+        .profile-content {
+            width: 65%;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+            .profile-content h3 {
+                margin-bottom: 20px;
+                border-bottom: 2px solid #007bff;
+                padding-bottom: 10px;
+            }
+
+            .profile-content .info {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 10px;
+            }
+
+                .profile-content .info label {
+                    font-weight: bold;
+                    width: 30%;
+                }
+
+                .profile-content .info span {
+                    width: 70%;
+                }
+
+            .profile-content a {
+                color: #007bff;
+                text-decoration: none;
+            }
+
+                .profile-content a:hover {
+                    text-decoration: underline;
+                }
+
+        .edit-icon {
+            float: right;
+            color: #007bff;
+            cursor: pointer;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 40%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+            .modal-content h3 {
+                margin-top: 0;
+            }
+
+            .modal-content .form-group {
+                margin-bottom: 15px;
+            }
+
+                .modal-content .form-group label {
+                    display: block;
+                    font-weight: bold;
+                    margin-bottom: 5px;
+                }
+
+                .modal-content .form-group input,
+                .modal-content .form-group select {
+                    width: 100%;
+                    padding: 8px;
+                    box-sizing: border-box;
+                }
+
+                .modal-content .form-group button {
+                    background-color: #007bff;
+                    color: white;
+                    padding: 10px 20px;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 100%;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            max-height: 150px;
+            overflow-y: auto;
+        }
+
+            .dropdown-content div {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                cursor: pointer;
+            }
+
+                .dropdown-content div:hover {
+                    background-color: #f1f1f1;
+                }
+
+                .dropdown-content div.selected {
+                    background-color: #007bff;
+                    color: white;
+                }
+
+        .dropdown-toggle {
+            width: 100%;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <div class="profile-sidebar">
+            <img src="@Model.ProfilePictureUrl" alt="User Image" id="profilePicture">
+            <h2>@Model.FullName</h2>
+            <p>@Model.Email</p>
+            <p>Phone: @Model.PhoneNumber</p>
+            <p>Location: @Model.City, @Model.Country</p>
+            <i class="fas fa-pen edit-icon" onclick="openFileDialog()"></i>
+        </div>
+        <div class="profile-content">
+            <h3>
+                Profile <i class="fas fa-edit edit-icon" onclick="openModal()"></i>
+            </h3>
+            <div class="info">
+                <label>Full Name:</label>
+                <span>@Model.FullName</span>
+            </div>
+            <div class="info">
+                <label>Email:</label>
+                <span>@Model.Email <a href="/Account/ChangeEmail"> (Change Email)</a></span>
+            </div>
+            <div class="info">
+                <label>Country Code:</label>
+                <span>@CountryHelper.GetCountryCode(Model.Country)</span>
+            </div>
+            <div class="info">
+                <label>Password:</label>
+                <span>******** <a href="/Account/ChangePassword"> (Change Password)</a></span>
+            </div>
+            <div class="info">
+                <label>City:</label>
+                <span>@Model.City</span>
+            </div>
+            <div class="info">
+                <label>Country:</label>
+                <span>@Model.Country</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <h3>Basic Information</h3>
+            <form asp-controller="Account" asp-action="EditProfile" method="post">
+                <div class="form-group">
+                    <label for="FullName">Full Name</label>
+                    <input type="text" id="FullName" name="FullName" value="@Model.FullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="PhoneNumber">Phone</label>
+                    <input type="text" id="PhoneNumber" name="PhoneNumber" value="@Model.PhoneNumber" required>
+                </div>
+                <div class="form-group">
+                    <label for="Country">Country</label>
+                    <div class="dropdown">
+                        <div class="dropdown-toggle" id="dropdownToggle" onclick="toggleDropdown()" tabindex="0">@Model.Country</div>
+                        <div class="dropdown-content" id="dropdown">
+                            @foreach (var country in Enum.GetValues(typeof(Country)))
+                            {
+                                var countryName = country.ToString();
+                                <div onclick="selectCountry('@countryName', '@CountryHelper.GetCountryCode((Country)Enum.Parse(typeof(Country), countryName))')" class="@(countryName == Model.Country.ToString() ? "selected" : "")">@countryName</div>
+                            }
+                        </div>
+                    </div>
+                    <input type="hidden" id="Country" name="Country" value="@Model.Country" />
+                </div>
+                <div class="form-group">
+                    <label for="CountryCode">Country Code</label>
+                    <input type="text" id="CountryCode" name="CountryCode" value="@CountryHelper.GetCountryCode(Model.Country)" readonly />
+                </div>
+                <div class="form-group">
+                    <label for="City">City</label>
+                    <input type="text" id="City" name="City" value="@Model.City" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="fileDialog" style="display: none;">
+        <input type="file" id="fileInput" accept="image/*" style="display: none;" onchange="openCropper(event)">
+    </div>
+
+    <div id="cropperModal" class="modal">
+        <div class="modal-content">
+            <h3>Crop Image</h3>
+            <div style="width: 100%; height: 400px;">
+                <img id="imageToCrop" style="max-width: 100%;" />
+            </div>
+            <button onclick="saveCroppedImage()">Save</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+    <script>
+        const countryCodes = @Html.Raw(JsonConvert.SerializeObject(CountryHelper.CountryCodes));
+        let cropper;
+
+        function openModal() {
+            document.getElementById('editModal').style.display = 'block';
+        }
+
+        function clearModalData() {
+            // Clear the image source and destroy the cropper instance if it exists
+            if (cropper) {
+                cropper.destroy();
+                cropper = null;
+            }
+            var image = document.getElementById('imageToCrop');
+            image.src = '';
+        }
+
+        window.onclick = function (event) {
+            var modal = document.getElementById('editModal');
+            var cropperModal = document.getElementById('cropperModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+                clearModalData(); // Clear the data when modal is closed
+            }
+            if (event.target == cropperModal) {
+                cropperModal.style.display = 'none';
+                clearModalData(); // Clear the data when cropperModal is closed
+            }
+        }
+
+        function toggleDropdown() {
+            var dropdown = document.getElementById('dropdown');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function selectCountry(countryName, countryCode) {
+            var dropdown = document.getElementById('dropdown');
+            var toggle = document.getElementById('dropdownToggle');
+            var hiddenInput = document.getElementById('Country');
+            var countryCodeInput = document.getElementById('CountryCode');
+
+            toggle.textContent = countryName;
+            hiddenInput.value = countryName;
+            countryCodeInput.value = countryCode;
+            dropdown.style.display = 'none';
+
+            var options = dropdown.querySelectorAll('div');
+            options.forEach(option => {
+                option.classList.remove('selected');
+                if (option.textContent === countryName) {
+                    option.classList.add('selected');
+                }
+            });
+        }
+
+        function handleKeydown(event) {
+            var dropdown = document.getElementById('dropdown');
+            var options = dropdown.querySelectorAll('div');
+            var key = event.key.toLowerCase();
+            for (var i = 0; i < options.length; i++) {
+                if (options[i].textContent.toLowerCase().startsWith(key)) {
+                    options[i].scrollIntoView();
+                    options[i].focus();
+                    break;
+                }
+            }
+        }
+
+        document.addEventListener('click', function (event) {
+            var dropdown = document.getElementById('dropdown');
+            if (!dropdown.contains(event.target) && !event.target.classList.contains('dropdown-toggle')) {
+                dropdown.style.display = 'none';
+            }
+        });
+
+        document.getElementById('dropdownToggle').addEventListener('keydown', handleKeydown);
+
+        function openFileDialog() {
+            document.getElementById('fileInput').click();
+        }
+
+        function openCropper(event) {
+            var image = document.getElementById('imageToCrop');
+            image.src = URL.createObjectURL(event.target.files[0]);
+            document.getElementById('cropperModal').style.display = 'block';
+            cropper = new Cropper(image, {
+                aspectRatio: 1,
+                viewMode: 1,
+                autoCropArea: 1,
+                responsive: true,
+                background: false,
+                rotatable: false,
+                scalable: false,
+                zoomable: false
+            });
+        }
+
+        function saveCroppedImage() {
+            cropper.getCroppedCanvas().toBlob((blob) => {
+                var formData = new FormData();
+                formData.append('croppedImage', blob, 'profile-picture.jpg'); // Specify the file name with extension
+
+                fetch('/Account/UploadProfilePicture', {
+                    method: 'POST',
+                    body: formData
+                }).then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            document.getElementById('profilePicture').src = data.imageUrl;
+                            document.getElementById('cropperModal').style.display = 'none';
+                        } else {
+                            alert('Failed to upload image: ' + data.message);
+                        }
+                    }).catch((error) => {
+                        alert('Failed to upload image: ' + error.message);
+                    });
+            }, 'image/jpeg'); // Specify the image format
+        }
+
+     
+    </script>
+</body>
+</html>
