@@ -20,6 +20,8 @@ namespace ProSkills.Models
         public DbSet<RedeemCode> RedeemCode { get; set; }
         public DbSet<Chapter> Chapters { get; set; }
         public DbSet<Lesson> Lessons { get; set; }
+        public DbSet<Service> Service { get; set; }
+
 
 
         // --------------------------------------------------------------------
