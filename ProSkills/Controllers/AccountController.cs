@@ -97,7 +97,7 @@ namespace ProSkills.Controllers
             {
                 UserName = user.UserName,
                 Email = user.Email,
-                PhoneNumber = user.PhoneNumber,
+                PhoneNumber = user.Phone,
                 FullName = user.FullName,
                 City = user.City,
                 Country = user.Country,
@@ -106,7 +106,6 @@ namespace ProSkills.Controllers
 
             return View(model);
         }
-
 
         [HttpPost]
         public async Task<IActionResult> EditProfile(ApplicationUser model)
@@ -118,7 +117,7 @@ namespace ProSkills.Controllers
             }
 
             user.FullName = model.FullName;
-            user.PhoneNumber = model.PhoneNumber;
+            user.Phone = model.Phone;
             user.Country = model.Country;
             user.City = model.City;
 
@@ -135,6 +134,112 @@ namespace ProSkills.Controllers
 
             return View("Profile", user);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ChangePassword(ChangePasswordViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View("Profile", model);
+            }
+
+            try
+            {
+                var user = await _userManager.GetUserAsync(User);
+                if (user == null)
+                {
+                    return RedirectToAction("Login", "Account");
+                }
+
+                var changePasswordResult = await _userManager.ChangePasswordAsync(user, model.OldPassword, model.NewPassword);
+                if (!changePasswordResult.Succeeded)
+                {
+                    foreach (var error in changePasswordResult.Errors)
+                    {
+                        ModelState.AddModelError(string.Empty, error.Description);
+                    }
+                    return View("Profile", model);
+                }
+
+                await _signInManager.RefreshSignInAsync(user);
+                return RedirectToAction("Profile");
+            }
+            catch (Exception ex)
+            {
+                // Log the exception (e.g., using a logging framework)
+                ModelState.AddModelError(string.Empty, "An error occurred while changing the password. Please try again later.");
+                // Optionally, log the detailed exception message for debugging purposes:
+                // _logger.LogError(ex, "Error occurred while changing password for user {UserId}", user?.Id);
+                return View("Profile", model);
+            }
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ChangeEmail(ChangeEmailViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                ModelState.AddModelError("", "The new email is not valid.");
+                return View("Profile", await GetProfileModelWithErrors());
+            }
+
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+            // Generate the token for changing the email
+            var token = await _userManager.GenerateChangeEmailTokenAsync(user, model.NewEmail);
+
+            // Change the email using the generated token
+            var setEmailResult = await _userManager.ChangeEmailAsync(user, model.NewEmail, token);
+            if (!setEmailResult.Succeeded)
+            {
+                foreach (var error in setEmailResult.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
+                }
+                return View("Profile", await GetProfileModelWithErrors());
+            }
+
+            user.UserName = model.NewEmail;
+            user.Email = model.NewEmail;
+            var setUserNameResult = await _userManager.UpdateAsync(user);
+            if (!setUserNameResult.Succeeded)
+            {
+                foreach (var error in setUserNameResult.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
+                }
+                return View("Profile", await GetProfileModelWithErrors());
+            }
+
+            await _signInManager.RefreshSignInAsync(user);
+            return RedirectToAction("Profile");
+        }
+
+        // Helper method to get the Profile model with errors
+        private async Task<ApplicationUser> GetProfileModelWithErrors()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            return new ApplicationUser
+            {
+                UserName = user.UserName,
+                Email = user.Email,
+                PhoneNumber = user.Phone,
+                FullName = user.FullName,
+                City = user.City,
+                Country = user.Country,
+                ProfilePictureUrl = user.ProfilePictureUrl
+            };
+        }
+
+
+
+
+
         #region Register
 
         [HttpGet]

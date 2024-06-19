@@ -255,7 +255,7 @@
 
     <div class="profile-content">
         <h3>
-            Profile <i class="fas fa-edit edit-icon2" onclick="openModal()"></i>
+            Profile <i class="fas fa-edit edit-icon2" onclick="openModal('editModal')"></i>
         </h3>
         <div class="info">
             <label>Full Name:</label>
@@ -263,7 +263,7 @@
         </div>
         <div class="info">
             <label>Email:</label>
-            <span>@Model.Email <a href="/Account/ChangeEmail"> (Change Email)</a></span>
+            <span>@Model.Email <a href="javascript:void(0);" onclick="openModal('changeEmailModal')"> (Change Email)</a></span>
         </div>
         <div class="info">
             <label>Country Code:</label>
@@ -271,7 +271,7 @@
         </div>
         <div class="info">
             <label>Password:</label>
-            <span>******** <a href="/Account/ChangePassword"> (Change Password)</a></span>
+            <span>******** <a href="javascript:void(0);" onclick="openModal('changePasswordModal')"> (Change Password)</a></span>
         </div>
         <div class="info">
             <label>City:</label>
@@ -325,6 +325,50 @@
     </div>
 </div>
 
+
+<!-- Modal for changing email -->
+<div id="changeEmailModal" class="modal">
+    <div class="modal-content">
+        <h3>Change Email</h3>
+        <form asp-action="ChangeEmail" asp-controller="Account" method="post">
+            @Html.AntiForgeryToken()
+            <div class="form-group">
+                <label for="NewEmail">New Email</label>
+                <input type="email" id="NewEmail" name="NewEmail" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<!-- Modal for changing password -->
+<div id="changePasswordModal" class="modal">
+    <div class="modal-content">
+        <h3>Change Password</h3>
+        <form asp-controller="Account" asp-action="ChangePassword" method="post">
+            <div class="form-group">
+                <label for="OldPassword">Old Password</label>
+                <input type="password" id="OldPassword" name="OldPassword" required>
+            </div>
+            <div class="form-group">
+                <label for="NewPassword">New Password</label>
+                <input type="password" id="NewPassword" name="NewPassword" required>
+            </div>
+            <div class="form-group">
+                <label for="ConfirmPassword">Confirm New Password</label>
+                <input type="password" id="ConfirmPassword" name="ConfirmPassword" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
 <div id="fileDialog" style="display: none;">
     <input type="file" id="fileInput" accept="image/*" style="display: none;" onchange="openCropper(event)">
 </div>
@@ -345,8 +389,8 @@
         const countryCodes = @Html.Raw(JsonConvert.SerializeObject(CountryHelper.CountryCodes));
         let cropper;
 
-        function openModal() {
-            document.getElementById('editModal').style.display = 'block';
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
         }
 
         function clearModalData() {
@@ -360,16 +404,13 @@
         }
 
         window.onclick = function (event) {
-            var modal = document.getElementById('editModal');
-            var cropperModal = document.getElementById('cropperModal');
-            if (event.target == modal) {
-                modal.style.display = 'none';
-                clearModalData(); // Clear the data when modal is closed
-            }
-            if (event.target == cropperModal) {
-                cropperModal.style.display = 'none';
-                clearModalData(); // Clear the data when cropperModal is closed
-            }
+            var modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                    clearModalData();
+                }
+            });
         }
 
         function toggleDropdown() {
