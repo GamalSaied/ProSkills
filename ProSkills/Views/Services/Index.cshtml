@@ -1,5 +1,37 @@
 ﻿@model List<ProSkills.ViewModels.ServiceViewModel>
 
+    <style>
+    .course-item .description {
+        max-height: 100px; /* Set a max height for the description */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; /* Prevent the text from wrapping */
+    }
+
+        .course-item .description:hover {
+            white-space: normal; /* Allow text wrapping when hovered */
+            overflow: auto; /* Allow scrolling if necessary */
+        }
+
+    .course-item .text-container {
+        position: relative;
+        padding: 15px;
+    }
+
+    .course-item .edit-icon, .course-item .delete-icon {
+        position: absolute;
+        top: 10px;
+    }
+
+    .course-item .edit-icon {
+        right: 50px; /* Adjust based on your design */
+    }
+
+    .course-item .delete-icon {
+        right: 10px;
+    }
+
+    </style>
 <div class="container-xxl py-5">
     <div class="container">
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
@@ -26,35 +58,30 @@
                 {
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="course-item bg-light">
-
                             <div class="position-relative overflow-hidden">
-    
                                 <img class="img-fluid" src="@service.ImageUrl" alt="">
                                 <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-
                                     <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
                                     <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">Join Now</a>
                                 </div>
-                                <a href="@Url.Action("Edit", "Services", new { id = service.Id })" class="position-relative top-0 end-0 mt-2 me-2 btn btn-sm btn-primary">
+                                <a href="@Url.Action("Edit", "Services", new { id = service.Id })" class="position-relative top-0 end-0 mt-2 me-2 btn btn-sm btn-primary edit-icon">
                                     <i class="fa fa-edit"></i>
                                 </a>
-
-                                <a href="@Url.Action("Delete", "Services", new { id = service.Id })" class="position-relative top-0 end-0 mt-2 me-2 btn btn-sm btn-danger" style="right: 50px;">
+                                <a href="@Url.Action("Delete", "Services", new { id = service.Id })" class="position-relative top-0 end-0 mt-2 me-2 btn btn-sm btn-danger delete-icon">
                                     <i class="fa fa-trash"></i>
                                 </a>
                             </div>
-
-                            <div class="text-center p-4 pb-0">
+                            <div class="text-container text-center p-4 pb-0">
                                 <h3 class="mb-0">$@service.Price</h3>
                                 <div class="mb-3">
                                     @for (int i = 0; i < service.Rating; i++)
                                     {
                                         <small class="fa fa-star text-primary"></small>
                                     }
-                                    <small>({@service.ReviewCount})</small>
+                                    <small>@service.ReviewCount</small>
                                 </div>
                                 <h5 class="mb-4">@service.Name</h5>
-                                <p class="mb-4">@service.Description</p>
+                                <p class="mb-4 description">@service.Description</p>
                             </div>
                             <div class="d-flex border-top">
                                 <small class="flex-fill text-center py-2"><i class="fa fa-user-tie text-primary me-2"></i>@service.InstructorName</small>
@@ -62,8 +89,20 @@
                             </div>
                         </div>
                     </div>
+
                 }
             </div>
         }
     </div>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const descriptions = document.querySelectorAll('.course-item .description');
+        descriptions.forEach(description => {
+            if (description.scrollHeight > description.clientHeight) {
+                description.style.fontSize = 'smaller'; // Adjust font size if text overflows
+            }
+        });
+    });
+
+</script>
