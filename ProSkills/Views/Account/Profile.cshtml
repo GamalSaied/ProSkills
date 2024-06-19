@@ -1,51 +1,21 @@
-﻿@model ProSkills.Models.ApplicationUser
+﻿@{
+    ViewData["Title"] = "Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model ProSkills.Models.ApplicationUser
 @using ProSkills.Models.ClientSide.Enumerators
 @using ProSkills.Helpers
 @using Newtonsoft.Json
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
+@section Styles {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css" />
     <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
 
-        .profile-container {
-            display: flex;
-            justify-content: space-between;
-            padding: 20px;
-        }
-
-        .profile-sidebar {
-            width: 30%;
-            background: #f4f4f4;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-            .profile-sidebar img {
-                width: 100px;
-                height: 100px;
-                border-radius: 50%;
-            }
-
-            .profile-sidebar h2 {
-                margin: 10px 0;
-            }
-
-            .profile-sidebar p {
-                color: #777;
-            }
 
         .profile-content {
-            width: 65%;
+            width: 70%;
             background: #fff;
             padding: 20px;
             border-radius: 10px;
@@ -82,12 +52,15 @@
                     text-decoration: underline;
                 }
 
-        .edit-icon {
+
+
+
+
+        .edit-icon2 {
             float: right;
             color: #007bff;
             cursor: pointer;
         }
-
         .modal {
             display: none;
             position: fixed;
@@ -174,7 +147,7 @@
                     color: white;
                 }
 
-        .dropdown-toggle {
+        #dropdownToggle {
             width: 100%;
             padding: 10px;
             background-color: #fff;
@@ -182,104 +155,191 @@
             cursor: pointer;
             text-align: left;
         }
+
+        .profile-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .profile-sidebar {
+            width: 25%;
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e6e6e6;
+        }
+
+            .profile-sidebar img {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                display: block;
+                margin: 0 auto;
+            }
+
+            .profile-sidebar h2 {
+                margin: 10px 0;
+                font-size: 1.5em;
+                color: #333;
+            }
+
+            .profile-sidebar p {
+                color: #777;
+                margin: 5px 0;
+            }
+
+        .profile-info {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .profile-info-item {
+            margin-bottom: 15px;
+        }
+
+            .profile-info-item label {
+                display: block;
+                font-weight: bold;
+                color: #333;
+                margin-bottom: 5px;
+            }
+
+            .profile-info-item span {
+                display: block;
+                color: #555;
+            }
+
+        .edit-icon {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background: #007bff;
+            color: white;
+            border-radius: 50%;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e6e6e6;
+            margin: 20px 0;
+        }
+
     </style>
-</head>
-<body>
-    <div class="profile-container">
-        <div class="profile-sidebar">
+}
+
+<div class="profile-container">
+    <div class="profile-sidebar">
+        <div style="position: relative; display: inline-block;">
             <img src="@Model.ProfilePictureUrl" alt="User Image" id="profilePicture">
-            <h2>@Model.FullName</h2>
-            <p>@Model.Email</p>
-            <p>Phone: @Model.PhoneNumber</p>
-            <p>Location: @Model.City, @Model.Country</p>
             <i class="fas fa-pen edit-icon" onclick="openFileDialog()"></i>
         </div>
-        <div class="profile-content">
-            <h3>
-                Profile <i class="fas fa-edit edit-icon" onclick="openModal()"></i>
-            </h3>
-            <div class="info">
-                <label>Full Name:</label>
-                <span>@Model.FullName</span>
+        <h2>@Model.FullName</h2>
+        <p>@Model.Email</p>
+        <hr />
+        <div class="profile-info">
+            <div class="profile-info-item">
+                <label>Phone</label>
+                <span>@Model.PhoneNumber</span>
             </div>
-            <div class="info">
-                <label>Email:</label>
-                <span>@Model.Email <a href="/Account/ChangeEmail"> (Change Email)</a></span>
-            </div>
-            <div class="info">
-                <label>Country Code:</label>
-                <span>@CountryHelper.GetCountryCode(Model.Country)</span>
-            </div>
-            <div class="info">
-                <label>Password:</label>
-                <span>******** <a href="/Account/ChangePassword"> (Change Password)</a></span>
-            </div>
-            <div class="info">
-                <label>City:</label>
-                <span>@Model.City</span>
-            </div>
-            <div class="info">
-                <label>Country:</label>
-                <span>@Model.Country</span>
+            <div class="profile-info-item">
+                <label>Location</label>
+                <span>@Model.City, @Model.Country</span>
             </div>
         </div>
     </div>
 
-    <div id="editModal" class="modal">
-        <div class="modal-content">
-            <h3>Basic Information</h3>
-            <form asp-controller="Account" asp-action="EditProfile" method="post">
-                <div class="form-group">
-                    <label for="FullName">Full Name</label>
-                    <input type="text" id="FullName" name="FullName" value="@Model.FullName" required>
-                </div>
-                <div class="form-group">
-                    <label for="PhoneNumber">Phone</label>
-                    <input type="text" id="PhoneNumber" name="PhoneNumber" value="@Model.PhoneNumber" required>
-                </div>
-                <div class="form-group">
-                    <label for="Country">Country</label>
-                    <div class="dropdown">
-                        <div class="dropdown-toggle" id="dropdownToggle" onclick="toggleDropdown()" tabindex="0">@Model.Country</div>
-                        <div class="dropdown-content" id="dropdown">
-                            @foreach (var country in Enum.GetValues(typeof(Country)))
-                            {
-                                var countryName = country.ToString();
-                                <div onclick="selectCountry('@countryName', '@CountryHelper.GetCountryCode((Country)Enum.Parse(typeof(Country), countryName))')" class="@(countryName == Model.Country.ToString() ? "selected" : "")">@countryName</div>
-                            }
-                        </div>
+    <div class="profile-content">
+        <h3>
+            Profile <i class="fas fa-edit edit-icon2" onclick="openModal()"></i>
+        </h3>
+        <div class="info">
+            <label>Full Name:</label>
+            <span>@Model.FullName</span>
+        </div>
+        <div class="info">
+            <label>Email:</label>
+            <span>@Model.Email <a href="/Account/ChangeEmail"> (Change Email)</a></span>
+        </div>
+        <div class="info">
+            <label>Country Code:</label>
+            <span>@CountryHelper.GetCountryCode(Model.Country)</span>
+        </div>
+        <div class="info">
+            <label>Password:</label>
+            <span>******** <a href="/Account/ChangePassword"> (Change Password)</a></span>
+        </div>
+        <div class="info">
+            <label>City:</label>
+            <span>@Model.City</span>
+        </div>
+        <div class="info">
+            <label>Country:</label>
+            <span>@Model.Country</span>
+        </div>
+    </div>
+</div>
+
+<div id="editModal" class="modal">
+    <div class="modal-content">
+        <h3>Basic Information</h3>
+        <form asp-controller="Account" asp-action="EditProfile" method="post">
+            <div class="form-group">
+                <label for="FullName">Full Name</label>
+                <input type="text" id="FullName" name="FullName" value="@Model.FullName" required>
+            </div>
+            <div class="form-group">
+                <label for="PhoneNumber">Phone</label>
+                <input type="text" id="PhoneNumber" name="PhoneNumber" value="@Model.PhoneNumber" required>
+            </div>
+            <div class="form-group">
+                <label for="Country">Country</label>
+                <div class="dropdown">
+                    <div class="dropdown-toggle" id="dropdownToggle" onclick="toggleDropdown()" tabindex="0">@Model.Country</div>
+                    <div class="dropdown-content" id="dropdown">
+                        @foreach (var country in Enum.GetValues(typeof(Country)))
+                        {
+                            var countryName = country.ToString();
+                            <div onclick="selectCountry('@countryName', '@CountryHelper.GetCountryCode((Country)Enum.Parse(typeof(Country), countryName))')" class="@(countryName == Model.Country.ToString() ? "selected" : "")">@countryName</div>
+                        }
                     </div>
-                    <input type="hidden" id="Country" name="Country" value="@Model.Country" />
                 </div>
-                <div class="form-group">
-                    <label for="CountryCode">Country Code</label>
-                    <input type="text" id="CountryCode" name="CountryCode" value="@CountryHelper.GetCountryCode(Model.Country)" readonly />
-                </div>
-                <div class="form-group">
-                    <label for="City">City</label>
-                    <input type="text" id="City" name="City" value="@Model.City" required>
-                </div>
-                <div class="form-group">
-                    <button type="submit">Save</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <div id="fileDialog" style="display: none;">
-        <input type="file" id="fileInput" accept="image/*" style="display: none;" onchange="openCropper(event)">
-    </div>
-
-    <div id="cropperModal" class="modal">
-        <div class="modal-content">
-            <h3>Crop Image</h3>
-            <div style="width: 100%; height: 400px;">
-                <img id="imageToCrop" style="max-width: 100%;" />
+                <input type="hidden" id="Country" name="Country" value="@Model.Country" />
             </div>
-            <button onclick="saveCroppedImage()">Save</button>
-        </div>
+            <div class="form-group">
+                <label for="CountryCode">Country Code</label>
+                <input type="text" id="CountryCode" name="CountryCode" value="@CountryHelper.GetCountryCode(Model.Country)" readonly />
+            </div>
+            <div class="form-group">
+                <label for="City">City</label>
+                <input type="text" id="City" name="City" value="@Model.City" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Save</button>
+            </div>
+        </form>
     </div>
+</div>
 
+<div id="fileDialog" style="display: none;">
+    <input type="file" id="fileInput" accept="image/*" style="display: none;" onchange="openCropper(event)">
+</div>
+
+<div id="cropperModal" class="modal">
+    <div class="modal-content">
+        <h3>Crop Image</h3>
+        <div style="width: 100%; height: 400px;">
+            <img id="imageToCrop" style="max-width: 100%;" />
+        </div>
+        <button onclick="saveCroppedImage()">Save</button>
+    </div>
+</div>
+
+@section Scripts {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
     <script>
         const countryCodes = @Html.Raw(JsonConvert.SerializeObject(CountryHelper.CountryCodes));
@@ -400,8 +460,5 @@
                     });
             }, 'image/jpeg'); // Specify the image format
         }
-
-     
     </script>
-</body>
-</html>
+}
