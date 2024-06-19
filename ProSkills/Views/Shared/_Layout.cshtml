@@ -34,6 +34,10 @@
                 transform: rotate(45deg);
                 background-color: white;
             }
+
+        .nav-link.active {
+            color: #007bff; /* Change this color to your desired active color */
+        }
     </style>
     @RenderSection("Styles", required: false)
 
@@ -48,24 +52,44 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="~/Home/index" class="nav-item nav-link active">Home</a>
-                <a href="~/Home/about" class="nav-item nav-link">About</a>
-                <a href="~/Home/courses" class="nav-item nav-link">Courses</a>
+                <a href="~/Home/index" class="nav-item nav-link @(ViewContext.RouteData.Values["action"].ToString() == "Index" && ViewContext.RouteData.Values["controller"].ToString() == "Home" ? "active" : "")">
+                    <i class="fa fa-home me-2"></i>Home
+                </a>
+                <a href="~/Home/about" class="nav-item nav-link @(ViewContext.RouteData.Values["action"].ToString() == "About" ? "active" : "")">
+                    <i class="fa fa-info-circle me-2"></i>About
+                </a>
+                <a href="~/Home/courses" class="nav-item nav-link @(ViewContext.RouteData.Values["action"].ToString() == "Courses" ? "active" : "")">
+                    <i class="fa fa-book-open me-2"></i>Courses
+                </a>
+                <a href="~/Home/services" class="nav-item nav-link @(ViewContext.RouteData.Values["action"].ToString() == "Services" ? "active" : "")">
+                    <i class="fa fa-concierge-bell me-2"></i>Services
+                </a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <a href="#" class="nav-link dropdown-toggle @(new[] { "Team", "Testimonial", "Error" }.Contains(ViewContext.RouteData.Values["action"].ToString()) ? "active" : "")" data-bs-toggle="dropdown">
+                        <i class="fa fa-file-alt me-2"></i>Pages
+                    </a>
                     <div class="dropdown-menu fade-down m-0">
-                        <a href="~/Home/Team" class="dropdown-item">Our Team</a>
-                        <a href="~/Home/Testimonial" class="dropdown-item">Testimonial</a>
-                        <a href="~/Home/Error" class="dropdown-item">404 Page</a>
+                        <a href="~/Home/Team" class="dropdown-item @(ViewContext.RouteData.Values["action"].ToString() == "Team" ? "active" : "")">
+                            <i class="fa fa-users me-2"></i>Our Team
+                        </a>
+                        <a href="~/Home/Testimonial" class="dropdown-item @(ViewContext.RouteData.Values["action"].ToString() == "Testimonial" ? "active" : "")">
+                            <i class="fa fa-comments me-2"></i>Testimonial
+                        </a>
+                        <a href="~/Home/Error" class="dropdown-item @(ViewContext.RouteData.Values["action"].ToString() == "Error" ? "active" : "")">
+                            <i class="fa fa-exclamation-triangle me-2"></i>404 Page
+                        </a>
                     </div>
                 </div>
-                <a href="~/Home/contact" class="nav-item nav-link">Contact</a>
+                <a href="~/Home/contact" class="nav-item nav-link @(ViewContext.RouteData.Values["action"].ToString() == "Contact" ? "active" : "")">
+                    <i class="fa fa-envelope me-2"></i>Contact
+                </a>
             </div>
         </div>
         <div class="d-flex align-items-center">
             @await Component.InvokeAsync("User")
         </div>
     </nav>
+
 
 
 
