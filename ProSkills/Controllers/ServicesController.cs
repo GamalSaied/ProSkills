@@ -30,7 +30,7 @@ namespace ProSkills.Controllers
                 Description = service.Description,
                 Price = service.Price,
                 ImageUrl = service.ImageUrl,
-                InstructorName = service.InstructorName,
+                VendorName = service.VendorName,
                 Duration = service.Duration,
                 Rating = service.Rating,
                 ReviewCount = service.ReviewCount
@@ -75,7 +75,7 @@ namespace ProSkills.Controllers
                     Description = serviceViewModel.Description,
                     Price = serviceViewModel.Price,
                     ImageUrl = serviceViewModel.ImageUrl,
-                    InstructorName = serviceViewModel.InstructorName,
+                    VendorName = serviceViewModel.VendorName,
                     Duration = serviceViewModel.Duration,
                     Rating = serviceViewModel.Rating,
                     ReviewCount = serviceViewModel.ReviewCount,
@@ -106,10 +106,13 @@ namespace ProSkills.Controllers
                 Description = service.Description,
                 Price = service.Price,
                 ImageUrl = service.ImageUrl,
-                InstructorName = service.InstructorName,
+                VendorName = service.VendorName,
                 Duration = service.Duration,
                 Rating = service.Rating,
-                ReviewCount = service.ReviewCount
+                ReviewCount = service.ReviewCount,
+                Information = service.Information,
+                DownloadLink = service.DownloadLink,
+                DemoLink = service.DemoLink
             };
 
             return View(serviceViewModel);
@@ -117,7 +120,7 @@ namespace ProSkills.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, ServiceViewModel serviceViewModel, IFormFile image)
+        public async Task<IActionResult> Edit(int id, ServiceViewModel serviceViewModel)
         {
             if (id != serviceViewModel.Id)
             {
@@ -134,15 +137,15 @@ namespace ProSkills.Controllers
                         return NotFound();
                     }
 
-                    if (image != null && image.Length > 0)
+                    if (serviceViewModel.Image != null && serviceViewModel.Image.Length > 0)
                     {
                         string uploadsFolder = Path.Combine(_environment.WebRootPath, "images");
-                        string uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(image.FileName);
+                        string uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(serviceViewModel.Image.FileName);
                         string filePath = Path.Combine(uploadsFolder, uniqueFileName);
 
                         using (var fileStream = new FileStream(filePath, FileMode.Create))
                         {
-                            await image.CopyToAsync(fileStream);
+                            await serviceViewModel.Image.CopyToAsync(fileStream);
                         }
 
                         service.ImageUrl = "/images/" + uniqueFileName; // Update the image URL
@@ -151,10 +154,13 @@ namespace ProSkills.Controllers
                     service.Name = serviceViewModel.Name;
                     service.Description = serviceViewModel.Description;
                     service.Price = serviceViewModel.Price;
-                    service.InstructorName = serviceViewModel.InstructorName;
+                    service.VendorName = serviceViewModel.VendorName;
                     service.Duration = serviceViewModel.Duration;
                     service.Rating = serviceViewModel.Rating;
                     service.ReviewCount = serviceViewModel.ReviewCount;
+                    service.Information = serviceViewModel.Information;
+                    service.DownloadLink = serviceViewModel.DownloadLink;
+                    service.DemoLink = serviceViewModel.DemoLink;
 
                     _serviceRepository.Update(service);
                     _serviceRepository.Save();
@@ -169,6 +175,8 @@ namespace ProSkills.Controllers
 
             return View(serviceViewModel);
         }
+
+
         public IActionResult Delete(int id)
         {
             var service = _serviceRepository.GetById(id);
@@ -184,7 +192,7 @@ namespace ProSkills.Controllers
                 Description = service.Description,
                 Price = service.Price,
                 ImageUrl = service.ImageUrl,
-                InstructorName = service.InstructorName,
+                VendorName = service.VendorName,
                 Duration = service.Duration,
                 Rating = service.Rating,
                 ReviewCount = service.ReviewCount
@@ -205,6 +213,35 @@ namespace ProSkills.Controllers
             }
             return RedirectToAction(nameof(Index));
         }
+
+        public IActionResult Details(int id)
+        {
+            var service = _serviceRepository.GetById(id);
+            if (service == null)
+            {
+                return NotFound();
+            }
+
+            var serviceViewModel = new ServiceViewModel
+            {
+                Id = service.Id,
+                Name = service.Name,
+                Description = service.Description,
+                Price = service.Price,
+                ImageUrl = service.ImageUrl,
+                VendorName = service.VendorName,
+                Duration = service.Duration,
+                Rating = service.Rating,
+                ReviewCount = service.ReviewCount,
+                Information = service.Information,
+                DownloadLink = service.DownloadLink,
+                DemoLink = service.DemoLink
+            };
+
+            return View(serviceViewModel);
+        }
+
+
 
     }
 }

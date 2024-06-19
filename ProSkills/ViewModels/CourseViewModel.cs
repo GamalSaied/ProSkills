@@ -7,7 +7,7 @@
         public string Description { get; set; }
         public decimal Price { get; set; }
         public string ImageUrl { get; set; }
-        public string InstructorName { get; set; }
+        public string VendorName { get; set; }
         public double Duration { get; set; } // Duration in hours
         public int StudentCount { get; set; }
         public int Rating { get; set; } // Average ratinokg

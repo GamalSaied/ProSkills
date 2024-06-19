@@ -11,6 +11,16 @@ namespace ProSkills.Models.ClientSide
         [StringLength(100)]
         public string Name { get; set; }
 
+
+        [StringLength(500)]
+        public string? Information { get; set; }
+
+
+
+        public string? DownloadLink { get; set; }
+
+        public string? DemoLink { get; set; }
+
         [StringLength(500)]
         public string? Description { get; set; }
 
@@ -20,7 +30,7 @@ namespace ProSkills.Models.ClientSide
         public string? ImageUrl { get; set; }
 
         [Required]
-        public string? InstructorName { get; set; }
+        public string? VendorName { get; set; }
 
         public double Duration { get; set; } // Duration in hours
 

@@ -1,16 +1,16 @@
 ﻿@model List<ProSkills.ViewModels.ServiceViewModel>
 
-    <style>
+<style>
     .course-item .description {
-        max-height: 100px; /* Set a max height for the description */
+        max-height: 100px;
         overflow: hidden;
         text-overflow: ellipsis;
-        white-space: nowrap; /* Prevent the text from wrapping */
+        white-space: nowrap;
     }
 
         .course-item .description:hover {
-            white-space: normal; /* Allow text wrapping when hovered */
-            overflow: auto; /* Allow scrolling if necessary */
+            white-space: normal;
+            overflow: auto;
         }
 
     .course-item .text-container {
@@ -24,14 +24,14 @@
     }
 
     .course-item .edit-icon {
-        right: 50px; /* Adjust based on your design */
+        right: 50px;
     }
 
     .course-item .delete-icon {
         right: 10px;
     }
+</style>
 
-    </style>
 <div class="container-xxl py-5">
     <div class="container">
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
@@ -57,11 +57,11 @@
                 @foreach (var service in Model)
                 {
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="course-item bg-light">
+                        <a href="@Url.Action("Details", "Services", new { id = service.Id })" class="course-item bg-light" style="text-decoration: none;">
                             <div class="position-relative overflow-hidden">
                                 <img class="img-fluid" src="@service.ImageUrl" alt="">
                                 <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-                                    <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
+                                    <a href="@Url.Action("Details", "Services", new { id = service.Id })" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
                                     <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">Join Now</a>
                                 </div>
                                 <a href="@Url.Action("Edit", "Services", new { id = service.Id })" class="position-relative top-0 end-0 mt-2 me-2 btn btn-sm btn-primary edit-icon">
@@ -84,17 +84,17 @@
                                 <p class="mb-4 description">@service.Description</p>
                             </div>
                             <div class="d-flex border-top">
-                                <small class="flex-fill text-center py-2"><i class="fa fa-user-tie text-primary me-2"></i>@service.InstructorName</small>
+                                <small class="flex-fill text-center py-2"><i class="fa fa-user-tie text-primary me-2"></i>@service.VendorName</small>
                                 <small class="flex-fill text-center py-2"><i class="fa fa-clock text-primary me-2"></i>@service.Duration Hrs</small>
                             </div>
-                        </div>
+                        </a>
                     </div>
-
                 }
             </div>
         }
     </div>
 </div>
+
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const descriptions = document.querySelectorAll('.course-item .description');
@@ -104,5 +104,4 @@
             }
         });
     });
-
 </script>

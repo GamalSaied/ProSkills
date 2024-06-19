@@ -9,12 +9,16 @@ namespace ProSkills.ViewModels
         public string? Description { get; set; }
         public decimal Price { get; set; }
         public string? ImageUrl { get; set; }
-        public string? InstructorName { get; set; }
+        public string? VendorName { get; set; }
         public double Duration { get; set; } // Duration in hours
         public int Rating { get; set; } // Average rating
         public int ReviewCount { get; set; } // Number of reviews
         [NotMapped]
         public IFormFile Image { get; set; } // Add this property for the uploaded file
+
+        public string? Information { get; set; }
+        public string? DownloadLink { get; set; }
+        public string? DemoLink { get; set; }
 
     }
 }

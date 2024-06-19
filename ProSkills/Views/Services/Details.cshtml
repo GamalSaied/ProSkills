@@ -1,0 +1,85 @@
+﻿@model ProSkills.ViewModels.ServiceViewModel
+
+@{
+    ViewData["Title"] = "Service Details";
+}
+<style>
+    .details-buttons {
+        display: flex;
+        gap: 10px;
+    }
+
+        .details-buttons .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+            .details-buttons .btn i {
+                margin-right: 5px;
+            }
+</style>
+
+
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-8">
+                <div class="d-flex align-items-center mb-3">
+                    <h2>@Model.Name</h2>
+                    <div class="details-buttons ms-3">
+                        <a href="@Url.Action("Edit", "Services", new { id = Model.Id })" class="btn btn-primary">
+                            <i class="fa fa-edit"></i> Edit
+                        </a>
+                        <a href="@Url.Action("Delete", "Services", new { id = Model.Id })" class="btn btn-danger">
+                            <i class="fa fa-trash"></i> Delete
+                        </a>
+                    </div>
+                </div>
+                <img class="img-fluid w-100 mb-4" src="@Model.ImageUrl" alt="@Model.Name">
+                <div class="mb-4">
+                    <h4 class="mb-3">Description</h4>
+                    <p>@Model.Description</p>
+                </div>
+                <div class="mb-4">
+                    <h4 class="mb-3">Information</h4>
+                    <p>@Model.Information</p>
+                </div>
+                <div class="mb-4">
+                    <h4 class="mb-3">Links</h4>
+                    <p>
+                        @if (!string.IsNullOrEmpty(Model.DownloadLink))
+                        {
+                            <a href="@Model.DownloadLink" class="btn btn-primary">Download</a>
+                        }
+                        @if (!string.IsNullOrEmpty(Model.DemoLink))
+                        {
+                            <a href="@Model.DemoLink" class="btn btn-secondary">Demo</a>
+                        }
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="bg-light p-4 rounded">
+                    <h4 class="text-center mb-3">Details</h4>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>Price:</strong> $@Model.Price</li>
+                        <li class="list-group-item"><strong>Duration:</strong> @Model.Duration Hrs</li>
+                        <li class="list-group-item"><strong>Vendor:</strong> @Model.VendorName</li>
+                        <li class="list-group-item">
+                            <strong>Rating:</strong>
+                            @for (int i = 0; i < Model.Rating; i++)
+                            {
+                                <span class="fa fa-star text-primary"></span>
+                            }
+                            <small>@Model.ReviewCount</small>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
