@@ -57,12 +57,12 @@
                 @foreach (var service in Model)
                 {
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="course-item bg-light">
+                        <a href="@Url.Action("Details", "Services", new { id = service.Id })" class="course-item bg-light text-decoration-none text-dark">
                             <div class="position-relative overflow-hidden">
                                 <img class="img-fluid" src="@service.ImageUrl" alt="">
                                 <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-                                    <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
-                                    <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">Join Now</a>
+                                    <span class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</span>
+                                    <span class="flex-shrink-0 btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">Join Now</span>
                                 </div>
                                 <a href="@Url.Action("Edit", "Services", new { id = service.Id })" class="position-relative top-0 end-0 mt-2 me-2 btn btn-sm btn-primary edit-icon">
                                     <i class="fa fa-edit"></i>
@@ -87,8 +87,9 @@
                                 <small class="flex-fill text-center py-2"><i class="fa fa-user-tie text-primary me-2"></i>@service.VendorName</small>
                                 <small class="flex-fill text-center py-2"><i class="fa fa-clock text-primary me-2"></i>@service.Duration Hrs</small>
                             </div>
-                        </div>
+                        </a>
                     </div>
+
                 }
             </div>
         }
