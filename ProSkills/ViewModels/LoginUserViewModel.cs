@@ -4,6 +4,9 @@ namespace ProSkills.ViewModels
 {
     public class LoginUserViewModel
     {
+       
+        public string? Username { get; set; }
+
         [Required(ErrorMessage = "Please enter your email address.")]
         [EmailAddress(ErrorMessage = "Please enter a valid email address.")]
         public string? Email { get; set; }
