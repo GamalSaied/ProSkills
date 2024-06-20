@@ -7,6 +7,7 @@ public class LeaderboardViewModel
     public string FullName { get; set; }
     public Level Level { get; set; }
     public int Points { get; set; }
-        public int CompletionPercentage { get; set; }  // Add this property
+    public int CompletionPercentage { get; set; } 
+    public string Email { get; set; } 
 
 }

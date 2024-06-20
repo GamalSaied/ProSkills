@@ -14,6 +14,7 @@ namespace ProSkills.Repository
             context = _context;
         }
 
+
         public List<CourseTrainee> GetAll() => context.CourseTrainee.ToList();
 
         public CourseTrainee GetById(int id) => context.CourseTrainee.FirstOrDefault(ct => ct.Id == id);
@@ -82,12 +83,14 @@ namespace ProSkills.Repository
                     ProfilePictureUrl = ct.Trainee.ProfilePictureUrl,
                     FullName = ct.Trainee.Name,
                     Level = LevelHelper.DetermineLevel(ct.Points), // Determine level based on points
-                    Points = ct.Points
+                    Points = ct.Points,
+                    Email = ct.Trainee.Email // Include the email property
                 })
                 .ToList(); // Transform data in memory
 
             return leaderboard;
         }
+
 
 
     }

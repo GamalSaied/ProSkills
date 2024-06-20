@@ -17,7 +17,7 @@ namespace ProSkills.Controllers
         #region Repository 
         private IRepository<Course> _courseRepository;
         private IRepository<instructor> _instructorRepository;
-        private IRepository<Trainee> _traineeRepository;
+        private ITraineeRepository _traineeRepository;
         private readonly ICourseTraineeRepository _courseTraineeRepository; // Use the specific interface
 
         private IRepository<Category> _categoryRepository;
@@ -30,7 +30,7 @@ namespace ProSkills.Controllers
 
         private readonly ITIContext _context;
 
-        public CourseController(IRepository<Trainee> traineeRepository, ICourseTraineeRepository courseTraineeRepository,IRepository<Lesson> lessonRepository,IRepository<Chapter> chapterRepository, IRepository<Course> CourseRepository, IRepository<instructor> InstructorRepository, IRepository<Category> CategoryRepository, IRepository<RedeemCode> RedeemCodeRepository, IRepository<Package> PackageRepository , ICourseRepository courseRepositoryVersion2)
+        public CourseController(ITraineeRepository traineeRepository, ICourseTraineeRepository courseTraineeRepository,IRepository<Lesson> lessonRepository,IRepository<Chapter> chapterRepository, IRepository<Course> CourseRepository, IRepository<instructor> InstructorRepository, IRepository<Category> CategoryRepository, IRepository<RedeemCode> RedeemCodeRepository, IRepository<Package> PackageRepository , ICourseRepository courseRepositoryVersion2)
         {
             _courseRepository = CourseRepository;
             _instructorRepository = InstructorRepository;
@@ -306,37 +306,51 @@ namespace ProSkills.Controllers
                 return NotFound();
             }
 
-            var totalItems = _courseTraineeRepository.GetLeaderboardByCourse(CourseId).Count();
+            // Get the current user's email
+            var currentUserEmail = User.Identity.Name;
+
+            // Get all course trainees with leaderboard data
+            var allLeaderboard = _courseTraineeRepository.GetLeaderboardByCourse(CourseId);
+
+            // Find the current user's leaderboard entry
+            var currentUserLeaderboard = allLeaderboard.FirstOrDefault(l => l.Email == currentUserEmail);
+
+            // Ensure the completion percentage is calculated correctly
+            foreach (var item in allLeaderboard)
+            {
+                item.CompletionPercentage = CalculateCompletionPercentage(item.Points);
+            }
+
+            var totalItems = allLeaderboard.Count();
             var totalPages = (int)Math.Ceiling(totalItems / (double)pageSize);
 
-            var leaderboard = _courseTraineeRepository.GetLeaderboardByCourse(CourseId)
+            // Paginate the leaderboard
+            var paginatedLeaderboard = allLeaderboard
                 .Skip((page - 1) * pageSize)
                 .Take(pageSize)
-                .Select((ct, index) => new LeaderboardViewModel
-                {
-                    Rank = (page - 1) * pageSize + index + 1,
-                    ProfilePictureUrl = ct.ProfilePictureUrl,
-                    FullName = ct.FullName,
-                    Points = ct.Points,
-                    Level = GetLevel(ct.Points),
-                    CompletionPercentage = CalculateCompletionPercentage(ct.Points)
-                })
                 .ToList();
 
+            // Ensure the current user's entry is at the top
+            if (currentUserLeaderboard != null)
+            {
+                paginatedLeaderboard.Insert(0, currentUserLeaderboard);
+                paginatedLeaderboard = paginatedLeaderboard.Distinct().ToList();
+            }
+
             ViewBag.CourseName = course.Name;
-            ViewBag.CourseId = CourseId;  // Make sure to set CourseId here
+            ViewBag.CourseId = CourseId;
 
             var model = new PagedLeaderboardViewModel
             {
                 CurrentPage = page,
                 PageSize = pageSize,
                 TotalPages = totalPages,
-                Leaderboard = leaderboard
+                Leaderboard = paginatedLeaderboard,
+                CurrentUser = currentUserLeaderboard
             };
 
             return View(model);
         }
-
 
 
         // GET: Course/Details/5
