@@ -5,6 +5,33 @@
     ViewData["Title"] = "Register";
 }
 
+<link rel="stylesheet" type="text/css" href="~/css/login.css">
+<style>
+    .input-group {
+        position: relative;
+    }
+
+        .input-group .input-group-text {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 2;
+            padding: 0;
+        }
+
+        .input-group .form-control {
+            padding-right: 40px; /* Ensure there is space for the icon */
+        }
+
+    .input-group-text i {
+        padding: 0;
+    }
+</style>
+
 <div class="main-content">
     <div class="form-container">
         <h3 class="title">Register</h3>
@@ -23,15 +50,25 @@
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
 
-            <div class="form-group">
+            <div class="form-group input-group">
                 <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control" />
+                <div class="input-group">
+                    <input type="password" class="form-control" asp-for="Password" placeholder="Password" id="passwordField" />
+                    <span class="input-group-text" onclick="togglePasswordVisibility('passwordField', 'toggleIcon')">
+                        <i class="fa fa-eye-slash" id="toggleIcon"></i>
+                    </span>
+                </div>
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
 
-            <div class="form-group">
+            <div class="form-group input-group">
                 <label asp-for="ConfirmPassword" class="control-label"></label>
-                <input asp-for="ConfirmPassword" class="form-control" />
+                <div class="input-group">
+                    <input type="password" class="form-control" asp-for="ConfirmPassword" placeholder="Confirm Password" id="confirmPasswordField" />
+                    <span class="input-group-text" onclick="togglePasswordVisibility('confirmPasswordField', 'toggleConfirmIcon')">
+                        <i class="fa fa-eye-slash" id="toggleConfirmIcon"></i>
+                    </span>
+                </div>
                 <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
             </div>
 
@@ -67,6 +104,21 @@
 <script src="https://cdn.jsdelivr.net/jquery.validation.unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
 
 <script>
+    function togglePasswordVisibility(fieldId, iconId) {
+        var passwordField = document.getElementById(fieldId);
+        var toggleIcon = document.getElementById(iconId);
+
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+            toggleIcon.classList.remove("fa-eye-slash");
+            toggleIcon.classList.add("fa-eye");
+        } else {
+            passwordField.type = "password";
+            toggleIcon.classList.remove("fa-eye");
+            toggleIcon.classList.add("fa-eye-slash");
+        }
+    }
+
     $(document).ready(function () {
         $("#registerForm").validate({
             onkeyup: true,
