@@ -16,10 +16,10 @@ namespace ProSkills.Controllers
 
         // GET: Chapter/AddNew
         [HttpGet]
-        public IActionResult AddNew(int CourseId)
+        public IActionResult AddNew(int courseId)
         {
-            ViewBag.CourseId = CourseId;
-            return View(new Chapter { CourseId = CourseId });
+            ViewBag.CourseId = courseId;
+            return View(new Chapter { CourseId = courseId });
         }
 
         // POST: Chapter/AddNew
@@ -30,7 +30,7 @@ namespace ProSkills.Controllers
             {
                 _chapterRepository.Insert(chapter);
                 _chapterRepository.Save();
-                return RedirectToAction("ChaptersInCourse", "Course", new { CourseId = chapter.CourseId });
+                return RedirectToAction("ChaptersInCourse", "Course", new { courseId = chapter.CourseId });
             }
 
             ViewBag.CourseId = chapter.CourseId;
@@ -59,7 +59,7 @@ namespace ProSkills.Controllers
             {
                 _chapterRepository.Update(chapter);
                 _chapterRepository.Save();
-                return RedirectToAction("ChaptersInCourse", "Course", new { CourseId = chapter.CourseId });
+                return RedirectToAction("ChaptersInCourse", "Course", new { courseId = chapter.CourseId });
             }
 
             return View(chapter);
@@ -74,7 +74,7 @@ namespace ProSkills.Controllers
                 chapter.IsDeleted = true;
                 _chapterRepository.Update(chapter);
                 _chapterRepository.Save();
-                return RedirectToAction("ChaptersInCourse", "Course", new { CourseId = chapter.CourseId });
+                return RedirectToAction("ChaptersInCourse", "Course", new { courseId = chapter.CourseId });
             }
             return NotFound();
         }

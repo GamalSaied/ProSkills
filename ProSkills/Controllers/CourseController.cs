@@ -54,10 +54,10 @@ namespace ProSkills.Controllers
 
 
         [HttpPost]
-        public IActionResult UnassignTrainee(int CourseId, int traineeId)
+        public IActionResult UnassignTrainee(int courseId, int traineeId)
         {
             var courseTrainee = _courseTraineeRepository.GetAll()
-                .FirstOrDefault(ct => ct.CourseId == CourseId && ct.TraineeId == traineeId);
+                .FirstOrDefault(ct => ct.CourseId == courseId && ct.TraineeId == traineeId);
 
             if (courseTrainee != null)
             {
@@ -65,23 +65,23 @@ namespace ProSkills.Controllers
                 _courseTraineeRepository.Save();
             }
 
-            return RedirectToAction("TraineesInCourse", new { CourseId });
+            return RedirectToAction("TraineesInCourse", new { courseId });
         }
 
 
         // GET: Course/AssignTrainee
         [HttpGet]
-        public IActionResult AssignTrainee(int CourseId)
+        public IActionResult AssignTrainee(int courseId)
         {
-            var course = _courseRepository.GetById(CourseId);
+            var course = _courseRepository.GetById(courseId);
             if (course == null)
             {
                 return NotFound();
             }
 
             ViewBag.CourseName = course.Name;
-            ViewBag.CourseId = CourseId;
-            return View(new CourseTraineeViewModel { CourseId = CourseId });
+            ViewBag.CourseId = courseId;
+            return View(new CourseTraineeViewModel { CourseId = courseId });
         }
 
         // POST: Course/AssignTrainee
@@ -112,7 +112,7 @@ namespace ProSkills.Controllers
                     _courseTraineeRepository.Insert(courseTrainee);
                     _courseTraineeRepository.Save();
 
-                    return RedirectToAction("TraineesInCourse", new { CourseId = model.CourseId });
+                    return RedirectToAction("TraineesInCourse", new { courseId = model.CourseId });
                 }
             }
 
@@ -122,9 +122,9 @@ namespace ProSkills.Controllers
         }
 
 
-        public IActionResult TraineesInCourse(int CourseId)
+        public IActionResult TraineesInCourse(int courseId)
         {
-            var course = _courseRepository.GetById(CourseId);
+            var course = _courseRepository.GetById(courseId);
             if (course == null)
             {
                 return NotFound();
@@ -132,7 +132,7 @@ namespace ProSkills.Controllers
 
             var trainees = course.Trainees.Select(ct => ct.Trainee).ToList();
             ViewBag.CourseName = course.Name;
-            ViewBag.CourseId = CourseId;
+            ViewBag.CourseId = courseId;
             return View(trainees);
         }
 
@@ -207,18 +207,18 @@ namespace ProSkills.Controllers
             return RedirectToAction("Index", "Course");
         }
 
-        public IActionResult ChaptersInCourse(int CourseId)
+        public IActionResult ChaptersInCourse(int courseId)
         {
-            var course = _courseRepository.GetById(CourseId);
+            var course = _courseRepository.GetById(courseId);
             if (course == null)
             {
                 return NotFound();
             }
 
-            var chapters = _chapterRepository.GetAll().Where(c => c.CourseId == CourseId).ToList();
+            var chapters = _chapterRepository.GetAll().Where(c => c.CourseId == courseId).ToList();
 
             ViewBag.CourseName = course.Name;
-            ViewBag.CourseId = CourseId;  // Ensure CourseId is set correctly
+            ViewBag.CourseId = courseId;  // Ensure CourseId is set correctly
 
             return View(chapters);
         }
@@ -242,9 +242,9 @@ namespace ProSkills.Controllers
 
 
 
-        public IActionResult TraineeCourse(int CourseId)
+        public IActionResult TraineeCourse(int courseId)
         {
-            var course = _courseRepositoryVersion2.GetCourseWithDetails(CourseId);
+            var course = _courseRepositoryVersion2.GetCourseWithDetails(courseId);
             return View("TraineeCourse", course);
         }
         public IActionResult TraineeCourseList(int traineeId)
@@ -298,7 +298,7 @@ namespace ProSkills.Controllers
             return NotFound();
         }
         [HttpGet]
-        public IActionResult Leaderboard(int CourseId)
+        public IActionResult Leaderboard(int CourseId, int page = 1, int pageSize = 10)
         {
             var course = _courseRepository.GetById(CourseId);
             if (course == null)
@@ -306,10 +306,15 @@ namespace ProSkills.Controllers
                 return NotFound();
             }
 
+            var totalItems = _courseTraineeRepository.GetLeaderboardByCourse(CourseId).Count();
+            var totalPages = (int)Math.Ceiling(totalItems / (double)pageSize);
+
             var leaderboard = _courseTraineeRepository.GetLeaderboardByCourse(CourseId)
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
                 .Select((ct, index) => new LeaderboardViewModel
                 {
-                    Rank = index + 1,
+                    Rank = (page - 1) * pageSize + index + 1,
                     ProfilePictureUrl = ct.ProfilePictureUrl,
                     FullName = ct.FullName,
                     Points = ct.Points,
@@ -319,8 +324,20 @@ namespace ProSkills.Controllers
                 .ToList();
 
             ViewBag.CourseName = course.Name;
-            return View(leaderboard);
+            ViewBag.CourseId = CourseId;  // Make sure to set CourseId here
+
+            var model = new PagedLeaderboardViewModel
+            {
+                CurrentPage = page,
+                PageSize = pageSize,
+                TotalPages = totalPages,
+                Leaderboard = leaderboard
+            };
+
+            return View(model);
         }
+
+
 
         // GET: Course/Details/5
         public IActionResult Details(int id)

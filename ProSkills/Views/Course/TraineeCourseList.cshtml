@@ -22,7 +22,7 @@
             int totalDays = (int)(course.EndAt - course.StartAt).TotalDays;
             
 
-            <div class="nft" onclick="window.location.href='/Course/TraineeCourse?CourseId=@course.Id'">
+            <div class="nft" onclick="window.location.href='/Course/TraineeCourse?courseId=@course.Id'">
                 <div class='main'>
                     <img class='tokenImage' src="/images/@course.CourseImagePath" alt="NFT" />
                     <h2>@course.Name</h2>

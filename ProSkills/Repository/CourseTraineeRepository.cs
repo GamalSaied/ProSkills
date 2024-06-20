@@ -67,10 +67,10 @@ namespace ProSkills.Repository
             throw new NotImplementedException();
         }
 
-        public List<LeaderboardViewModel> GetLeaderboardByCourse(int CourseId)
+        public List<LeaderboardViewModel> GetLeaderboardByCourse(int courseId)
         {
             var courseTrainees = context.CourseTrainee
-                .Where(ct => ct.CourseId == CourseId)
+                .Where(ct => ct.CourseId == courseId)
                 .Include(ct => ct.Trainee)
                 .ToList(); // Fetch data from the database
 

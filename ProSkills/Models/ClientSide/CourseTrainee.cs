@@ -9,11 +9,12 @@ namespace ProSkills.Models.ClientSide
 
         [ForeignKey("Trainee")]
         public int TraineeId { get; set; }
-        public Trainee? Trainee { get; set; }
+        public Trainee Trainee { get; set; }
+
 
         [ForeignKey("Course")]
         public int CourseId { get; set; }
-        public Course? Course { get; set; }
+        public Course Course { get; set; }
 
         public decimal? Result { get; set; }
         public List<ActivityLog>? ActivitylogList { get; set; }

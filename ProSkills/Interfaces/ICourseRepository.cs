@@ -6,8 +6,8 @@ namespace ProSkills.Interfaces
     public interface ICourseRepository
     {
         IEnumerable<Course> GetAllCoursesWithDetails();
-        Course GetCourseWithDetails(int CourseId);
+        Course GetCourseWithDetails(int courseId);
 
-        List<Course> GetCourseTraineeWithDetails(int CourseId);
+        List<Course> GetCourseTraineeWithDetails(int courseId);
     }
 }

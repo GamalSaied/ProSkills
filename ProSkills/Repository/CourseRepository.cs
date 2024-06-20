@@ -120,12 +120,12 @@ namespace ProSkills.Repository
                 .ToList();
         }
 
-        public Course GetCourseWithDetails(int CourseId)
+        public Course GetCourseWithDetails(int courseId)
         {
             return context.Course
                 .Include(c => c.Chapters)
                 .ThenInclude(ch => ch.Lessons)
-                .FirstOrDefault(c => c.Id == CourseId);
+                .FirstOrDefault(c => c.Id == courseId);
         }
         public void MarkAsDeleted(int id)
         {
