@@ -44,7 +44,13 @@ namespace ProSkills.Controllers
 
 
         }
+
+
+
         #endregion
+
+
+
 
         [HttpPost]
         public IActionResult UnassignTrainee(int courseId, int traineeId)
@@ -303,6 +309,18 @@ namespace ProSkills.Controllers
             ViewBag.CourseName = course.Name;
             return View(leaderboard);
         }
+        // GET: Course/Details/5
+        public IActionResult Details(int id)
+        {
+            var course = _courseRepository.GetById(id);
+            if (course == null)
+            {
+                return NotFound();
+            }
 
+            return View(course);
+        }
     }
+
+
 }

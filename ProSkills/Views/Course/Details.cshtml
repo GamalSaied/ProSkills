@@ -1,0 +1,14 @@
+﻿@model ProSkills.Models.ClientSide.Course
+
+@{
+    ViewBag.Title = "Course Details";
+}
+
+<h2>@Model.Name</h2>
+<p>@Model.Description</p>
+
+<p>Start Date: @Model.StartAt.ToString("yyyy-MM-dd")</p>
+<p>End Date: @Model.EndAt.ToString("yyyy-MM-dd")</p>
+<p>Instructor: @Model.Instructor?.Name</p>
+
+<a href="@Url.Action("Leaderboard", "Course", new { courseId = Model.Id })" class="btn btn-primary">View Leaderboard</a>

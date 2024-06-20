@@ -68,9 +68,12 @@ namespace ProSkills.Repository
 
         public List<LeaderboardViewModel> GetLeaderboardByCourse(int courseId)
         {
-            return context.CourseTrainee
+            var courseTrainees = context.CourseTrainee
                 .Where(ct => ct.CourseId == courseId)
                 .Include(ct => ct.Trainee)
+                .ToList(); // Fetch data from the database
+
+            var leaderboard = courseTrainees
                 .OrderByDescending(ct => ct.Points)
                 .Select((ct, index) => new LeaderboardViewModel
                 {
@@ -80,8 +83,11 @@ namespace ProSkills.Repository
                     Level = ct.Level,
                     Points = ct.Points
                 })
-                .ToList();
+                .ToList(); // Transform data in memory
+
+            return leaderboard;
         }
+
     }
 
 }

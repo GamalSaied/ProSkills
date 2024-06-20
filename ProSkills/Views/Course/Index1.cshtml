@@ -46,9 +46,9 @@
                         <td><a href="/Course/TraineesInCourse?courseId=@course.Id">View Trainees</a></td>
                         <td><a href="/Course/ChaptersInCourse?courseId=@course.Id">View Chapters</a></td>
                         <td><a href="/Course/TraineeCourse?courseId=@course.Id">View Chapters</a></td>
-                        <td><a href="/Course/GetByID?ID=@course.Id">Profile</a></td>
-                        <td><a href="/Course/Edit?ID=@course.Id" class="btn btn-block bg-gradient-secondary btn-xs">Edit</a></td>
-                        <td><a href="/Course/SoftDelete?ID=@course.Id" class="btn btn-block bg-gradient-danger btn-xs" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
+                        <td><a href="@Url.Action("Details", "Course", new { id = course.Id })">Profile</a></td>
+                        <td><a href="@Url.Action("Edit", "Course", new { id = course.Id })" class="btn btn-block bg-gradient-secondary btn-xs">Edit</a></td>
+                        <td><a href="@Url.Action("SoftDelete", "Course", new { id = course.Id })" class="btn btn-block bg-gradient-danger btn-xs" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
                     </tr>
                 }
             }
