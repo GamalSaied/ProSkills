@@ -17,20 +17,19 @@ namespace ProSkills.Controllers
         private IRepository<Course> _courseRepository;
         private IRepository<instructor> _instructorRepository;
         private IRepository<Trainee> _traineeRepository;
-        private IRepository<CourseTrainee> _courseTraineeRepository;
+        private readonly ICourseTraineeRepository _courseTraineeRepository; // Use the specific interface
 
         private IRepository<Category> _categoryRepository;
         private IRepository<RedeemCode> _redeemCodeRepository;
         private IRepository<Package> _packageRepository;
         private IRepository<Chapter> _chapterRepository;
-
         private ICourseRepository _courseRepositoryVersion2;
 
         private readonly IRepository<Lesson> _lessonRepository;
 
         private readonly ITIContext _context;
 
-        public CourseController(IRepository<Trainee> traineeRepository, IRepository<CourseTrainee> courseTraineeRepository,IRepository<Lesson> lessonRepository,IRepository<Chapter> chapterRepository, IRepository<Course> CourseRepository, IRepository<instructor> InstructorRepository, IRepository<Category> CategoryRepository, IRepository<RedeemCode> RedeemCodeRepository, IRepository<Package> PackageRepository , ICourseRepository courseRepositoryVersion2)
+        public CourseController(IRepository<Trainee> traineeRepository, ICourseTraineeRepository courseTraineeRepository,IRepository<Lesson> lessonRepository,IRepository<Chapter> chapterRepository, IRepository<Course> CourseRepository, IRepository<instructor> InstructorRepository, IRepository<Category> CategoryRepository, IRepository<RedeemCode> RedeemCodeRepository, IRepository<Package> PackageRepository , ICourseRepository courseRepositoryVersion2)
         {
             _courseRepository = CourseRepository;
             _instructorRepository = InstructorRepository;
@@ -290,6 +289,19 @@ namespace ProSkills.Controllers
                 return RedirectToAction("Index");
             }
             return NotFound();
+        }
+        [HttpGet]
+        public IActionResult Leaderboard(int courseId)
+        {
+            var course = _courseRepository.GetById(courseId);
+            if (course == null)
+            {
+                return NotFound();
+            }
+
+            var leaderboard = _courseTraineeRepository.GetLeaderboardByCourse(courseId);
+            ViewBag.CourseName = course.Name;
+            return View(leaderboard);
         }
 
     }

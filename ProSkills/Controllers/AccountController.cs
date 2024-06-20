@@ -65,6 +65,14 @@ namespace ProSkills.Controllers
                     var result = await _userManager.UpdateAsync(user);
                     if (result.Succeeded)
                     {
+                        var trainee = _traineeRepository.GetTraineeByEmail(user.Email);
+                        if (trainee != null)
+                        {
+                            trainee.ProfilePictureUrl = user.ProfilePictureUrl;
+                            _traineeRepository.Update(trainee);
+                            _traineeRepository.Save();
+                        }
+
                         return Json(new { success = true, imageUrl = user.ProfilePictureUrl });
                     }
                     else
@@ -125,6 +133,17 @@ namespace ProSkills.Controllers
             var result = await _userManager.UpdateAsync(user);
             if (result.Succeeded)
             {
+                var trainee = _traineeRepository.GetTraineeByEmail(user.Email);
+                if (trainee != null)
+                {
+                    trainee.Name = user.FullName;
+                    trainee.Phone = user.Phone;
+                    trainee.Country = user.Country;
+                    
+                    _traineeRepository.Update(trainee);
+                    _traineeRepository.Save();
+                }
+
                 return RedirectToAction("Profile");
             }
 
@@ -135,6 +154,7 @@ namespace ProSkills.Controllers
 
             return View("Profile", user);
         }
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -203,6 +223,14 @@ namespace ProSkills.Controllers
                 return View("Profile", await GetProfileModelWithErrors());
             }
 
+            var trainee = _traineeRepository.GetTraineeByEmail(user.Email);
+            if (trainee != null)
+            {
+                trainee.Email = user.Email;
+                _traineeRepository.Update(trainee);
+                _traineeRepository.Save();
+            }
+
             await _signInManager.RefreshSignInAsync(user);
             return RedirectToAction("Profile");
         }
@@ -241,32 +269,33 @@ namespace ProSkills.Controllers
         {
             if (ModelState.IsValid)
             {
-                string normalizedEmail = userFromRequest.Email.ToUpper();
                 var user = new ApplicationUser
                 {
                     FullName = userFromRequest.FullName,
                     Email = userFromRequest.Email,
-                    NormalizedEmail = normalizedEmail,
+                    UserName = userFromRequest.Email,
                     Phone = userFromRequest.Phone,
                     Country = userFromRequest.Country,
-                    UserName = userFromRequest.Email,
-                    ProfilePictureUrl = "/themefront/img/user.jpg"
-                    
+                    ProfilePictureUrl = "/themefront/img/user.jpg" // Default profile picture
                 };
 
                 var result = await _userManager.CreateAsync(user, userFromRequest.Password);
 
                 if (result.Succeeded)
                 {
-                    var trainee = userFromRequest.ToTrainee();
-                    trainee.Email = user.Email;
-                    trainee.Name = user.FullName;
-                    trainee.Country = user.Country;
-                   
+                    var trainee = new Trainee
+                    {
+                        Name = user.FullName,
+                        Email = user.Email,
+                        Phone = user.Phone,
+                        Country = user.Country,
+                        CreatedAt = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+                        IsDeleted = false
+                    };
+
                     _traineeRepository.Insert(trainee);
                     _traineeRepository.Save();
-                  
-                    //await _signInManager.SignInAsync(user, isPersistent: false);
+
                     return RedirectToAction(nameof(Login));
                 }
 
@@ -275,6 +304,7 @@ namespace ProSkills.Controllers
                     ModelState.AddModelError("", error.Description);
                 }
             }
+
             return View(userFromRequest);
         }
 

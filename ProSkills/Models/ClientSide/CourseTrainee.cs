@@ -8,16 +8,16 @@ namespace ProSkills.Models.ClientSide
         public int Id { get; set; }
 
         [ForeignKey("Trainee")]
-        public int TraineeId { get; set;}
-        public Trainee? Trainee { get; set;} 
+        public int TraineeId { get; set; }
+        public Trainee? Trainee { get; set; }
         [ForeignKey("Course")]
         public int CourseId { get; set; }
         public Course? Course { get; set; }
 
         public decimal Result { get; set; }
-        List<ActivityLog>? ActivitylogList { get; set; }
-        List<Certificate>? CertificateList { get; set; }
-        Level level { get; set; }
-        int points { get; set; }
+        public List<ActivityLog>? ActivitylogList { get; set; }
+        public Level Level { get; set; } // Correct the casing for enum
+        public int Points { get; set; } // Add this property
     }
+
 }

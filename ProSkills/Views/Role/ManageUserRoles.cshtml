@@ -1,0 +1,49 @@
+﻿
+@model List<UserRoleAssignmentViewModel>
+@{
+    ViewBag.Title = "Manage User Roles";
+    var roles = ViewBag.Roles as List<IdentityRole>;
+}
+
+<h2>Manage User Roles</h2>
+
+<form asp-action="ManageUserRoles" method="post">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>User Name</th>
+                @foreach (var role in roles)
+                {
+                    <th>@role.Name</th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>@user.UserName</td>
+                    @foreach (var role in roles)
+                    {
+                        <td>
+                            <input type="checkbox"
+                                   name="[@Model.IndexOf(user)].Roles[@role.Name]"
+                                   value="true"
+                            @(user.Roles[role.Name] ? "checked" : "") />
+                            <input type="hidden"
+                                   name="[@Model.IndexOf(user)].Roles[@role.Name]"
+                                   value="false" />
+                            <input type="hidden"
+                                   name="[@Model.IndexOf(user)].UserId"
+                                   value="@user.UserId" />
+                            <input type="hidden"
+                                   name="[@Model.IndexOf(user)].UserName"
+                                   value="@user.UserName" />
+                        </td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
