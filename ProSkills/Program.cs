@@ -57,6 +57,8 @@ namespace ProSkills
             builder.Services.AddScoped<ITraineeRepository, TraineeRepository>();
             builder.Services.AddScoped<IRepository<Service>, ServiceRepository>();
             builder.Services.AddScoped<ICourseTraineeRepository, CourseTraineeRepository>();
+            builder.Services.AddScoped<IRepository<Assessment>, AssessmentRepository>();
+
 
 
 

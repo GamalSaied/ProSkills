@@ -3,13 +3,13 @@
 @{
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
     var courseName = ViewBag.CourseName;
-    var courseId = ViewBag.CourseId;
+    var CourseId = ViewBag.CourseId;
 }
 
 <div class="card-body">
     <h2>@courseName - Chapters</h2>
     <div>
-        <a href="/Chapter/AddNew?courseId=@courseId" class="btn btn-info btn-block btn-flat" style="margin-bottom:10px;">New Chapter</a>
+        <a href="/Chapter/AddNew?CourseId=@CourseId" class="btn btn-info btn-block btn-flat" style="margin-bottom:10px;">New Chapter</a>
     </div>
 
     <table id="example1" class="table table-bordered table-striped">

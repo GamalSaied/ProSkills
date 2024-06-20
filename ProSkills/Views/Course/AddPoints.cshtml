@@ -1,7 +1,7 @@
-﻿@model ProSkills.Models.ClientSide.Course
+﻿@model ProSkills.ViewModels.AddPointsViewModel
 
 @{
-    ViewBag.Title = "Course Details";
+    ViewBag.Title = "Add Points";
 }
 
 <!DOCTYPE html>
@@ -106,35 +106,28 @@
             <div class="col">
                 <div class="card shadow">
                     <div class="card-header border-0">
-                        <h3 class="mb-0">Course Details</h3>
+                        <h3 class="mb-0">Add Points</h3>
                     </div>
                     <div class="card-body">
-                        <form>
+                        <form asp-action="AddPoints" method="post">
                             <div class="form-group">
-                                <label for="Name">Name</label>
-                                <input type="text" id="Name" class="form-control" value="@Model.Name" readonly />
+                                <label for="TraineeEmail">Trainee Email</label>
+                                <select asp-for="TraineeEmail" asp-items="Model.Trainees" class="form-control">
+                                    <option value="">Select Trainee</option>
+                                </select>
                             </div>
                             <div class="form-group">
-                                <label for="Description">Description</label>
-                                <textarea id="Description" class="form-control" readonly>@Model.Description</textarea>
+                                <label for="CourseName">Course Name</label>
+                                <select asp-for="CourseName" asp-items="Model.Courses" class="form-control">
+                                    <option value="">Select Course</option>
+                                </select>
                             </div>
                             <div class="form-group">
-                                <label for="StartAt">Start At</label>
-                                <input type="text" id="StartAt" class="form-control" value="@Model.StartAt.ToString("yyyy-MM-dd")" readonly />
+                                <label for="Points">Points</label>
+                                <input asp-for="Points" class="form-control" />
+                                <span asp-validation-for="Points" class="text-danger"></span>
                             </div>
-                            <div class="form-group">
-                                <label for="EndAt">End At</label>
-                                <input type="text" id="EndAt" class="form-control" value="@Model.EndAt.ToString("yyyy-MM-dd")" readonly />
-                            </div>
-                            <div class="form-group">
-                                <label for="Instructor">Instructor</label>
-                                <input type="text" id="Instructor" class="form-control" value="@Model.Instructor?.Name" readonly />
-                            </div>
-                            <div class="form-group">
-                                <label for="Category">Category</label>
-                                <input type="text" id="Category" class="form-control" value="@Model.Category?.Name" readonly />
-                            </div>
-                            <a href="@Url.Action("Edit", "Course", new { id = Model.Id })" class="btn">Edit</a>
+                            <button type="submit" class="btn">Add Points</button>
                         </form>
                     </div>
                 </div>

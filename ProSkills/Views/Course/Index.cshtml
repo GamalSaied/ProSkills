@@ -49,7 +49,7 @@
                         <td>@item.NumberOfTrainees</td>
                         <td>@item.NumberOfLessons</td>
                         <td>@item.NumberOfAssessment</td>
-                        <td><a href="/Course/TraineesInCourse?courseId=@item.Id">View Trainees</a></td>
+                        <td><a href="/Course/TraineesInCourse?CourseId=@item.Id">View Trainees</a></td>
                         <td><a href="/Course/Edit?id=@item.Id" class="btn btn-block bg-gradient-secondary btn-xs">Edit</a></td>
                         <td>
                             <form action="/Course/Delete" method="post" onsubmit="return confirm('Are you sure you want to delete this course?');">

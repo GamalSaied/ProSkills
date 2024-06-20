@@ -3,6 +3,7 @@
     public enum Level
     {
         Beginner,
+        Amature,
         Semi_Pro,
         Professional,
         Legendary

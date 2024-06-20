@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ProSkills.Helpers;
 using ProSkills.Interfaces;
 using ProSkills.Models.ClientSide;
 
@@ -66,10 +67,10 @@ namespace ProSkills.Repository
             throw new NotImplementedException();
         }
 
-        public List<LeaderboardViewModel> GetLeaderboardByCourse(int courseId)
+        public List<LeaderboardViewModel> GetLeaderboardByCourse(int CourseId)
         {
             var courseTrainees = context.CourseTrainee
-                .Where(ct => ct.CourseId == courseId)
+                .Where(ct => ct.CourseId == CourseId)
                 .Include(ct => ct.Trainee)
                 .ToList(); // Fetch data from the database
 
@@ -80,13 +81,14 @@ namespace ProSkills.Repository
                     Rank = index + 1,
                     ProfilePictureUrl = ct.Trainee.ProfilePictureUrl,
                     FullName = ct.Trainee.Name,
-                    Level = ct.Level,
+                    Level = LevelHelper.DetermineLevel(ct.Points), // Determine level based on points
                     Points = ct.Points
                 })
                 .ToList(); // Transform data in memory
 
             return leaderboard;
         }
+
 
     }
 

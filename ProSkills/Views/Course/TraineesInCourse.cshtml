@@ -3,13 +3,13 @@
 @{
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
     var courseName = ViewBag.CourseName;
-    var courseId = ViewBag.CourseId;
+    var CourseId = ViewBag.CourseId;
 }
 
 <div class="card-body">
     <h2>@courseName - Trainees</h2>
     <div>
-        <a href="/Course/AssignTrainee?courseId=@courseId" class="btn btn-info btn-block btn-flat" style="margin-bottom:10px;">Assign Trainee</a>
+        <a href="/Course/AssignTrainee?CourseId=@CourseId" class="btn btn-info btn-block btn-flat" style="margin-bottom:10px;">Assign Trainee</a>
     </div>
 
     <table id="example1" class="table table-bordered table-striped">
@@ -43,7 +43,7 @@
                         <td><a href="/Trainee/GetByID?ID=@item.Id">Profile</a></td>
                         <td>
                             <form action="/Course/UnassignTrainee" method="post" onsubmit="return confirm('Are you sure you want to unassign this trainee?');">
-                                <input type="hidden" name="courseId" value="@courseId" />
+                                <input type="hidden" name="CourseId" value="@CourseId" />
                                 <input type="hidden" name="traineeId" value="@item.Id" />
                                 <button type="submit" class="btn btn-block bg-gradient-danger btn-xs">Unassign</button>
                             </form>

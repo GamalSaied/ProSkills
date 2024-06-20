@@ -28,12 +28,16 @@ namespace ProSkills.Models.ClientSide
         [ForeignKey("instructor")]
         public int instructorId { get; set; }
         public instructor? Instructor { get; set; }
-
-        public List<Steps>? steps  { get; set; }
         public List<CourseTrainee>? Trainees {  get; set; }
 
         // One-to-many relationship with Chapter
         public List<Chapter> Chapters { get; set; } = new List<Chapter>();
+        public List<Assessment> Assessments { get; set; } = new List<Assessment>();
+
+
+        [ForeignKey("Category")]
+        public int CategoryId { get; set; }
+        public Category? Category { get; set; }
 
         #endregion
 

@@ -1,32 +1,238 @@
 ﻿@model List<LeaderboardViewModel>
+
 @{
     ViewBag.Title = "Leaderboard";
 }
 
-<h2>@ViewBag.CourseName - Leaderboard</h2>
-
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>#Rank</th>
-            <th>Profile Picture</th>
-            <th>Full Name</th>
-            <th>Level</th>
-            <th>Points</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@item.Rank</td>
-                <td>
-                    <img src="@item.ProfilePictureUrl" alt="Profile Picture" class="img-circle" style="width: 50px; height: 50px;" />
-                </td>
-                <td>@item.FullName</td>
-                <td>@item.Level</td>
-                <td>@item.Points</td>
-            </tr>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <title>@ViewBag.Title</title>
+    <style>
+        body {
+            font-family: Open Sans, sans-serif;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            margin: 0;
+            text-align: left;
+            color: #525f7f;
+            background-color: #f8f9fe;
         }
-    </tbody>
-</table>
+
+        .container {
+            width: 100%;
+            margin-right: auto;
+            margin-left: auto;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        .mt-7 {
+            margin-top: 6rem !important;
+        }
+
+        .mb-5 {
+            margin-bottom: 3rem !important;
+        }
+
+        .card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            border: 1px solid rgba(0, 0, 0, .05);
+            border-radius: .375rem;
+            background-color: #fff;
+            background-clip: border-box;
+        }
+
+        .card-header {
+            margin-bottom: 0;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid rgba(0, 0, 0, .05);
+            background-color: #fff;
+        }
+
+        .card-footer {
+            padding: 1.25rem 1.5rem;
+            border-top: 1px solid rgba(0, 0, 0, .05);
+            background-color: #fff;
+        }
+
+        .table {
+            width: 100%;
+            margin-bottom: 1rem;
+            background-color: transparent;
+        }
+
+            .table th,
+            .table td {
+                padding: 1rem;
+                vertical-align: top;
+                border-top: 1px solid #e9ecef;
+            }
+
+            .table thead th {
+                vertical-align: bottom;
+                border-bottom: 2px solid #e9ecef;
+            }
+
+            .table .thead-light th {
+                color: #8898aa;
+                border-color: #e9ecef;
+                background-color: #f6f9fc;
+            }
+
+        .table-responsive {
+            display: block;
+            overflow-x: auto;
+            width: 100%;
+            -webkit-overflow-scrolling: touch;
+            -ms-overflow-style: -ms-autohiding-scrollbar;
+        }
+
+        .avatar {
+            font-size: 1rem;
+            display: inline-flex;
+            width: 48px;
+            height: 48px;
+            color: #fff;
+            border-radius: 50%;
+            background-color: #adb5bd;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .avatar img {
+                width: 100%;
+                border-radius: 50%;
+            }
+
+        .shadow {
+            box-shadow: 0 0 2rem 0 rgba(136, 152, 170, .15) !important;
+        }
+
+        .rounded-circle {
+            border-radius: 50% !important;
+        }
+
+        .d-flex {
+            display: flex !important;
+        }
+
+        .align-items-center {
+            align-items: center !important;
+        }
+
+        .mr-3 {
+            margin-right: 1rem !important;
+        }
+
+        .mr-2 {
+            margin-right: 0.5rem !important;
+        }
+
+        .progress {
+            height: 1rem;
+            overflow: hidden;
+            font-size: .75rem;
+            background-color: #e9ecef;
+            border-radius: .375rem;
+            vertical-align: baseline;
+        }
+
+        .progress-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            transition: width .6s ease;
+        }
+
+        .bg-success {
+            background-color: #2dce89 !important;
+        }
+
+        .bg-info {
+            background-color: #11cdef !important;
+        }
+
+        .bg-warning {
+            background-color: #fb6340 !important;
+        }
+
+        .bg-danger {
+            background-color: #f5365c !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mt-7">
+        <div class="row">
+            <div class="col">
+                <div class="card shadow">
+                    <div class="card-header border-0">
+                        <h3 class="mb-0">Leaderboard</h3>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table align-items-center table-flush">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th scope="col">#Rank</th>
+                                    <th scope="col">Profile Picture</th>
+                                    <th scope="col">Full Name</th>
+                                    <th scope="col">Level</th>
+                                    <th scope="col">Points</th>
+                                    <th scope="col">Completion</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.Rank</td>
+                                        <td>
+                                            <img src="@item.ProfilePictureUrl" class="avatar rounded-circle mr-3" alt="@item.FullName" />
+                                        </td>
+                                        <td>@item.FullName</td>
+                                        <td>@item.Level</td>
+                                        <td>@item.Points</td>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <span class="mr-2">@item.CompletionPercentage%</span>
+                                                <div class="progress" style="width: 100%;">
+                                                    <div class="progress-bar @GetProgressBarColor(item.CompletionPercentage)" role="progressbar" aria-valuenow="@item.CompletionPercentage" aria-valuemin="0" aria-valuemax="100" style="width: @item.CompletionPercentage%;"></div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @functions {
+        private string GetProgressBarColor(int completionPercentage)
+        {
+            if (completionPercentage >= 90)
+                return "bg-success";
+            if (completionPercentage >= 70)
+                return "bg-info";
+            if (completionPercentage >= 50)
+                return "bg-warning";
+            return "bg-danger";
+        }
+    }
+
+</body>
+</html>
