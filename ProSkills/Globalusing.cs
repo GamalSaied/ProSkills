@@ -2,5 +2,7 @@
 global using ProSkills.Models;
 global using Microsoft.AspNetCore.Http;
 global using System.Net.Mail;
+global using ProSkills.ViewModels;
+global using Microsoft.AspNetCore.Identity;
 
 //global using ProSkills.Filters;

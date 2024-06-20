@@ -1,9 +1,10 @@
-﻿using ProSkills.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using ProSkills.Interfaces;
 using ProSkills.Models.ClientSide;
 
 namespace ProSkills.Repository
 {
-    public class CourseTraineeRepository : IRepository<CourseTrainee>
+    public class CourseTraineeRepository : ICourseTraineeRepository
     {
         private readonly ITIContext context;
 
@@ -59,9 +60,27 @@ namespace ProSkills.Repository
         {
             throw new NotImplementedException();
         }
+
         public void MarkAsDeleted(int id)
         {
             throw new NotImplementedException();
+        }
+
+        public List<LeaderboardViewModel> GetLeaderboardByCourse(int courseId)
+        {
+            return context.CourseTrainee
+                .Where(ct => ct.CourseId == courseId)
+                .Include(ct => ct.Trainee)
+                .OrderByDescending(ct => ct.Points)
+                .Select((ct, index) => new LeaderboardViewModel
+                {
+                    Rank = index + 1,
+                    ProfilePictureUrl = ct.Trainee.ProfilePictureUrl,
+                    FullName = ct.Trainee.Name,
+                    Level = ct.Level,
+                    Points = ct.Points
+                })
+                .ToList();
         }
     }
 

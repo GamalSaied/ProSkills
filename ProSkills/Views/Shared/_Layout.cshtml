@@ -17,6 +17,8 @@
     <link href="~/ThemeFront/css/bootstrap.min.css" rel="stylesheet">
     <link href="~/ThemeFront/css/style.css" rel="stylesheet">
     <link href="~/css/Register.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
     <style>
         .navbar .dropdown-menu {
             right: 0;
@@ -36,7 +38,7 @@
             }
 
         .nav-link.active {
-            color: #007bff; /* Change this color to your desired active color */
+            color: #007bff;
         }
     </style>
     @RenderSection("Styles", required: false)
@@ -185,8 +187,11 @@
 
     <!-- Include jQuery Validation and Unobtrusive Validation scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.19.3/jquery.validate.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation.unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/ThemeFront/js/main.js"></script>
+
 
     @RenderSection("Scripts", required: false)
 </body>

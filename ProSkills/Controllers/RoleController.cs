@@ -1,41 +1,85 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using ProSkills.Models;
 using ProSkills.ViewModels;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace ProSkills.Controllers
 {
     public class RoleController : Controller
     {
-        private readonly RoleManager<IdentityRole> roleManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public RoleController(RoleManager<IdentityRole> RoleManager)
+        public RoleController(RoleManager<IdentityRole> roleManager, UserManager<ApplicationUser> userManager)
         {
-            roleManager = RoleManager;
+            _roleManager = roleManager;
+            _userManager = userManager;
         }
+
         [HttpGet]
-        public IActionResult Create()
+        public async Task<IActionResult> ManageUserRoles()
         {
-            return View();
+            var users = _userManager.Users.ToList();
+            var roles = _roleManager.Roles.ToList();
+
+            var model = new List<UserRoleAssignmentViewModel>();
+
+            foreach (var user in users)
+            {
+                var userRoles = await _userManager.GetRolesAsync(user);
+                var roleAssignments = new Dictionary<string, bool>();
+
+                foreach (var role in roles)
+                {
+                    roleAssignments[role.Name] = userRoles.Contains(role.Name);
+                }
+
+                model.Add(new UserRoleAssignmentViewModel
+                {
+                    UserId = user.Id,
+                    UserName = user.UserName,
+                    Roles = roleAssignments
+                });
+            }
+
+            ViewBag.Roles = roles;
+            return View(model);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(RoleViewModel rolefromreq)
+        public async Task<IActionResult> ManageUserRoles(List<UserRoleAssignmentViewModel> model)
         {
-            if (ModelState.IsValid)
+            foreach (var userRoleAssignment in model)
             {
-                IdentityRole role=new IdentityRole() { Name=rolefromreq.RoleName };
-                 IdentityResult result= await roleManager.CreateAsync(role);
-                if(result.Succeeded)
+                var user = await _userManager.FindByIdAsync(userRoleAssignment.UserId);
+                if (user == null)
                 {
-                    return RedirectToAction("Index", "Home");
+                    continue;
                 }
-                foreach (var item in result.Errors)
+
+                foreach (var roleAssignment in userRoleAssignment.Roles)
                 {
-                    ModelState.AddModelError("",item.Description);
+                    if (roleAssignment.Value) // Add role
+                    {
+                        if (!await _userManager.IsInRoleAsync(user, roleAssignment.Key))
+                        {
+                            await _userManager.AddToRoleAsync(user, roleAssignment.Key);
+                        }
+                    }
+                    else // Remove role
+                    {
+                        if (await _userManager.IsInRoleAsync(user, roleAssignment.Key))
+                        {
+                            await _userManager.RemoveFromRoleAsync(user, roleAssignment.Key);
+                        }
+                    }
                 }
             }
 
-            return View();
+            return RedirectToAction("ManageUserRoles");
         }
     }
 }

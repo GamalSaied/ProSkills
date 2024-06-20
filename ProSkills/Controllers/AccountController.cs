@@ -13,6 +13,7 @@ using ProSkills.Models.AdminPanel.AccountManger;
 using ProSkills.Helpers;
 using ProSkills.Models.ClientSide.Enumerators;
 using System;
+using Syncfusion.EJ2.Spreadsheet;
 
 namespace ProSkills.Controllers
 {
@@ -64,6 +65,14 @@ namespace ProSkills.Controllers
                     var result = await _userManager.UpdateAsync(user);
                     if (result.Succeeded)
                     {
+                        var trainee = _traineeRepository.GetTraineeByEmail(user.Email);
+                        if (trainee != null)
+                        {
+                            trainee.ProfilePictureUrl = user.ProfilePictureUrl;
+                            _traineeRepository.Update(trainee);
+                            _traineeRepository.Save();
+                        }
+
                         return Json(new { success = true, imageUrl = user.ProfilePictureUrl });
                     }
                     else
@@ -124,6 +133,17 @@ namespace ProSkills.Controllers
             var result = await _userManager.UpdateAsync(user);
             if (result.Succeeded)
             {
+                var trainee = _traineeRepository.GetTraineeByEmail(user.Email);
+                if (trainee != null)
+                {
+                    trainee.Name = user.FullName;
+                    trainee.Phone = user.Phone;
+                    trainee.Country = user.Country;
+                    
+                    _traineeRepository.Update(trainee);
+                    _traineeRepository.Save();
+                }
+
                 return RedirectToAction("Profile");
             }
 
@@ -134,6 +154,7 @@ namespace ProSkills.Controllers
 
             return View("Profile", user);
         }
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -190,20 +211,6 @@ namespace ProSkills.Controllers
                 return RedirectToAction("Login", "Account");
             }
 
-            // Generate the token for changing the email
-            var token = await _userManager.GenerateChangeEmailTokenAsync(user, model.NewEmail);
-
-            // Change the email using the generated token
-            var setEmailResult = await _userManager.ChangeEmailAsync(user, model.NewEmail, token);
-            if (!setEmailResult.Succeeded)
-            {
-                foreach (var error in setEmailResult.Errors)
-                {
-                    ModelState.AddModelError(string.Empty, error.Description);
-                }
-                return View("Profile", await GetProfileModelWithErrors());
-            }
-
             user.UserName = model.NewEmail;
             user.Email = model.NewEmail;
             var setUserNameResult = await _userManager.UpdateAsync(user);
@@ -214,6 +221,14 @@ namespace ProSkills.Controllers
                     ModelState.AddModelError(string.Empty, error.Description);
                 }
                 return View("Profile", await GetProfileModelWithErrors());
+            }
+
+            var trainee = _traineeRepository.GetTraineeByEmail(user.Email);
+            if (trainee != null)
+            {
+                trainee.Email = user.Email;
+                _traineeRepository.Update(trainee);
+                _traineeRepository.Save();
             }
 
             await _signInManager.RefreshSignInAsync(user);
@@ -258,25 +273,29 @@ namespace ProSkills.Controllers
                 {
                     FullName = userFromRequest.FullName,
                     Email = userFromRequest.Email,
+                    UserName = userFromRequest.Email,
                     Phone = userFromRequest.Phone,
                     Country = userFromRequest.Country,
-                    UserName = userFromRequest.Email,
-
+                    ProfilePictureUrl = "/themefront/img/user.jpg" // Default profile picture
                 };
 
                 var result = await _userManager.CreateAsync(user, userFromRequest.Password);
 
                 if (result.Succeeded)
                 {
-                    var trainee = userFromRequest.ToTrainee();
-                    trainee.Email = user.Email;
-                    trainee.Name = user.FullName;
-                    trainee.Country = user.Country;
-                   
+                    var trainee = new Trainee
+                    {
+                        Name = user.FullName,
+                        Email = user.Email,
+                        Phone = user.Phone,
+                        Country = user.Country,
+                        CreatedAt = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+                        IsDeleted = false
+                    };
+
                     _traineeRepository.Insert(trainee);
                     _traineeRepository.Save();
-                  
-                    //await _signInManager.SignInAsync(user, isPersistent: false);
+
                     return RedirectToAction(nameof(Login));
                 }
 
@@ -285,6 +304,7 @@ namespace ProSkills.Controllers
                     ModelState.AddModelError("", error.Description);
                 }
             }
+
             return View(userFromRequest);
         }
 
@@ -297,6 +317,7 @@ namespace ProSkills.Controllers
         {
             return View();
         }
+
 
         [HttpPost]
         public async Task<IActionResult> Login(LoginUserViewModel userFromReq)
@@ -341,50 +362,101 @@ namespace ProSkills.Controllers
 
         #endregion
 
-        #region Forget Password
-
+        // GET: Forgot Password
         [HttpGet]
-        public IActionResult ForgetPassword()
+        public IActionResult ForgotPassword()
         {
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> SendEmail(ForgetPasswordViewmodel modelformreq)
+        public async Task<IActionResult> ForgotPassword(ForgotPasswordViewModel model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                var user = await _userManager.FindByEmailAsync(modelformreq.Email);
-                if (user is not null)
-                {
-                    var token = await _userManager
-                        .GeneratePasswordResetTokenAsync(user); //token valid for this user only one time
-                    var passwordresetLink = Url.Action("ResetPassword", "Account",
-                        new { Email = user.Email, token = token });
+                return View(model);
+            }
+            string normalizedEmail = model.Email.ToUpper();
 
-                    var email = new Email
-                    {
-                        subject = "Reset password",
-                        body = passwordresetLink,
-                        To = user.Email
-                    };
-
-                    EmailSettings.Sendemail(email);
-                    return RedirectToAction("CheckyourInbox");
-                }
-
-                ModelState.AddModelError("", "Email is not found");
+            var user = await _userManager.FindByNameAsync(normalizedEmail);
+            if (user == null)
+            {
+                ModelState.AddModelError(string.Empty, "Invalid email address.");
+                return View(model);
             }
 
-            return View();
+            var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+            TempData["ResetEmail"] = model.Email;
+            TempData["ResetToken"] = token;
+
+
+            // Simulating sending the reset link (usually you would send an email)
+            var resetLink = Url.Action("ResetPassword", "Account", new { token, email = model.Email }, Request.Scheme);
+            Console.WriteLine($"Password reset link: {resetLink}");
+
+            return RedirectToAction("ForgotPasswordConfirmation");
         }
 
-        public IActionResult CheckyourInbox()
+
+
+        // GET: Forgot Password Confirmation
+        [HttpGet]
+        public IActionResult ForgotPasswordConfirmation()
         {
             return View();
         }
 
-        #endregion
+        [HttpGet]
+        public IActionResult ResetPassword(string token, string email)
+        {
+            if (string.IsNullOrWhiteSpace(token) || string.IsNullOrWhiteSpace(email))
+            {
+                throw new ApplicationException("A code and email must be supplied for password reset.");
+            }
+
+            var model = new ResetPasswordViewModel { Token = token, Email = email };
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ResetPassword(ResetPasswordViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+            string normalize = model.Email.ToUpper();
+            var user = await _userManager.FindByNameAsync(normalize);
+            if (user == null)
+            {
+                ModelState.AddModelError(string.Empty, "Invalid email address.");
+                return View(model);
+            }
+
+            var result = await _userManager.ResetPasswordAsync(user, model.Token, model.Password);
+            if (result.Succeeded)
+            {
+                return RedirectToAction("ResetPasswordConfirmation");
+            }
+
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError(string.Empty, error.Description);
+            }
+
+            return View(model);
+        }
+
+
+        // GET: Reset Password Confirmation
+        [HttpGet]
+        public IActionResult ResetPasswordConfirmation()
+        {
+            return View();
+        }
+
+
+
 
     }
 }
