@@ -12,6 +12,7 @@ namespace ProSkills
 {
     public class Program
     {
+      
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
@@ -33,6 +34,8 @@ namespace ProSkills
             {
                 options.IdleTimeout = TimeSpan.FromMinutes(5);
             });
+
+           
 
             builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
             {
