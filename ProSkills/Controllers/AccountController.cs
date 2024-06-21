@@ -126,7 +126,7 @@ namespace ProSkills.Controllers
             }
 
             user.FullName = model.FullName;
-            user.Phone = model.PhoneNumber;
+            user.Phone = model.Phone;
             user.Country = model.Country;
             user.City = model.City;
 
