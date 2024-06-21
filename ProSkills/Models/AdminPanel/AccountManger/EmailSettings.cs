@@ -10,8 +10,9 @@ namespace ProSkills.Models.AdminPanel.AccountManger
             var client = new SmtpClient("smtp.gmail.com", 587);
             //it means that email will be encrypted
             client.EnableSsl = true;
-            client.Credentials = new NetworkCredential("gsaied12@gmail.com","");
-            client.Send("gsaied12@gmail.com", email.To, email.subject, email.body);
+            client.Credentials = new NetworkCredential("furniture.store.fs2024@gmail.com", "mofg jpio zbjl sggw");
+            client.Send("furniture.store.fs2024@gmail.com", email.To, email.subject, email.body);
         }
+      
     }
 }

@@ -370,7 +370,7 @@ namespace ProSkills.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> ForgotPassword(ForgotPasswordViewModel model)
+        public async Task<IActionResult> ForgotPassword(ForgetPasswordViewmodel model)
         {
             if (!ModelState.IsValid)
             {
