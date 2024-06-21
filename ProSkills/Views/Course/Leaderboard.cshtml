@@ -9,11 +9,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
     <title>@ViewBag.Title</title>
     <style>
         body {
-            font-family: Open Sans, sans-serif;
+            font-family: 'Roboto', sans-serif;
             font-size: 1rem;
             font-weight: 400;
             line-height: 1.5;
@@ -52,6 +53,22 @@
             padding: 1.25rem 1.5rem;
             border-bottom: 1px solid rgba(0, 0, 0, .05);
             background-color: #fff;
+            text-align: center;
+        }
+
+            .card-header h3 {
+                font-family: 'Orbitron', sans-serif;
+                font-size: 2.5rem;
+                font-weight: 700;
+                color: #007bff;
+                border: 2px solid #007bff;
+                padding: 10px 20px;
+                display: inline-block;
+                border-radius: 5px;
+            }
+
+        .card-body {
+            padding: 1.5rem;
         }
 
         .card-footer {
@@ -69,13 +86,19 @@
             .table th,
             .table td {
                 padding: 1rem;
-                vertical-align: top;
+                vertical-align: middle;
                 border-top: 1px solid #e9ecef;
+                font-size: 1.25rem; /* Increased font size */
+                font-family: 'Orbitron', sans-serif; /* Game-like font */
+                color: #4a4a4a; /* Darker text color */
             }
 
             .table thead th {
                 vertical-align: bottom;
                 border-bottom: 2px solid #e9ecef;
+                font-size: 1.5rem; /* Larger header text */
+                font-family: 'Orbitron', sans-serif; /* Game-like font */
+                color: #343a40; /* Darker header color */
             }
 
             .table .thead-light th {
@@ -95,8 +118,8 @@
         .avatar {
             font-size: 1rem;
             display: inline-flex;
-            width: 48px;
-            height: 48px;
+            width: 70px; /* Increased width */
+            height: 70px; /* Increased height */
             color: #fff;
             border-radius: 50%;
             background-color: #adb5bd;
@@ -177,14 +200,14 @@
 
         .rank-circle {
             display: inline-block;
-            width: 2.5rem;
-            height: 2.5rem;
-            line-height: 2.5rem;
+            width: 3.5rem; /* Increased width */
+            height: 3.5rem; /* Increased height */
+            line-height: 3.5rem; /* Adjusted line-height */
             border-radius: 50%;
             background-color: #007bff;
             color: #fff;
             text-align: center;
-            font-size: 1.25rem;
+            font-size: 1.5rem; /* Keep font size same */
             font-weight: bold;
         }
 
@@ -192,6 +215,49 @@
             background-color: #ffc107;
             color: #343a40;
         }
+
+        .level-text {
+            font-family: 'Pacifico', cursive;
+            font-size: 2rem; /* Larger font size for Level */
+            color: #007bff; /* Color for Level text */
+        }
+
+        .column-text {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.25rem;
+            color: #4a4a4a;
+        }
+
+        .your-stats {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #007bff;
+            border-bottom: 2px solid #007bff;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .rank-circle.top-1 {
+            background-color: #ff0000; /* Bright Red */
+            color: #fff;
+        }
+
+        .rank-circle.top-2 {
+            background-color: darkviolet;
+            color: #fff;
+        }
+
+        .rank-circle.top-3 {
+            background-color: blue;
+            color: #fff;
+        }
+
+        .rank-circle.top-10 {
+            background-color: darkturquoise; /* Blue */
+            color: white;
+        }
+
     </style>
 </head>
 <body>
@@ -201,19 +267,21 @@
             <div class="col">
                 <div class="card shadow">
                     <div class="card-header border-0">
-                        <h3 class="mb-0">Leaderboard</h3>
+                        <h3 class="mb-0 leaderboard-title">Leaderboard</h3>
                     </div>
                     <div class="card-body">
-                        @if (Model.CurrentUser != null)
-                        {
-                            <div>
-                                <h4>Your Stats</h4>
-                                <p><strong>Rank:</strong> #@Model.CurrentUser.Rank</p>
-                                <p><strong>Points:</strong> @Model.CurrentUser.Points</p>
-                                <p><strong>Level:</strong> @Model.CurrentUser.Level</p>
-                                <p><strong>Completion:</strong> @Model.CurrentUser.CompletionPercentage%</p>
-                            </div>
-                        }
+                        <div class="card-body">
+                            @if (Model.CurrentUser != null)
+                            {
+                                <div class="your-stats">
+                                    <h1 style="font-type:Bold"> Your Stats</h1>
+                                    <h4> ==============</h4>                                    <p><strong>Rank:</strong> #@Model.CurrentUser.Rank</p>
+                                    <p><strong>Points:</strong> @Model.CurrentUser.Points</p>
+                                    <p><strong>Level:</strong> <span class="level-text">@Model.CurrentUser.Level</span></p>
+                                    <p><strong>Completion:</strong> <span class="level-text">@Model.CurrentUser.CompletionPercentage%</span></p>
+                                </div>
+                            }
+                        </div>
                     </div>
                     <div class="table-responsive">
                         <table class="table align-items-center table-flush">
@@ -232,15 +300,26 @@
                                 {
                                     <tr class="@(item.Email == Model.CurrentUser?.Email ? "highlight" : "")">
                                         <td>
-                                            <div class="rank-circle">#@item.Rank</div>
+                                            @if (item.Rank <= 3)
+                                            {
+                                                <div class="rank-circle top-@item.Rank">#@item.Rank</div>
+                                            }
+                                            else if (item.Rank <= 10)
+                                            {
+                                                <div class="rank-circle top-10">#@item.Rank</div>
+                                            }
+                                            else
+                                            {
+                                                @item.Rank
+                                            }
                                         </td>
                                         <td>
                                             <img src="@item.ProfilePictureUrl" class="avatar rounded-circle mr-3" alt="@item.FullName" />
                                         </td>
-                                        <td>@item.FullName</td>
-                                        <td>@item.Level</td>
-                                        <td>@item.Points</td>
-                                        <td>
+                                        <td class="column-text">@item.FullName</td>
+                                        <td class="level-text">@item.Level</td>
+                                        <td class="column-text">@item.Points</td>
+                                        <td class="column-text">
                                             <div class="d-flex align-items-center">
                                                 <span class="mr-2">@item.CompletionPercentage%</span>
                                                 <div class="progress" style="width: 100%;">
