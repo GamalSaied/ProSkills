@@ -104,6 +104,7 @@ namespace ProSkills.Models
                     new Trainee { Id = 26, Name = "Trainee 26", Email = "Trainee26@example.com", Bio = "Bio for Trainee 26", CreatedAt = DateTime.Now.ToString(), IsDeleted = false },
                     new Trainee { Id = 27, Name = "Trainee 27", Email = "Trainee27@example.com", Bio = "Bio for Trainee 27", CreatedAt = DateTime.Now.ToString(), IsDeleted = false },
                     new Trainee { Id = 28, Name = "Trainee 28", Email = "Trainee28@example.com", Bio = "Bio for Trainee 28", CreatedAt = DateTime.Now.ToString(), IsDeleted = false },
+                    new Trainee { Id = 29, Name = "Trainee 29", Email = "Trainee29@example.com", Bio = "Bio for Trainee 29", CreatedAt = DateTime.Now.ToString(), IsDeleted = false },
                     new Trainee { Id = 30, Name = "Trainee 30", Email = "Trainee30@example.com", Bio = "Bio for Trainee 30", CreatedAt = DateTime.Now.ToString(), IsDeleted = false }
                 );
             base.OnModelCreating(modelBuilder);
