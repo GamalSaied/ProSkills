@@ -139,7 +139,7 @@ namespace ProSkills.Controllers
                     trainee.Name = user.FullName;
                     trainee.Phone = user.Phone;
                     trainee.Country = user.Country;
-                    
+
                     _traineeRepository.Update(trainee);
                     _traineeRepository.Save();
                 }
@@ -363,7 +363,7 @@ namespace ProSkills.Controllers
         #endregion
 
 
-     
+
 
 
         #region Myforgetpassword
@@ -375,8 +375,9 @@ namespace ProSkills.Controllers
                 return View(model);
             }
 
-            string normalizedEmail = model.Email.ToUpper();
-            var user = await _userManager.FindByNameAsync(normalizedEmail);
+            // Assuming email normalization is needed
+            string normalizedEmail = model.Email;
+            var user = await _userManager.FindByEmailAsync(normalizedEmail);
 
             if (user == null)
             {
@@ -390,7 +391,7 @@ namespace ProSkills.Controllers
             string emailSubject = "Password Reset";
             string emailBody = $"Please reset your password by clicking here: <a href='{resetLink}'>link</a>";
 
-            EmailSettings.Sendemail(new Email
+            await EmailSettings.SendEmailAsync(new Email
             {
                 To = model.Email,
                 Subject = emailSubject,
@@ -444,14 +445,14 @@ namespace ProSkills.Controllers
         {
             return View();
         }
+        #endregion
+
+
+
     }
-    #endregion
-
-    
-
-
-
-
-    
 }
+
+
+
+    
 
