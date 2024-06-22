@@ -362,13 +362,11 @@ namespace ProSkills.Controllers
 
         #endregion
 
-        // GET: Forgot Password
-        [HttpGet]
-        public IActionResult ForgotPassword()
-        {
-            return View();
-        }
 
+     
+
+
+        #region Myforgetpassword
         [HttpPost]
         public async Task<IActionResult> ForgotPassword(ForgetPasswordViewmodel model)
         {
@@ -376,9 +374,10 @@ namespace ProSkills.Controllers
             {
                 return View(model);
             }
-            string normalizedEmail = model.Email.ToUpper();
 
+            string normalizedEmail = model.Email.ToUpper();
             var user = await _userManager.FindByNameAsync(normalizedEmail);
+
             if (user == null)
             {
                 ModelState.AddModelError(string.Empty, "Invalid email address.");
@@ -386,34 +385,28 @@ namespace ProSkills.Controllers
             }
 
             var token = await _userManager.GeneratePasswordResetTokenAsync(user);
-            TempData["ResetEmail"] = model.Email;
-            TempData["ResetToken"] = token;
-
-
-            // Simulating sending the reset link (usually you would send an email)
             var resetLink = Url.Action("ResetPassword", "Account", new { token, email = model.Email }, Request.Scheme);
-            Console.WriteLine($"Password reset link: {resetLink}");
+
+            string emailSubject = "Password Reset";
+            string emailBody = $"Please reset your password by clicking here: <a href='{resetLink}'>link</a>";
+
+            EmailSettings.Sendemail(new Email
+            {
+                To = model.Email,
+                Subject = emailSubject,
+                Body = emailBody
+            });
 
             return RedirectToAction("ForgotPasswordConfirmation");
         }
 
-
-
-        // GET: Forgot Password Confirmation
-        [HttpGet]
         public IActionResult ForgotPasswordConfirmation()
         {
             return View();
         }
 
-        [HttpGet]
         public IActionResult ResetPassword(string token, string email)
         {
-            if (string.IsNullOrWhiteSpace(token) || string.IsNullOrWhiteSpace(email))
-            {
-                throw new ApplicationException("A code and email must be supplied for password reset.");
-            }
-
             var model = new ResetPasswordViewModel { Token = token, Email = email };
             return View(model);
         }
@@ -425,12 +418,12 @@ namespace ProSkills.Controllers
             {
                 return View(model);
             }
-            string normalize = model.Email.ToUpper();
-            var user = await _userManager.FindByNameAsync(normalize);
+
+            var user = await _userManager.FindByEmailAsync(model.Email);
             if (user == null)
             {
-                ModelState.AddModelError(string.Empty, "Invalid email address.");
-                return View(model);
+                ModelState.AddModelError(string.Empty, "Invalid request.");
+                return View();
             }
 
             var result = await _userManager.ResetPasswordAsync(user, model.Token, model.Password);
@@ -444,20 +437,21 @@ namespace ProSkills.Controllers
                 ModelState.AddModelError(string.Empty, error.Description);
             }
 
-            return View(model);
+            return View();
         }
 
-
-        // GET: Reset Password Confirmation
-        [HttpGet]
         public IActionResult ResetPasswordConfirmation()
         {
             return View();
         }
-
-
-
-
     }
+    #endregion
+
+    
+
+
+
+
+    
 }
 
