@@ -1,5 +1,4 @@
-﻿using ProSkills.Models.AdminPanel.InstructorManger;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ProSkills.Models.ClientSide
 {

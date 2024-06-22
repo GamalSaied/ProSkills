@@ -3,8 +3,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using ProSkills.Interfaces;
 using ProSkills.Models;
-using ProSkills.Models.AdminPanel.InstructorManger;
-using ProSkills.Models.ClientSide;
 using ProSkills.Repositories;
 using ProSkills.Repository;
 

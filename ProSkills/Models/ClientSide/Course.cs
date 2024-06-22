@@ -1,4 +1,4 @@
-﻿using ProSkills.Models.AdminPanel.InstructorManger;
+﻿using Syncfusion.EJ2.Spreadsheet;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Drawing;
 
@@ -9,7 +9,7 @@ namespace ProSkills.Models.ClientSide
 
         public int Id { get; set; }                                   // Create auto
         public string? Name { get; set; }                              //b7ot feha ely e5trto mel course Category
-        public string? CourseImagePath { get; set; }                  // b7ot feha el category img bta3t elcourse ely e5trto 
+        public string CourseImagePath { get; set; } = "/Images/DefaultCourseImg.png";              // b7ot feha el category img bta3t elcourse ely e5trto 
         public string? Description { get; set; }                       // Enter By User
         public DateTime StartAt { get; set; }                         // Enter By User
         public DateTime EndAt { get; set; }                           // Enter By User
@@ -22,6 +22,10 @@ namespace ProSkills.Models.ClientSide
         public string? RedeemCode { get; set; }                       // RedeemCode of the course
         public string CreatedAt { get; set; }
         public bool IsDeleted { get; set; }
+        public int Price { get; set; }
+
+        public int Rating { get; set; }
+        public int ReviewCount { get; set; }
 
         #region Foriegn Keys
         // MyNew Data

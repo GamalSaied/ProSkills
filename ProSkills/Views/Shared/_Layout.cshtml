@@ -63,6 +63,9 @@
                 <a href="~/Home/Courses" class="nav-item nav-link @(ViewContext.RouteData.Values["action"].ToString() == "Courses" ? "active" : "")">
                     <i class="fa fa-book-open me-2"></i>Courses
                 </a>
+                <a href="~/Course/Cards" class="nav-item nav-link @(ViewContext.RouteData.Values["action"].ToString() == "Cards" ? "active" : "")">
+                    <i class="fa fa-book me-2"></i>Courses
+                </a>
                 <a href="~/Services/Index" class="nav-item nav-link @(ViewContext.RouteData.Values["controller"].ToString() == "Services" ? "active" : "")">
                     <i class="fa fa-concierge-bell me-2"></i>Services
                 </a>

@@ -77,7 +77,15 @@ namespace ProSkills.Repository
 
         public Trainee GetTraineeByEmail(string email)
         {
-            return context.Trainee.FirstOrDefault(t => t.Email == email);
+            return context.Trainee
+                .Include(t => t.Courses)
+                    .ThenInclude(tc => tc.Course)
+                        .ThenInclude(c => c.Instructor)
+                .Include(t => t.Courses)
+                    .ThenInclude(tc => tc.Course)
+                        .ThenInclude(c => c.Chapters)
+                .FirstOrDefault(t => t.Email == email);
         }
+
     }
 }

@@ -1,9 +1,6 @@
 ﻿using Microsoft.CodeAnalysis.Operations;
 using ProSkills.Interfaces;
 
-using ProSkills.Models.AdminPanel.InstructorManger;
-using ProSkills.Models.ClientSide;
-
 namespace ProSkills.Repository
 {
     public class InstructorRepository : IRepository<instructor>

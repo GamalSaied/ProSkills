@@ -27,7 +27,13 @@ namespace ProSkills.Models.ClientSide
 
         [Required]
         public DateTime UpdatedAt { get; set; }
-        
+
         public bool IsDeleted { get; set; }
+
+
+        [ForeignKey("Course")]
+        public int CourseId { get; set; }
+        public Course? Course { get; set; }
+
     }
 }

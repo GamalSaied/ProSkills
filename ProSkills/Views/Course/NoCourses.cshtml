@@ -1,0 +1,12 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="text-center">
+    <img src="~/Images/DefaultCourseImg.png" alt="No Courses" class="img-fluid" style="max-width: 200px;">
+    <h2>No Courses Available!</h2>
+    <p>Currently, there are no courses available. Please check back later.</p>
+    <a href="@Url.Action("New", "Course")" class="btn btn-primary">
+        <i class="fa fa-plus me-2"></i>Create New Course
+    </a>
+</div>

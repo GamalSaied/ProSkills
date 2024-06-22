@@ -1,6 +1,4 @@
-﻿using ProSkills.Models.ClientSide;
-
-namespace ProSkills.Models.AdminPanel.InstructorManger
+﻿namespace ProSkills.Models.ClientSide
 {
 
     public class instructor
@@ -9,6 +7,7 @@ namespace ProSkills.Models.AdminPanel.InstructorManger
         public string Name { get; set; }
         public string? Email { get; set; }
         public string? Password { get; set; }
+        public string ImagePath { get; set; } = "\\ThemeFront\\img\\User.jpg";
         public string? Bio { get; set; }
         public string? Speciallization { get; set; }
 

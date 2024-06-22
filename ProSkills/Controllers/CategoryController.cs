@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using NuGet.Protocol.Core.Types;
 using ProSkills.Interfaces;
-using ProSkills.Models.AdminPanel.InstructorManger;
 using ProSkills.Models.ClientSide;
 using ProSkills.Repository;
 using System;

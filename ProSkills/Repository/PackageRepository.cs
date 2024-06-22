@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http.HttpResults;
 using ProSkills.Interfaces;
-using ProSkills.Models.AdminPanel.InstructorManger;
 using ProSkills.Models.ClientSide;
 
 namespace ProSkills.Repository

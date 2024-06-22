@@ -14,6 +14,8 @@ using ProSkills.Helpers;
 using ProSkills.Models.ClientSide.Enumerators;
 using System;
 using Syncfusion.EJ2.Spreadsheet;
+using Microsoft.AspNetCore.Authorization;
+using ProSkills.Repository;
 
 namespace ProSkills.Controllers
 {
@@ -32,6 +34,63 @@ namespace ProSkills.Controllers
             _environment = environment;
 
         }
+
+        [Authorize]
+        public async Task<IActionResult> Programs()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+            var trainee = _traineeRepository.GetTraineeByEmail(user.Email);
+            if (trainee == null || trainee.IsDeleted)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            var courses = trainee.Courses?
+                .Where(tc => !tc.Course.IsDeleted)
+                .Select(tc => new CourseViewModel
+                {
+                    Id = tc.Course.Id,
+                    Title = tc.Course.Name,
+                    Description = tc.Course.Description,
+                    Duration = tc.Course.Hours ?? 0,
+                    StudentCount = tc.Course.NumberOfTrainees ?? 0,
+                    Rating = tc.Course.Rating,
+                    ReviewCount = tc.Course.ReviewCount,
+                    StartAt = tc.Course.StartAt,
+                    EndAt = tc.Course.EndAt,
+                    Location = tc.Course.Location,
+                    ImagePath = tc.Course.CourseImagePath,
+                    Chapters = tc.Course.Chapters.Select(c => new ChapterViewModel
+                    {
+                        Id = c.Id,
+                        Title = c.Title,
+                        Description = c.Description
+                    }).ToList(),
+                    Instructor = new InstructorViewModel
+                    {
+                        Id = tc.Course.Instructor.Id,
+                        Name = tc.Course.Instructor.Name,
+                        ImagePath = tc.Course.Instructor.ImagePath,
+                        Bio = tc.Course.Instructor.Bio,
+                        Speciallization = tc.Course.Instructor.Speciallization
+                    },
+                    CompletionRatio = tc.CompletionRatio
+                }).ToList() ?? new List<CourseViewModel>();
+
+            var viewModel = new MyCoursesViewModel
+            {
+                User = user,
+                Courses = courses
+            };
+
+            return View(viewModel);
+        }
+
 
 
         [HttpPost]

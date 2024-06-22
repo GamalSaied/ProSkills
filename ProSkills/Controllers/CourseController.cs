@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using ProSkills.Interfaces;
-using ProSkills.Models.AdminPanel.InstructorManger;
-using ProSkills.Models.ClientSide;
 using ProSkills.Models.ClientSide.Enumerators;
 using ProSkills.Repositories;
 using ProSkills.Repository;
@@ -285,17 +283,26 @@ namespace ProSkills.Controllers
 
         // POST: Course/Delete
         [HttpPost]
-        public IActionResult Delete(int id)
+        public IActionResult SoftDelete(int id)
         {
             var course = _courseRepository.GetById(id);
-            if (course != null)
+            if (course == null)
             {
-                course.IsDeleted = true;
-                _courseRepository.Update(course);
-                _courseRepository.Save();
-                return RedirectToAction("Index");
+                return Json(new { success = false, message = "Course not found." });
             }
-            return NotFound();
+
+            course.IsDeleted = true;
+            try
+            {
+                _courseRepository.Update(course);
+                return Json(new { success = true });
+            }
+            catch (Exception ex)
+            {
+                // Log the exception (use your preferred logging framework)
+                Console.WriteLine($"Error updating course: {ex.Message}");
+                return Json(new { success = false, message = "An error occurred while deleting the course." });
+            }
         }
         [HttpGet]
         public IActionResult Leaderboard(int CourseId, int page = 1, int pageSize = 10)
@@ -463,8 +470,149 @@ namespace ProSkills.Controllers
         }
 
 
+        public IActionResult Cards()
+        {
+            var courses = _courseRepository.GetAll().Where(c => !c.IsDeleted);
+            var courseViewModels = courses.Select(course => new CourseViewModel
+            {
+                Id = course.Id,
+                Title = course.Name,
+                Description = course.Description,
+                Price = course.Price,
+                ImagePath = string.IsNullOrEmpty(course.CourseImagePath) ? "/Images/DefaultCourseImg.png" : course.CourseImagePath,
+                VendorName = course.Instructor?.Name ?? "Unknown Vendor",
+                Duration = course.Hours ?? 0,
+                StudentCount = course.NumberOfTrainees ?? 0,
+                Rating = course.Rating,
+                ReviewCount = course.ReviewCount,
+                StartAt = course.StartAt,
+                EndAt = course.EndAt,
+                Location = course.Location,
+                NumberOfAssessment = course.NumberOfAssessment ?? 0,
+                NumberOfLessons = course.NumberOfLessons ?? 0,
+                TotalFilesSize = course.TotalFilesSize ?? 0,
+                Chapters = course.Chapters?.Select(ch => new ChapterViewModel
+                {
+                    Id = ch.Id,
+                    Title = ch.Title,
+                    Description = ch.Description
+                }).ToList() ?? new List<ChapterViewModel>(),
+                Assessments = course.Assessments?.Select(a => new AssessmentViewModel
+                {
+                    Id = a.Id,
+                    Title = a.Title,
+                    Description = a.Description,
+                    Points = a.Points
+                }).ToList() ?? new List<AssessmentViewModel>(),
+                Instructor = course.Instructor == null ? new InstructorViewModel() : new InstructorViewModel
+                {
+                    Id = course.Instructor.Id,
+                    Name = course.Instructor.Name,
+                    ImagePath = string.IsNullOrEmpty(course.Instructor.ImagePath) ? "\\ThemeFront\\img\\User.jpg" : course.Instructor.ImagePath,
+                    Bio = course.Instructor.Bio,
+                    Speciallization = course.Instructor.Speciallization
+                }
+            }).ToList();
+
+            if (!courseViewModels.Any())
+            {
+                return View("NoCourses");
+            }
+
+            return View(courseViewModels);
+        }
+
+
+
+
+
+        [HttpPost]
+        public IActionResult Create(CourseViewModel courseViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                var course = new Course
+                {
+                    Name = courseViewModel.Title,
+                    Description = courseViewModel.Description,
+                    CourseImagePath = courseViewModel.ImagePath,
+                    instructorId = 1, // Assign appropriate instructor ID
+                    StartAt = courseViewModel.StartAt,
+                    EndAt = courseViewModel.EndAt,
+                    Location = courseViewModel.Location,
+                    Hours = (int?)courseViewModel.Duration, // Assuming Hours is the duration
+                    NumberOfTrainees = courseViewModel.StudentCount
+                };
+
+                _courseRepository.Insert(course);
+                _courseRepository.Save();
+
+                return RedirectToAction("Cards"); // Redirect to the new card view
+            }
+
+            return View(courseViewModel);
+        }
+
+
+        public IActionResult Profile(int id)
+        {
+            var course = _courseRepository.GetById(id);
+            if (course == null)
+            {
+                return NotFound();
+            }
+
+            var courseViewModel = new CourseViewModel
+            {
+                Id = course.Id,
+                Title = course.Name,
+                Description = course.Description,
+                Price = course.Price,
+                ImagePath = string.IsNullOrEmpty(course.CourseImagePath) ? "/Images/DefaultCourseImg.png" : course.CourseImagePath,
+                VendorName = course.Instructor?.Name ?? "Unknown Vendor",
+                Duration = course.Hours ?? 0,
+                StudentCount = course.NumberOfTrainees ?? 0,
+                Rating = course.Rating,
+                ReviewCount = course.ReviewCount,
+                StartAt = course.StartAt,
+                EndAt = course.EndAt,
+                Location = course.Location,
+                NumberOfAssessment = course.NumberOfAssessment ?? 0,
+                NumberOfLessons = course.NumberOfLessons ?? 0,
+                TotalFilesSize = course.TotalFilesSize ?? 0,
+                Chapters = course.Chapters?.Select(ch => new ChapterViewModel
+                {
+                    Id = ch.Id,
+                    Title = ch.Title,
+                    Description = ch.Description
+                }).ToList() ?? new List<ChapterViewModel>(),
+                Assessments = course.Assessments?.Select(a => new AssessmentViewModel
+                {
+                    Id = a.Id,
+                    Title = a.Title,
+                    Description = a.Description,
+                    Points = a.Points
+                }).ToList() ?? new List<AssessmentViewModel>(),
+                Instructor = course.Instructor == null ? new InstructorViewModel() : new InstructorViewModel
+                {
+                    Id = course.Instructor.Id,
+                    Name = course.Instructor.Name,
+                    ImagePath = string.IsNullOrEmpty(course.Instructor.ImagePath) ? "\\ThemeFront\\img\\User.jpg" : course.Instructor.ImagePath,
+                    Bio = course.Instructor.Bio,
+                    Speciallization = course.Instructor.Speciallization
+                }
+            };
+
+            return View(courseViewModel);
+        }
+
+
+
+
 
     }
+
+
 }
 
 

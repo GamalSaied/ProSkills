@@ -1,25 +1,21 @@
 ﻿using ProSkills.Models.ClientSide.Enumerators;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ProSkills.Models.ClientSide
+public class CourseTrainee
 {
-    public class CourseTrainee
-    {
-        public int Id { get; set; }
+    public int Id { get; set; }
 
-        [ForeignKey("Trainee")]
-        public int TraineeId { get; set; }
-        public Trainee Trainee { get; set; }
+    [ForeignKey("Trainee")]
+    public int TraineeId { get; set; }
+    public Trainee Trainee { get; set; }
 
+    [ForeignKey("Course")]
+    public int CourseId { get; set; }
+    public Course Course { get; set; }
 
-        [ForeignKey("Course")]
-        public int CourseId { get; set; }
-        public Course Course { get; set; }
-
-        public decimal? Result { get; set; }
-        public List<ActivityLog>? ActivitylogList { get; set; }
-        public Level Level { get; set; } = Level.Beginner;// Correct the casing for enum
-        public int Points { get; set; } = 0; // Add this property
-    }
-
+    public decimal? Result { get; set; }
+    public List<ActivityLog>? ActivitylogList { get; set; }
+    public Level Level { get; set; } = Level.Beginner;
+    public int Points { get; set; } = 0;
+    public int CompletionRatio { get; set; } = 0;
 }

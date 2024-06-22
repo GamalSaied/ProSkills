@@ -1,0 +1,109 @@
+﻿@model MyCoursesViewModel
+
+<style>
+    .course-card {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .course-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .course-details {
+        padding: 15px;
+    }
+
+    .course-title {
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .course-meta {
+        font-size: 0.875rem;
+        color: #777;
+    }
+
+    .user-info {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 15px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+        .user-info img {
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+    .enrolled-badge {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        background-color: green;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 0.875rem;
+    }
+
+    .completion-bar {
+        height: 10px;
+        border-radius: 5px;
+        background-color: #ddd;
+        overflow: hidden;
+        margin-top: 10px;
+    }
+
+    .completion-bar-inner {
+        height: 100%;
+        background-color: green;
+    }
+</style>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="row">
+                @foreach (var course in Model.Courses)
+                {
+                    <div class="col-md-6 mb-4">
+                        <div class="course-card">
+                            <div class="enrolled-badge">ENROLLED</div>
+                            <img src="@course.ImagePath" alt="@course.Title" class="course-image">
+                            <div class="course-details">
+                                <div class="course-title">@course.Title</div>
+                                <div class="course-meta">
+                                    <i class="fa fa-user"></i> @course.Instructor.Name <br />
+                                    <i class="fa fa-book"></i> @course.Chapters.Count() Lessons <br />
+                                    <i class="fa fa-clock"></i> @course.Duration Hours <br />
+                                </div>
+                                <div class="completion-bar">
+                                    <div class="completion-bar-inner" style="width:@course.CompletionRatio%"></div>
+                                </div>
+                                <a href="@Url.Action("Profile", "Course", new { id = course.Id })" class="btn btn-primary btn-block mt-3">Dashboard</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="user-info">
+                <img src="@Model.User.ProfilePictureUrl" alt="@Model.User.FullName" width="100" height="100">
+                <h4>@Model.User.FullName</h4>
+                <p>@Model.User.Email</p>
+                <p>@Model.User.Phone</p>
+                <p>@Model.User.City, @Model.User.Country</p>
+            </div>
+        </div>
+    </div>
+</div>
