@@ -21,7 +21,7 @@
         public int NumberOfAssessment { get; set; }
         public int NumberOfLessons { get; set; }
         public InstructorViewModel Instructor { get; set; }
-        public int CompletionRatio { get; set; } // Add this line
+        public double CompletionRatio { get; set; } // Add this line
 
     }
 

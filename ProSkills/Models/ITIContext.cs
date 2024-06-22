@@ -20,6 +20,7 @@ namespace ProSkills.Models
         public DbSet<Lesson> Lessons { get; set; }
         public DbSet<Service> Service { get; set; }
         public DbSet<Assessment> Assessments { get; set; }
+        public DbSet<ActivityLog> ActivityLogs { get; set; }
 
 
         // --------------------------------------------------------------------

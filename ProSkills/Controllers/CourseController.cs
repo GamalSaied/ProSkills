@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using ProSkills.Interfaces;
 using ProSkills.Models.ClientSide.Enumerators;
@@ -17,18 +19,21 @@ namespace ProSkills.Controllers
         private IRepository<instructor> _instructorRepository;
         private ITraineeRepository _traineeRepository;
         private readonly ICourseTraineeRepository _courseTraineeRepository; // Use the specific interface
+        private readonly IActivityLogRepository _activityLogRepository;
+
 
         private IRepository<Category> _categoryRepository;
         private IRepository<RedeemCode> _redeemCodeRepository;
         private IRepository<Package> _packageRepository;
         private IRepository<Chapter> _chapterRepository;
         private ICourseRepository _courseRepositoryVersion2;
+        private readonly UserManager<ApplicationUser> _userManager;
 
         private readonly IRepository<Lesson> _lessonRepository;
 
         private readonly ITIContext _context;
 
-        public CourseController(ITraineeRepository traineeRepository, ICourseTraineeRepository courseTraineeRepository,IRepository<Lesson> lessonRepository,IRepository<Chapter> chapterRepository, IRepository<Course> CourseRepository, IRepository<instructor> InstructorRepository, IRepository<Category> CategoryRepository, IRepository<RedeemCode> RedeemCodeRepository, IRepository<Package> PackageRepository , ICourseRepository courseRepositoryVersion2)
+        public CourseController(IActivityLogRepository activityLogRepository , UserManager<ApplicationUser> userManager,ITraineeRepository traineeRepository, ICourseTraineeRepository courseTraineeRepository,IRepository<Lesson> lessonRepository,IRepository<Chapter> chapterRepository, IRepository<Course> CourseRepository, IRepository<instructor> InstructorRepository, IRepository<Category> CategoryRepository, IRepository<RedeemCode> RedeemCodeRepository, IRepository<Package> PackageRepository , ICourseRepository courseRepositoryVersion2)
         {
             _courseRepository = CourseRepository;
             _instructorRepository = InstructorRepository;
@@ -40,7 +45,9 @@ namespace ProSkills.Controllers
             _courseRepositoryVersion2 = courseRepositoryVersion2;
             _courseTraineeRepository = courseTraineeRepository;
             _traineeRepository = traineeRepository;
+            _activityLogRepository = activityLogRepository;
 
+            _userManager = userManager;
 
         }
 
@@ -48,9 +55,128 @@ namespace ProSkills.Controllers
 
         #endregion
 
+        [Authorize]
+        public async Task<IActionResult> Dashboard(int courseId)
+        {
+            var course = _courseRepository.GetById(courseId);
+            if (course == null)
+            {
+                throw new KeyNotFoundException($"Course with Id {courseId} not found.");
+            }
+
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+            var completedLessons = _activityLogRepository.GetByUserIdAndCourseId(user.Id, courseId)
+                                        .Select(al => al.LessonId)
+                                        .ToList();
+
+            var viewModel = new CourseViewModel
+            {
+                Id = course.Id,
+                Title = course.Name ?? "No Title",
+                Description = course.Description ?? "No Description",
+                Duration = course.Hours ?? 0,
+                StudentCount = course.NumberOfTrainees ?? 0,
+                Rating = course.Rating,
+                ReviewCount = course.ReviewCount,
+                StartAt = course.StartAt,
+                EndAt = course.EndAt,
+                Location = course.Location ?? "No Location",
+                ImagePath = course.CourseImagePath ?? "\\Images\\DefaultCourseImg.png",
+                Chapters = course.Chapters?.Select(c => new ChapterViewModel
+                {
+                    Id = c.Id,
+                    Title = c.Title ?? "No Title",
+                    Description = c.Description ?? "No Description",
+                    Lessons = c.Lessons?.Select(l => new LessonViewModel
+                    {
+                        Id = l.Id,
+                        Title = l.Title ?? "No Title",
+                        Content = l.Content ?? "No Content",
+                        DownloadLink = l.downloadLink,
+                        TaskLink = l.TaskLink,
+                        Time = l.Time ?? TimeSpan.Zero,
+                        IsCompleted = completedLessons.Contains(l.Id) // Check if the lesson is completed
+                    }).ToList() ?? new List<LessonViewModel>()
+                }).ToList() ?? new List<ChapterViewModel>(),
+                Instructor = new InstructorViewModel
+                {
+                    Id = course.Instructor?.Id ?? 0,
+                    Name = course.Instructor?.Name ?? "Unknown Instructor",
+                    ImagePath = course.Instructor?.ImagePath ?? "\\ThemeFront\\img\\User.jpg",
+                    Bio = course.Instructor?.Bio ?? "No bio available.",
+                    Speciallization = course.Instructor?.Speciallization ?? "N/A"
+                },
+                CompletionRatio = GetCompletionRatio(course, user.Id)
+            };
+
+            return View(viewModel);
+        }
 
 
 
+
+        private double GetCompletionRatio(Course course, string userId)
+        {
+            var totalLessons = course.Chapters?.SelectMany(c => c.Lessons).Count() ?? 0;
+            if (totalLessons == 0)
+            {
+                return 0;
+            }
+
+            var completedLessons = _activityLogRepository.GetByUserIdAndCourseId(userId, course.Id).Count();
+            return (completedLessons / (double)totalLessons) * 100;
+        }
+
+        [HttpPost]
+        public IActionResult UpdateLessonCompletion(int lessonId, bool isChecked)
+        {
+            var user = _userManager.GetUserAsync(User).Result;
+            if (user == null)
+            {
+                return Json(new { success = false, message = "User not found." });
+            }
+
+            var lesson = _lessonRepository.GetById(lessonId);
+            if (lesson == null)
+            {
+                return Json(new { success = false, message = "Lesson not found." });
+            }
+
+            var activityLog = _activityLogRepository.GetByUserIdAndLessonId(user.Id, lessonId);
+            if (isChecked)
+            {
+                if (activityLog == null)
+                {
+                    _activityLogRepository.Insert(new ActivityLog
+                    {
+                        UserId = user.Id,
+                        ActivityDate = DateTime.Now,
+                        ActivityType = "LessonCompleted",
+                        Description = $"Completed lesson {lesson.Title}",
+                        LessonId = lessonId
+                    });
+                }
+            }
+            else
+            {
+                if (activityLog != null)
+                {
+                    _activityLogRepository.Delete(activityLog.Id);
+                }
+            }
+
+            _activityLogRepository.Save();
+
+            var course = _courseRepository.GetById(lesson.Chapter.CourseId);
+            var completionRatio = GetCompletionRatio(course, user.Id);
+
+            return Json(new { success = true, completionRatio = (int)completionRatio });
+        }
         [HttpPost]
         public IActionResult UnassignTrainee(int courseId, int traineeId)
         {

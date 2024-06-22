@@ -89,7 +89,7 @@
                                 <div class="completion-bar">
                                     <div class="completion-bar-inner" style="width:@course.CompletionRatio%"></div>
                                 </div>
-                                <a href="@Url.Action("Profile", "Course", new { id = course.Id })" class="btn btn-primary btn-block mt-3">Dashboard</a>
+                                <a href="@Url.Action("Dashboard", "Course", new { courseId = course.Id })" class="btn btn-primary btn-block mt-3">Dashboard</a>
                             </div>
                         </div>
                     </div>

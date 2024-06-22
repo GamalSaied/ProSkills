@@ -17,5 +17,5 @@ public class CourseTrainee
     public List<ActivityLog>? ActivitylogList { get; set; }
     public Level Level { get; set; } = Level.Beginner;
     public int Points { get; set; } = 0;
-    public int CompletionRatio { get; set; } = 0;
+    public double CompletionRatio { get; set; } = 0;
 }

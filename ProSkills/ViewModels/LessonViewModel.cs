@@ -8,5 +8,7 @@
         public string DownloadLink { get; set; }
         public string TaskLink { get; set; }
         public TimeSpan Time { get; set; }
+        public bool IsCompleted { get; set; }
+
     }
 }

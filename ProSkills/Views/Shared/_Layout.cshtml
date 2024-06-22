@@ -54,9 +54,6 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="~/Home/Index" class="nav-item nav-link @(ViewContext.RouteData.Values["action"].ToString() == "Index" && ViewContext.RouteData.Values["controller"].ToString() == "Home" ? "active" : "")">
-                    <i class="fa fa-home me-2"></i>Home
-                </a>
                 <a href="~/Home/About" class="nav-item nav-link @(ViewContext.RouteData.Values["action"].ToString() == "About" ? "active" : "")">
                     <i class="fa fa-info-circle me-2"></i>About
                 </a>

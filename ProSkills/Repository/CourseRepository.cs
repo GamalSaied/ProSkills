@@ -36,19 +36,15 @@ namespace ProSkills.Repository
         // Retrieves a Data by its ID
         public Course GetById(int id)
         {
-            var course = context.Course
-                                .Include(c => c.Instructor)
-                                .Include(c => c.Trainees)
-                                .ThenInclude(ct => ct.Trainee)
-                                .FirstOrDefault(d => d.Id == id);
-
-            if (course == null)
-            {
-                throw new KeyNotFoundException($"Course with Id {id} not found.");
-            }
-
-            return course;
+            return context.Course
+                          .Include(c => c.Chapters)
+                              .ThenInclude(ch => ch.Lessons)
+                          .Include(c => c.Instructor)
+                          .FirstOrDefault(c => c.Id == id && !c.IsDeleted);
         }
+
+
+
 
         public Course GetByName(string name)
         {
@@ -124,9 +120,11 @@ namespace ProSkills.Repository
         {
             return context.Course
                 .Include(c => c.Chapters)
-                .ThenInclude(ch => ch.Lessons)
-                .FirstOrDefault(c => c.Id == courseId);
+                    .ThenInclude(ch => ch.Lessons)
+                .Include(c => c.Instructor)
+                .FirstOrDefault(c => c.Id == courseId && !c.IsDeleted);
         }
+
         public void MarkAsDeleted(int id)
         {
             throw new NotImplementedException();
