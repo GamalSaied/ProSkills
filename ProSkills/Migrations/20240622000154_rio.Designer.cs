@@ -12,8 +12,8 @@ using ProSkills.Models;
 namespace ProSkills.Migrations
 {
     [DbContext(typeof(ITIContext))]
-    [Migration("20240621235024_riko")]
-    partial class riko
+    [Migration("20240622000154_rio")]
+    partial class rio
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -235,7 +235,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 1,
                             Bio = "Bio for Instructor 1",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "instructor1@example.com",
                             IsDeleted = false,
                             Name = "Instructor 1",
@@ -245,7 +245,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 2,
                             Bio = "Bio for Instructor 2",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "instructor2@example.com",
                             IsDeleted = false,
                             Name = "Instructor 2",
@@ -255,7 +255,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 3,
                             Bio = "Bio for Instructor 3",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "instructor3@example.com",
                             IsDeleted = false,
                             Name = "Instructor 3",
@@ -265,7 +265,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 4,
                             Bio = "Bio for Instructor 4",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "instructor4@example.com",
                             IsDeleted = false,
                             Name = "Instructor 4",
@@ -275,7 +275,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 5,
                             Bio = "Bio for Instructor 5",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "instructor5@example.com",
                             IsDeleted = false,
                             Name = "Instructor 5",
@@ -285,7 +285,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 6,
                             Bio = "Bio for Instructor 6",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "instructor6@example.com",
                             IsDeleted = false,
                             Name = "Instructor 6",
@@ -295,7 +295,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 7,
                             Bio = "Bio for Instructor 7",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "instructor7@example.com",
                             IsDeleted = false,
                             Name = "Instructor 7",
@@ -305,7 +305,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 8,
                             Bio = "Bio for Instructor 8",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "instructor8@example.com",
                             IsDeleted = false,
                             Name = "Instructor 8",
@@ -315,7 +315,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 9,
                             Bio = "Bio for Instructor 9",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "instructor9@example.com",
                             IsDeleted = false,
                             Name = "Instructor 9",
@@ -325,7 +325,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 10,
                             Bio = "Bio for Instructor 10",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "instructor10@example.com",
                             IsDeleted = false,
                             Name = "Instructor 10",
@@ -335,7 +335,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 11,
                             Bio = "Bio for Instructor 11",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "instructor11@example.com",
                             IsDeleted = false,
                             Name = "Instructor 11",
@@ -345,7 +345,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 12,
                             Bio = "Bio for Instructor 12",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "instructor12@example.com",
                             IsDeleted = false,
                             Name = "Instructor 12",
@@ -355,7 +355,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 13,
                             Bio = "Bio for Instructor 13",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "instructor13@example.com",
                             IsDeleted = false,
                             Name = "Instructor 13",
@@ -365,7 +365,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 14,
                             Bio = "Bio for Instructor 14",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "instructor14@example.com",
                             IsDeleted = false,
                             Name = "Instructor 14",
@@ -375,7 +375,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 15,
                             Bio = "Bio for Instructor 15",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "instructor15@example.com",
                             IsDeleted = false,
                             Name = "Instructor 15",
@@ -385,7 +385,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 16,
                             Bio = "Bio for Instructor 16",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "instructor16@example.com",
                             IsDeleted = false,
                             Name = "Instructor 16",
@@ -395,7 +395,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 17,
                             Bio = "Bio for Instructor 17",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "instructor17@example.com",
                             IsDeleted = false,
                             Name = "Instructor 17",
@@ -405,7 +405,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 18,
                             Bio = "Bio for Instructor 18",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "instructor18@example.com",
                             IsDeleted = false,
                             Name = "Instructor 18",
@@ -415,7 +415,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 19,
                             Bio = "Bio for Instructor 19",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "instructor19@example.com",
                             IsDeleted = false,
                             Name = "Instructor 19",
@@ -425,7 +425,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 20,
                             Bio = "Bio for Instructor 20",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "instructor20@example.com",
                             IsDeleted = false,
                             Name = "Instructor 20",
@@ -435,7 +435,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 21,
                             Bio = "Bio for Instructor 21",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "instructor21@example.com",
                             IsDeleted = false,
                             Name = "Instructor 21",
@@ -445,7 +445,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 22,
                             Bio = "Bio for Instructor 22",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "instructor22@example.com",
                             IsDeleted = false,
                             Name = "Instructor 22",
@@ -455,7 +455,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 23,
                             Bio = "Bio for Instructor 23",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "instructor23@example.com",
                             IsDeleted = false,
                             Name = "Instructor 23",
@@ -465,7 +465,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 24,
                             Bio = "Bio for Instructor 24",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "instructor24@example.com",
                             IsDeleted = false,
                             Name = "Instructor 24",
@@ -475,7 +475,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 25,
                             Bio = "Bio for Instructor 25",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "instructor25@example.com",
                             IsDeleted = false,
                             Name = "Instructor 25",
@@ -485,7 +485,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 26,
                             Bio = "Bio for Instructor 26",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "instructor26@example.com",
                             IsDeleted = false,
                             Name = "Instructor 26",
@@ -495,7 +495,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 27,
                             Bio = "Bio for Instructor 27",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "instructor27@example.com",
                             IsDeleted = false,
                             Name = "Instructor 27",
@@ -505,7 +505,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 28,
                             Bio = "Bio for Instructor 28",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "instructor28@example.com",
                             IsDeleted = false,
                             Name = "Instructor 28",
@@ -515,7 +515,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 29,
                             Bio = "Bio for Instructor 29",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "instructor29@example.com",
                             IsDeleted = false,
                             Name = "Instructor 29",
@@ -525,7 +525,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 30,
                             Bio = "Bio for Instructor 30",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "instructor30@example.com",
                             IsDeleted = false,
                             Name = "Instructor 30",
@@ -623,7 +623,7 @@ namespace ProSkills.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d1398b08-df89-444d-b6a1-b1dd208bb3ff",
+                            ConcurrencyStamp = "eff51bda-1527-4440-b504-84c2ff533c4e",
                             Country = 0,
                             Email = "ahmed9821hussein@gmail.com",
                             EmailConfirmed = true,
@@ -631,7 +631,7 @@ namespace ProSkills.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "AHMED9821HUSSEIN@GMAIL.COM",
                             NormalizedUserName = "AHMED9821HUSSEIN@GMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEE+8JjGOfHN50VvEMT4qrTaY+jOgP1v44oJk+LzEDmny/IC0egibbs14rsmlVP3YKA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEFfzqTzFpF9epdxO0EYSpIWYENaPksdOnNjfgOmfC/qeZ6pBvPijLxWBqxofgDIC9A==",
                             Phone = "01015983533",
                             PhoneNumberConfirmed = true,
                             ProfilePictureUrl = "\\Images\\profiles\\profile-picture.jpg",
@@ -643,7 +643,7 @@ namespace ProSkills.Migrations
                         {
                             Id = "2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "dea0e99a-7d72-4550-964a-a0ccdb7290e3",
+                            ConcurrencyStamp = "7daae6a4-8ab1-4704-8f9d-93768d2fbbe8",
                             Country = 0,
                             Email = "MuhammedSadat@outlook.com",
                             EmailConfirmed = true,
@@ -651,7 +651,7 @@ namespace ProSkills.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "MUHAMMEDSADAT@OUTLOOK.COM",
                             NormalizedUserName = "MUHAMMEDSADAT@OUTLOOK.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEOZ8R4yaz51H7xnFPsC9K7GJyqLETKP5wKNbj2nohDvE9An/UHjQHWaVyCf+KnCpig==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEDnsvClrkTDKl76maaKnFHkaNiQZvvCeiHvX6AWq5dXh/AwYO2CwNo6pDaVjagb31A==",
                             Phone = "01050403037",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
@@ -662,7 +662,7 @@ namespace ProSkills.Migrations
                         {
                             Id = "3",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "6eeb8440-7a33-4907-93d9-1cac96faf71b",
+                            ConcurrencyStamp = "a28d341e-5566-4cb7-9d21-9aa67a5add07",
                             Country = 0,
                             Email = "gamalsaied.90@gmail.com",
                             EmailConfirmed = true,
@@ -670,7 +670,7 @@ namespace ProSkills.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "GAMALSAIED.90@GMAIL.COM",
                             NormalizedUserName = "GAMALSAIED.90@GMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEL6vPyLI5AC5v1e4fmKAl7Sf26zVKwMp3/l9cv5kknWC8NhK7J+t61I8wdoZkqe7Tw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEKOkYm5AxkL5R95jAiglF+HCE1y1nRbf9QnADhfXogjd/blN6i/ZnGT/gtX92wrkLw==",
                             Phone = "01033901616",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
@@ -774,7 +774,7 @@ namespace ProSkills.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:54 ص",
                             Description = "Building Information Modeling software",
                             Image = "path/to/bim/image.jpg",
                             IsDeleted = false,
@@ -783,7 +783,7 @@ namespace ProSkills.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:54 ص",
                             Description = "Computer-Aided Design software",
                             Image = "path/to/cad/image.jpg",
                             IsDeleted = false,
@@ -792,7 +792,7 @@ namespace ProSkills.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:54 ص",
                             Description = "Software for construction planning and management",
                             Image = "path/to/construction/image.jpg",
                             IsDeleted = false,
@@ -801,7 +801,7 @@ namespace ProSkills.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:54 ص",
                             Description = "Software for structural engineering analysis and design",
                             Image = "path/to/structural/image.jpg",
                             IsDeleted = false,
@@ -810,7 +810,7 @@ namespace ProSkills.Migrations
                         new
                         {
                             Id = 5,
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:54 ص",
                             Description = "Software for civil engineering design and analysis",
                             Image = "path/to/civil/image.jpg",
                             IsDeleted = false,
@@ -819,7 +819,7 @@ namespace ProSkills.Migrations
                         new
                         {
                             Id = 6,
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:54 ص",
                             Description = "Software for project management",
                             Image = "path/to/project/image.jpg",
                             IsDeleted = false,
@@ -828,7 +828,7 @@ namespace ProSkills.Migrations
                         new
                         {
                             Id = 7,
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:54 ص",
                             Description = "Advanced Building Information Modeling software",
                             Image = "path/to/advanced_bim/image.jpg",
                             IsDeleted = false,
@@ -888,15 +888,6 @@ namespace ProSkills.Migrations
                         new
                         {
                             Id = 3,
-                            CourseId = 1,
-                            Description = "Description for Chapter 3 in Course 1",
-                            IsDeleted = false,
-                            Title = "Chapter 3 for Course 1",
-                            downloadLink = "https://sadat.vip/"
-                        },
-                        new
-                        {
-                            Id = 4,
                             CourseId = 2,
                             Description = "Description for Chapter 1 in Course 2",
                             IsDeleted = false,
@@ -905,7 +896,7 @@ namespace ProSkills.Migrations
                         },
                         new
                         {
-                            Id = 5,
+                            Id = 4,
                             CourseId = 2,
                             Description = "Description for Chapter 2 in Course 2",
                             IsDeleted = false,
@@ -914,16 +905,7 @@ namespace ProSkills.Migrations
                         },
                         new
                         {
-                            Id = 6,
-                            CourseId = 2,
-                            Description = "Description for Chapter 3 in Course 2",
-                            IsDeleted = false,
-                            Title = "Chapter 3 for Course 2",
-                            downloadLink = "https://sadat.vip/"
-                        },
-                        new
-                        {
-                            Id = 7,
+                            Id = 5,
                             CourseId = 3,
                             Description = "Description for Chapter 1 in Course 3",
                             IsDeleted = false,
@@ -932,7 +914,7 @@ namespace ProSkills.Migrations
                         },
                         new
                         {
-                            Id = 8,
+                            Id = 6,
                             CourseId = 3,
                             Description = "Description for Chapter 2 in Course 3",
                             IsDeleted = false,
@@ -941,7 +923,16 @@ namespace ProSkills.Migrations
                         },
                         new
                         {
-                            Id = 9,
+                            Id = 7,
+                            CourseId = 3,
+                            Description = "Description for Chapter 3 in Course 3",
+                            IsDeleted = false,
+                            Title = "Chapter 3 for Course 3",
+                            downloadLink = "https://sadat.vip/"
+                        },
+                        new
+                        {
+                            Id = 8,
                             CourseId = 4,
                             Description = "Description for Chapter 1 in Course 4",
                             IsDeleted = false,
@@ -950,7 +941,7 @@ namespace ProSkills.Migrations
                         },
                         new
                         {
-                            Id = 10,
+                            Id = 9,
                             CourseId = 4,
                             Description = "Description for Chapter 2 in Course 4",
                             IsDeleted = false,
@@ -959,16 +950,7 @@ namespace ProSkills.Migrations
                         },
                         new
                         {
-                            Id = 11,
-                            CourseId = 4,
-                            Description = "Description for Chapter 3 in Course 4",
-                            IsDeleted = false,
-                            Title = "Chapter 3 for Course 4",
-                            downloadLink = "https://sadat.vip/"
-                        },
-                        new
-                        {
-                            Id = 12,
+                            Id = 10,
                             CourseId = 5,
                             Description = "Description for Chapter 1 in Course 5",
                             IsDeleted = false,
@@ -977,7 +959,7 @@ namespace ProSkills.Migrations
                         },
                         new
                         {
-                            Id = 13,
+                            Id = 11,
                             CourseId = 5,
                             Description = "Description for Chapter 2 in Course 5",
                             IsDeleted = false,
@@ -986,7 +968,7 @@ namespace ProSkills.Migrations
                         },
                         new
                         {
-                            Id = 14,
+                            Id = 12,
                             CourseId = 5,
                             Description = "Description for Chapter 3 in Course 5",
                             IsDeleted = false,
@@ -995,7 +977,7 @@ namespace ProSkills.Migrations
                         },
                         new
                         {
-                            Id = 15,
+                            Id = 13,
                             CourseId = 6,
                             Description = "Description for Chapter 1 in Course 6",
                             IsDeleted = false,
@@ -1004,7 +986,7 @@ namespace ProSkills.Migrations
                         },
                         new
                         {
-                            Id = 16,
+                            Id = 14,
                             CourseId = 6,
                             Description = "Description for Chapter 2 in Course 6",
                             IsDeleted = false,
@@ -1013,7 +995,7 @@ namespace ProSkills.Migrations
                         },
                         new
                         {
-                            Id = 17,
+                            Id = 15,
                             CourseId = 7,
                             Description = "Description for Chapter 1 in Course 7",
                             IsDeleted = false,
@@ -1022,7 +1004,7 @@ namespace ProSkills.Migrations
                         },
                         new
                         {
-                            Id = 18,
+                            Id = 16,
                             CourseId = 7,
                             Description = "Description for Chapter 2 in Course 7",
                             IsDeleted = false,
@@ -1031,7 +1013,7 @@ namespace ProSkills.Migrations
                         },
                         new
                         {
-                            Id = 19,
+                            Id = 17,
                             CourseId = 8,
                             Description = "Description for Chapter 1 in Course 8",
                             IsDeleted = false,
@@ -1040,7 +1022,7 @@ namespace ProSkills.Migrations
                         },
                         new
                         {
-                            Id = 20,
+                            Id = 18,
                             CourseId = 8,
                             Description = "Description for Chapter 2 in Course 8",
                             IsDeleted = false,
@@ -1049,16 +1031,7 @@ namespace ProSkills.Migrations
                         },
                         new
                         {
-                            Id = 21,
-                            CourseId = 8,
-                            Description = "Description for Chapter 3 in Course 8",
-                            IsDeleted = false,
-                            Title = "Chapter 3 for Course 8",
-                            downloadLink = "https://sadat.vip/"
-                        },
-                        new
-                        {
-                            Id = 22,
+                            Id = 19,
                             CourseId = 9,
                             Description = "Description for Chapter 1 in Course 9",
                             IsDeleted = false,
@@ -1067,7 +1040,7 @@ namespace ProSkills.Migrations
                         },
                         new
                         {
-                            Id = 23,
+                            Id = 20,
                             CourseId = 9,
                             Description = "Description for Chapter 2 in Course 9",
                             IsDeleted = false,
@@ -1076,7 +1049,16 @@ namespace ProSkills.Migrations
                         },
                         new
                         {
-                            Id = 24,
+                            Id = 21,
+                            CourseId = 9,
+                            Description = "Description for Chapter 3 in Course 9",
+                            IsDeleted = false,
+                            Title = "Chapter 3 for Course 9",
+                            downloadLink = "https://sadat.vip/"
+                        },
+                        new
+                        {
+                            Id = 22,
                             CourseId = 10,
                             Description = "Description for Chapter 1 in Course 10",
                             IsDeleted = false,
@@ -1085,20 +1067,11 @@ namespace ProSkills.Migrations
                         },
                         new
                         {
-                            Id = 25,
+                            Id = 23,
                             CourseId = 10,
                             Description = "Description for Chapter 2 in Course 10",
                             IsDeleted = false,
                             Title = "Chapter 2 for Course 10",
-                            downloadLink = "https://sadat.vip/"
-                        },
-                        new
-                        {
-                            Id = 26,
-                            CourseId = 10,
-                            Description = "Description for Chapter 3 in Course 10",
-                            IsDeleted = false,
-                            Title = "Chapter 3 for Course 10",
                             downloadLink = "https://sadat.vip/"
                         });
                 });
@@ -1174,9 +1147,9 @@ namespace ProSkills.Migrations
                             Id = 1,
                             CategoryId = 1,
                             CourseImagePath = "path/to/course/image.jpg",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:54 ص",
                             Description = "Learn Structural Revit",
-                            EndAt = new DateTime(2024, 7, 22, 2, 50, 23, 594, DateTimeKind.Local).AddTicks(9547),
+                            EndAt = new DateTime(2024, 7, 22, 3, 1, 54, 69, DateTimeKind.Local).AddTicks(4285),
                             Hours = 40,
                             IsDeleted = false,
                             Location = "Online",
@@ -1184,18 +1157,18 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 5,
                             NumberOfLessons = 20,
                             NumberOfTrainees = 25,
-                            StartAt = new DateTime(2024, 6, 29, 2, 50, 23, 594, DateTimeKind.Local).AddTicks(9538),
+                            StartAt = new DateTime(2024, 6, 29, 3, 1, 54, 69, DateTimeKind.Local).AddTicks(4273),
                             TotalFilesSize = 10.5,
-                            instructorId = 2
+                            instructorId = 10
                         },
                         new
                         {
                             Id = 2,
                             CategoryId = 1,
                             CourseImagePath = "path/to/course/image.jpg",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:54 ص",
                             Description = "Learn Arch Revit",
-                            EndAt = new DateTime(2024, 8, 6, 2, 50, 23, 594, DateTimeKind.Local).AddTicks(9673),
+                            EndAt = new DateTime(2024, 8, 6, 3, 1, 54, 69, DateTimeKind.Local).AddTicks(4411),
                             Hours = 60,
                             IsDeleted = false,
                             Location = "Online",
@@ -1203,18 +1176,18 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 7,
                             NumberOfLessons = 25,
                             NumberOfTrainees = 30,
-                            StartAt = new DateTime(2024, 7, 6, 2, 50, 23, 594, DateTimeKind.Local).AddTicks(9669),
+                            StartAt = new DateTime(2024, 7, 6, 3, 1, 54, 69, DateTimeKind.Local).AddTicks(4407),
                             TotalFilesSize = 15.199999999999999,
-                            instructorId = 2
+                            instructorId = 5
                         },
                         new
                         {
                             Id = 3,
                             CategoryId = 1,
                             CourseImagePath = "path/to/course/image.jpg",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:54 ص",
                             Description = "Learn MEP Revit",
-                            EndAt = new DateTime(2024, 7, 27, 2, 50, 23, 594, DateTimeKind.Local).AddTicks(9714),
+                            EndAt = new DateTime(2024, 7, 27, 3, 1, 54, 69, DateTimeKind.Local).AddTicks(4470),
                             Hours = 45,
                             IsDeleted = false,
                             Location = "Online",
@@ -1222,18 +1195,18 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 22,
                             NumberOfTrainees = 20,
-                            StartAt = new DateTime(2024, 6, 27, 2, 50, 23, 594, DateTimeKind.Local).AddTicks(9711),
+                            StartAt = new DateTime(2024, 6, 27, 3, 1, 54, 69, DateTimeKind.Local).AddTicks(4468),
                             TotalFilesSize = 11.699999999999999,
-                            instructorId = 8
+                            instructorId = 14
                         },
                         new
                         {
                             Id = 4,
                             CategoryId = 2,
                             CourseImagePath = "path/to/course/image.jpg",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:54 ص",
                             Description = "Learn Structural AutoCAD",
-                            EndAt = new DateTime(2024, 8, 21, 2, 50, 23, 594, DateTimeKind.Local).AddTicks(9732),
+                            EndAt = new DateTime(2024, 8, 21, 3, 1, 54, 69, DateTimeKind.Local).AddTicks(4488),
                             Hours = 55,
                             IsDeleted = false,
                             Location = "Online",
@@ -1241,7 +1214,7 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 23,
                             NumberOfTrainees = 25,
-                            StartAt = new DateTime(2024, 7, 2, 2, 50, 23, 594, DateTimeKind.Local).AddTicks(9729),
+                            StartAt = new DateTime(2024, 7, 2, 3, 1, 54, 69, DateTimeKind.Local).AddTicks(4486),
                             TotalFilesSize = 13.5,
                             instructorId = 14
                         },
@@ -1250,9 +1223,9 @@ namespace ProSkills.Migrations
                             Id = 5,
                             CategoryId = 2,
                             CourseImagePath = "path/to/course/image.jpg",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:54 ص",
                             Description = "Learn Arch AutoCAD",
-                            EndAt = new DateTime(2024, 8, 1, 2, 50, 23, 594, DateTimeKind.Local).AddTicks(9768),
+                            EndAt = new DateTime(2024, 8, 1, 3, 1, 54, 69, DateTimeKind.Local).AddTicks(4512),
                             Hours = 50,
                             IsDeleted = false,
                             Location = "Online",
@@ -1260,18 +1233,18 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 7,
                             NumberOfLessons = 25,
                             NumberOfTrainees = 30,
-                            StartAt = new DateTime(2024, 6, 29, 2, 50, 23, 594, DateTimeKind.Local).AddTicks(9765),
+                            StartAt = new DateTime(2024, 6, 29, 3, 1, 54, 69, DateTimeKind.Local).AddTicks(4509),
                             TotalFilesSize = 14.1,
-                            instructorId = 12
+                            instructorId = 1
                         },
                         new
                         {
                             Id = 6,
                             CategoryId = 2,
                             CourseImagePath = "path/to/course/image.jpg",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:54 ص",
                             Description = "Learn MEP AutoCAD",
-                            EndAt = new DateTime(2024, 8, 11, 2, 50, 23, 594, DateTimeKind.Local).AddTicks(9795),
+                            EndAt = new DateTime(2024, 8, 11, 3, 1, 54, 69, DateTimeKind.Local).AddTicks(4541),
                             Hours = 55,
                             IsDeleted = false,
                             Location = "Online",
@@ -1279,18 +1252,18 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 24,
                             NumberOfTrainees = 25,
-                            StartAt = new DateTime(2024, 7, 4, 2, 50, 23, 594, DateTimeKind.Local).AddTicks(9792),
+                            StartAt = new DateTime(2024, 7, 4, 3, 1, 54, 69, DateTimeKind.Local).AddTicks(4539),
                             TotalFilesSize = 12.300000000000001,
-                            instructorId = 9
+                            instructorId = 4
                         },
                         new
                         {
                             Id = 7,
                             CategoryId = 2,
                             CourseImagePath = "path/to/course/image.jpg",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:54 ص",
                             Description = "Learn 3D AutoCAD",
-                            EndAt = new DateTime(2024, 8, 16, 2, 50, 23, 594, DateTimeKind.Local).AddTicks(9822),
+                            EndAt = new DateTime(2024, 8, 16, 3, 1, 54, 69, DateTimeKind.Local).AddTicks(4580),
                             Hours = 50,
                             IsDeleted = false,
                             Location = "Online",
@@ -1298,18 +1271,18 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 23,
                             NumberOfTrainees = 20,
-                            StartAt = new DateTime(2024, 6, 30, 2, 50, 23, 594, DateTimeKind.Local).AddTicks(9812),
+                            StartAt = new DateTime(2024, 6, 30, 3, 1, 54, 69, DateTimeKind.Local).AddTicks(4564),
                             TotalFilesSize = 12.800000000000001,
-                            instructorId = 14
+                            instructorId = 9
                         },
                         new
                         {
                             Id = 8,
                             CategoryId = 3,
                             CourseImagePath = "path/to/course/image.jpg",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:54 ص",
                             Description = "Learn Tekla",
-                            EndAt = new DateTime(2024, 7, 27, 2, 50, 23, 594, DateTimeKind.Local).AddTicks(9885),
+                            EndAt = new DateTime(2024, 7, 27, 3, 1, 54, 69, DateTimeKind.Local).AddTicks(4700),
                             Hours = 45,
                             IsDeleted = false,
                             Location = "Online",
@@ -1317,18 +1290,18 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 22,
                             NumberOfTrainees = 30,
-                            StartAt = new DateTime(2024, 6, 28, 2, 50, 23, 594, DateTimeKind.Local).AddTicks(9882),
+                            StartAt = new DateTime(2024, 6, 28, 3, 1, 54, 69, DateTimeKind.Local).AddTicks(4697),
                             TotalFilesSize = 13.199999999999999,
-                            instructorId = 13
+                            instructorId = 1
                         },
                         new
                         {
                             Id = 9,
                             CategoryId = 3,
                             CourseImagePath = "path/to/course/image.jpg",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:54 ص",
                             Description = "Learn SketchUP",
-                            EndAt = new DateTime(2024, 8, 1, 2, 50, 23, 595, DateTimeKind.Local).AddTicks(41),
+                            EndAt = new DateTime(2024, 8, 1, 3, 1, 54, 69, DateTimeKind.Local).AddTicks(4716),
                             Hours = 40,
                             IsDeleted = false,
                             Location = "Online",
@@ -1336,18 +1309,18 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 5,
                             NumberOfLessons = 20,
                             NumberOfTrainees = 25,
-                            StartAt = new DateTime(2024, 7, 1, 2, 50, 23, 594, DateTimeKind.Local).AddTicks(9904),
+                            StartAt = new DateTime(2024, 7, 1, 3, 1, 54, 69, DateTimeKind.Local).AddTicks(4713),
                             TotalFilesSize = 10.800000000000001,
-                            instructorId = 13
+                            instructorId = 10
                         },
                         new
                         {
                             Id = 10,
                             CategoryId = 4,
                             CourseImagePath = "path/to/course/image.jpg",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:54 ص",
                             Description = "Learn SAP 2000",
-                            EndAt = new DateTime(2024, 8, 6, 2, 50, 23, 595, DateTimeKind.Local).AddTicks(60),
+                            EndAt = new DateTime(2024, 8, 6, 3, 1, 54, 69, DateTimeKind.Local).AddTicks(4733),
                             Hours = 50,
                             IsDeleted = false,
                             Location = "Online",
@@ -1355,18 +1328,18 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 22,
                             NumberOfTrainees = 20,
-                            StartAt = new DateTime(2024, 7, 3, 2, 50, 23, 595, DateTimeKind.Local).AddTicks(57),
+                            StartAt = new DateTime(2024, 7, 3, 3, 1, 54, 69, DateTimeKind.Local).AddTicks(4730),
                             TotalFilesSize = 12.199999999999999,
-                            instructorId = 13
+                            instructorId = 6
                         },
                         new
                         {
                             Id = 11,
                             CategoryId = 4,
                             CourseImagePath = "path/to/course/image.jpg",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:54 ص",
                             Description = "Learn STAAD Pro",
-                            EndAt = new DateTime(2024, 8, 11, 2, 50, 23, 595, DateTimeKind.Local).AddTicks(221),
+                            EndAt = new DateTime(2024, 8, 11, 3, 1, 54, 69, DateTimeKind.Local).AddTicks(4754),
                             Hours = 55,
                             IsDeleted = false,
                             Location = "Online",
@@ -1374,18 +1347,18 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 24,
                             NumberOfTrainees = 25,
-                            StartAt = new DateTime(2024, 7, 5, 2, 50, 23, 595, DateTimeKind.Local).AddTicks(216),
+                            StartAt = new DateTime(2024, 7, 5, 3, 1, 54, 69, DateTimeKind.Local).AddTicks(4750),
                             TotalFilesSize = 13.5,
-                            instructorId = 13
+                            instructorId = 4
                         },
                         new
                         {
                             Id = 12,
                             CategoryId = 5,
                             CourseImagePath = "path/to/course/image.jpg",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:54 ص",
                             Description = "Learn CIVIL 3D",
-                            EndAt = new DateTime(2024, 8, 1, 2, 50, 23, 595, DateTimeKind.Local).AddTicks(245),
+                            EndAt = new DateTime(2024, 8, 1, 3, 1, 54, 69, DateTimeKind.Local).AddTicks(4772),
                             Hours = 45,
                             IsDeleted = false,
                             Location = "Online",
@@ -1393,7 +1366,7 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 22,
                             NumberOfTrainees = 30,
-                            StartAt = new DateTime(2024, 7, 2, 2, 50, 23, 595, DateTimeKind.Local).AddTicks(242),
+                            StartAt = new DateTime(2024, 7, 2, 3, 1, 54, 69, DateTimeKind.Local).AddTicks(4769),
                             TotalFilesSize = 13.1,
                             instructorId = 1
                         },
@@ -1402,9 +1375,9 @@ namespace ProSkills.Migrations
                             Id = 13,
                             CategoryId = 4,
                             CourseImagePath = "path/to/course/image.jpg",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:54 ص",
                             Description = "Learn ETABS",
-                            EndAt = new DateTime(2024, 7, 27, 2, 50, 23, 595, DateTimeKind.Local).AddTicks(264),
+                            EndAt = new DateTime(2024, 7, 27, 3, 1, 54, 69, DateTimeKind.Local).AddTicks(4791),
                             Hours = 40,
                             IsDeleted = false,
                             Location = "Online",
@@ -1412,18 +1385,18 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 5,
                             NumberOfLessons = 20,
                             NumberOfTrainees = 25,
-                            StartAt = new DateTime(2024, 6, 30, 2, 50, 23, 595, DateTimeKind.Local).AddTicks(262),
+                            StartAt = new DateTime(2024, 6, 30, 3, 1, 54, 69, DateTimeKind.Local).AddTicks(4788),
                             TotalFilesSize = 10.6,
-                            instructorId = 9
+                            instructorId = 8
                         },
                         new
                         {
                             Id = 14,
                             CategoryId = 4,
                             CourseImagePath = "path/to/course/image.jpg",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:54 ص",
                             Description = "Learn SAFE",
-                            EndAt = new DateTime(2024, 7, 22, 2, 50, 23, 595, DateTimeKind.Local).AddTicks(287),
+                            EndAt = new DateTime(2024, 7, 22, 3, 1, 54, 69, DateTimeKind.Local).AddTicks(4819),
                             Hours = 35,
                             IsDeleted = false,
                             Location = "Online",
@@ -1431,18 +1404,18 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 5,
                             NumberOfLessons = 18,
                             NumberOfTrainees = 20,
-                            StartAt = new DateTime(2024, 6, 29, 2, 50, 23, 595, DateTimeKind.Local).AddTicks(284),
+                            StartAt = new DateTime(2024, 6, 29, 3, 1, 54, 69, DateTimeKind.Local).AddTicks(4816),
                             TotalFilesSize = 11.199999999999999,
-                            instructorId = 4
+                            instructorId = 14
                         },
                         new
                         {
                             Id = 15,
                             CategoryId = 6,
                             CourseImagePath = "path/to/course/image.jpg",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:54 ص",
                             Description = "Learn Primavera P6",
-                            EndAt = new DateTime(2024, 8, 6, 2, 50, 23, 595, DateTimeKind.Local).AddTicks(303),
+                            EndAt = new DateTime(2024, 8, 6, 3, 1, 54, 69, DateTimeKind.Local).AddTicks(4846),
                             Hours = 60,
                             IsDeleted = false,
                             Location = "Online",
@@ -1450,18 +1423,18 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 7,
                             NumberOfLessons = 25,
                             NumberOfTrainees = 30,
-                            StartAt = new DateTime(2024, 7, 6, 2, 50, 23, 595, DateTimeKind.Local).AddTicks(301),
+                            StartAt = new DateTime(2024, 7, 6, 3, 1, 54, 69, DateTimeKind.Local).AddTicks(4843),
                             TotalFilesSize = 15.800000000000001,
-                            instructorId = 5
+                            instructorId = 1
                         },
                         new
                         {
                             Id = 16,
                             CategoryId = 6,
                             CourseImagePath = "path/to/course/image.jpg",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:54 ص",
                             Description = "Learn Microsoft Project",
-                            EndAt = new DateTime(2024, 7, 27, 2, 50, 23, 595, DateTimeKind.Local).AddTicks(323),
+                            EndAt = new DateTime(2024, 7, 27, 3, 1, 54, 69, DateTimeKind.Local).AddTicks(4870),
                             Hours = 45,
                             IsDeleted = false,
                             Location = "Online",
@@ -1469,18 +1442,18 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 22,
                             NumberOfTrainees = 25,
-                            StartAt = new DateTime(2024, 6, 27, 2, 50, 23, 595, DateTimeKind.Local).AddTicks(320),
+                            StartAt = new DateTime(2024, 6, 27, 3, 1, 54, 69, DateTimeKind.Local).AddTicks(4867),
                             TotalFilesSize = 12.5,
-                            instructorId = 2
+                            instructorId = 15
                         },
                         new
                         {
                             Id = 17,
                             CategoryId = 3,
                             CourseImagePath = "path/to/course/image.jpg",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:54 ص",
                             Description = "Learn Navisworks",
-                            EndAt = new DateTime(2024, 8, 11, 2, 50, 23, 595, DateTimeKind.Local).AddTicks(348),
+                            EndAt = new DateTime(2024, 8, 11, 3, 1, 54, 69, DateTimeKind.Local).AddTicks(4885),
                             Hours = 55,
                             IsDeleted = false,
                             Location = "Online",
@@ -1488,18 +1461,18 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 24,
                             NumberOfTrainees = 30,
-                            StartAt = new DateTime(2024, 7, 4, 2, 50, 23, 595, DateTimeKind.Local).AddTicks(345),
+                            StartAt = new DateTime(2024, 7, 4, 3, 1, 54, 69, DateTimeKind.Local).AddTicks(4883),
                             TotalFilesSize = 13.800000000000001,
-                            instructorId = 9
+                            instructorId = 8
                         },
                         new
                         {
                             Id = 18,
                             CategoryId = 7,
                             CourseImagePath = "path/to/course/image.jpg",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:54 ص",
                             Description = "Learn Advanced Revit Structure",
-                            EndAt = new DateTime(2024, 8, 16, 2, 50, 23, 595, DateTimeKind.Local).AddTicks(365),
+                            EndAt = new DateTime(2024, 8, 16, 3, 1, 54, 69, DateTimeKind.Local).AddTicks(4902),
                             Hours = 50,
                             IsDeleted = false,
                             Location = "Online",
@@ -1507,18 +1480,18 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 23,
                             NumberOfTrainees = 20,
-                            StartAt = new DateTime(2024, 6, 30, 2, 50, 23, 595, DateTimeKind.Local).AddTicks(363),
+                            StartAt = new DateTime(2024, 6, 30, 3, 1, 54, 69, DateTimeKind.Local).AddTicks(4899),
                             TotalFilesSize = 12.300000000000001,
-                            instructorId = 15
+                            instructorId = 8
                         },
                         new
                         {
                             Id = 19,
                             CategoryId = 7,
                             CourseImagePath = "path/to/course/image.jpg",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:54 ص",
                             Description = "Learn Advanced Revit Architecture",
-                            EndAt = new DateTime(2024, 7, 27, 2, 50, 23, 595, DateTimeKind.Local).AddTicks(382),
+                            EndAt = new DateTime(2024, 7, 27, 3, 1, 54, 69, DateTimeKind.Local).AddTicks(4922),
                             Hours = 45,
                             IsDeleted = false,
                             Location = "Online",
@@ -1526,18 +1499,18 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 6,
                             NumberOfLessons = 22,
                             NumberOfTrainees = 25,
-                            StartAt = new DateTime(2024, 6, 28, 2, 50, 23, 595, DateTimeKind.Local).AddTicks(379),
+                            StartAt = new DateTime(2024, 6, 28, 3, 1, 54, 69, DateTimeKind.Local).AddTicks(4920),
                             TotalFilesSize = 13.699999999999999,
-                            instructorId = 4
+                            instructorId = 7
                         },
                         new
                         {
                             Id = 20,
                             CategoryId = 7,
                             CourseImagePath = "path/to/course/image.jpg",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:54 ص",
                             Description = "Learn Advanced Revit MEP",
-                            EndAt = new DateTime(2024, 7, 22, 2, 50, 23, 595, DateTimeKind.Local).AddTicks(399),
+                            EndAt = new DateTime(2024, 7, 22, 3, 1, 54, 69, DateTimeKind.Local).AddTicks(4939),
                             Hours = 35,
                             IsDeleted = false,
                             Location = "Online",
@@ -1545,9 +1518,9 @@ namespace ProSkills.Migrations
                             NumberOfAssessment = 5,
                             NumberOfLessons = 18,
                             NumberOfTrainees = 20,
-                            StartAt = new DateTime(2024, 6, 29, 2, 50, 23, 595, DateTimeKind.Local).AddTicks(397),
+                            StartAt = new DateTime(2024, 6, 29, 3, 1, 54, 69, DateTimeKind.Local).AddTicks(4936),
                             TotalFilesSize = 11.4,
-                            instructorId = 1
+                            instructorId = 14
                         });
                 });
 
@@ -1588,8 +1561,8 @@ namespace ProSkills.Migrations
                             Id = 1,
                             CourseId = 1,
                             Level = 0,
-                            Points = 830,
-                            Result = 72.2894605977043m,
+                            Points = 270,
+                            Result = 9.30865817808668m,
                             TraineeId = 1
                         },
                         new
@@ -1597,8 +1570,8 @@ namespace ProSkills.Migrations
                             Id = 2,
                             CourseId = 1,
                             Level = 0,
-                            Points = 560,
-                            Result = 86.4895031602914m,
+                            Points = 130,
+                            Result = 17.739730785144m,
                             TraineeId = 2
                         },
                         new
@@ -1606,8 +1579,8 @@ namespace ProSkills.Migrations
                             Id = 3,
                             CourseId = 1,
                             Level = 0,
-                            Points = 340,
-                            Result = 27.5533553611222m,
+                            Points = 770,
+                            Result = 85.102802416939m,
                             TraineeId = 3
                         },
                         new
@@ -1615,8 +1588,8 @@ namespace ProSkills.Migrations
                             Id = 4,
                             CourseId = 1,
                             Level = 0,
-                            Points = 30,
-                            Result = 73.0109007595093m,
+                            Points = 940,
+                            Result = 3.06165927533456m,
                             TraineeId = 4
                         },
                         new
@@ -1624,8 +1597,8 @@ namespace ProSkills.Migrations
                             Id = 5,
                             CourseId = 1,
                             Level = 0,
-                            Points = 0,
-                            Result = 10.7545456665873m,
+                            Points = 220,
+                            Result = 99.5339919636359m,
                             TraineeId = 5
                         },
                         new
@@ -1633,8 +1606,8 @@ namespace ProSkills.Migrations
                             Id = 6,
                             CourseId = 1,
                             Level = 0,
-                            Points = 800,
-                            Result = 29.180293103618m,
+                            Points = 540,
+                            Result = 76.7476066782086m,
                             TraineeId = 6
                         },
                         new
@@ -1642,8 +1615,8 @@ namespace ProSkills.Migrations
                             Id = 7,
                             CourseId = 1,
                             Level = 0,
-                            Points = 750,
-                            Result = 24.9962157985478m,
+                            Points = 850,
+                            Result = 6.03443290707989m,
                             TraineeId = 7
                         },
                         new
@@ -1651,8 +1624,8 @@ namespace ProSkills.Migrations
                             Id = 8,
                             CourseId = 1,
                             Level = 0,
-                            Points = 140,
-                            Result = 30.1448208987283m,
+                            Points = 100,
+                            Result = 6.59941413952639m,
                             TraineeId = 8
                         },
                         new
@@ -1660,8 +1633,8 @@ namespace ProSkills.Migrations
                             Id = 9,
                             CourseId = 1,
                             Level = 0,
-                            Points = 880,
-                            Result = 68.2288896669716m,
+                            Points = 290,
+                            Result = 11.9150061004565m,
                             TraineeId = 9
                         },
                         new
@@ -1669,8 +1642,8 @@ namespace ProSkills.Migrations
                             Id = 10,
                             CourseId = 1,
                             Level = 0,
-                            Points = 540,
-                            Result = 79.8843709542481m,
+                            Points = 570,
+                            Result = 26.1446903904745m,
                             TraineeId = 10
                         },
                         new
@@ -1678,8 +1651,8 @@ namespace ProSkills.Migrations
                             Id = 11,
                             CourseId = 1,
                             Level = 0,
-                            Points = 980,
-                            Result = 26.3474571767987m,
+                            Points = 240,
+                            Result = 97.7364110063341m,
                             TraineeId = 11
                         },
                         new
@@ -1687,8 +1660,8 @@ namespace ProSkills.Migrations
                             Id = 12,
                             CourseId = 1,
                             Level = 0,
-                            Points = 690,
-                            Result = 70.4677331302497m,
+                            Points = 310,
+                            Result = 60.5431719815848m,
                             TraineeId = 12
                         },
                         new
@@ -1696,8 +1669,8 @@ namespace ProSkills.Migrations
                             Id = 13,
                             CourseId = 1,
                             Level = 0,
-                            Points = 140,
-                            Result = 56.4814189436019m,
+                            Points = 220,
+                            Result = 39.1560592178947m,
                             TraineeId = 13
                         },
                         new
@@ -1705,8 +1678,8 @@ namespace ProSkills.Migrations
                             Id = 14,
                             CourseId = 1,
                             Level = 0,
-                            Points = 230,
-                            Result = 90.5404291012845m,
+                            Points = 20,
+                            Result = 73.1807602490343m,
                             TraineeId = 14
                         },
                         new
@@ -1714,8 +1687,8 @@ namespace ProSkills.Migrations
                             Id = 15,
                             CourseId = 15,
                             Level = 0,
-                            Points = 390,
-                            Result = 94.3505920077469m,
+                            Points = 870,
+                            Result = 14.2348197794775m,
                             TraineeId = 15
                         },
                         new
@@ -1723,8 +1696,8 @@ namespace ProSkills.Migrations
                             Id = 16,
                             CourseId = 16,
                             Level = 0,
-                            Points = 350,
-                            Result = 3.85785004595445m,
+                            Points = 720,
+                            Result = 76.185503359607m,
                             TraineeId = 16
                         },
                         new
@@ -1732,8 +1705,8 @@ namespace ProSkills.Migrations
                             Id = 17,
                             CourseId = 17,
                             Level = 0,
-                            Points = 250,
-                            Result = 20.5301229657516m,
+                            Points = 300,
+                            Result = 17.1621914336307m,
                             TraineeId = 17
                         },
                         new
@@ -1741,8 +1714,8 @@ namespace ProSkills.Migrations
                             Id = 18,
                             CourseId = 18,
                             Level = 0,
-                            Points = 530,
-                            Result = 7.67040234431208m,
+                            Points = 900,
+                            Result = 91.2107106408202m,
                             TraineeId = 18
                         },
                         new
@@ -1750,8 +1723,8 @@ namespace ProSkills.Migrations
                             Id = 19,
                             CourseId = 19,
                             Level = 0,
-                            Points = 50,
-                            Result = 98.4240101656114m,
+                            Points = 470,
+                            Result = 57.1550086735166m,
                             TraineeId = 19
                         },
                         new
@@ -1759,8 +1732,8 @@ namespace ProSkills.Migrations
                             Id = 20,
                             CourseId = 20,
                             Level = 0,
-                            Points = 120,
-                            Result = 82.1927933935085m,
+                            Points = 870,
+                            Result = 24.7310161896566m,
                             TraineeId = 20
                         },
                         new
@@ -1768,8 +1741,8 @@ namespace ProSkills.Migrations
                             Id = 21,
                             CourseId = 1,
                             Level = 0,
-                            Points = 740,
-                            Result = 62.3285710057507m,
+                            Points = 580,
+                            Result = 17.6209789782645m,
                             TraineeId = 21
                         },
                         new
@@ -1777,8 +1750,8 @@ namespace ProSkills.Migrations
                             Id = 22,
                             CourseId = 2,
                             Level = 0,
-                            Points = 1000,
-                            Result = 52.3965863895644m,
+                            Points = 940,
+                            Result = 84.801667661105m,
                             TraineeId = 22
                         },
                         new
@@ -1786,8 +1759,8 @@ namespace ProSkills.Migrations
                             Id = 23,
                             CourseId = 3,
                             Level = 0,
-                            Points = 590,
-                            Result = 77.9742786151803m,
+                            Points = 620,
+                            Result = 85.0538286057158m,
                             TraineeId = 23
                         },
                         new
@@ -1795,8 +1768,8 @@ namespace ProSkills.Migrations
                             Id = 24,
                             CourseId = 4,
                             Level = 0,
-                            Points = 280,
-                            Result = 7.62591304764633m,
+                            Points = 440,
+                            Result = 29.3299538996148m,
                             TraineeId = 24
                         },
                         new
@@ -1804,8 +1777,8 @@ namespace ProSkills.Migrations
                             Id = 25,
                             CourseId = 5,
                             Level = 0,
-                            Points = 930,
-                            Result = 37.2152900869168m,
+                            Points = 650,
+                            Result = 86.1035436081959m,
                             TraineeId = 25
                         },
                         new
@@ -1813,8 +1786,8 @@ namespace ProSkills.Migrations
                             Id = 26,
                             CourseId = 6,
                             Level = 0,
-                            Points = 90,
-                            Result = 21.5653955418783m,
+                            Points = 870,
+                            Result = 91.5362773484366m,
                             TraineeId = 26
                         },
                         new
@@ -1822,8 +1795,8 @@ namespace ProSkills.Migrations
                             Id = 27,
                             CourseId = 7,
                             Level = 0,
-                            Points = 920,
-                            Result = 15.5826841437641m,
+                            Points = 540,
+                            Result = 22.3788363155125m,
                             TraineeId = 27
                         },
                         new
@@ -1831,8 +1804,8 @@ namespace ProSkills.Migrations
                             Id = 28,
                             CourseId = 8,
                             Level = 0,
-                            Points = 50,
-                            Result = 96.4329084860723m,
+                            Points = 770,
+                            Result = 0.0805992845884229m,
                             TraineeId = 28
                         },
                         new
@@ -1840,8 +1813,8 @@ namespace ProSkills.Migrations
                             Id = 29,
                             CourseId = 9,
                             Level = 0,
-                            Points = 600,
-                            Result = 59.3473766212075m,
+                            Points = 70,
+                            Result = 40.7481164560266m,
                             TraineeId = 29
                         },
                         new
@@ -1849,8 +1822,8 @@ namespace ProSkills.Migrations
                             Id = 30,
                             CourseId = 10,
                             Level = 0,
-                            Points = 10,
-                            Result = 8.90524518347064m,
+                            Points = 890,
+                            Result = 96.9059361211294m,
                             TraineeId = 30
                         },
                         new
@@ -1858,8 +1831,8 @@ namespace ProSkills.Migrations
                             Id = 31,
                             CourseId = 11,
                             Level = 0,
-                            Points = 850,
-                            Result = 21.2331754808358m,
+                            Points = 260,
+                            Result = 33.372855160111m,
                             TraineeId = 1
                         },
                         new
@@ -1867,8 +1840,8 @@ namespace ProSkills.Migrations
                             Id = 32,
                             CourseId = 12,
                             Level = 0,
-                            Points = 180,
-                            Result = 95.4302206975507m,
+                            Points = 530,
+                            Result = 78.1806567965784m,
                             TraineeId = 2
                         },
                         new
@@ -1876,8 +1849,8 @@ namespace ProSkills.Migrations
                             Id = 33,
                             CourseId = 13,
                             Level = 0,
-                            Points = 440,
-                            Result = 48.2842879536957m,
+                            Points = 590,
+                            Result = 5.91906147982253m,
                             TraineeId = 3
                         },
                         new
@@ -1885,8 +1858,8 @@ namespace ProSkills.Migrations
                             Id = 34,
                             CourseId = 14,
                             Level = 0,
-                            Points = 900,
-                            Result = 65.5862785074438m,
+                            Points = 480,
+                            Result = 48.2759136282374m,
                             TraineeId = 4
                         },
                         new
@@ -1894,8 +1867,8 @@ namespace ProSkills.Migrations
                             Id = 35,
                             CourseId = 15,
                             Level = 0,
-                            Points = 650,
-                            Result = 24.1390696829555m,
+                            Points = 930,
+                            Result = 92.8836319015397m,
                             TraineeId = 5
                         },
                         new
@@ -1903,8 +1876,8 @@ namespace ProSkills.Migrations
                             Id = 36,
                             CourseId = 16,
                             Level = 0,
-                            Points = 900,
-                            Result = 69.6144442008445m,
+                            Points = 620,
+                            Result = 83.5890429420427m,
                             TraineeId = 6
                         },
                         new
@@ -1912,8 +1885,8 @@ namespace ProSkills.Migrations
                             Id = 37,
                             CourseId = 17,
                             Level = 0,
-                            Points = 360,
-                            Result = 89.4796966140338m,
+                            Points = 680,
+                            Result = 97.0321074222096m,
                             TraineeId = 7
                         },
                         new
@@ -1921,8 +1894,8 @@ namespace ProSkills.Migrations
                             Id = 38,
                             CourseId = 18,
                             Level = 0,
-                            Points = 430,
-                            Result = 56.3336625340148m,
+                            Points = 390,
+                            Result = 83.2392562779231m,
                             TraineeId = 8
                         },
                         new
@@ -1930,8 +1903,8 @@ namespace ProSkills.Migrations
                             Id = 39,
                             CourseId = 19,
                             Level = 0,
-                            Points = 190,
-                            Result = 1.07068613321567m,
+                            Points = 480,
+                            Result = 3.92695114870412m,
                             TraineeId = 9
                         },
                         new
@@ -1939,8 +1912,8 @@ namespace ProSkills.Migrations
                             Id = 40,
                             CourseId = 20,
                             Level = 0,
-                            Points = 850,
-                            Result = 66.7613194293813m,
+                            Points = 190,
+                            Result = 4.6862148644857m,
                             TraineeId = 10
                         },
                         new
@@ -1948,8 +1921,8 @@ namespace ProSkills.Migrations
                             Id = 41,
                             CourseId = 1,
                             Level = 0,
-                            Points = 710,
-                            Result = 13.971868657498m,
+                            Points = 320,
+                            Result = 71.6774210113957m,
                             TraineeId = 11
                         },
                         new
@@ -1957,8 +1930,8 @@ namespace ProSkills.Migrations
                             Id = 42,
                             CourseId = 2,
                             Level = 0,
-                            Points = 620,
-                            Result = 25.2941296550369m,
+                            Points = 410,
+                            Result = 1.34574679641515m,
                             TraineeId = 12
                         },
                         new
@@ -1966,8 +1939,8 @@ namespace ProSkills.Migrations
                             Id = 43,
                             CourseId = 3,
                             Level = 0,
-                            Points = 50,
-                            Result = 41.3786472548868m,
+                            Points = 700,
+                            Result = 46.058847650044m,
                             TraineeId = 13
                         },
                         new
@@ -1975,8 +1948,8 @@ namespace ProSkills.Migrations
                             Id = 44,
                             CourseId = 4,
                             Level = 0,
-                            Points = 790,
-                            Result = 60.0435795182418m,
+                            Points = 860,
+                            Result = 11.3646903645473m,
                             TraineeId = 14
                         },
                         new
@@ -1984,8 +1957,8 @@ namespace ProSkills.Migrations
                             Id = 45,
                             CourseId = 5,
                             Level = 0,
-                            Points = 100,
-                            Result = 22.4464729850116m,
+                            Points = 0,
+                            Result = 80.8507209206009m,
                             TraineeId = 15
                         },
                         new
@@ -1993,8 +1966,8 @@ namespace ProSkills.Migrations
                             Id = 46,
                             CourseId = 6,
                             Level = 0,
-                            Points = 880,
-                            Result = 47.2561765471934m,
+                            Points = 330,
+                            Result = 83.4842452199881m,
                             TraineeId = 16
                         },
                         new
@@ -2002,8 +1975,8 @@ namespace ProSkills.Migrations
                             Id = 47,
                             CourseId = 7,
                             Level = 0,
-                            Points = 430,
-                            Result = 60.6382074532971m,
+                            Points = 340,
+                            Result = 85.3718572627904m,
                             TraineeId = 17
                         },
                         new
@@ -2011,8 +1984,8 @@ namespace ProSkills.Migrations
                             Id = 48,
                             CourseId = 8,
                             Level = 0,
-                            Points = 10,
-                            Result = 48.6655982640382m,
+                            Points = 1000,
+                            Result = 25.0075030433436m,
                             TraineeId = 18
                         },
                         new
@@ -2020,8 +1993,8 @@ namespace ProSkills.Migrations
                             Id = 49,
                             CourseId = 9,
                             Level = 0,
-                            Points = 300,
-                            Result = 0.538000701963393m,
+                            Points = 650,
+                            Result = 13.7764399747591m,
                             TraineeId = 19
                         },
                         new
@@ -2029,8 +2002,8 @@ namespace ProSkills.Migrations
                             Id = 50,
                             CourseId = 10,
                             Level = 0,
-                            Points = 320,
-                            Result = 82.4137866513644m,
+                            Points = 870,
+                            Result = 59.744253789164m,
                             TraineeId = 20
                         },
                         new
@@ -2038,8 +2011,8 @@ namespace ProSkills.Migrations
                             Id = 51,
                             CourseId = 11,
                             Level = 0,
-                            Points = 730,
-                            Result = 42.1023762547551m,
+                            Points = 810,
+                            Result = 10.9299331735802m,
                             TraineeId = 21
                         },
                         new
@@ -2047,8 +2020,8 @@ namespace ProSkills.Migrations
                             Id = 52,
                             CourseId = 12,
                             Level = 0,
-                            Points = 630,
-                            Result = 9.13525880716405m,
+                            Points = 200,
+                            Result = 24.1249227892029m,
                             TraineeId = 22
                         },
                         new
@@ -2056,8 +2029,8 @@ namespace ProSkills.Migrations
                             Id = 53,
                             CourseId = 13,
                             Level = 0,
-                            Points = 920,
-                            Result = 29.2419031545567m,
+                            Points = 10,
+                            Result = 86.6242473147494m,
                             TraineeId = 23
                         },
                         new
@@ -2065,8 +2038,8 @@ namespace ProSkills.Migrations
                             Id = 54,
                             CourseId = 14,
                             Level = 0,
-                            Points = 210,
-                            Result = 95.0733457568657m,
+                            Points = 490,
+                            Result = 66.1836879984223m,
                             TraineeId = 24
                         },
                         new
@@ -2074,8 +2047,8 @@ namespace ProSkills.Migrations
                             Id = 55,
                             CourseId = 15,
                             Level = 0,
-                            Points = 900,
-                            Result = 39.5243226580075m,
+                            Points = 880,
+                            Result = 28.8030284222052m,
                             TraineeId = 25
                         },
                         new
@@ -2083,8 +2056,8 @@ namespace ProSkills.Migrations
                             Id = 56,
                             CourseId = 16,
                             Level = 0,
-                            Points = 420,
-                            Result = 22.2925947199814m,
+                            Points = 740,
+                            Result = 87.3437567033556m,
                             TraineeId = 26
                         },
                         new
@@ -2092,8 +2065,8 @@ namespace ProSkills.Migrations
                             Id = 57,
                             CourseId = 17,
                             Level = 0,
-                            Points = 760,
-                            Result = 36.6059789438552m,
+                            Points = 160,
+                            Result = 73.4850927238316m,
                             TraineeId = 27
                         },
                         new
@@ -2101,8 +2074,8 @@ namespace ProSkills.Migrations
                             Id = 58,
                             CourseId = 18,
                             Level = 0,
-                            Points = 810,
-                            Result = 32.7502818535049m,
+                            Points = 950,
+                            Result = 10.537106907004m,
                             TraineeId = 28
                         },
                         new
@@ -2110,8 +2083,8 @@ namespace ProSkills.Migrations
                             Id = 59,
                             CourseId = 19,
                             Level = 0,
-                            Points = 660,
-                            Result = 96.2488538910405m,
+                            Points = 820,
+                            Result = 75.0268533111862m,
                             TraineeId = 29
                         },
                         new
@@ -2119,8 +2092,8 @@ namespace ProSkills.Migrations
                             Id = 60,
                             CourseId = 20,
                             Level = 0,
-                            Points = 260,
-                            Result = 72.8857262541168m,
+                            Points = 30,
+                            Result = 43.4397866107795m,
                             TraineeId = 30
                         },
                         new
@@ -2128,8 +2101,8 @@ namespace ProSkills.Migrations
                             Id = 61,
                             CourseId = 1,
                             Level = 0,
-                            Points = 370,
-                            Result = 22.8791279313962m,
+                            Points = 190,
+                            Result = 2.35966109972522m,
                             TraineeId = 1
                         },
                         new
@@ -2137,8 +2110,8 @@ namespace ProSkills.Migrations
                             Id = 62,
                             CourseId = 2,
                             Level = 0,
-                            Points = 820,
-                            Result = 31.0014698397402m,
+                            Points = 10,
+                            Result = 77.5959612850443m,
                             TraineeId = 2
                         },
                         new
@@ -2146,8 +2119,8 @@ namespace ProSkills.Migrations
                             Id = 63,
                             CourseId = 3,
                             Level = 0,
-                            Points = 480,
-                            Result = 59.5917481254281m,
+                            Points = 970,
+                            Result = 74.4560927775987m,
                             TraineeId = 3
                         },
                         new
@@ -2155,8 +2128,8 @@ namespace ProSkills.Migrations
                             Id = 64,
                             CourseId = 4,
                             Level = 0,
-                            Points = 290,
-                            Result = 70.0281173597533m,
+                            Points = 680,
+                            Result = 12.6069428286471m,
                             TraineeId = 4
                         },
                         new
@@ -2164,8 +2137,8 @@ namespace ProSkills.Migrations
                             Id = 65,
                             CourseId = 5,
                             Level = 0,
-                            Points = 80,
-                            Result = 94.2694769237838m,
+                            Points = 380,
+                            Result = 35.8889747011323m,
                             TraineeId = 5
                         },
                         new
@@ -2173,8 +2146,8 @@ namespace ProSkills.Migrations
                             Id = 66,
                             CourseId = 6,
                             Level = 0,
-                            Points = 230,
-                            Result = 53.4575810989172m,
+                            Points = 490,
+                            Result = 16.4637892169333m,
                             TraineeId = 6
                         },
                         new
@@ -2182,8 +2155,8 @@ namespace ProSkills.Migrations
                             Id = 67,
                             CourseId = 7,
                             Level = 0,
-                            Points = 200,
-                            Result = 95.5300936534028m,
+                            Points = 30,
+                            Result = 70.3421071138868m,
                             TraineeId = 7
                         },
                         new
@@ -2191,8 +2164,8 @@ namespace ProSkills.Migrations
                             Id = 68,
                             CourseId = 8,
                             Level = 0,
-                            Points = 870,
-                            Result = 52.9610670954929m,
+                            Points = 960,
+                            Result = 93.2026736574059m,
                             TraineeId = 8
                         },
                         new
@@ -2200,8 +2173,8 @@ namespace ProSkills.Migrations
                             Id = 69,
                             CourseId = 9,
                             Level = 0,
-                            Points = 110,
-                            Result = 45.0083754380026m,
+                            Points = 720,
+                            Result = 90.3280672890374m,
                             TraineeId = 9
                         },
                         new
@@ -2209,8 +2182,8 @@ namespace ProSkills.Migrations
                             Id = 70,
                             CourseId = 10,
                             Level = 0,
-                            Points = 280,
-                            Result = 14.2291778657598m,
+                            Points = 870,
+                            Result = 19.4205032654763m,
                             TraineeId = 10
                         },
                         new
@@ -2218,8 +2191,8 @@ namespace ProSkills.Migrations
                             Id = 71,
                             CourseId = 11,
                             Level = 0,
-                            Points = 550,
-                            Result = 59.3759566667639m,
+                            Points = 520,
+                            Result = 31.3396152686348m,
                             TraineeId = 11
                         },
                         new
@@ -2227,8 +2200,8 @@ namespace ProSkills.Migrations
                             Id = 72,
                             CourseId = 12,
                             Level = 0,
-                            Points = 930,
-                            Result = 93.8527502267744m,
+                            Points = 780,
+                            Result = 92.7894744996627m,
                             TraineeId = 12
                         },
                         new
@@ -2236,8 +2209,8 @@ namespace ProSkills.Migrations
                             Id = 73,
                             CourseId = 13,
                             Level = 0,
-                            Points = 680,
-                            Result = 33.9995704938823m,
+                            Points = 730,
+                            Result = 87.2252195596801m,
                             TraineeId = 13
                         },
                         new
@@ -2245,8 +2218,8 @@ namespace ProSkills.Migrations
                             Id = 74,
                             CourseId = 14,
                             Level = 0,
-                            Points = 640,
-                            Result = 76.0663815492241m,
+                            Points = 960,
+                            Result = 11.3872186311704m,
                             TraineeId = 14
                         },
                         new
@@ -2254,8 +2227,8 @@ namespace ProSkills.Migrations
                             Id = 75,
                             CourseId = 15,
                             Level = 0,
-                            Points = 740,
-                            Result = 43.5881591931345m,
+                            Points = 680,
+                            Result = 94.6244398250413m,
                             TraineeId = 15
                         },
                         new
@@ -2263,8 +2236,8 @@ namespace ProSkills.Migrations
                             Id = 76,
                             CourseId = 16,
                             Level = 0,
-                            Points = 860,
-                            Result = 25.6428625490396m,
+                            Points = 330,
+                            Result = 26.5170690290742m,
                             TraineeId = 16
                         },
                         new
@@ -2272,8 +2245,8 @@ namespace ProSkills.Migrations
                             Id = 77,
                             CourseId = 17,
                             Level = 0,
-                            Points = 370,
-                            Result = 58.3241656700828m,
+                            Points = 350,
+                            Result = 70.7220232299265m,
                             TraineeId = 17
                         },
                         new
@@ -2281,8 +2254,8 @@ namespace ProSkills.Migrations
                             Id = 78,
                             CourseId = 18,
                             Level = 0,
-                            Points = 150,
-                            Result = 71.7962760429707m,
+                            Points = 740,
+                            Result = 92.715958837168m,
                             TraineeId = 18
                         },
                         new
@@ -2290,8 +2263,8 @@ namespace ProSkills.Migrations
                             Id = 79,
                             CourseId = 19,
                             Level = 0,
-                            Points = 730,
-                            Result = 28.5010145755361m,
+                            Points = 750,
+                            Result = 37.0674935449258m,
                             TraineeId = 19
                         },
                         new
@@ -2299,8 +2272,8 @@ namespace ProSkills.Migrations
                             Id = 80,
                             CourseId = 20,
                             Level = 0,
-                            Points = 680,
-                            Result = 87.8044040471396m,
+                            Points = 880,
+                            Result = 88.2174528705444m,
                             TraineeId = 20
                         },
                         new
@@ -2308,8 +2281,8 @@ namespace ProSkills.Migrations
                             Id = 81,
                             CourseId = 1,
                             Level = 0,
-                            Points = 10,
-                            Result = 99.434080401825m,
+                            Points = 920,
+                            Result = 27.1442936363534m,
                             TraineeId = 21
                         },
                         new
@@ -2317,8 +2290,8 @@ namespace ProSkills.Migrations
                             Id = 82,
                             CourseId = 2,
                             Level = 0,
-                            Points = 200,
-                            Result = 90.1091666122812m,
+                            Points = 560,
+                            Result = 76.6247367793928m,
                             TraineeId = 22
                         },
                         new
@@ -2326,8 +2299,8 @@ namespace ProSkills.Migrations
                             Id = 83,
                             CourseId = 3,
                             Level = 0,
-                            Points = 970,
-                            Result = 19.0830996124111m,
+                            Points = 380,
+                            Result = 98.1474775812784m,
                             TraineeId = 23
                         },
                         new
@@ -2335,8 +2308,8 @@ namespace ProSkills.Migrations
                             Id = 84,
                             CourseId = 4,
                             Level = 0,
-                            Points = 620,
-                            Result = 80.1884196606271m,
+                            Points = 240,
+                            Result = 22.9083437044633m,
                             TraineeId = 24
                         },
                         new
@@ -2344,8 +2317,8 @@ namespace ProSkills.Migrations
                             Id = 85,
                             CourseId = 5,
                             Level = 0,
-                            Points = 890,
-                            Result = 43.5563853087766m,
+                            Points = 770,
+                            Result = 59.2349349139755m,
                             TraineeId = 25
                         },
                         new
@@ -2353,8 +2326,8 @@ namespace ProSkills.Migrations
                             Id = 86,
                             CourseId = 6,
                             Level = 0,
-                            Points = 40,
-                            Result = 30.1265758508179m,
+                            Points = 830,
+                            Result = 29.2925643190788m,
                             TraineeId = 26
                         },
                         new
@@ -2362,8 +2335,8 @@ namespace ProSkills.Migrations
                             Id = 87,
                             CourseId = 7,
                             Level = 0,
-                            Points = 830,
-                            Result = 44.9399433627696m,
+                            Points = 460,
+                            Result = 6.95075675018552m,
                             TraineeId = 27
                         },
                         new
@@ -2371,8 +2344,8 @@ namespace ProSkills.Migrations
                             Id = 88,
                             CourseId = 8,
                             Level = 0,
-                            Points = 720,
-                            Result = 5.91263366628802m,
+                            Points = 640,
+                            Result = 71.3173804016625m,
                             TraineeId = 28
                         },
                         new
@@ -2380,8 +2353,8 @@ namespace ProSkills.Migrations
                             Id = 89,
                             CourseId = 9,
                             Level = 0,
-                            Points = 190,
-                            Result = 46.904511602711m,
+                            Points = 310,
+                            Result = 49.324217755315m,
                             TraineeId = 29
                         },
                         new
@@ -2389,8 +2362,8 @@ namespace ProSkills.Migrations
                             Id = 90,
                             CourseId = 10,
                             Level = 0,
-                            Points = 820,
-                            Result = 57.9964566661103m,
+                            Points = 100,
+                            Result = 21.0493652973935m,
                             TraineeId = 30
                         },
                         new
@@ -2398,8 +2371,8 @@ namespace ProSkills.Migrations
                             Id = 91,
                             CourseId = 11,
                             Level = 0,
-                            Points = 810,
-                            Result = 10.6664104929983m,
+                            Points = 580,
+                            Result = 0.315188012827505m,
                             TraineeId = 31
                         },
                         new
@@ -2407,8 +2380,8 @@ namespace ProSkills.Migrations
                             Id = 92,
                             CourseId = 12,
                             Level = 0,
-                            Points = 900,
-                            Result = 54.9643228332019m,
+                            Points = 550,
+                            Result = 12.5285707587931m,
                             TraineeId = 32
                         },
                         new
@@ -2416,8 +2389,8 @@ namespace ProSkills.Migrations
                             Id = 93,
                             CourseId = 13,
                             Level = 0,
-                            Points = 320,
-                            Result = 19.8307242178148m,
+                            Points = 720,
+                            Result = 15.5873082167199m,
                             TraineeId = 33
                         },
                         new
@@ -2425,71 +2398,71 @@ namespace ProSkills.Migrations
                             Id = 94,
                             CourseId = 14,
                             Level = 0,
-                            Points = 430,
-                            Result = 97.8293179295797m,
-                            TraineeId = 34
+                            Points = 820,
+                            Result = 15.2452363436467m,
+                            TraineeId = 1
                         },
                         new
                         {
                             Id = 95,
                             CourseId = 15,
                             Level = 0,
-                            Points = 780,
-                            Result = 64.5866977173513m,
-                            TraineeId = 35
+                            Points = 700,
+                            Result = 19.9320892900603m,
+                            TraineeId = 2
                         },
                         new
                         {
                             Id = 96,
                             CourseId = 16,
                             Level = 0,
-                            Points = 550,
-                            Result = 25.8362409195012m,
-                            TraineeId = 36
+                            Points = 920,
+                            Result = 16.1922790968771m,
+                            TraineeId = 3
                         },
                         new
                         {
                             Id = 97,
                             CourseId = 17,
                             Level = 0,
-                            Points = 40,
-                            Result = 9.40468655694651m,
-                            TraineeId = 37
+                            Points = 10,
+                            Result = 12.3468276031005m,
+                            TraineeId = 4
                         },
                         new
                         {
                             Id = 98,
                             CourseId = 18,
                             Level = 0,
-                            Points = 180,
-                            Result = 89.5784124548006m,
-                            TraineeId = 38
+                            Points = 440,
+                            Result = 35.4687516945992m,
+                            TraineeId = 5
                         },
                         new
                         {
                             Id = 99,
                             CourseId = 19,
                             Level = 0,
-                            Points = 500,
-                            Result = 27.8391165957731m,
-                            TraineeId = 39
+                            Points = 400,
+                            Result = 36.1545014743861m,
+                            TraineeId = 6
                         },
                         new
                         {
                             Id = 100,
                             CourseId = 20,
                             Level = 0,
-                            Points = 750,
-                            Result = 34.1182490968273m,
-                            TraineeId = 40
+                            Points = 530,
+                            Result = 7.74278748731545m,
+                            TraineeId = 7
                         },
                         new
                         {
                             Id = 101,
                             CourseId = 1,
                             Level = 0,
-                            Points = 140,
-                            Result = 58.5838593742467m,
+                            Points = 800,
+                            Result = 17.8758565853093m,
                             TraineeId = 31
                         },
                         new
@@ -2497,8 +2470,8 @@ namespace ProSkills.Migrations
                             Id = 102,
                             CourseId = 1,
                             Level = 0,
-                            Points = 270,
-                            Result = 16.8915690098298m,
+                            Points = 640,
+                            Result = 93.0111785147826m,
                             TraineeId = 32
                         },
                         new
@@ -2506,8 +2479,8 @@ namespace ProSkills.Migrations
                             Id = 103,
                             CourseId = 1,
                             Level = 0,
-                            Points = 380,
-                            Result = 55.3800897127084m,
+                            Points = 290,
+                            Result = 48.2313547694795m,
                             TraineeId = 33
                         });
                 });
@@ -2556,7 +2529,7 @@ namespace ProSkills.Migrations
                             Content = "Content for Lesson 1 in Chapter 1",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 16, 0, 0),
+                            Time = new TimeSpan(0, 0, 35, 0, 0),
                             Title = "Lesson 1 for Chapter 1",
                             downloadLink = "https://sadat.vip/"
                         },
@@ -2567,41 +2540,41 @@ namespace ProSkills.Migrations
                             Content = "Content for Lesson 2 in Chapter 1",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 17, 0, 0),
+                            Time = new TimeSpan(0, 0, 33, 0, 0),
                             Title = "Lesson 2 for Chapter 1",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
                             Id = 3,
-                            ChapterId = 2,
-                            Content = "Content for Lesson 1 in Chapter 2",
+                            ChapterId = 1,
+                            Content = "Content for Lesson 3 in Chapter 1",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 47, 0, 0),
-                            Title = "Lesson 1 for Chapter 2",
+                            Time = new TimeSpan(0, 0, 45, 0, 0),
+                            Title = "Lesson 3 for Chapter 1",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
                             Id = 4,
                             ChapterId = 2,
-                            Content = "Content for Lesson 2 in Chapter 2",
+                            Content = "Content for Lesson 1 in Chapter 2",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 30, 0, 0),
-                            Title = "Lesson 2 for Chapter 2",
+                            Time = new TimeSpan(0, 0, 56, 0, 0),
+                            Title = "Lesson 1 for Chapter 2",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
                             Id = 5,
                             ChapterId = 2,
-                            Content = "Content for Lesson 3 in Chapter 2",
+                            Content = "Content for Lesson 2 in Chapter 2",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 52, 0, 0),
-                            Title = "Lesson 3 for Chapter 2",
+                            Time = new TimeSpan(0, 0, 35, 0, 0),
+                            Title = "Lesson 2 for Chapter 2",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
@@ -2611,7 +2584,7 @@ namespace ProSkills.Migrations
                             Content = "Content for Lesson 1 in Chapter 3",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 49, 0, 0),
+                            Time = new TimeSpan(0, 0, 23, 0, 0),
                             Title = "Lesson 1 for Chapter 3",
                             downloadLink = "https://sadat.vip/"
                         },
@@ -2622,140 +2595,140 @@ namespace ProSkills.Migrations
                             Content = "Content for Lesson 2 in Chapter 3",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 53, 0, 0),
+                            Time = new TimeSpan(0, 0, 32, 0, 0),
                             Title = "Lesson 2 for Chapter 3",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
                             Id = 8,
-                            ChapterId = 4,
-                            Content = "Content for Lesson 1 in Chapter 4",
+                            ChapterId = 3,
+                            Content = "Content for Lesson 3 in Chapter 3",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 35, 0, 0),
-                            Title = "Lesson 1 for Chapter 4",
+                            Time = new TimeSpan(0, 0, 24, 0, 0),
+                            Title = "Lesson 3 for Chapter 3",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
                             Id = 9,
                             ChapterId = 4,
-                            Content = "Content for Lesson 2 in Chapter 4",
+                            Content = "Content for Lesson 1 in Chapter 4",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 48, 0, 0),
-                            Title = "Lesson 2 for Chapter 4",
+                            Time = new TimeSpan(0, 0, 31, 0, 0),
+                            Title = "Lesson 1 for Chapter 4",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
                             Id = 10,
-                            ChapterId = 5,
-                            Content = "Content for Lesson 1 in Chapter 5",
+                            ChapterId = 4,
+                            Content = "Content for Lesson 2 in Chapter 4",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 18, 0, 0),
-                            Title = "Lesson 1 for Chapter 5",
+                            Time = new TimeSpan(0, 0, 53, 0, 0),
+                            Title = "Lesson 2 for Chapter 4",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
                             Id = 11,
-                            ChapterId = 5,
-                            Content = "Content for Lesson 2 in Chapter 5",
+                            ChapterId = 4,
+                            Content = "Content for Lesson 3 in Chapter 4",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 17, 0, 0),
-                            Title = "Lesson 2 for Chapter 5",
+                            Time = new TimeSpan(0, 0, 26, 0, 0),
+                            Title = "Lesson 3 for Chapter 4",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
                             Id = 12,
-                            ChapterId = 6,
-                            Content = "Content for Lesson 1 in Chapter 6",
+                            ChapterId = 5,
+                            Content = "Content for Lesson 1 in Chapter 5",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 38, 0, 0),
-                            Title = "Lesson 1 for Chapter 6",
+                            Time = new TimeSpan(0, 0, 20, 0, 0),
+                            Title = "Lesson 1 for Chapter 5",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
                             Id = 13,
-                            ChapterId = 6,
-                            Content = "Content for Lesson 2 in Chapter 6",
+                            ChapterId = 5,
+                            Content = "Content for Lesson 2 in Chapter 5",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 28, 0, 0),
-                            Title = "Lesson 2 for Chapter 6",
+                            Time = new TimeSpan(0, 0, 42, 0, 0),
+                            Title = "Lesson 2 for Chapter 5",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
                             Id = 14,
                             ChapterId = 6,
-                            Content = "Content for Lesson 3 in Chapter 6",
+                            Content = "Content for Lesson 1 in Chapter 6",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 48, 0, 0),
-                            Title = "Lesson 3 for Chapter 6",
+                            Time = new TimeSpan(0, 0, 31, 0, 0),
+                            Title = "Lesson 1 for Chapter 6",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
                             Id = 15,
-                            ChapterId = 7,
-                            Content = "Content for Lesson 1 in Chapter 7",
+                            ChapterId = 6,
+                            Content = "Content for Lesson 2 in Chapter 6",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 13, 0, 0),
-                            Title = "Lesson 1 for Chapter 7",
+                            Time = new TimeSpan(0, 0, 43, 0, 0),
+                            Title = "Lesson 2 for Chapter 6",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
                             Id = 16,
                             ChapterId = 7,
-                            Content = "Content for Lesson 2 in Chapter 7",
+                            Content = "Content for Lesson 1 in Chapter 7",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 15, 0, 0),
-                            Title = "Lesson 2 for Chapter 7",
+                            Time = new TimeSpan(0, 0, 31, 0, 0),
+                            Title = "Lesson 1 for Chapter 7",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
                             Id = 17,
-                            ChapterId = 8,
-                            Content = "Content for Lesson 1 in Chapter 8",
+                            ChapterId = 7,
+                            Content = "Content for Lesson 2 in Chapter 7",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 29, 0, 0),
-                            Title = "Lesson 1 for Chapter 8",
+                            Time = new TimeSpan(0, 0, 41, 0, 0),
+                            Title = "Lesson 2 for Chapter 7",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
                             Id = 18,
                             ChapterId = 8,
-                            Content = "Content for Lesson 2 in Chapter 8",
+                            Content = "Content for Lesson 1 in Chapter 8",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 49, 0, 0),
-                            Title = "Lesson 2 for Chapter 8",
+                            Time = new TimeSpan(0, 0, 54, 0, 0),
+                            Title = "Lesson 1 for Chapter 8",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
                             Id = 19,
                             ChapterId = 8,
-                            Content = "Content for Lesson 3 in Chapter 8",
+                            Content = "Content for Lesson 2 in Chapter 8",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 36, 0, 0),
-                            Title = "Lesson 3 for Chapter 8",
+                            Time = new TimeSpan(0, 0, 26, 0, 0),
+                            Title = "Lesson 2 for Chapter 8",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
@@ -2765,7 +2738,7 @@ namespace ProSkills.Migrations
                             Content = "Content for Lesson 1 in Chapter 9",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 38, 0, 0),
+                            Time = new TimeSpan(0, 0, 25, 0, 0),
                             Title = "Lesson 1 for Chapter 9",
                             downloadLink = "https://sadat.vip/"
                         },
@@ -2776,503 +2749,371 @@ namespace ProSkills.Migrations
                             Content = "Content for Lesson 2 in Chapter 9",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 53, 0, 0),
+                            Time = new TimeSpan(0, 0, 32, 0, 0),
                             Title = "Lesson 2 for Chapter 9",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
                             Id = 22,
-                            ChapterId = 9,
-                            Content = "Content for Lesson 3 in Chapter 9",
+                            ChapterId = 10,
+                            Content = "Content for Lesson 1 in Chapter 10",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 12, 0, 0),
-                            Title = "Lesson 3 for Chapter 9",
+                            Time = new TimeSpan(0, 0, 15, 0, 0),
+                            Title = "Lesson 1 for Chapter 10",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
                             Id = 23,
                             ChapterId = 10,
-                            Content = "Content for Lesson 1 in Chapter 10",
-                            IsDeleted = false,
-                            TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 32, 0, 0),
-                            Title = "Lesson 1 for Chapter 10",
-                            downloadLink = "https://sadat.vip/"
-                        },
-                        new
-                        {
-                            Id = 24,
-                            ChapterId = 10,
                             Content = "Content for Lesson 2 in Chapter 10",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 36, 0, 0),
+                            Time = new TimeSpan(0, 0, 23, 0, 0),
                             Title = "Lesson 2 for Chapter 10",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
-                            Id = 25,
-                            ChapterId = 10,
-                            Content = "Content for Lesson 3 in Chapter 10",
+                            Id = 24,
+                            ChapterId = 11,
+                            Content = "Content for Lesson 1 in Chapter 11",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 20, 0, 0),
-                            Title = "Lesson 3 for Chapter 10",
+                            Time = new TimeSpan(0, 0, 19, 0, 0),
+                            Title = "Lesson 1 for Chapter 11",
+                            downloadLink = "https://sadat.vip/"
+                        },
+                        new
+                        {
+                            Id = 25,
+                            ChapterId = 11,
+                            Content = "Content for Lesson 2 in Chapter 11",
+                            IsDeleted = false,
+                            TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
+                            Time = new TimeSpan(0, 0, 57, 0, 0),
+                            Title = "Lesson 2 for Chapter 11",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
                             Id = 26,
                             ChapterId = 11,
-                            Content = "Content for Lesson 1 in Chapter 11",
-                            IsDeleted = false,
-                            TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 18, 0, 0),
-                            Title = "Lesson 1 for Chapter 11",
-                            downloadLink = "https://sadat.vip/"
-                        },
-                        new
-                        {
-                            Id = 27,
-                            ChapterId = 11,
-                            Content = "Content for Lesson 2 in Chapter 11",
-                            IsDeleted = false,
-                            TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 29, 0, 0),
-                            Title = "Lesson 2 for Chapter 11",
-                            downloadLink = "https://sadat.vip/"
-                        },
-                        new
-                        {
-                            Id = 28,
-                            ChapterId = 11,
                             Content = "Content for Lesson 3 in Chapter 11",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 29, 0, 0),
+                            Time = new TimeSpan(0, 0, 10, 0, 0),
                             Title = "Lesson 3 for Chapter 11",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
-                            Id = 29,
+                            Id = 27,
                             ChapterId = 12,
                             Content = "Content for Lesson 1 in Chapter 12",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 36, 0, 0),
+                            Time = new TimeSpan(0, 0, 18, 0, 0),
                             Title = "Lesson 1 for Chapter 12",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
-                            Id = 30,
+                            Id = 28,
                             ChapterId = 12,
                             Content = "Content for Lesson 2 in Chapter 12",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 18, 0, 0),
+                            Time = new TimeSpan(0, 0, 19, 0, 0),
                             Title = "Lesson 2 for Chapter 12",
+                            downloadLink = "https://sadat.vip/"
+                        },
+                        new
+                        {
+                            Id = 29,
+                            ChapterId = 13,
+                            Content = "Content for Lesson 1 in Chapter 13",
+                            IsDeleted = false,
+                            TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
+                            Time = new TimeSpan(0, 0, 45, 0, 0),
+                            Title = "Lesson 1 for Chapter 13",
+                            downloadLink = "https://sadat.vip/"
+                        },
+                        new
+                        {
+                            Id = 30,
+                            ChapterId = 13,
+                            Content = "Content for Lesson 2 in Chapter 13",
+                            IsDeleted = false,
+                            TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
+                            Time = new TimeSpan(0, 0, 31, 0, 0),
+                            Title = "Lesson 2 for Chapter 13",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
                             Id = 31,
                             ChapterId = 13,
-                            Content = "Content for Lesson 1 in Chapter 13",
+                            Content = "Content for Lesson 3 in Chapter 13",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 30, 0, 0),
-                            Title = "Lesson 1 for Chapter 13",
+                            Time = new TimeSpan(0, 0, 36, 0, 0),
+                            Title = "Lesson 3 for Chapter 13",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
                             Id = 32,
-                            ChapterId = 13,
-                            Content = "Content for Lesson 2 in Chapter 13",
+                            ChapterId = 14,
+                            Content = "Content for Lesson 1 in Chapter 14",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 40, 0, 0),
-                            Title = "Lesson 2 for Chapter 13",
+                            Time = new TimeSpan(0, 0, 49, 0, 0),
+                            Title = "Lesson 1 for Chapter 14",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
                             Id = 33,
-                            ChapterId = 13,
-                            Content = "Content for Lesson 3 in Chapter 13",
+                            ChapterId = 14,
+                            Content = "Content for Lesson 2 in Chapter 14",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 12, 0, 0),
-                            Title = "Lesson 3 for Chapter 13",
+                            Time = new TimeSpan(0, 0, 43, 0, 0),
+                            Title = "Lesson 2 for Chapter 14",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
                             Id = 34,
                             ChapterId = 14,
-                            Content = "Content for Lesson 1 in Chapter 14",
-                            IsDeleted = false,
-                            TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 33, 0, 0),
-                            Title = "Lesson 1 for Chapter 14",
-                            downloadLink = "https://sadat.vip/"
-                        },
-                        new
-                        {
-                            Id = 35,
-                            ChapterId = 14,
-                            Content = "Content for Lesson 2 in Chapter 14",
-                            IsDeleted = false,
-                            TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 45, 0, 0),
-                            Title = "Lesson 2 for Chapter 14",
-                            downloadLink = "https://sadat.vip/"
-                        },
-                        new
-                        {
-                            Id = 36,
-                            ChapterId = 14,
                             Content = "Content for Lesson 3 in Chapter 14",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 10, 0, 0),
+                            Time = new TimeSpan(0, 0, 16, 0, 0),
                             Title = "Lesson 3 for Chapter 14",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
-                            Id = 37,
+                            Id = 35,
                             ChapterId = 15,
                             Content = "Content for Lesson 1 in Chapter 15",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 55, 0, 0),
+                            Time = new TimeSpan(0, 0, 46, 0, 0),
                             Title = "Lesson 1 for Chapter 15",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
-                            Id = 38,
+                            Id = 36,
                             ChapterId = 15,
                             Content = "Content for Lesson 2 in Chapter 15",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 51, 0, 0),
+                            Time = new TimeSpan(0, 0, 53, 0, 0),
                             Title = "Lesson 2 for Chapter 15",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
-                            Id = 39,
+                            Id = 37,
                             ChapterId = 16,
                             Content = "Content for Lesson 1 in Chapter 16",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 28, 0, 0),
+                            Time = new TimeSpan(0, 0, 14, 0, 0),
                             Title = "Lesson 1 for Chapter 16",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
-                            Id = 40,
+                            Id = 38,
                             ChapterId = 16,
                             Content = "Content for Lesson 2 in Chapter 16",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 43, 0, 0),
+                            Time = new TimeSpan(0, 0, 29, 0, 0),
                             Title = "Lesson 2 for Chapter 16",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
-                            Id = 41,
+                            Id = 39,
                             ChapterId = 17,
                             Content = "Content for Lesson 1 in Chapter 17",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 43, 0, 0),
+                            Time = new TimeSpan(0, 0, 58, 0, 0),
                             Title = "Lesson 1 for Chapter 17",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
-                            Id = 42,
+                            Id = 40,
                             ChapterId = 17,
                             Content = "Content for Lesson 2 in Chapter 17",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 22, 0, 0),
+                            Time = new TimeSpan(0, 0, 50, 0, 0),
                             Title = "Lesson 2 for Chapter 17",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
-                            Id = 43,
+                            Id = 41,
                             ChapterId = 18,
                             Content = "Content for Lesson 1 in Chapter 18",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 22, 0, 0),
+                            Time = new TimeSpan(0, 0, 56, 0, 0),
                             Title = "Lesson 1 for Chapter 18",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
-                            Id = 44,
+                            Id = 42,
                             ChapterId = 18,
                             Content = "Content for Lesson 2 in Chapter 18",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 51, 0, 0),
+                            Time = new TimeSpan(0, 0, 29, 0, 0),
                             Title = "Lesson 2 for Chapter 18",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
-                            Id = 45,
-                            ChapterId = 18,
-                            Content = "Content for Lesson 3 in Chapter 18",
-                            IsDeleted = false,
-                            TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 41, 0, 0),
-                            Title = "Lesson 3 for Chapter 18",
-                            downloadLink = "https://sadat.vip/"
-                        },
-                        new
-                        {
-                            Id = 46,
+                            Id = 43,
                             ChapterId = 19,
                             Content = "Content for Lesson 1 in Chapter 19",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 33, 0, 0),
+                            Time = new TimeSpan(0, 0, 20, 0, 0),
                             Title = "Lesson 1 for Chapter 19",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
-                            Id = 47,
+                            Id = 44,
                             ChapterId = 19,
                             Content = "Content for Lesson 2 in Chapter 19",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 43, 0, 0),
+                            Time = new TimeSpan(0, 0, 52, 0, 0),
                             Title = "Lesson 2 for Chapter 19",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
-                            Id = 48,
-                            ChapterId = 19,
-                            Content = "Content for Lesson 3 in Chapter 19",
-                            IsDeleted = false,
-                            TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 24, 0, 0),
-                            Title = "Lesson 3 for Chapter 19",
-                            downloadLink = "https://sadat.vip/"
-                        },
-                        new
-                        {
-                            Id = 49,
+                            Id = 45,
                             ChapterId = 20,
                             Content = "Content for Lesson 1 in Chapter 20",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 49, 0, 0),
+                            Time = new TimeSpan(0, 0, 14, 0, 0),
                             Title = "Lesson 1 for Chapter 20",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
-                            Id = 50,
+                            Id = 46,
                             ChapterId = 20,
                             Content = "Content for Lesson 2 in Chapter 20",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 20, 0, 0),
+                            Time = new TimeSpan(0, 0, 24, 0, 0),
                             Title = "Lesson 2 for Chapter 20",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
-                            Id = 51,
+                            Id = 47,
                             ChapterId = 21,
                             Content = "Content for Lesson 1 in Chapter 21",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 16, 0, 0),
+                            Time = new TimeSpan(0, 0, 31, 0, 0),
                             Title = "Lesson 1 for Chapter 21",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
-                            Id = 52,
+                            Id = 48,
                             ChapterId = 21,
                             Content = "Content for Lesson 2 in Chapter 21",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 54, 0, 0),
+                            Time = new TimeSpan(0, 0, 39, 0, 0),
                             Title = "Lesson 2 for Chapter 21",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
-                            Id = 53,
+                            Id = 49,
                             ChapterId = 21,
                             Content = "Content for Lesson 3 in Chapter 21",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 57, 0, 0),
+                            Time = new TimeSpan(0, 0, 39, 0, 0),
                             Title = "Lesson 3 for Chapter 21",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
-                            Id = 54,
+                            Id = 50,
                             ChapterId = 22,
                             Content = "Content for Lesson 1 in Chapter 22",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 45, 0, 0),
+                            Time = new TimeSpan(0, 0, 44, 0, 0),
                             Title = "Lesson 1 for Chapter 22",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
-                            Id = 55,
+                            Id = 51,
                             ChapterId = 22,
                             Content = "Content for Lesson 2 in Chapter 22",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 52, 0, 0),
+                            Time = new TimeSpan(0, 0, 18, 0, 0),
                             Title = "Lesson 2 for Chapter 22",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
-                            Id = 56,
+                            Id = 52,
                             ChapterId = 23,
                             Content = "Content for Lesson 1 in Chapter 23",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 41, 0, 0),
+                            Time = new TimeSpan(0, 0, 32, 0, 0),
                             Title = "Lesson 1 for Chapter 23",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
-                            Id = 57,
+                            Id = 53,
                             ChapterId = 23,
                             Content = "Content for Lesson 2 in Chapter 23",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 45, 0, 0),
+                            Time = new TimeSpan(0, 0, 17, 0, 0),
                             Title = "Lesson 2 for Chapter 23",
                             downloadLink = "https://sadat.vip/"
                         },
                         new
                         {
-                            Id = 58,
-                            ChapterId = 24,
-                            Content = "Content for Lesson 1 in Chapter 24",
+                            Id = 54,
+                            ChapterId = 23,
+                            Content = "Content for Lesson 3 in Chapter 23",
                             IsDeleted = false,
                             TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 16, 0, 0),
-                            Title = "Lesson 1 for Chapter 24",
-                            downloadLink = "https://sadat.vip/"
-                        },
-                        new
-                        {
-                            Id = 59,
-                            ChapterId = 24,
-                            Content = "Content for Lesson 2 in Chapter 24",
-                            IsDeleted = false,
-                            TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 56, 0, 0),
-                            Title = "Lesson 2 for Chapter 24",
-                            downloadLink = "https://sadat.vip/"
-                        },
-                        new
-                        {
-                            Id = 60,
-                            ChapterId = 24,
-                            Content = "Content for Lesson 3 in Chapter 24",
-                            IsDeleted = false,
-                            TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 53, 0, 0),
-                            Title = "Lesson 3 for Chapter 24",
-                            downloadLink = "https://sadat.vip/"
-                        },
-                        new
-                        {
-                            Id = 61,
-                            ChapterId = 25,
-                            Content = "Content for Lesson 1 in Chapter 25",
-                            IsDeleted = false,
-                            TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 47, 0, 0),
-                            Title = "Lesson 1 for Chapter 25",
-                            downloadLink = "https://sadat.vip/"
-                        },
-                        new
-                        {
-                            Id = 62,
-                            ChapterId = 25,
-                            Content = "Content for Lesson 2 in Chapter 25",
-                            IsDeleted = false,
-                            TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 27, 0, 0),
-                            Title = "Lesson 2 for Chapter 25",
-                            downloadLink = "https://sadat.vip/"
-                        },
-                        new
-                        {
-                            Id = 63,
-                            ChapterId = 25,
-                            Content = "Content for Lesson 3 in Chapter 25",
-                            IsDeleted = false,
-                            TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 20, 0, 0),
-                            Title = "Lesson 3 for Chapter 25",
-                            downloadLink = "https://sadat.vip/"
-                        },
-                        new
-                        {
-                            Id = 64,
-                            ChapterId = 26,
-                            Content = "Content for Lesson 1 in Chapter 26",
-                            IsDeleted = false,
-                            TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 39, 0, 0),
-                            Title = "Lesson 1 for Chapter 26",
-                            downloadLink = "https://sadat.vip/"
-                        },
-                        new
-                        {
-                            Id = 65,
-                            ChapterId = 26,
-                            Content = "Content for Lesson 2 in Chapter 26",
-                            IsDeleted = false,
-                            TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 56, 0, 0),
-                            Title = "Lesson 2 for Chapter 26",
-                            downloadLink = "https://sadat.vip/"
-                        },
-                        new
-                        {
-                            Id = 66,
-                            ChapterId = 26,
-                            Content = "Content for Lesson 3 in Chapter 26",
-                            IsDeleted = false,
-                            TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            Time = new TimeSpan(0, 0, 20, 0, 0),
-                            Title = "Lesson 3 for Chapter 26",
+                            Time = new TimeSpan(0, 0, 58, 0, 0),
+                            Title = "Lesson 3 for Chapter 23",
                             downloadLink = "https://sadat.vip/"
                         });
                 });
@@ -3322,7 +3163,7 @@ namespace ProSkills.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:54 ص",
                             Hours = 10,
                             Image = "image1.jpg",
                             IsDeleted = false,
@@ -3335,7 +3176,7 @@ namespace ProSkills.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:54 ص",
                             Hours = 10,
                             Image = "image2.jpg",
                             IsDeleted = false,
@@ -3348,7 +3189,7 @@ namespace ProSkills.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:54 ص",
                             Hours = 10,
                             Image = "image3.jpg",
                             IsDeleted = false,
@@ -3396,7 +3237,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 1,
                             Code = "gamal",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:54 ص",
                             IsDeleted = false,
                             PackageName = "Premium",
                             isAvalible = true,
@@ -3503,7 +3344,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 1,
                             Bio = "Bio for Trainee 1",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "Trainee1@example.com",
                             IsDeleted = false,
                             Name = "Trainee 1",
@@ -3513,7 +3354,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 2,
                             Bio = "Bio for Trainee 2",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "Trainee2@example.com",
                             IsDeleted = false,
                             Name = "Trainee 2",
@@ -3523,7 +3364,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 3,
                             Bio = "Bio for Trainee 3",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "Trainee3@example.com",
                             IsDeleted = false,
                             Name = "Trainee 3",
@@ -3533,7 +3374,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 4,
                             Bio = "Bio for Trainee 4",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "Trainee4@example.com",
                             IsDeleted = false,
                             Name = "Trainee 4",
@@ -3543,7 +3384,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 5,
                             Bio = "Bio for Trainee 5",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "Trainee5@example.com",
                             IsDeleted = false,
                             Name = "Trainee 5",
@@ -3553,7 +3394,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 6,
                             Bio = "Bio for Trainee 6",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "Trainee6@example.com",
                             IsDeleted = false,
                             Name = "Trainee 6",
@@ -3563,7 +3404,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 7,
                             Bio = "Bio for Trainee 7",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "Trainee7@example.com",
                             IsDeleted = false,
                             Name = "Trainee 7",
@@ -3573,7 +3414,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 8,
                             Bio = "Bio for Trainee 8",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "Trainee8@example.com",
                             IsDeleted = false,
                             Name = "Trainee 8",
@@ -3583,7 +3424,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 9,
                             Bio = "Bio for Trainee 9",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "Trainee9@example.com",
                             IsDeleted = false,
                             Name = "Trainee 9",
@@ -3593,7 +3434,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 10,
                             Bio = "Bio for Trainee 10",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "Trainee10@example.com",
                             IsDeleted = false,
                             Name = "Trainee 10",
@@ -3603,7 +3444,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 11,
                             Bio = "Bio for Trainee 11",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "Trainee11@example.com",
                             IsDeleted = false,
                             Name = "Trainee 11",
@@ -3613,7 +3454,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 12,
                             Bio = "Bio for Trainee 12",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "Trainee12@example.com",
                             IsDeleted = false,
                             Name = "Trainee 12",
@@ -3623,7 +3464,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 13,
                             Bio = "Bio for Trainee 13",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "Trainee13@example.com",
                             IsDeleted = false,
                             Name = "Trainee 13",
@@ -3633,7 +3474,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 14,
                             Bio = "Bio for Trainee 14",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "Trainee14@example.com",
                             IsDeleted = false,
                             Name = "Trainee 14",
@@ -3643,7 +3484,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 15,
                             Bio = "Bio for Trainee 15",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "Trainee15@example.com",
                             IsDeleted = false,
                             Name = "Trainee 15",
@@ -3653,7 +3494,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 16,
                             Bio = "Bio for Trainee 16",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "Trainee16@example.com",
                             IsDeleted = false,
                             Name = "Trainee 16",
@@ -3663,7 +3504,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 17,
                             Bio = "Bio for Trainee 17",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "Trainee17@example.com",
                             IsDeleted = false,
                             Name = "Trainee 17",
@@ -3673,7 +3514,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 18,
                             Bio = "Bio for Trainee 18",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "Trainee18@example.com",
                             IsDeleted = false,
                             Name = "Trainee 18",
@@ -3683,7 +3524,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 19,
                             Bio = "Bio for Trainee 19",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "Trainee19@example.com",
                             IsDeleted = false,
                             Name = "Trainee 19",
@@ -3693,7 +3534,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 20,
                             Bio = "Bio for Trainee 20",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "Trainee20@example.com",
                             IsDeleted = false,
                             Name = "Trainee 20",
@@ -3703,7 +3544,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 21,
                             Bio = "Bio for Trainee 21",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "Trainee21@example.com",
                             IsDeleted = false,
                             Name = "Trainee 21",
@@ -3713,7 +3554,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 22,
                             Bio = "Bio for Trainee 22",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "Trainee22@example.com",
                             IsDeleted = false,
                             Name = "Trainee 22",
@@ -3723,7 +3564,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 23,
                             Bio = "Bio for Trainee 23",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "Trainee23@example.com",
                             IsDeleted = false,
                             Name = "Trainee 23",
@@ -3733,7 +3574,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 24,
                             Bio = "Bio for Trainee 24",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "Trainee24@example.com",
                             IsDeleted = false,
                             Name = "Trainee 24",
@@ -3743,7 +3584,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 25,
                             Bio = "Bio for Trainee 25",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "Trainee25@example.com",
                             IsDeleted = false,
                             Name = "Trainee 25",
@@ -3753,7 +3594,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 26,
                             Bio = "Bio for Trainee 26",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "Trainee26@example.com",
                             IsDeleted = false,
                             Name = "Trainee 26",
@@ -3763,7 +3604,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 27,
                             Bio = "Bio for Trainee 27",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "Trainee27@example.com",
                             IsDeleted = false,
                             Name = "Trainee 27",
@@ -3773,7 +3614,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 28,
                             Bio = "Bio for Trainee 28",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "Trainee28@example.com",
                             IsDeleted = false,
                             Name = "Trainee 28",
@@ -3783,7 +3624,7 @@ namespace ProSkills.Migrations
                         {
                             Id = 30,
                             Bio = "Bio for Trainee 30",
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:53 ص",
                             Email = "Trainee30@example.com",
                             IsDeleted = false,
                             Name = "Trainee 30",
@@ -3792,7 +3633,7 @@ namespace ProSkills.Migrations
                         new
                         {
                             Id = 31,
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:54 ص",
                             Email = "ahmed9821hussein@gmail.com",
                             IsDeleted = false,
                             Name = "Ahmed Hussein",
@@ -3802,7 +3643,7 @@ namespace ProSkills.Migrations
                         new
                         {
                             Id = 32,
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:54 ص",
                             Email = "MuhammedSadat@outlook.com",
                             IsDeleted = false,
                             Name = "Muhammed Sadat",
@@ -3812,7 +3653,7 @@ namespace ProSkills.Migrations
                         new
                         {
                             Id = 33,
-                            CreatedAt = "22/06/2024 02:50:23 ص",
+                            CreatedAt = "22/06/2024 03:01:54 ص",
                             Email = "gamalsaied.90@gmail.com",
                             IsDeleted = false,
                             Name = "Gamal Said",
@@ -3826,7 +3667,7 @@ namespace ProSkills.Migrations
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
@@ -3835,7 +3676,7 @@ namespace ProSkills.Migrations
                     b.HasOne("ProSkills.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
@@ -3844,7 +3685,7 @@ namespace ProSkills.Migrations
                     b.HasOne("ProSkills.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
@@ -3853,13 +3694,13 @@ namespace ProSkills.Migrations
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("ProSkills.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
@@ -3868,7 +3709,7 @@ namespace ProSkills.Migrations
                     b.HasOne("ProSkills.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
@@ -3877,7 +3718,7 @@ namespace ProSkills.Migrations
                     b.HasOne("ProSkills.Models.ClientSide.CourseTrainee", "CourseTrainee")
                         .WithMany("ActivitylogList")
                         .HasForeignKey("CourseTraineeId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("CourseTrainee");
@@ -3895,7 +3736,7 @@ namespace ProSkills.Migrations
                     b.HasOne("ProSkills.Models.ClientSide.Course", "Course")
                         .WithMany("Chapters")
                         .HasForeignKey("CourseId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Course");
@@ -3906,13 +3747,13 @@ namespace ProSkills.Migrations
                     b.HasOne("ProSkills.Models.ClientSide.Category", "Category")
                         .WithMany("Course")
                         .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("ProSkills.Models.AdminPanel.InstructorManger.instructor", "Instructor")
                         .WithMany()
                         .HasForeignKey("instructorId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Category");
@@ -3925,13 +3766,13 @@ namespace ProSkills.Migrations
                     b.HasOne("ProSkills.Models.ClientSide.Course", "Course")
                         .WithMany("Trainees")
                         .HasForeignKey("CourseId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("ProSkills.Models.ClientSide.Trainee", "Trainee")
                         .WithMany("Courses")
                         .HasForeignKey("TraineeId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Course");
@@ -3944,7 +3785,7 @@ namespace ProSkills.Migrations
                     b.HasOne("ProSkills.Models.ClientSide.Chapter", "Chapter")
                         .WithMany("Lessons")
                         .HasForeignKey("ChapterId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Chapter");
