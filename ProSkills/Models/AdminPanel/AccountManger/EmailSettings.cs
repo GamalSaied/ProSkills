@@ -11,7 +11,7 @@ namespace ProSkills.Models.AdminPanel.AccountManger
             //it means that email will be encrypted
             client.EnableSsl = true;
             client.Credentials = new NetworkCredential("furniture.store.fs2024@gmail.com", "mofg jpio zbjl sggw");
-            client.Send("furniture.store.fs2024@gmail.com", email.To, email.subject, email.body);
+            client.Send("furniture.store.fs2024@gmail.com", email.To, email.Subject, email.Body);
         }
       
     }
