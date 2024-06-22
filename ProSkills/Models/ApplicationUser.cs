@@ -14,7 +14,7 @@ namespace ProSkills.Models
         public Country Country { get; set; }
 
         public string  Phone {  get; set; }
-        public string? ProfilePictureUrl { get; set; } 
+        public string ProfilePictureUrl { get; set; } = "\\ThemeFront\\img\\User.jpg";
         public string? City { get; set; } 
         public string? CountryCode { get; set; }
 
