@@ -70,7 +70,8 @@
 
     .completion-bar-text {
         text-align: right;
-        font-size: 1rem;
+        font-size: 4rem;
+        color: white;
     }
 </style>
 
@@ -88,7 +89,7 @@
                                 <div class="course-title">@course.Title</div>
                                 <div class="course-meta">
                                     <i class="fa fa-user"></i> @course.Instructor.Name <br />
-                                    <i class="fa fa-book"></i> @course.Chapters.Count() Lessons <br />
+                                    <i class="fa fa-book"></i> @course.Chapters.Count() Chapters <br />
                                     <i class="fa fa-clock"></i> @course.Duration Hours <br />
                                 </div>
                                 <div class="completion-bar">

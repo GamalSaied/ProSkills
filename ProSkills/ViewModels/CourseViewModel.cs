@@ -22,6 +22,7 @@
         public int NumberOfLessons { get; set; }
         public InstructorViewModel Instructor { get; set; }
         public double CompletionRatio { get; set; } // Add this line
+        public bool IsEnrolled { get; set; } // Add this property
 
     }
 
