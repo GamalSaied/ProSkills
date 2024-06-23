@@ -4,5 +4,6 @@
     {
         public ApplicationUser User { get; set; }
         public List<CourseViewModel> Courses { get; set; }
+
     }
 }

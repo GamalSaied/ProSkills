@@ -93,6 +93,7 @@ namespace ProSkills.Controllers
 
 
 
+
         [HttpPost]
         public async Task<IActionResult> UploadProfilePicture(IFormFile croppedImage)
         {

@@ -90,7 +90,6 @@ namespace ProSkills.Repository
 
             return leaderboard;
         }
-
         public CourseTrainee GetByUserEmailAndCourse(string email, int courseId)
         {
             return context.CourseTrainee
@@ -98,7 +97,6 @@ namespace ProSkills.Repository
                           .Include(ct => ct.Trainee)
                           .FirstOrDefault(ct => ct.Trainee.Email == email && ct.CourseId == courseId);
         }
-
     }
 
 }

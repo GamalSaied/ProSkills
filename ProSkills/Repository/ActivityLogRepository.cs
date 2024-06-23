@@ -74,20 +74,20 @@ namespace ProSkills.Repositories
                 Save();
             }
         }
-        public List<ActivityLog> GetByUserIdAndCourseId(string userId, int courseId)
+        public List<ActivityLog> GetByUserIdAndCourseId(string userEmail , int courseId)
         {
             return context.ActivityLogs
                 .Include(a => a.Lesson)
                 .ThenInclude(l => l.Chapter)
-                .Where(a => a.UserId == userId && a.Lesson.Chapter.CourseId == courseId && a.ActivityType == "LessonCompleted" && !a.IsDeleted)
+                .Where(a => a.UserEmail == userEmail && a.Lesson.Chapter.CourseId == courseId && a.ActivityType == "LessonCompleted" && !a.IsDeleted)
                 .ToList();
         }
 
 
-        public ActivityLog GetByUserIdAndLessonId(string userId, int lessonId)
+        public ActivityLog GetByUserIdAndLessonId(string userEmail, int lessonId)
         {
             return context.ActivityLogs
-                .FirstOrDefault(a => a.UserId == userId && a.LessonId == lessonId && a.ActivityType == "LessonCompleted");
+                .FirstOrDefault(a => a.UserEmail == userEmail && a.LessonId == lessonId && a.ActivityType == "LessonCompleted");
         }
 
 

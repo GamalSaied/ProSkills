@@ -5,7 +5,7 @@ namespace ProSkills.Models
     public class ActivityLog
     {
         public int Id { get; set; }
-        public string UserId { get; set; }
+        public string UserEmail { get; set; }
         public DateTime ActivityDate { get; set; }
         public string ActivityType { get; set; } // e.g., "LessonCompleted"
         public string Description { get; set; }

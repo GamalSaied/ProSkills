@@ -70,9 +70,21 @@ namespace ProSkills.Controllers
                 return RedirectToAction("Login", "Account");
             }
 
-            var completedLessons = _activityLogRepository.GetByUserIdAndCourseId(user.Id, courseId)
-                                        .Select(al => al.LessonId)
-                                        .ToList();
+            // Calculate completion ratio
+            var completionRatio = GetCompletionRatio(course, user.Email);
+
+            // Update CourseTrainee completion ratio
+            var courseTrainee = _courseTraineeRepository.GetByUserEmailAndCourse(user.Email, courseId);
+            if (courseTrainee != null)
+            {
+                courseTrainee.CompletionRatio = completionRatio;
+                _courseTraineeRepository.Update(courseTrainee);
+                _courseTraineeRepository.Save();
+            }
+
+            var completedLessons = _activityLogRepository.GetByUserIdAndCourseId(user.Email, courseId)
+                                            .Select(al => al.LessonId)
+                                            .ToList();
 
             var viewModel = new CourseViewModel
             {
@@ -111,26 +123,12 @@ namespace ProSkills.Controllers
                     Bio = course.Instructor?.Bio ?? "No bio available.",
                     Speciallization = course.Instructor?.Speciallization ?? "N/A"
                 },
-                CompletionRatio = GetCompletionRatio(course, user.Id)
+                CompletionRatio = completionRatio
             };
 
             return View(viewModel);
         }
 
-
-
-
-        private double GetCompletionRatio(Course course, string userId)
-        {
-            var totalLessons = course.Chapters?.SelectMany(c => c.Lessons).Count() ?? 0;
-            if (totalLessons == 0)
-            {
-                return 0;
-            }
-
-            var completedLessons = _activityLogRepository.GetByUserIdAndCourseId(userId, course.Id).Count();
-            return (completedLessons / (double)totalLessons) * 100;
-        }
 
         [HttpPost]
         public IActionResult UpdateLessonCompletion(int lessonId, bool isChecked)
@@ -147,14 +145,14 @@ namespace ProSkills.Controllers
                 return Json(new { success = false, message = "Lesson not found." });
             }
 
-            var activityLog = _activityLogRepository.GetByUserIdAndLessonId(user.Id, lessonId);
+            var activityLog = _activityLogRepository.GetByUserIdAndLessonId(user.Email, lessonId);
             if (isChecked)
             {
                 if (activityLog == null)
                 {
                     _activityLogRepository.Insert(new ActivityLog
                     {
-                        UserId = user.Id,
+                        UserEmail = user.Email,
                         ActivityDate = DateTime.Now,
                         ActivityType = "LessonCompleted",
                         Description = $"Completed lesson {lesson.Title}",
@@ -172,11 +170,40 @@ namespace ProSkills.Controllers
 
             _activityLogRepository.Save();
 
-            var course = _courseRepository.GetById(lesson.Chapter.CourseId);
-            var completionRatio = GetCompletionRatio(course, user.Id);
+            // Update CourseTrainee Completion Ratio
+            var courseTrainee = _courseTraineeRepository.GetByUserEmailAndCourse(user.Email, lesson.Chapter.CourseId);
+            if (courseTrainee != null)
+            {
+                var course = _courseRepository.GetById(lesson.Chapter.CourseId);
+                var completionRatio = GetCompletionRatio(course, user.Email);
+                courseTrainee.CompletionRatio = completionRatio;
+                _courseTraineeRepository.Update(courseTrainee);
+                _courseTraineeRepository.Save();
+                return Json(new { success = true, completionRatio = (int)completionRatio });
+            }
 
-            return Json(new { success = true, completionRatio = (int)completionRatio });
+            return Json(new { success = false, message = "CourseTrainee not found." });
         }
+
+
+
+
+
+        private double GetCompletionRatio(Course course, string userEmail)
+        {
+            var totalLessons = course.Chapters?.SelectMany(c => c.Lessons).Count() ?? 0;
+            if (totalLessons == 0)
+            {
+                return 0;
+            }
+
+            var completedLessons = _activityLogRepository.GetByUserIdAndCourseId(userEmail, course.Id).Count();
+            return (completedLessons / (double)totalLessons) * 100;
+        }
+
+
+
+
         [HttpPost]
         public IActionResult UnassignTrainee(int courseId, int traineeId)
         {
