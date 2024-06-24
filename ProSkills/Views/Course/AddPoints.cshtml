@@ -1,139 +1,34 @@
-﻿@model ProSkills.ViewModels.AddPointsViewModel
-
+﻿@model AddPointsViewModel
 @{
-    ViewBag.Title = "Add Points";
-}
+    Layout = null; // This ensures that no layout is used
 
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
-    <title>@ViewBag.Title</title>
-    <style>
-        body {
-            font-family: Open Sans, sans-serif;
-            font-size: 1rem;
-            font-weight: 400;
-            line-height: 1.5;
-            margin: 0;
-            text-align: left;
-            color: #525f7f;
-            background-color: #f8f9fe;
-        }
-
-        .container {
-            width: 100%;
-            margin-right: auto;
-            margin-left: auto;
-            padding-right: 15px;
-            padding-left: 15px;
-        }
-
-        .mt-7 {
-            margin-top: 6rem !important;
-        }
-
-        .card {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            min-width: 0;
-            word-wrap: break-word;
-            border: 1px solid rgba(0, 0, 0, .05);
-            border-radius: .375rem;
-            background-color: #fff;
-            background-clip: border-box;
-        }
-
-        .card-header {
-            margin-bottom: 0;
-            padding: 1.25rem 1.5rem;
-            border-bottom: 1px solid rgba(0, 0, 0, .05);
-            background-color: #fff;
-        }
-
-        .card-footer {
-            padding: 1.25rem 1.5rem;
-            border-top: 1px solid rgba(0, 0, 0, .05);
-            background-color: #fff;
-        }
-
-        .form-group {
-            margin-bottom: 1rem;
-        }
-
-        .form-control {
-            display: block;
-            width: 100%;
-            padding: .625rem .75rem;
-            font-size: 1rem;
-            line-height: 1.5;
-            color: #8898aa;
-            background-color: #fff;
-            background-clip: padding-box;
-            border: 1px solid #cad1d7;
-            border-radius: .375rem;
-            transition: all .15s ease-in-out;
-        }
-
-        .btn {
-            font-size: 1rem;
-            font-weight: 600;
-            line-height: 1.5;
-            display: inline-block;
-            padding: .625rem 1.25rem;
-            transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-            text-align: center;
-            vertical-align: middle;
-            cursor: pointer;
-            border: 1px solid transparent;
-            border-radius: .375rem;
-            background-color: #5e72e4;
-            color: #fff;
-        }
-
-            .btn:hover {
-                background-color: #324cdd;
-            }
-    </style>
+    <title>Add Points</title>
 </head>
 <body>
-
-    <div class="container mt-7">
-        <div class="row">
-            <div class="col">
-                <div class="card shadow">
-                    <div class="card-header border-0">
-                        <h3 class="mb-0">Add Points</h3>
-                    </div>
-                    <div class="card-body">
-                        <form asp-action="AddPoints" method="post">
-                            <div class="form-group">
-                                <label for="TraineeEmail">Trainee Email</label>
-                                <select asp-for="TraineeEmail" asp-items="Model.Trainees" class="form-control">
-                                    <option value="">Select Trainee</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="CourseName">Course Name</label>
-                                <select asp-for="CourseName" asp-items="Model.Courses" class="form-control">
-                                    <option value="">Select Course</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="Points">Points</label>
-                                <input asp-for="Points" class="form-control" />
-                                <span asp-validation-for="Points" class="text-danger"></span>
-                            </div>
-                            <button type="submit" class="btn">Add Points</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+    <form asp-action="AddPoints" method="post">
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
         </div>
-    </div>
-
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div>
+            <label for="courseName">Course Name:</label>
+            <input type="text" id="courseName" name="courseName" required>
+        </div>
+        <div>
+            <label for="points">Points:</label>
+            <input type="number" id="points" name="points" required>
+        </div>
+        <button type="submit">Add Points</button>
+    </form>
 </body>
 </html>

@@ -18,6 +18,9 @@ namespace ProSkills.Controllers
             _CategoryRepository = CategoryRepository;
             _environment = environment; // for img and constractor
         }
+
+
+
         public IActionResult Index()
         {
 

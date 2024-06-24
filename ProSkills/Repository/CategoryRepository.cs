@@ -1,5 +1,6 @@
 ﻿using ProSkills.Interfaces;
 using ProSkills.Models.ClientSide;
+using Microsoft.EntityFrameworkCore;
 
 namespace ProSkills.Repository
 {
@@ -12,14 +13,15 @@ namespace ProSkills.Repository
         {
             context = _context;
         }
+
         // Retrieves all Data from the database
-        public List<Category> GetAll() => context.Category.ToList();
+        public List<Category> GetAll() => context.Category.Include(c => c.Course).ToList();
 
         // Retrieves a Data by its ID
-        public Category GetById(int id) => context.Category.FirstOrDefault(d => d.Id == id);
+        public Category GetById(int id) => context.Category.Include(c => c.Course).FirstOrDefault(d => d.Id == id);
 
         // Checks if a Data with the given name exists
-        public Category CheckName(string name) => context.Category.FirstOrDefault(e => e.Name.ToLower() == name.ToLower());
+        public Category CheckName(string name) => context.Category.Include(c => c.Course).FirstOrDefault(e => e.Name.ToLower() == name.ToLower());
 
         // Inserts a new Data into the database
         public void Insert(Category obj) => context.Add(obj);
@@ -40,13 +42,11 @@ namespace ProSkills.Repository
         // Saves changes made to the database
         public void Save() => context.SaveChanges();
 
-        public Category GetByName(string Name) => context.Category.FirstOrDefault(d => d.Name == Name);
+        public Category GetByName(string Name) => context.Category.Include(c => c.Course).FirstOrDefault(d => d.Name == Name);
 
         public void MarkAsDeleted(int id)
         {
             throw new NotImplementedException();
         }
     }
-        
-   
 }

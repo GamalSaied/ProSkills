@@ -525,69 +525,48 @@ namespace ProSkills.Controllers
             return View(course);
         }
 
-        // GET: Course/AddPoints
         [HttpGet]
         public IActionResult AddPoints()
         {
-            var viewModel = new AddPointsViewModel
-            {
-                Trainees = _traineeRepository.GetAll().Select(t => new SelectListItem
-                {
-                    Value = t.Email,
-                    Text = t.Email
-                }),
-                Courses = _courseRepository.GetAll().Select(c => new SelectListItem
-                {
-                    Value = c.Name,
-                    Text = c.Name
-                })
-            };
-
-            return View(viewModel);
+            return View();
         }
 
-        // POST: Course/AddPoints
         [HttpPost]
         public IActionResult AddPoints(AddPointsViewModel model)
         {
-            if (ModelState.IsValid)
+            var user = _userManager.FindByEmailAsync(model.Email).Result;
+            if (user == null)
             {
-                var trainee = _traineeRepository.GetAll().FirstOrDefault(t => t.Email == model.TraineeEmail);
-                var course = _courseRepository.GetAll().FirstOrDefault(c => c.Name == model.CourseName);
-
-                if (trainee == null || course == null)
-                {
-                    ModelState.AddModelError("", "Invalid Trainee or Course");
-                    return View(model);
-                }
-
-                var courseTrainee = _courseTraineeRepository.GetAll().FirstOrDefault(ct => ct.TraineeId == trainee.Id && ct.CourseId == course.Id);
-                if (courseTrainee == null)
-                {
-                    ModelState.AddModelError("", "Trainee is not enrolled in the course");
-                    return View(model);
-                }
-
-                courseTrainee.Points += model.Points;
-                _courseTraineeRepository.Update(courseTrainee);
-                _courseTraineeRepository.Save();
-
-                return RedirectToAction("Index1"); // Redirect to the desired action after saving the points
+                return RedirectToAction("GetPoints", new { error = "EmailNotValid" });
             }
 
-            model.Trainees = _traineeRepository.GetAll().Select(t => new SelectListItem
+            if (!_userManager.CheckPasswordAsync(user, model.Password).Result)
             {
-                Value = t.Email,
-                Text = t.Email
-            });
-            model.Courses = _courseRepository.GetAll().Select(c => new SelectListItem
-            {
-                Value = c.Name,
-                Text = c.Name
-            });
+                return RedirectToAction("GetPoints", new { error = "PassNotValid" });
+            }
 
-            return View(model);
+            var course = _courseRepository.GetAll().FirstOrDefault(c => c.Name == model.CourseName);
+            if (course == null)
+            {
+                return RedirectToAction("GetPoints", new { error = "CourseNotFound" });
+            }
+
+            var trainee = _traineeRepository.GetAll().FirstOrDefault(t => t.Email == model.Email);
+            var courseTrainee = _courseTraineeRepository.GetAll().FirstOrDefault(ct => ct.TraineeId == trainee.Id && ct.CourseId == course.Id);
+            if (courseTrainee == null)
+            {
+                return RedirectToAction("GetPoints", new { error = "TraineeNotEnrolledInCourse" });
+            }
+
+            // Add points to the trainee
+            courseTrainee.Points += model.Points;
+            _courseTraineeRepository.Update(courseTrainee);
+            _courseTraineeRepository.Save();
+
+            return RedirectToAction("GetPoints", new { courseId = course.Id, traineeId = trainee.Id });
         }
+
+
         private LeaderboardViewModel MapToLeaderboardViewModel(CourseTrainee ct, int rank)
         {
             var viewModel = new LeaderboardViewModel
@@ -821,9 +800,82 @@ namespace ProSkills.Controllers
             return View(courseViewModel);
         }
 
+        public IActionResult GetPoints(int? courseId = null, int? traineeId = null, string error = null)
+        {
+            if (!string.IsNullOrEmpty(error))
+            {
+                return View((object)error);
+            }
+
+            if (courseId == null || traineeId == null)
+            {
+                return NotFound();
+            }
+
+            var course = _courseRepository.GetById(courseId.Value);
+            var trainee = _traineeRepository.GetById(traineeId.Value);
+
+            if (course == null || trainee == null)
+            {
+                return NotFound();
+            }
+
+            var courseTrainee = _courseTraineeRepository.GetByUserEmailAndCourse(trainee.Email, courseId.Value);
+            if (courseTrainee == null)
+            {
+                return NotFound();
+            }
+
+            var viewModel = new TraineeCourseDetailsViewModel
+            {
+                FullName = trainee.Name,
+                Email = trainee.Email,
+                CourseName = course.Name,
+                Level = GetLevel(courseTrainee.Points),
+                CompletionRatio = CalculateCompletionPercentage(courseTrainee.Points),
+                Points = courseTrainee.Points,
+                Rank = _courseTraineeRepository.GetLeaderboardByCourse(course.Id).FindIndex(l => l.Email == trainee.Email) + 1
+            };
+
+            return View(viewModel);
+        }
 
 
+        [HttpGet]
+        public IActionResult GetTraineeDetails()
+        {
+            return View();
+        }
 
+        [HttpPost]
+        public IActionResult GetTraineeDetails(string email, string password, string courseName)
+        {
+            var user = _userManager.FindByEmailAsync(email).Result;
+            if (user == null)
+            {
+                return RedirectToAction("GetPoints", new { error = "EmailNotValid" });
+            }
+
+            if (!_userManager.CheckPasswordAsync(user, password).Result)
+            {
+                return RedirectToAction("GetPoints", new { error = "PassNotValid" });
+            }
+
+            var course = _courseRepository.GetAll().FirstOrDefault(c => c.Name == courseName);
+            if (course == null)
+            {
+                return RedirectToAction("GetPoints", new { error = "CourseNotFound" });
+            }
+
+            var trainee = _traineeRepository.GetAll().FirstOrDefault(t => t.Email == email);
+            var courseTrainee = _courseTraineeRepository.GetAll().FirstOrDefault(ct => ct.TraineeId == trainee.Id && ct.CourseId == course.Id);
+            if (courseTrainee == null)
+            {
+                return RedirectToAction("GetPoints", new { error = "TraineeNotEnrolledInCourse" });
+            }
+
+            return RedirectToAction("GetPoints", new { courseId = course.Id, traineeId = trainee.Id });
+        }
 
     }
 
