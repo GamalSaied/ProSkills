@@ -1,0 +1,177 @@
+﻿@model ProSkills.ViewModels.CoursesByCategoryViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>@Model.CategoryName</title>
+  <link href="~/css/style.css" rel="stylesheet">
+    <style>
+        .course-card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .course-image {
+            width: 100%;
+            height: 250px; /* Adjust the height to be consistent with the original cards */
+            object-fit: cover;
+        }
+
+        .course-details {
+            padding: 15px;
+        }
+
+        .course-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .course-meta {
+            font-size: 0.875rem;
+            color: #777;
+        }
+
+        .enrolled-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: green;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.875rem;
+        }
+
+        .completion-bar {
+            height: 10px;
+            border-radius: 5px;
+            background-color: #ddd;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .completion-bar-inner {
+            height: 100%;
+            background-color: green;
+        }
+
+        .completion-bar-text {
+            text-align: right;
+            font-size: 1rem;
+        }
+
+        .course-item img {
+            width: 100%;
+            height: 250px; /* Adjust the height as needed */
+            object-fit: cover; /* This property ensures the image covers the entire area without distortion */
+        }
+
+        .course-item {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid bg-primary py-5 mb-5 page-header">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown">@Model.CategoryName</h1>   
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            </div>
+            <div class="text-center mb-4">
+            </div>
+
+            @if (Model.EnrolledCourses != null && Model.EnrolledCourses.Any())
+            {
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h1 class="mb-5">Courses</h1>
+                </div>
+                <div class="row g-4 justify-content-center">
+                    @foreach (var course in Model.EnrolledCourses)
+                    {
+                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="course-card">
+                                <div class="enrolled-badge">ENROLLED</div>
+                                <img src="@course.ImagePath" alt="@course.Title" class="course-image">
+                                <div class="course-details">
+                                    <div class="course-title">@course.Title</div>
+                                    <div class="course-meta">
+                                        <i class="fa fa-user"></i> @course.Instructor.Name <br />
+                                        <i class="fa fa-clock"></i> @course.Duration Hours <br />
+                                    </div>
+                                    <div class="completion-bar">
+                                        <div class="completion-bar-inner" style="width:@course.CompletionRatio%"></div>
+                                        <div class="completion-bar-text">
+                                            @course.CompletionRatio% Completed
+                                        </div>
+                                    </div>
+                                    <a href="@Url.Action("Dashboard", "Course", new { courseId = course.Id })" class="btn btn-primary btn-block mt-3">Dashboard</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+
+            @if (Model.OtherCourses == null || !Model.OtherCourses.Any())
+            {
+                <div class="text-center">
+                    <img src="~/Images/DefaultCourseImg.png" alt="No Courses" class="img-fluid" style="max-width: 200px;">
+                    <h2>No Courses Available!</h2>
+                    <p>Currently, there are no courses available. Please check back later.</p>
+                </div>
+            }
+            else
+            {
+                <div class="row g-4 justify-content-center">
+                    @foreach (var course in Model.OtherCourses)
+                    {
+                        var imageUrl = string.IsNullOrEmpty(course.ImagePath) ? "/Images/DefaultCourseImg.png" : course.ImagePath;
+
+                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="course-item bg-light">
+                                <div class="position-relative overflow-hidden">
+                                    <a href="@Url.Action("Profile", "Course", new { id = course.Id })">
+                                        <img class="img-fluid" src="@imageUrl" alt="Course Image">
+                                    </a>
+                                    <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
+                                        <a href="@Url.Action("Profile", "Course", new { id = course.Id })" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
+                                        <a href="@Url.Action("Join", "Course", new { id = course.Id })" class="flex-shrink-0 btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">Join Now</a>
+                                    </div>
+                                </div>
+                                <div class="text-container text-center p-4 pb-0">
+                                    <h3 class="mb-0">@course.Title</h3>
+                                    <div class="mb-3">
+                                        <small class="fa fa-user-tie text-primary me-2"></small>@course.VendorName
+                                        <small class="fa fa-clock text-primary me-2"></small>@course.Duration Hrs
+                                    </div>
+                                    <p class="mb-4 description">@course.Description</p>
+                                </div>
+                                <div class="d-flex border-top">
+                                    <small class="flex-fill text-center py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>@course.StartAt.ToShortDateString() - @course.EndAt.ToShortDateString()</small>
+                                    <small class="flex-fill text-center py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>@course.Location</small>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>

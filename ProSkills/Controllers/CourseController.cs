@@ -565,7 +565,120 @@ namespace ProSkills.Controllers
 
             return RedirectToAction("GetPoints", new { courseId = course.Id, traineeId = trainee.Id });
         }
+        public async Task<IActionResult> CoursesByCategory(int categoryId)
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                return RedirectToAction("Login", "Account");
+            }
 
+            var trainee = _traineeRepository.GetAll().FirstOrDefault(t => t.Email == user.Email);
+            if (trainee == null)
+            {
+                return View(new CoursesByCategoryViewModel { EnrolledCourses = new List<CourseViewModel>(), OtherCourses = new List<CourseViewModel>(), CategoryName = "Category Not Found" });
+            }
+
+            var category = _categoryRepository.GetById(categoryId);
+            if (category == null)
+            {
+                return View(new CoursesByCategoryViewModel { EnrolledCourses = new List<CourseViewModel>(), OtherCourses = new List<CourseViewModel>(), CategoryName = "Category Not Found" });
+            }
+
+            var coursesInCategory = _courseRepository.GetAll().Where(c => c.CategoryId == categoryId).ToList();
+
+            var enrolledCourses = coursesInCategory
+                .Where(c => _courseTraineeRepository.GetAll().Any(ct => ct.CourseId == c.Id && ct.TraineeId == trainee.Id))
+                .Select(course => new CourseViewModel
+                {
+                    Id = course.Id,
+                    Title = course.Name,
+                    Description = course.Description,
+                    Price = course.Price,
+                    ImagePath = string.IsNullOrEmpty(course.CourseImagePath) ? "/Images/DefaultCourseImg.png" : course.CourseImagePath,
+                    VendorName = course.Instructor?.Name ?? "Unknown Vendor",
+                    Duration = course.Hours ?? 0,
+                    StudentCount = course.NumberOfTrainees ?? 0,
+                    Rating = course.Rating,
+                    ReviewCount = course.ReviewCount,
+                    StartAt = course.StartAt,
+                    EndAt = course.EndAt,
+                    Location = course.Location,
+                    IsEnrolled = true,
+                    CompletionRatio = _courseTraineeRepository.GetByUserEmailAndCourse(user.Email, course.Id)?.CompletionRatio ?? 0,
+                    Chapters = course.Chapters?.Select(ch => new ChapterViewModel
+                    {
+                        Id = ch.Id,
+                        Title = ch.Title,
+                        Description = ch.Description
+                    }).ToList() ?? new List<ChapterViewModel>(),
+                    Assessments = course.Assessments?.Select(a => new AssessmentViewModel
+                    {
+                        Id = a.Id,
+                        Title = a.Title,
+                        Description = a.Description,
+                        Points = a.Points
+                    }).ToList() ?? new List<AssessmentViewModel>(),
+                    Instructor = course.Instructor == null ? new InstructorViewModel() : new InstructorViewModel
+                    {
+                        Id = course.Instructor.Id,
+                        Name = course.Instructor.Name,
+                        ImagePath = string.IsNullOrEmpty(course.Instructor.ImagePath) ? "\\ThemeFront\\img\\User.jpg" : course.Instructor.ImagePath,
+                        Bio = course.Instructor.Bio,
+                        Speciallization = course.Instructor.Speciallization
+                    }
+                }).ToList();
+
+            var otherCourses = coursesInCategory
+                .Where(c => !_courseTraineeRepository.GetAll().Any(ct => ct.CourseId == c.Id && ct.TraineeId == trainee.Id))
+                .Select(course => new CourseViewModel
+                {
+                    Id = course.Id,
+                    Title = course.Name,
+                    Description = course.Description,
+                    Price = course.Price,
+                    ImagePath = string.IsNullOrEmpty(course.CourseImagePath) ? "/Images/DefaultCourseImg.png" : course.CourseImagePath,
+                    VendorName = course.Instructor?.Name ?? "Unknown Vendor",
+                    Duration = course.Hours ?? 0,
+                    StudentCount = course.NumberOfTrainees ?? 0,
+                    Rating = course.Rating,
+                    ReviewCount = course.ReviewCount,
+                    StartAt = course.StartAt,
+                    EndAt = course.EndAt,
+                    Location = course.Location,
+                    IsEnrolled = false,
+                    Chapters = course.Chapters?.Select(ch => new ChapterViewModel
+                    {
+                        Id = ch.Id,
+                        Title = ch.Title,
+                        Description = ch.Description
+                    }).ToList() ?? new List<ChapterViewModel>(),
+                    Assessments = course.Assessments?.Select(a => new AssessmentViewModel
+                    {
+                        Id = a.Id,
+                        Title = a.Title,
+                        Description = a.Description,
+                        Points = a.Points
+                    }).ToList() ?? new List<AssessmentViewModel>(),
+                    Instructor = course.Instructor == null ? new InstructorViewModel() : new InstructorViewModel
+                    {
+                        Id = course.Instructor.Id,
+                        Name = course.Instructor.Name,
+                        ImagePath = string.IsNullOrEmpty(course.Instructor.ImagePath) ? "\\ThemeFront\\img\\User.jpg" : course.Instructor.ImagePath,
+                        Bio = course.Instructor.Bio,
+                        Speciallization = course.Instructor.Speciallization
+                    }
+                }).ToList();
+
+            var viewModel = new CoursesByCategoryViewModel
+            {
+                EnrolledCourses = enrolledCourses,
+                OtherCourses = otherCourses,
+                CategoryName = category.Name
+            };
+
+            return View(viewModel);
+        }
 
         private LeaderboardViewModel MapToLeaderboardViewModel(CourseTrainee ct, int rank)
         {
@@ -878,6 +991,8 @@ namespace ProSkills.Controllers
         }
 
     }
+
+
 
 
 }
