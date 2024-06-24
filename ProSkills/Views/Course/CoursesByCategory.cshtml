@@ -7,6 +7,10 @@
     <title>@Model.CategoryName</title>
   <link href="~/css/style.css" rel="stylesheet">
     <style>
+        .category-description {
+            font-size: 1.2rem;
+            color: #555;
+        }
         .course-card {
             border: 1px solid #ddd;
             border-radius: 10px;
@@ -83,10 +87,14 @@
         <div class="container py-5">
             <div class="row justify-content-center">
                 <div class="col-lg-10 text-center">
-                    <h1 class="display-3 text-white animated slideInDown">@Model.CategoryName</h1>   
+                    <h1 class="display-3 text-white animated slideInDown">@Model.CategoryName</h1>
+
                 </div>
             </div>
         </div>
+    </div>
+    <div class="text-center category-header">
+        <p class="category-description"><strong>Description: </strong> @Model.CategoryDescription</p>
     </div>
 
     <div class="container-xxl py-5">

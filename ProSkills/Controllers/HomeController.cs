@@ -22,7 +22,6 @@ namespace ProSkills.Controllers
             ViewBag.FullName = User.Claims.FirstOrDefault(c => c.Type == "FullName")?.Value;
             var categories = _categoryRepository.GetAll();
             return View(categories);
-            return View();
         }
 
         public IActionResult Team()

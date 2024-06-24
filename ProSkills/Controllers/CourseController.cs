@@ -674,7 +674,9 @@ namespace ProSkills.Controllers
             {
                 EnrolledCourses = enrolledCourses,
                 OtherCourses = otherCourses,
-                CategoryName = category.Name
+                CategoryName = category.Name,
+            CategoryDescription = category.Description
+
             };
 
             return View(viewModel);
