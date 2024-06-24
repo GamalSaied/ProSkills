@@ -126,6 +126,7 @@
     <None Include="wwwroot\build\scss\_users-list.scss" />
     <None Include="wwwroot\build\scss\_variables-alt.scss" />
     <None Include="wwwroot\build\scss\_variables.scss" />
+    <None Include="wwwroot\css\Category.css" />
     <None Include="wwwroot\dist\css\adminlte.css.map" />
     <None Include="wwwroot\dist\css\adminlte.min.css.map" />
     <None Include="wwwroot\dist\css\alt\adminlte.components.css.map" />

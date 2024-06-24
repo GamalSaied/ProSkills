@@ -1,0 +1,39 @@
+﻿@model object
+
+@{
+    Layout = null; // This ensures that no layout is used
+
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trainee Course Details</title>
+    
+</head>
+<body>
+    <div class="container">
+        @if (Model is string)
+        {
+            <div class="error-message">@Model</div>
+        }
+        else if (Model is ProSkills.ViewModels.TraineeCourseDetailsViewModel details)
+        {
+            <h1>Trainee Course Details</h1>
+            <div class="details">
+                <p><strong>Full Name:</strong> @details.FullName</p>
+                <p><strong>Email:</strong> @details.Email</p>
+                <p><strong>Course Name:</strong> @details.CourseName</p>
+                <p><strong>Level:</strong> @details.Level</p>
+                <p><strong>Completion Ratio:</strong> @details.CompletionRatio%</p>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width:@details.CompletionRatio%;">@details.CompletionRatio%</div>
+                </div>
+                <p><strong>Points:</strong> @details.Points</p>
+                <p><strong>Rank:</strong> @details.Rank</p>
+            </div>
+        }
+    </div>
+</body>
+</html>

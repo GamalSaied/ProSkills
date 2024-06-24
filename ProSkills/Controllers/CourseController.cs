@@ -821,9 +821,88 @@ namespace ProSkills.Controllers
             return View(courseViewModel);
         }
 
+        public IActionResult GetPoints(int? courseId = null, int? traineeId = null, string error = null)
+        {
+            if (!string.IsNullOrEmpty(error))
+            {
+                return View((object)error);
+            }
+
+            if (courseId == null || traineeId == null)
+            {
+                return NotFound();
+            }
+
+            var course = _courseRepository.GetById(courseId.Value);
+            var trainee = _traineeRepository.GetById(traineeId.Value);
+
+            if (course == null || trainee == null)
+            {
+                return NotFound();
+            }
+
+            var courseTrainee = _courseTraineeRepository.GetByUserEmailAndCourse(trainee.Email, courseId.Value);
+            if (courseTrainee == null)
+            {
+                return NotFound();
+            }
+
+            var viewModel = new TraineeCourseDetailsViewModel
+            {
+                FullName = trainee.Name,
+                Email = trainee.Email,
+                CourseName = course.Name,
+                Level = courseTrainee.Level,
+                CompletionRatio = courseTrainee.CompletionRatio,
+                Points = courseTrainee.Points,
+                Rank = _courseTraineeRepository.GetLeaderboardByCourse(course.Id).FindIndex(l => l.Email == trainee.Email) + 1
+            };
+
+            return View(viewModel);
+        }
 
 
+        [HttpGet]
+        public IActionResult GetTraineeDetails()
+        {
+            return View();
+        }
 
+        [HttpPost]
+        [HttpPost]
+        public IActionResult GetTraineeDetails(string email, string password, string courseName)
+        {
+            // Check if the email exists
+            var user = _userManager.FindByEmailAsync(email).Result;
+            if (user == null)
+            {
+                return RedirectToAction("GetPoints", new { error = "EmailNotValid" });
+            }
+
+            // Check if the password is correct
+            if (!_userManager.CheckPasswordAsync(user, password).Result)
+            {
+                return RedirectToAction("GetPoints", new { error = "PassNotValid" });
+            }
+
+            // Validate the course name
+            var course = _courseRepository.GetAll().FirstOrDefault(c => c.Name == courseName);
+            if (course == null)
+            {
+                return RedirectToAction("GetPoints", new { error = "CourseNotFound" });
+            }
+
+            // Validate the trainee's enrollment in the course
+            var trainee = _traineeRepository.GetAll().FirstOrDefault(t => t.Email == email);
+            var courseTrainee = _courseTraineeRepository.GetAll().FirstOrDefault(ct => ct.TraineeId == trainee.Id && ct.CourseId == course.Id);
+            if (courseTrainee == null)
+            {
+                return RedirectToAction("GetPoints", new { error = "TraineeNotEnrolledInCourse" });
+            }
+
+            // If all validations pass, redirect to GetPoints with courseId and traineeId
+            return RedirectToAction("GetPoints", new { courseId = course.Id, traineeId = trainee.Id });
+        }
 
     }
 

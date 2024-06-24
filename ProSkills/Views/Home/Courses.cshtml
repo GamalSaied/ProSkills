@@ -1,12 +1,19 @@
-﻿<!-- Spinner Start -->
+﻿@model List<ProSkills.Models.ClientSide.Category>
+<style>
+    .category-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+</style>
+<link href="~/css/Category.css" rel="stylesheet">
+<!-- Spinner Start -->
 <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
     <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
         <span class="sr-only">Loading...</span>
     </div>
 </div>
 <!-- Spinner End -->
-
-
 <!-- Header Start -->
 <div class="container-fluid bg-primary py-5 mb-5 page-header">
     <div class="container py-5">
@@ -25,6 +32,8 @@
     </div>
 </div>
 <!-- Header End -->
+
+<!-- Categories Start -->
 <!-- Categories Start -->
 <div class="container-xxl py-5 category">
     <div class="container">
@@ -39,8 +48,8 @@
                         <a class="position-relative d-block overflow-hidden" href="">
                             <img class="img-fluid" src="~/ThemeFront/img/cat-1.jpg" alt="">
                             <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
-                                <h5 class="m-0">Web Design</h5>
-                                <small class="text-primary">49 Courses</small>
+                                <h5 class="m-0">@Model[0].Name</h5>
+                                <small class="text-primary">@Model[0].Course?.Count() Courses</small>
                             </div>
                         </a>
                     </div>
@@ -48,8 +57,8 @@
                         <a class="position-relative d-block overflow-hidden" href="">
                             <img class="img-fluid" src="~/ThemeFront/img/cat-2.jpg" alt="">
                             <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
-                                <h5 class="m-0">Graphic Design</h5>
-                                <small class="text-primary">49 Courses</small>
+                                <h5 class="m-0">@Model[1].Name</h5>
+                                <small class="text-primary">@Model[1].Course?.Count() Courses</small>
                             </div>
                         </a>
                     </div>
@@ -57,8 +66,8 @@
                         <a class="position-relative d-block overflow-hidden" href="">
                             <img class="img-fluid" src="~/ThemeFront/img/cat-3.jpg" alt="">
                             <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
-                                <h5 class="m-0">Video Editing</h5>
-                                <small class="text-primary">49 Courses</small>
+                                <h5 class="m-0">@Model[3].Name</h5>
+                                <small class="text-primary">@Model[3].Course?.Count() Courses</small>
                             </div>
                         </a>
                     </div>
@@ -68,15 +77,16 @@
                 <a class="position-relative d-block h-100 overflow-hidden" href="">
                     <img class="img-fluid position-absolute w-100 h-100" src="~/ThemeFront/img/cat-4.jpg" alt="" style="object-fit: cover;">
                     <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin:  1px;">
-                        <h5 class="m-0">Online Marketing</h5>
-                        <small class="text-primary">49 Courses</small>
+                        <h5 class="m-0">@Model[5].Name</h5>
+                        <small class="text-primary">@Model[5].Course?.Count() Courses</small>
                     </div>
                 </a>
             </div>
         </div>
     </div>
 </div>
-<!-- Categories Start -->
+<!-- Categories End -->
+
 <!-- Courses Start -->
 <div class="container-xxl py-5">
     <div class="container">
@@ -217,3 +227,5 @@
     </div>
 </div>
 <!-- Testimonial End -->
+
+         
