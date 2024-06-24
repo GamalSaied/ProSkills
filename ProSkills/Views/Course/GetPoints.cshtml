@@ -20,19 +20,14 @@
         }
         else if (Model is ProSkills.ViewModels.TraineeCourseDetailsViewModel details)
         {
-            <h1>Trainee Course Details</h1>
-            <div class="details">
-                <p><strong>Full Name:</strong> @details.FullName</p>
-                <p><strong>Email:</strong> @details.Email</p>
-                <p><strong>Course Name:</strong> @details.CourseName</p>
-                <p><strong>Level:</strong> @details.Level</p>
-                <p><strong>Completion Ratio:</strong> @details.CompletionRatio%</p>
-                <div class="progress-bar-container">
-                    <div class="progress-bar" style="width:@details.CompletionRatio%;">@details.CompletionRatio%</div>
-                </div>
-                <p><strong>Points:</strong> @details.Points</p>
-                <p><strong>Rank:</strong> @details.Rank</p>
-            </div>
+            <input name="Name" type="text" value="@details.FullName" readonly />
+            <input name="Email" type="text" value="@details.Email" readonly />
+            <input name="Course" type="text" value="@details.CourseName" readonly />
+            <input name="Level" type="text" value="@details.Level" readonly />
+            <input name="Ratio" type="text" value="@details.CompletionRatio" readonly />
+            <input name="Points" type="text" value="@details.Points" readonly />
+            <input name="Rank" type="text" value="@details.Rank" readonly />
+
         }
     </div>
 </body>

@@ -525,69 +525,48 @@ namespace ProSkills.Controllers
             return View(course);
         }
 
-        // GET: Course/AddPoints
         [HttpGet]
         public IActionResult AddPoints()
         {
-            var viewModel = new AddPointsViewModel
-            {
-                Trainees = _traineeRepository.GetAll().Select(t => new SelectListItem
-                {
-                    Value = t.Email,
-                    Text = t.Email
-                }),
-                Courses = _courseRepository.GetAll().Select(c => new SelectListItem
-                {
-                    Value = c.Name,
-                    Text = c.Name
-                })
-            };
-
-            return View(viewModel);
+            return View();
         }
 
-        // POST: Course/AddPoints
         [HttpPost]
         public IActionResult AddPoints(AddPointsViewModel model)
         {
-            if (ModelState.IsValid)
+            var user = _userManager.FindByEmailAsync(model.Email).Result;
+            if (user == null)
             {
-                var trainee = _traineeRepository.GetAll().FirstOrDefault(t => t.Email == model.TraineeEmail);
-                var course = _courseRepository.GetAll().FirstOrDefault(c => c.Name == model.CourseName);
-
-                if (trainee == null || course == null)
-                {
-                    ModelState.AddModelError("", "Invalid Trainee or Course");
-                    return View(model);
-                }
-
-                var courseTrainee = _courseTraineeRepository.GetAll().FirstOrDefault(ct => ct.TraineeId == trainee.Id && ct.CourseId == course.Id);
-                if (courseTrainee == null)
-                {
-                    ModelState.AddModelError("", "Trainee is not enrolled in the course");
-                    return View(model);
-                }
-
-                courseTrainee.Points += model.Points;
-                _courseTraineeRepository.Update(courseTrainee);
-                _courseTraineeRepository.Save();
-
-                return RedirectToAction("Index1"); // Redirect to the desired action after saving the points
+                return RedirectToAction("GetPoints", new { error = "EmailNotValid" });
             }
 
-            model.Trainees = _traineeRepository.GetAll().Select(t => new SelectListItem
+            if (!_userManager.CheckPasswordAsync(user, model.Password).Result)
             {
-                Value = t.Email,
-                Text = t.Email
-            });
-            model.Courses = _courseRepository.GetAll().Select(c => new SelectListItem
-            {
-                Value = c.Name,
-                Text = c.Name
-            });
+                return RedirectToAction("GetPoints", new { error = "PassNotValid" });
+            }
 
-            return View(model);
+            var course = _courseRepository.GetAll().FirstOrDefault(c => c.Name == model.CourseName);
+            if (course == null)
+            {
+                return RedirectToAction("GetPoints", new { error = "CourseNotFound" });
+            }
+
+            var trainee = _traineeRepository.GetAll().FirstOrDefault(t => t.Email == model.Email);
+            var courseTrainee = _courseTraineeRepository.GetAll().FirstOrDefault(ct => ct.TraineeId == trainee.Id && ct.CourseId == course.Id);
+            if (courseTrainee == null)
+            {
+                return RedirectToAction("GetPoints", new { error = "TraineeNotEnrolledInCourse" });
+            }
+
+            // Add points to the trainee
+            courseTrainee.Points += model.Points;
+            _courseTraineeRepository.Update(courseTrainee);
+            _courseTraineeRepository.Save();
+
+            return RedirectToAction("GetPoints", new { courseId = course.Id, traineeId = trainee.Id });
         }
+
+
         private LeaderboardViewModel MapToLeaderboardViewModel(CourseTrainee ct, int rank)
         {
             var viewModel = new LeaderboardViewModel
@@ -852,8 +831,8 @@ namespace ProSkills.Controllers
                 FullName = trainee.Name,
                 Email = trainee.Email,
                 CourseName = course.Name,
-                Level = courseTrainee.Level,
-                CompletionRatio = courseTrainee.CompletionRatio,
+                Level = GetLevel(courseTrainee.Points),
+                CompletionRatio = CalculateCompletionPercentage(courseTrainee.Points),
                 Points = courseTrainee.Points,
                 Rank = _courseTraineeRepository.GetLeaderboardByCourse(course.Id).FindIndex(l => l.Email == trainee.Email) + 1
             };
@@ -869,30 +848,25 @@ namespace ProSkills.Controllers
         }
 
         [HttpPost]
-        [HttpPost]
         public IActionResult GetTraineeDetails(string email, string password, string courseName)
         {
-            // Check if the email exists
             var user = _userManager.FindByEmailAsync(email).Result;
             if (user == null)
             {
                 return RedirectToAction("GetPoints", new { error = "EmailNotValid" });
             }
 
-            // Check if the password is correct
             if (!_userManager.CheckPasswordAsync(user, password).Result)
             {
                 return RedirectToAction("GetPoints", new { error = "PassNotValid" });
             }
 
-            // Validate the course name
             var course = _courseRepository.GetAll().FirstOrDefault(c => c.Name == courseName);
             if (course == null)
             {
                 return RedirectToAction("GetPoints", new { error = "CourseNotFound" });
             }
 
-            // Validate the trainee's enrollment in the course
             var trainee = _traineeRepository.GetAll().FirstOrDefault(t => t.Email == email);
             var courseTrainee = _courseTraineeRepository.GetAll().FirstOrDefault(ct => ct.TraineeId == trainee.Id && ct.CourseId == course.Id);
             if (courseTrainee == null)
@@ -900,7 +874,6 @@ namespace ProSkills.Controllers
                 return RedirectToAction("GetPoints", new { error = "TraineeNotEnrolledInCourse" });
             }
 
-            // If all validations pass, redirect to GetPoints with courseId and traineeId
             return RedirectToAction("GetPoints", new { courseId = course.Id, traineeId = trainee.Id });
         }
 
