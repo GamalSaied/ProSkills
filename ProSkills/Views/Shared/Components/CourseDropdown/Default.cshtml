@@ -5,9 +5,48 @@
         <i class="fa fa-trophy me-2"></i>Leaderboard
     </a>
     <div class="dropdown-menu fade-down m-0">
-        @foreach (var course in Model)
-        {
-            <a href="~/Course/Leaderboard?CourseId=@course.Id" class="dropdown-item">@course.Name</a>
-        }
+        <div class="dropdown-list-container">
+            @foreach (var course in Model)
+            {
+                <a href="~/Course/Leaderboard?CourseId=@course.Id" class="dropdown-item">
+                    <i class="fa fa-book me-2"></i>@course.Name
+                </a>
+            }
+        </div>
     </div>
 </div>
+
+<style>
+    .dropdown-list-container {
+        max-height: 200px; /* Adjust the height as needed */
+        overflow-y: auto;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const dropdownContainer = document.querySelector('.dropdown-list-container');
+        if (dropdownContainer) {
+            dropdownContainer.addEventListener('keydown', function (e) {
+                const items = this.querySelectorAll('.dropdown-item');
+                let index = Array.prototype.indexOf.call(items, document.activeElement);
+                if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    if (index < items.length - 1) {
+                        items[index + 1].focus();
+                    } else {
+                        items[0].focus();
+                    }
+                }
+                if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    if (index > 0) {
+                        items[index - 1].focus();
+                    } else {
+                        items[items.length - 1].focus();
+                    }
+                }
+            });
+        }
+    });
+</script>
