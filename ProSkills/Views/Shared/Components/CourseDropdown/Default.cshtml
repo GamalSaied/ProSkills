@@ -1,0 +1,13 @@
+﻿@model List<ProSkills.Models.ClientSide.Course>
+
+<div class="nav-item dropdown">
+    <a href="#" class="nav-link dropdown-toggle @(ViewContext.RouteData.Values["action"].ToString() == "Leaderboard" ? "active" : "")" data-bs-toggle="dropdown">
+        <i class="fa fa-trophy me-2"></i>Leaderboard
+    </a>
+    <div class="dropdown-menu fade-down m-0">
+        @foreach (var course in Model)
+        {
+            <a href="~/Course/Leaderboard?CourseId=@course.Id" class="dropdown-item">@course.Name</a>
+        }
+    </div>
+</div>
