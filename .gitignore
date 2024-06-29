@@ -402,3 +402,5 @@ FodyWeavers.xsd
 /ProSkills/Migrations/20240622001226_itic.cs
 /ProSkills/Migrations/20240622002433_ww.cs
 /ProSkills/Migrations/20240622002433_ww.Designer.cs
+/ProSkills/Migrations/20240625020753_GeM.Designer.cs
+/ProSkills/Migrations/20240625020753_GeM.cs
