@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Join Request Already Submitted";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="alert alert-info text-center" role="alert">
+        <h2 class="alert-heading">Join Request Already Submitted</h2>
+        <p class="mb-4">You have already submitted a join request for this course. Your request is currently being processed.</p>
+        <p class="mb-4">You will be redirected to your courses in a few seconds.</p>
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+</div>
+
+<script>
+    setTimeout(function () {
+        window.location.href = '@Url.Action("Cards", "Course")';
+    }, 5000); // Redirect after 5 seconds
+</script>
+
+<style>
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+        max-width: 150px;
+        height: auto;
+    }
+
+    .alert {
+        background-color: #e9ecef;
+        border-color: #d6d8db;
+    }
+
+    .alert-heading {
+        font-weight: bold;
+        color: #333;
+    }
+
+    .spinner-border {
+        width: 3rem;
+        height: 3rem;
+    }
+</style>

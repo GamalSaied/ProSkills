@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using ProSkills.Interfaces;
 using ProSkills.Models;
+using ProSkills.Models.ClientSide;
 using ProSkills.Repositories;
 using ProSkills.Repository;
 
@@ -57,12 +58,13 @@ namespace ProSkills
             builder.Services.AddScoped<ICourseTraineeRepository, CourseTraineeRepository>();
             builder.Services.AddScoped<IRepository<Assessment>, AssessmentRepository>();
             builder.Services.AddScoped<IActivityLogRepository, ActivityLogRepository>();
+            builder.Services.AddScoped<IJoinRequestRepository, JoinRequestRepository>();
 
 
 
             var app = builder.Build();
 
-            if (!app.Environment.IsDevelopment())
+            if (app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
             }

@@ -20,7 +20,7 @@ namespace ProSkills.Controllers
         private ITraineeRepository _traineeRepository;
         private readonly ICourseTraineeRepository _courseTraineeRepository; // Use the specific interface
         private readonly IActivityLogRepository _activityLogRepository;
-
+        private readonly IRepository<Assessment> _assessmentRepository;
 
         private IRepository<Category> _categoryRepository;
         private IRepository<RedeemCode> _redeemCodeRepository;
@@ -30,10 +30,12 @@ namespace ProSkills.Controllers
         private readonly UserManager<ApplicationUser> _userManager;
 
         private readonly IRepository<Lesson> _lessonRepository;
+        private readonly IWebHostEnvironment _environment;
 
-        private readonly ITIContext _context;
+        private readonly IJoinRequestRepository _joinRequestRepository;
 
-        public CourseController(IActivityLogRepository activityLogRepository , UserManager<ApplicationUser> userManager,ITraineeRepository traineeRepository, ICourseTraineeRepository courseTraineeRepository,IRepository<Lesson> lessonRepository,IRepository<Chapter> chapterRepository, IRepository<Course> CourseRepository, IRepository<instructor> InstructorRepository, IRepository<Category> CategoryRepository, IRepository<RedeemCode> RedeemCodeRepository, IRepository<Package> PackageRepository , ICourseRepository courseRepositoryVersion2)
+        public CourseController(IRepository<Assessment> assessmentRepository,IJoinRequestRepository joinRequestRepository
+,IWebHostEnvironment environment,IActivityLogRepository activityLogRepository , UserManager<ApplicationUser> userManager,ITraineeRepository traineeRepository, ICourseTraineeRepository courseTraineeRepository,IRepository<Lesson> lessonRepository,IRepository<Chapter> chapterRepository, IRepository<Course> CourseRepository, IRepository<instructor> InstructorRepository, IRepository<Category> CategoryRepository, IRepository<RedeemCode> RedeemCodeRepository, IRepository<Package> PackageRepository , ICourseRepository courseRepositoryVersion2)
         {
             _courseRepository = CourseRepository;
             _instructorRepository = InstructorRepository;
@@ -46,12 +48,212 @@ namespace ProSkills.Controllers
             _courseTraineeRepository = courseTraineeRepository;
             _traineeRepository = traineeRepository;
             _activityLogRepository = activityLogRepository;
-
+            _environment = environment;
             _userManager = userManager;
+            _joinRequestRepository = joinRequestRepository;
+
+            _assessmentRepository = assessmentRepository;
 
         }
+        [Authorize]
+        public async Task<IActionResult> AssessmentsInCourse(int courseId)
+        {
+            var course = _courseRepository.GetById(courseId);
+            if (course == null)
+            {
+                return NotFound();
+            }
 
+            var assessments = _assessmentRepository.GetAll().Where(a => a.CourseId == courseId).ToList();
 
+            var viewModel = new AssessmentsInCourseViewModel
+            {
+                CourseId = course.Id,
+                CourseTitle = course.Name,
+                Assessments = assessments.Select(a => new AssessmentViewModel
+                {
+                    Id = a.Id,
+                    Title = a.Title,
+                    Description = a.Description,
+                    Points = a.Points
+                }).ToList()
+            };
+
+            return View(viewModel);
+        }
+
+        [Authorize]
+        public IActionResult ViewAssessment(int id)
+        {
+            var assessment = _assessmentRepository.GetById(id);
+            if (assessment == null)
+            {
+                return NotFound();
+            }
+
+            var viewModel = new AssessmentViewModel
+            {
+                Id = assessment.Id,
+                Title = assessment.Title,
+                Description = assessment.Description,
+                Points = assessment.Points
+            };
+
+            return View(viewModel);
+        }
+        public async Task<IActionResult>Join(int id)
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+            var trainee = _traineeRepository.GetTraineeByEmail(user.Email);
+            if (trainee == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            var course = _courseRepository.GetById(id);
+            if (course == null)
+            {
+                return NotFound();
+            }
+
+            var viewModel = new JoinRequestViewModel
+            {
+                CourseId = course.Id,
+                CourseTitle = course.Name,
+                TraineeId = trainee.Id,
+                TraineeEmail = trainee.Email
+            };
+
+            return View(viewModel);
+        }
+
+        [Authorize]
+        [HttpPost]
+        public async Task<IActionResult> SubmitJoinRequest(JoinRequestViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View("Join", model);
+            }
+
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+            var trainee = _traineeRepository.GetTraineeByEmail(user.Email);
+            if (trainee == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            // Check if there is already a pending join request for this course and trainee
+            var existingRequest = _joinRequestRepository.GetAll()
+                .FirstOrDefault(jr => jr.CourseId == model.CourseId && jr.TraineeId == trainee.Id && jr.Status == JoinRequestStatus.Pending);
+
+            if (existingRequest != null)
+            {
+                return View("AlreadySubmittedRequest");
+            }
+
+            string paymentProofPath = null;
+
+            if (model.PaymentProof != null && model.PaymentProof.Length > 0)
+            {
+                var uploadsFolder = Path.Combine(_environment.WebRootPath, "payment_proofs");
+                if (!Directory.Exists(uploadsFolder))
+                {
+                    Directory.CreateDirectory(uploadsFolder);
+                }
+
+                var uniqueFileName = Guid.NewGuid().ToString() + "_" + model.PaymentProof.FileName;
+                var fullPath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                using (var fileStream = new FileStream(fullPath, FileMode.Create))
+                {
+                    await model.PaymentProof.CopyToAsync(fileStream);
+                }
+
+                paymentProofPath = Path.Combine("\\payment_proofs", uniqueFileName);
+            }
+
+            var joinRequest = new JoinRequest
+            {
+                CourseId = model.CourseId,
+                TraineeId = trainee.Id,
+                PaymentProofPath = paymentProofPath,
+                Status = JoinRequestStatus.Pending,
+                CreatedAt = DateTime.Now
+            };
+
+            _joinRequestRepository.Insert(joinRequest);
+            _joinRequestRepository.Save();
+
+            // Send email or notification to admin for approval if necessary
+
+            return RedirectToAction("JoinRequestSubmitted");
+        }
+        [Authorize]
+        public IActionResult JoinRequestSubmitted()
+        {
+            return View();
+        }
+
+        //[Authorize(Roles = "Admin")]
+        public IActionResult PendingRequests()
+        {
+            var pendingRequests = _joinRequestRepository.GetAll().Where(jr => jr.Status == JoinRequestStatus.Pending).ToList();
+            return View(pendingRequests);
+        }
+
+        //[Authorize(Roles = "Admin")]
+        public IActionResult ApproveJoinRequest(int id)
+        {
+            var joinRequest = _joinRequestRepository.GetById(id);
+            if (joinRequest == null)
+            {
+                return NotFound();
+            }
+
+            joinRequest.Status = JoinRequestStatus.Approved;
+            _joinRequestRepository.Update(joinRequest);
+            _joinRequestRepository.Save();
+
+            var courseTrainee = new CourseTrainee
+            {
+                CourseId = joinRequest.CourseId,
+                TraineeId = joinRequest.TraineeId,
+                CompletionRatio = 0,
+                Points = 0
+            };
+
+            // Assuming you have a CourseTraineeRepository, insert the new record
+            _courseTraineeRepository.Insert(courseTrainee);
+            _courseTraineeRepository.Save();
+
+            return RedirectToAction("PendingRequests");
+        }
+
+        [HttpPost]
+        public IActionResult DeclineJoinRequest(int id)
+        {
+            var joinRequest = _joinRequestRepository.GetById(id);
+            if (joinRequest == null)
+            {
+                return NotFound();
+            }
+
+            _joinRequestRepository.Delete(id);
+            _joinRequestRepository.Save();
+
+            return RedirectToAction("PendingRequests");
+        }
 
         #endregion
 

@@ -19,6 +19,11 @@
     <link href="~/ThemeFront/css/style.css" rel="stylesheet">
     <link href="~/css/Register.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <!-- Add these in the <head> section of your _Layout.cshtml -->
+@*     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ *@    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <style>
         .navbar .dropdown-menu {
@@ -67,19 +72,6 @@
                 <a href="~/Services/Index" class="nav-item nav-link @(ViewContext.RouteData.Values["controller"].ToString() == "Services" ? "active" : "")">
                     <i class="fa fa-concierge-bell me-2"></i>Services
                 </a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle @(new[] { "Team", "Error" }.Contains(ViewContext.RouteData.Values["action"].ToString()) ? "active" : "")" data-bs-toggle="dropdown">
-                        <i class="fa fa-file-alt me-2"></i>Pages
-                    </a>
-                    <div class="dropdown-menu fade-down m-0">
-                        <a href="~/Home/Team" class="dropdown-item @(ViewContext.RouteData.Values["action"].ToString() == "Team" ? "active" : "")">
-                            <i class="fa fa-users me-2"></i>Our Team
-                        </a>
-                        <a href="~/Home/Error" class="dropdown-item @(ViewContext.RouteData.Values["action"].ToString() == "Error" ? "active" : "")">
-                            <i class="fa fa-exclamation-triangle me-2"></i>404 Page
-                        </a>
-                    </div>
-                </div>
                 <a href="~/Home/Contact" class="nav-item nav-link @(ViewContext.RouteData.Values["action"].ToString() == "Contact" ? "active" : "")">
                     <i class="fa fa-envelope me-2"></i>Contact
                 </a>
@@ -90,6 +82,12 @@
         </div>
         <div class="d-flex align-items-center">
             @await Component.InvokeAsync("User")
+            @if (User.IsInRole("Admin"))
+            {
+                <a href="@Url.Action("PendingRequests", "Course")" class="settings-icon">
+                    <i class="fa fa-cog"></i>
+                </a>
+            }
         </div>
     </nav>
 
@@ -117,13 +115,6 @@
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <h4 class="text-white mb-3">Newsletter</h4>
-                        <div class="position-relative mx-auto" style="max-width: 400px;">
-                            <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                            <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
                         </div>
                     </div>
                 </div>

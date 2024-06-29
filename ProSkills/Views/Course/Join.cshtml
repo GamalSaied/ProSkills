@@ -1,0 +1,127 @@
+﻿@model ProSkills.ViewModels.JoinRequestViewModel
+
+@{
+    Layout = "_Layout";
+}
+
+<h2 class="text-center my-4">Join Request</h2>
+
+<div class="containers">
+    <form asp-action="SubmitJoinRequest" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+        <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+
+        <div class="form-group">
+            <input asp-for="CourseId" type="hidden" />
+            <label asp-for="CourseTitle" class="form-label">Course Title</label>
+            <input asp-for="CourseTitle" class="form-control" readonly />
+            <span asp-validation-for="CourseTitle" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <input asp-for="TraineeId" type="hidden" />
+            <label asp-for="TraineeEmail" class="form-label">Your Email</label>
+            <input asp-for="TraineeEmail" class="form-control" readonly />
+            <span asp-validation-for="TraineeEmail" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="PaymentProof" class="form-label">Payment Proof</label>
+            <input asp-for="PaymentProof" type="file" class="form-control" />
+            <span asp-validation-for="PaymentProof" class="text-danger"></span>
+        </div>
+
+        <div class="text-center mt-4">
+            <button type="submit" class="btn btn-primary btn-lg">Submit Request</button>
+        </div>
+    </form>
+
+    <div class="payment-info mt-5">
+        <h3 class="text-center">Payment Information</h3>
+        <div class="payment-methods text-center mt-3">
+            <div class="payment-method">
+                <span class="payment-type">InstaPay/Vodafone Cash:</span>
+                <span class="payment-details">+201006468449</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .containers {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        font-weight: bold;
+        color: #333;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+
+    .payment-info {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    .payment-methods {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .payment-method {
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: #e9ecef;
+        border-radius: 5px;
+        display: inline-block;
+    }
+
+    .payment-type {
+        font-weight: bold;
+        color: #007bff;
+    }
+
+    .payment-details {
+        color: #333;
+    }
+</style>
+
+<script>
+    // Bootstrap custom validation
+    (function () {
+        'use strict';
+        window.addEventListener('load', function () {
+            var forms = document.getElementsByClassName('needs-validation');
+            var validation = Array.prototype.filter.call(forms, function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+</script>

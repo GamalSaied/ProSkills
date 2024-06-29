@@ -21,6 +21,7 @@ namespace ProSkills.Models
         public DbSet<Service> Service { get; set; }
         public DbSet<Assessment> Assessments { get; set; }
         public DbSet<ActivityLog> ActivityLogs { get; set; }
+        public DbSet<JoinRequest> JoinRequests { get; set; }
 
 
         // --------------------------------------------------------------------
@@ -234,52 +235,100 @@ namespace ProSkills.Models
                 new Course { Id = 19, Name = "Revit Architecture Advanced", CategoryId = 7, Description = "Learn Advanced Revit Architecture", StartAt = DateTime.Now.AddDays(6), EndAt = DateTime.Now.AddDays(35), CreatedAt = DateTime.Now.ToString(), Hours = 45, NumberOfTrainees = 25, TotalFilesSize = 13.7, NumberOfAssessment = 6, NumberOfLessons = 22, Location = "Online", IsDeleted = false, instructorId = new Random().Next(1, 16) },
                 new Course { Id = 20, Name = "Revit MEP Advanced", CategoryId = 7, Description = "Learn Advanced Revit MEP", StartAt = DateTime.Now.AddDays(7), EndAt = DateTime.Now.AddDays(30), CreatedAt = DateTime.Now.ToString(), Hours = 35, NumberOfTrainees = 20, TotalFilesSize = 11.4, NumberOfAssessment = 5, NumberOfLessons = 18, Location = "Online", IsDeleted = false, instructorId = new Random().Next(1, 16) }
             );
+            modelBuilder.Entity<Chapter>().HasData(
+      new Chapter { Id = 1, Title = "Introduction to Structural Revit", Description = "Basics of Structural Revit", CourseId = 1, downloadLink = "https://sadat.vip/", IsDeleted = false },
+      new Chapter { Id = 2, Title = "Advanced Structural Elements", Description = "Detailed look into advanced elements", CourseId = 1, downloadLink = "https://sadat.vip/", IsDeleted = false },
+      new Chapter { Id = 3, Title = "Structural Revit Best Practices", Description = "Best practices for using Structural Revit", CourseId = 1, downloadLink = "https://sadat.vip/", IsDeleted = false },
+      new Chapter { Id = 4, Title = "Structural Analysis in Revit", Description = "Conducting structural analysis", CourseId = 1, downloadLink = "https://sadat.vip/", IsDeleted = false }
+  );
 
-            // Seed chapters and lessons
-            var random1 = new Random();
-            var chapterId = 1;
-            var lessonId = 1;
-            var chapters = new List<Chapter>();
-            var lessons = new List<Lesson>();
+            modelBuilder.Entity<Lesson>().HasData(
+                // Lessons for Chapter 1
+                new Lesson { Id = 1, Title = "Revit Installation and Setup", Content = "Installing Revit and initial setup", Time = TimeSpan.FromMinutes(30), ChapterId = 1, downloadLink = "https://sadat.vip/", TaskLink = "https://www.youtube.com/watch?v=Nd6U2KgHI6k", IsDeleted = false },
+                new Lesson { Id = 2, Title = "Basic Structural Elements", Content = "Understanding basic structural elements", Time = TimeSpan.FromMinutes(45), ChapterId = 1, downloadLink = "https://sadat.vip/", TaskLink = "https://www.youtube.com/watch?v=Nd6U2KgHI6k", IsDeleted = false },
 
-            for (int courseId = 1; courseId <= 10; courseId++)
-            {
-                var numberOfChapters = random1.Next(2, 4); // Each course has between 2 and 4 chapters
-                for (int i = 1; i <= numberOfChapters; i++)
-                {
-                    chapters.Add(new Chapter
-                    {
-                        Id = chapterId,
-                        Title = $"Chapter {i} for Course {courseId}",
-                        Description = $"Description for Chapter {i} in Course {courseId}",
-                        CourseId = courseId,
-                        downloadLink = "https://sadat.vip/",
-                        IsDeleted = false
-                    });
+                // Lessons for Chapter 2
+                new Lesson { Id = 3, Title = "Advanced Structural Design", Content = "Advanced design techniques", Time = TimeSpan.FromMinutes(60), ChapterId = 2, downloadLink = "https://sadat.vip/", TaskLink = "https://www.youtube.com/watch?v=Nd6U2KgHI6k", IsDeleted = false },
+                new Lesson { Id = 4, Title = "Complex Structures", Content = "Designing complex structures", Time = TimeSpan.FromMinutes(50), ChapterId = 2, downloadLink = "https://sadat.vip/", TaskLink = "https://www.youtube.com/watch?v=Nd6U2KgHI6k", IsDeleted = false },
 
-                    var numberOfLessons = random1.Next(2, 4); // Each chapter has between 2 and 4 lessons
-                    for (int j = 1; j <= numberOfLessons; j++)
-                    {
-                        lessons.Add(new Lesson
-                        {
-                            Id = lessonId,
-                            Title = $"Lesson {j} for Chapter {chapterId}",
-                            Content = $"Content for Lesson {j} in Chapter {chapterId}",
-                            Time = TimeSpan.FromMinutes(random1.Next(10, 60)), // Random lesson time between 10 and 60 minutes
-                            ChapterId = chapterId,
-                            downloadLink = "https://sadat.vip/",
-                            TaskLink = "https://www.youtube.com/watch?v=0W4KRuw7m9U",
-                            IsDeleted = false
-                        });
-                        lessonId++;
-                    }
-                    chapterId++;
-                }
-            }
+                // Lessons for Chapter 3
+                new Lesson { Id = 5, Title = "Best Practices Overview", Content = "Overview of best practices", Time = TimeSpan.FromMinutes(40), ChapterId = 3, downloadLink = "https://sadat.vip/", TaskLink = "https://www.youtube.com/watch?v=Nd6U2KgHI6k", IsDeleted = false },
+                new Lesson { Id = 6, Title = "Modeling Tips", Content = "Tips for effective modeling", Time = TimeSpan.FromMinutes(35), ChapterId = 3, downloadLink = "https://sadat.vip/", TaskLink = "https://www.youtube.com/watch?v=Nd6U2KgHI6k", IsDeleted = false },
 
-            modelBuilder.Entity<Chapter>().HasData(chapters);
-            modelBuilder.Entity<Lesson>().HasData(lessons);
-            Random random = new Random();
+                // Lessons for Chapter 4
+                new Lesson { Id = 7, Title = "Introduction to Structural Analysis", Content = "Basics of structural analysis", Time = TimeSpan.FromMinutes(45), ChapterId = 4, downloadLink = "https://sadat.vip/", TaskLink = "https://www.youtube.com/watch?v=Nd6U2KgHI6k", IsDeleted = false },
+                new Lesson { Id = 8, Title = "Advanced Analysis Techniques", Content = "Advanced techniques in structural analysis", Time = TimeSpan.FromMinutes(55), ChapterId = 4, downloadLink = "https://sadat.vip/", TaskLink = "https://www.youtube.com/watch?v=Nd6U2KgHI6k", IsDeleted = false }
+            );
+
+            modelBuilder.Entity<Assessment>().HasData(
+    // Assessment for Grids
+    new Assessment
+    {
+        Id = 1,
+        Title = "Grids Task",
+        Description = "1- Draw grids on the attached dwg.\n2- Change the size of the Bubble.\n3- Change the text size of inside the bubble.",
+        Points = 20,
+        CreatedAt = DateTime.Now,
+        UpdatedAt = DateTime.Now,
+        CourseId = 1,
+        IsDeleted = false
+    },
+
+    // Assessment for Columns
+    new Assessment
+    {
+        Id = 2,
+        Title = "Columns Task",
+        Description = "1- Create the type of column with dimension 25*50 cm2 and .6*.6.\n2- Draw the columns on the attached dwg.",
+        Points = 25,
+        CreatedAt = DateTime.Now,
+        UpdatedAt = DateTime.Now,
+        CourseId = 1,
+        IsDeleted = false
+    },
+
+    // Assessment for Footings
+    new Assessment
+    {
+        Id = 3,
+        Title = "Footings Task",
+        Description = "1- Create the type of Footings with dimension 1.5*1.5 and 1*.6.\n2- Draw the Footings on the attached dwg.",
+        Points = 25,
+        CreatedAt = DateTime.Now,
+        UpdatedAt = DateTime.Now,
+        CourseId = 1,
+        IsDeleted = false
+    },
+
+    // Assessment for Beams
+    new Assessment
+    {
+        Id = 4,
+        Title = "Beams Task",
+        Description = "1- Create the type of Beams with dimension 25*50.\n2- Draw the Beams on the attached dwg.",
+        Points = 25,
+        CreatedAt = DateTime.Now,
+        UpdatedAt = DateTime.Now,
+        CourseId = 1,
+        IsDeleted = false
+    },
+
+    // Assessment for Floors
+    new Assessment
+    {
+        Id = 5,
+        Title = "Floors Task",
+        Description = "1- Create the type of floors generic 300mm.\n2- Draw the floors on the attached dwg.",
+        Points = 30,
+        CreatedAt = DateTime.Now,
+        UpdatedAt = DateTime.Now,
+        CourseId = 1,
+        IsDeleted = false
+    }
+);
+
+
+
 
             // Generate random CourseTrainee relations
             var courseTraineeData = new List<CourseTrainee>();

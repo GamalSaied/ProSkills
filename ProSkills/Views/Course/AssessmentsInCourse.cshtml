@@ -1,0 +1,26 @@
+﻿@model ProSkills.ViewModels.AssessmentsInCourseViewModel
+
+<div class="container">
+    <h2>@Model.CourseTitle - Assessments</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Points</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var assessment in Model.Assessments)
+            {
+                <tr>
+                    <td>@assessment.Title</td>
+                    <td>@assessment.Points</td>
+                    <td>
+                        <a href="@Url.Action("ViewAssessment", "Course", new { id = assessment.Id })" class="btn btn-primary">View Assessment</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

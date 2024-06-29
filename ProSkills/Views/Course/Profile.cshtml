@@ -144,8 +144,9 @@
                     <h5>@Model.VendorName</h5>
                     <p>@Model.Description</p>
                     <div>
-                        <a href="#" class="btn btn-primary">Notify once available!</a>
-                        <a href="#" class="btn btn-outline-primary">Request a phone call</a>
+                        <a href="@Url.Action("Join", "Course", new { id = Model.Id })" class="btn btn-primary">Join Now</a>
+                        <a href="@Url.Action("AssessmentsInCourse", "Course", new { courseId = Model.Id })" class="btn btn-secondary">View Assessments</a>
+
                     </div>
                 </div>
             </div>
